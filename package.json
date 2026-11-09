@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && tsc -p tsconfig.worker.json && vite build && cp dist/index.html dist/404.html && mkdir -p dist/explore dist/stage && cp dist/index.html dist/explore/index.html && cp dist/index.html dist/stage/index.html",
+    "build": "tsc --noEmit && tsc -p tsconfig.worker.json && vite build && node scripts/post-build.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test:e2e": "node scripts/smoke.mjs",
     "deploy": "npm run build && wrangler deploy"
