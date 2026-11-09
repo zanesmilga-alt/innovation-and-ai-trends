@@ -1,0 +1,1131 @@
+{
+  "_note": "PLACEHOLDER CONTENT. Replace this file with the real signals.json. The app reads whatever is here.",
+  "placeholder": true,
+  "signals": [
+    {
+      "id": "s01",
+      "n": 1,
+      "act": 1,
+      "title": "PLACEHOLDER signal 1",
+      "short": "Placeholder 1",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "cpu",
+      "image": null,
+      "art": "network",
+      "hook": "Replace this with the real one-line hook for signal 1.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 1.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 1?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 1.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s02",
+      "n": 2,
+      "act": 1,
+      "title": "PLACEHOLDER signal 2",
+      "short": "Placeholder 2",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "brain",
+      "image": null,
+      "art": "molecules",
+      "hook": "Replace this with the real one-line hook for signal 2.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 2.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 2?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 2.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s03",
+      "n": 3,
+      "act": 1,
+      "title": "PLACEHOLDER signal 3",
+      "short": "Placeholder 3",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "bot",
+      "image": null,
+      "art": "orbit",
+      "hook": "Replace this with the real one-line hook for signal 3.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 3.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 3?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 3.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s04",
+      "n": 4,
+      "act": 1,
+      "title": "PLACEHOLDER signal 4",
+      "short": "Placeholder 4",
+      "status": "PLACEHOLDER",
+      "isNew": true,
+      "icon": "shield-check",
+      "image": null,
+      "art": "ripples",
+      "hook": "Replace this with the real one-line hook for signal 4.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 4.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 4?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 4.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s05",
+      "n": 5,
+      "act": 2,
+      "title": "PLACEHOLDER signal 5",
+      "short": "Placeholder 5",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "zap",
+      "image": null,
+      "art": "lenses",
+      "hook": "Replace this with the real one-line hook for signal 5.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 5.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 5?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 5.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s06",
+      "n": 6,
+      "act": 2,
+      "title": "PLACEHOLDER signal 6",
+      "short": "Placeholder 6",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "network",
+      "image": null,
+      "art": "waves",
+      "hook": "Replace this with the real one-line hook for signal 6.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 6.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 6?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 6.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s07",
+      "n": 7,
+      "act": 2,
+      "title": "PLACEHOLDER signal 7",
+      "short": "Placeholder 7",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "coins",
+      "image": null,
+      "art": "hub",
+      "hook": "Replace this with the real one-line hook for signal 7.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 7.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 7?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 7.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s08",
+      "n": 8,
+      "act": 2,
+      "title": "PLACEHOLDER signal 8",
+      "short": "Placeholder 8",
+      "status": "PLACEHOLDER",
+      "isNew": true,
+      "icon": "chart-line",
+      "image": null,
+      "art": "ladder",
+      "hook": "Replace this with the real one-line hook for signal 8.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 8.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 8?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 8.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s09",
+      "n": 9,
+      "act": 3,
+      "title": "PLACEHOLDER signal 9",
+      "short": "Placeholder 9",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "flask-conical",
+      "image": null,
+      "art": "tiers",
+      "hook": "Replace this with the real one-line hook for signal 9.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 9.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 9?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 9.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s10",
+      "n": 10,
+      "act": 3,
+      "title": "PLACEHOLDER signal 10",
+      "short": "Placeholder 10",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "users",
+      "image": null,
+      "art": "falling",
+      "hook": "Replace this with the real one-line hook for signal 10.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 10.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 10?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 10.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s11",
+      "n": 11,
+      "act": 3,
+      "title": "PLACEHOLDER signal 11",
+      "short": "Placeholder 11",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "message-square",
+      "image": null,
+      "art": "rising",
+      "hook": "Replace this with the real one-line hook for signal 11.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 11.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 11?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 11.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s12",
+      "n": 12,
+      "act": 3,
+      "title": "PLACEHOLDER signal 12",
+      "short": "Placeholder 12",
+      "status": "PLACEHOLDER",
+      "isNew": true,
+      "icon": "eye",
+      "image": null,
+      "art": "layers",
+      "hook": "Replace this with the real one-line hook for signal 12.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 12.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 12?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 12.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s13",
+      "n": 13,
+      "act": 4,
+      "title": "PLACEHOLDER signal 13",
+      "short": "Placeholder 13",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "globe",
+      "image": null,
+      "art": "bolt",
+      "hook": "Replace this with the real one-line hook for signal 13.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 13.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 13?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 13.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s14",
+      "n": 14,
+      "act": 4,
+      "title": "PLACEHOLDER signal 14",
+      "short": "Placeholder 14",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "layers",
+      "image": null,
+      "art": "stars",
+      "hook": "Replace this with the real one-line hook for signal 14.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 14.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 14?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 14.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s15",
+      "n": 15,
+      "act": 4,
+      "title": "PLACEHOLDER signal 15",
+      "short": "Placeholder 15",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "rocket",
+      "image": null,
+      "art": "ecg",
+      "hook": "Replace this with the real one-line hook for signal 15.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 15.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 15?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 15.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s16",
+      "n": 16,
+      "act": 4,
+      "title": "PLACEHOLDER signal 16",
+      "short": "Placeholder 16",
+      "status": "PLACEHOLDER",
+      "isNew": true,
+      "icon": "scale",
+      "image": null,
+      "art": "network",
+      "hook": "Replace this with the real one-line hook for signal 16.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 16.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 16?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 16.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s17",
+      "n": 17,
+      "act": 5,
+      "title": "PLACEHOLDER signal 17",
+      "short": "Placeholder 17",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "database",
+      "image": null,
+      "art": "molecules",
+      "hook": "Replace this with the real one-line hook for signal 17.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 17.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 17?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 17.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s18",
+      "n": 18,
+      "act": 5,
+      "title": "PLACEHOLDER signal 18",
+      "short": "Placeholder 18",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "cloud",
+      "image": null,
+      "art": "orbit",
+      "hook": "Replace this with the real one-line hook for signal 18.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 18.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 18?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 18.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s19",
+      "n": 19,
+      "act": 5,
+      "title": "PLACEHOLDER signal 19",
+      "short": "Placeholder 19",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "code",
+      "image": null,
+      "art": "ripples",
+      "hook": "Replace this with the real one-line hook for signal 19.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 19.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 19?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 19.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s20",
+      "n": 20,
+      "act": 5,
+      "title": "PLACEHOLDER signal 20",
+      "short": "Placeholder 20",
+      "status": "PLACEHOLDER",
+      "isNew": true,
+      "icon": "file-text",
+      "image": null,
+      "art": "lenses",
+      "hook": "Replace this with the real one-line hook for signal 20.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 20.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 20?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 20.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s21",
+      "n": 21,
+      "act": 6,
+      "title": "PLACEHOLDER signal 21",
+      "short": "Placeholder 21",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "gauge",
+      "image": null,
+      "art": "waves",
+      "hook": "Replace this with the real one-line hook for signal 21.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 21.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 21?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 21.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s22",
+      "n": 22,
+      "act": 6,
+      "title": "PLACEHOLDER signal 22",
+      "short": "Placeholder 22",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "workflow",
+      "image": null,
+      "art": "hub",
+      "hook": "Replace this with the real one-line hook for signal 22.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 22.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 22?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 22.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s23",
+      "n": 23,
+      "act": 6,
+      "title": "PLACEHOLDER signal 23",
+      "short": "Placeholder 23",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "search",
+      "image": null,
+      "art": "ladder",
+      "hook": "Replace this with the real one-line hook for signal 23.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 23.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 23?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 23.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s24",
+      "n": 24,
+      "act": 6,
+      "title": "PLACEHOLDER signal 24",
+      "short": "Placeholder 24",
+      "status": "PLACEHOLDER",
+      "isNew": true,
+      "icon": "lock",
+      "image": null,
+      "art": "tiers",
+      "hook": "Replace this with the real one-line hook for signal 24.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 24.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 24?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 24.",
+      "sources": [
+        "Placeholder source"
+      ]
+    },
+    {
+      "id": "s25",
+      "n": 25,
+      "act": 6,
+      "title": "PLACEHOLDER signal 25",
+      "short": "Placeholder 25",
+      "status": "PLACEHOLDER",
+      "isNew": false,
+      "icon": "activity",
+      "image": null,
+      "art": "falling",
+      "hook": "Replace this with the real one-line hook for signal 25.",
+      "why": "Replace with the real \"why it matters for our customers\" text.",
+      "story": "Replace with the real story text for signal 25.",
+      "stats": [
+        {
+          "value": "00",
+          "label": "Placeholder stat 1",
+          "fresh": "checked"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 2",
+          "fresh": "deck"
+        },
+        {
+          "value": "00",
+          "label": "Placeholder stat 3",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "Placeholder guess question for signal 25?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 50,
+        "answerLabel": "Placeholder answer",
+        "source": "Placeholder source"
+      },
+      "hotTake": "Placeholder hot take for signal 25.",
+      "sources": [
+        "Placeholder source"
+      ]
+    }
+  ]
+}

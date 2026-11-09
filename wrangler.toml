@@ -1,0 +1,8 @@
+# Assets-only Worker: serves the built site from dist/.
+# Phase 2 adds the Room Durable Object and the /ws route here.
+name = "signal-room"
+compatibility_date = "2026-10-01"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
