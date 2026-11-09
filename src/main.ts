@@ -9,6 +9,11 @@ if (!root) throw new Error('#app missing');
 const path = location.pathname.replace(/\/+$/, '') || '/';
 const join = path.match(/^\/join(?:\/([^/]+))?$/);
 
+// On the stage and phone pages the brand link would leave the room, so it does nothing there.
+if (path === '/stage' || join) {
+  document.querySelector<HTMLAnchorElement>('.brand')?.addEventListener('click', (e) => e.preventDefault());
+}
+
 if (path === '/explore') {
   void mountApp(root, 'explore');
 } else if (path === '/stage') {

@@ -25,6 +25,14 @@ export interface TrueFalse {
   explanation: string;
 }
 
+/** Multiple-choice game: pick one of the options. */
+export interface Choice {
+  question: string;
+  options: string[];
+  answer: number; // index into options
+  explanation: string;
+}
+
 /** "What are the chances" game: a 0–100% slider. */
 export interface Chance {
   question: string;
@@ -51,6 +59,9 @@ export interface Signal {
   guess?: Guess;
   trueFalse?: TrueFalse;
   chance?: Chance;
+  /** The one game for this trend on the phones. */
+  gameType?: 'guess' | 'truefalse' | 'choice';
+  choice?: Choice;
   hotTake: string;
   sources: string[];
 }

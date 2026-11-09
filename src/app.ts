@@ -232,7 +232,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     mapLayer.style.transformOrigin = '';
     story.classList.remove('open');
     story.setAttribute('aria-hidden', 'true');
-    history.replaceState(null, '', location.pathname);
+    history.replaceState(null, '', location.pathname + location.search);
   }
 
   function step(delta: number) {

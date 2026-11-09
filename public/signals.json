@@ -1,5 +1,5 @@
 {
-  "_note": "DRAFT. Content from the June AI Trends deck (figures as the deck states them, not re-checked). \"why\", hot takes and signals 21–25 are placeholders. Images: public/images/trends/<id>.jpg",
+  "_note": "DRAFT. Content from the June AI Trends deck (figures as the deck states them, not re-checked). \"why\", hot takes and signals 21–25 are placeholders. Images: public/images/trends/<id>.jpg Multiple-choice wrong answers were written for the game; check them.",
   "placeholder": true,
   "signals": [
     {
@@ -58,7 +58,8 @@
         "question": "What is the chance that a \"vibe coder\" is a developer by profession?",
         "answer": 37,
         "explanation": "The deck says 63% are domain experts, so about 37% are developers."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s02",
@@ -111,7 +112,8 @@
         "statement": "A humanoid robot is on sale today for under $20,000.",
         "answer": true,
         "explanation": "The deck lists the Unitree G1 at $16,000, available to buy now."
-      }
+      },
+      "gameType": "truefalse"
     },
     {
       "id": "s03",
@@ -171,6 +173,18 @@
         "question": "What is the chance a random person worldwide worries AI will harm society?",
         "answer": 57,
         "explanation": "Ipsos 2025: 57% of people globally worry about it."
+      },
+      "gameType": "choice",
+      "choice": {
+        "question": "How many monthly users does Character.AI have?",
+        "options": [
+          "2M",
+          "8M",
+          "20M",
+          "50M"
+        ],
+        "answer": 2,
+        "explanation": "The deck: 20M monthly users, 50%+ of them under 24."
       }
     },
     {
@@ -224,7 +238,8 @@
         "statement": "Google’s contracted cloud backlog roughly doubled year over year.",
         "answer": true,
         "explanation": "The deck says it doubled, to $460B."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s05",
@@ -278,7 +293,8 @@
         "statement": "The deck quotes $0.50 for cloud inference and $0.05 for an on-premise small model.",
         "answer": true,
         "explanation": "Those are the two figures the deck gives for the cost comparison."
-      }
+      },
+      "gameType": "truefalse"
     },
     {
       "id": "s06",
@@ -331,6 +347,18 @@
         "statement": "Nvidia’s peak market cap was larger than Japan’s GDP.",
         "answer": true,
         "explanation": "The deck gives Nvidia’s peak market cap as $5T, which it compares to Japan’s GDP."
+      },
+      "gameType": "choice",
+      "choice": {
+        "question": "What was Nvidia’s discrete GPU market share in H1 2025?",
+        "options": [
+          "45%",
+          "62%",
+          "92%",
+          "99%"
+        ],
+        "answer": 2,
+        "explanation": "The deck: 92% in H1 2025."
       }
     },
     {
@@ -385,7 +413,8 @@
         "statement": "More than 50 enterprises adopted the A2A protocol within weeks of launch.",
         "answer": true,
         "explanation": "The deck says 50+ enterprise companies adopted it within weeks."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s08",
@@ -438,7 +467,8 @@
         "statement": "Atlassian was down about 60% year to date by mid-February 2026.",
         "answer": true,
         "explanation": "The deck gives −60% for Atlassian at that point."
-      }
+      },
+      "gameType": "truefalse"
     },
     {
       "id": "s09",
@@ -497,6 +527,18 @@
         "question": "What is the chance a given enterprise has measurable AI return (MIT 2025)?",
         "answer": 5,
         "explanation": "If 95% see zero return, about 5% see measurable return."
+      },
+      "gameType": "choice",
+      "choice": {
+        "question": "What share of enterprises report zero measurable AI financial return (MIT 2025)?",
+        "options": [
+          "15%",
+          "50%",
+          "75%",
+          "95%"
+        ],
+        "answer": 3,
+        "explanation": "MIT 2025, as cited in the deck: 95%."
       }
     },
     {
@@ -557,7 +599,8 @@
         "question": "What is the chance a failed identity check is deepfake-driven (Veriff 2025)?",
         "answer": 5,
         "explanation": "1 in 20 is 5%."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s11",
@@ -611,7 +654,8 @@
         "statement": "Inference cost fell from $3.50 to $0.32 per million tokens in a year.",
         "answer": true,
         "explanation": "ARK Invest 2026, as cited in the deck."
-      }
+      },
+      "gameType": "truefalse"
     },
     {
       "id": "s12",
@@ -664,6 +708,18 @@
         "statement": "Argentina created a legal framework for non-human AI corporations in June 2026.",
         "answer": true,
         "explanation": "The deck says this is the first such framework anywhere."
+      },
+      "gameType": "choice",
+      "choice": {
+        "question": "How big is Argentina’s Stargate data center bid?",
+        "options": [
+          "$2B+",
+          "$5B+",
+          "$20B+",
+          "$100B+"
+        ],
+        "answer": 2,
+        "explanation": "The deck: $20B+ for Patagonia."
       }
     },
     {
@@ -717,7 +773,8 @@
         "statement": "Anthropic’s engineering throughput is 8x that of 2021–2025, with the same headcount.",
         "answer": true,
         "explanation": "The deck: same engineers, same headcount, 8x the output."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s14",
@@ -771,7 +828,8 @@
         "statement": "GPT-4-class inference fell from $60 to $0.60 per million tokens between 2024 and 2026.",
         "answer": true,
         "explanation": "That is the deck’s figure. The deck’s \"98%\" label does not match it; the arithmetic gives 99%. Check before the session."
-      }
+      },
+      "gameType": "truefalse"
     },
     {
       "id": "s15",
@@ -824,6 +882,18 @@
         "statement": "Microsoft committed $15.2B to the UAE through 2029.",
         "answer": true,
         "explanation": "The deck gives this figure, quadrupling local capacity."
+      },
+      "gameType": "choice",
+      "choice": {
+        "question": "What share of global hyperscale AI compute does the US hold?",
+        "options": [
+          "20%",
+          "35%",
+          "55%",
+          "80%"
+        ],
+        "answer": 2,
+        "explanation": "The deck: 55%, with China in second place."
       }
     },
     {
@@ -878,7 +948,8 @@
         "statement": "The EU’s AI investment plan is worth €200B.",
         "answer": true,
         "explanation": "The deck gives €200B, including AI Gigafactories."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s17",
@@ -937,7 +1008,8 @@
         "question": "What is the chance a global enterprise faces critical AI skills gaps by end-2026 (IDC)?",
         "answer": 90,
         "explanation": "IDC: 90%+ of enterprises."
-      }
+      },
+      "gameType": "truefalse"
     },
     {
       "id": "s18",
@@ -990,6 +1062,18 @@
         "statement": "The EU AI Act has been fully in force since August 2025.",
         "answer": true,
         "explanation": "The deck gives August 2025."
+      },
+      "gameType": "choice",
+      "choice": {
+        "question": "How much is the EU’s AI investment plan worth?",
+        "options": [
+          "€20B",
+          "€200B",
+          "€2T",
+          "€20T"
+        ],
+        "answer": 1,
+        "explanation": "The deck: €200B, including AI Gigafactories."
       }
     },
     {
@@ -1048,7 +1132,8 @@
         "question": "What is the chance a person worldwide lacks access to essential health services?",
         "answer": 33,
         "explanation": "The deck says 1 in 3."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s20",
@@ -1102,7 +1187,8 @@
         "statement": "Estimated global enterprise AI spend with no measurable return is $30–40B.",
         "answer": true,
         "explanation": "The deck gives this range."
-      }
+      },
+      "gameType": "truefalse"
     },
     {
       "id": "s21",
@@ -1160,7 +1246,8 @@
         "question": "Placeholder chance question 21?",
         "answer": 50,
         "explanation": "Placeholder."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s22",
@@ -1218,7 +1305,8 @@
         "question": "Placeholder chance question 22?",
         "answer": 50,
         "explanation": "Placeholder."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s23",
@@ -1276,7 +1364,8 @@
         "question": "Placeholder chance question 23?",
         "answer": 50,
         "explanation": "Placeholder."
-      }
+      },
+      "gameType": "truefalse"
     },
     {
       "id": "s24",
@@ -1334,7 +1423,8 @@
         "question": "Placeholder chance question 24?",
         "answer": 50,
         "explanation": "Placeholder."
-      }
+      },
+      "gameType": "guess"
     },
     {
       "id": "s25",
@@ -1392,7 +1482,8 @@
         "question": "Placeholder chance question 25?",
         "answer": 50,
         "explanation": "Placeholder."
-      }
+      },
+      "gameType": "guess"
     }
   ]
 }

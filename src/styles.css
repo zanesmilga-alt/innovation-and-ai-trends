@@ -899,3 +899,19 @@ kbd { font-family: var(--f-mono); font-size: 0.9em; padding: 1px 6px; border: 1p
 .trend-box textarea { min-height: 110px; resize: vertical; font-size: 19px; margin-top: 10px; }
 .trend-box .big-btn { margin-top: 12px; }
 .phone .toast { bottom: 80px; }
+
+/* ---------- Phase 3b: one game per trend, trend views ---------- */
+.choices { display: grid; gap: 12px; margin: 6px 0 0; }
+.choice-row { display: grid; grid-template-columns: minmax(200px, 1fr) 2fr 80px; gap: 16px; align-items: center; padding: 10px 14px; border-radius: 12px; background: rgba(16, 22, 47, 0.7); }
+.choice-row.right { outline: 2px solid var(--orange); }
+.choice-label { font-size: clamp(20px, 1.8vw, 30px); }
+.choice-track { height: clamp(22px, 2.6vh, 34px); border-radius: 999px; background: var(--surface-2); overflow: hidden; display: block; }
+.choice-fill { display: block; height: 100%; background: linear-gradient(90deg, var(--orange), var(--hi)); transition: width 600ms var(--ease); }
+.choice-count { font-size: clamp(18px, 1.6vw, 26px); color: var(--orange); text-align: right; }
+.wall .view-card, .wall .ask-card { text-align: left; }
+.wall .ask-card { text-align: center; }
+.wall .ask-card h2 { font-family: var(--f-display); font-weight: 900; font-size: clamp(40px, 4.4vw, 76px); margin: 8px 0 18px; line-height: 1.02; }
+.wall .view-card { width: min(1400px, 94vw); }
+.wall .view-card ol { grid-template-columns: repeat(2, 1fr); }
+.wall .view-card li { animation: rise 600ms var(--ease) both; }
+.wall .view-card li:nth-child(2n) { animation-delay: 80ms; }

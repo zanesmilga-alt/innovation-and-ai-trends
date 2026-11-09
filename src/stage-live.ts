@@ -36,11 +36,13 @@ const PHASE_LABEL: Record<Phase, string> = {
   lobby: 'Join',
   warmup: 'Warm-up',
   hearts: 'Heart pick',
-  guess: 'Deep dive · guess',
+  guess: 'Deep dive · game',
   story: 'Deep dive · the story',
   hottake: 'Deep dive · hot take',
   discuss: 'Deep dive · discuss',
   flyover: 'Flyover',
+  askTrends: 'Your trends · add',
+  trendView: 'Your trends',
   close: 'Close',
 };
 
@@ -95,6 +97,16 @@ export async function startStage(o: StageOptions): Promise<void> {
   const suggest = $('suggest');
 
   if (!code || !key) {
+    // Came back without a link (for example after a stray click): return to the last room.
+    try {
+      const saved = sessionStorage.getItem('signalroom.stage');
+      if (saved) {
+        location.replace(`/stage${saved}`);
+        return;
+      }
+    } catch {
+      /* no storage: show the setup form */
+    }
     $('setup').hidden = false;
     $('setup-form').addEventListener('submit', (e) => {
       e.preventDefault();
@@ -113,16 +125,21 @@ export async function startStage(o: StageOptions): Promise<void> {
   };
   let results: Results = {
     type: 'results', warmup: [0, 0, 0], hearts: {}, topN: [], revealed: false,
-    guessCount: 0, guessValues: [], takes: { agree: 0, disagree: 0 }, trends: [],
+    gameCount: 0, gameValues: [], takes: { agree: 0, disagree: 0 }, trends: [],
   };
   let qrOpen = false;
-  let wallOpen = false;
   let linkStatus: LinkStatus = 'reconnecting';
   let lastHearts: Record<string, number> = {};
   let storyShown: string | null = null;
   let flyTimer: number | undefined;
   let flown: string[] = [];
   let error = '';
+
+  try {
+    sessionStorage.setItem('signalroom.stage', location.search);
+  } catch {
+    /* ignore */
+  }
 
   const joinUrl = `${location.origin}/join/${code}`;
   $('qr-code').textContent = code;
@@ -168,7 +185,12 @@ export async function startStage(o: StageOptions): Promise<void> {
   });
 
   const send = (m: ClientMessage) => link.send(m);
-  const rangeOf = (s: Signal) => (s.guess ? { min: s.guess.min, max: s.guess.max } : { min: 0, max: 100 });
+  /** The answer range the phones may send, by game type. */
+  const rangeOf = (s: Signal) => {
+    if (s.gameType === 'truefalse' && s.trueFalse) return { min: 0, max: 1 };
+    if (s.gameType === 'choice' && s.choice) return { min: 0, max: s.choice.options.length - 1 };
+    return s.guess ? { min: s.guess.min, max: s.guess.max } : { min: 0, max: 100 };
+  };
 
   /** Pick a signal for a deep dive (or a flyover stop). */
   const choose = (id: string, phase?: Phase) => {
@@ -233,31 +255,63 @@ export async function startStage(o: StageOptions): Promise<void> {
       </div>`;
   };
 
+  /** The one game for the trend: guess the number, true or false, or multiple choice. */
+  const gameHtml = (s: Signal): string => {
+    const label = `<p class="eyebrow mono">${esc(s.short)} · ${s.gameType === 'truefalse' ? 'true or false' : s.gameType === 'choice' ? 'pick one' : 'guess the number'}</p>`;
+    const waiting = results.revealed ? '' : `<p class="lede">${results.gameCount} answered so far. Press <kbd>R</kbd> to reveal.</p>`;
+
+    if (s.gameType === 'truefalse' && s.trueFalse) {
+      const t = s.trueFalse;
+      const trueCount = results.gameValues.filter((v) => v === 1).length;
+      const falseCount = results.gameValues.length - trueCount;
+      const reveal = results.revealed
+        ? `${split(trueCount, falseCount).replace('Agree', 'True').replace('Disagree', 'False')}
+           <p class="reveal-line">It is ${t.answer ? 'true' : 'false'}. <span class="mono">${esc(t.explanation)}</span></p>`
+        : waiting;
+      return `${label}<h2 class="statement">${esc(t.statement)}</h2>${reveal}`;
+    }
+
+    if (s.gameType === 'choice' && s.choice) {
+      const c = s.choice;
+      const counts = c.options.map((_, i) => results.gameValues.filter((v) => v === i).length);
+      const total = results.gameValues.length || 1;
+      const bars = c.options.map((o, i) => `
+        <div class="choice-row ${results.revealed && i === c.answer ? 'right' : ''}">
+          <span class="choice-label">${esc(o)}</span>
+          <span class="choice-track"><span class="choice-fill" style="width:${results.revealed ? Math.round((counts[i] / total) * 100) : 0}%"></span></span>
+          <span class="mono choice-count">${results.revealed ? counts[i] : ''}</span>
+        </div>`).join('');
+      const reveal = results.revealed
+        ? `<p class="reveal-line">${esc(c.options[c.answer])} <span class="mono">· ${esc(c.explanation)}</span></p>`
+        : waiting;
+      return `${label}<h2>${esc(c.question)}</h2><div class="choices">${bars}</div>${reveal}`;
+    }
+
+    // guess the number
+    const g = s.guess;
+    if (!g) return `${label}<p class="lede">Guess the number</p>`;
+    const span = g.max - g.min || 1;
+    const at = (v: number) => `${Math.max(0, Math.min(100, ((v - g.min) / span) * 100))}%`;
+    const guessDots = results.revealed ? results.gameValues.map((v) => `<i class="gdot" style="left:${at(v)}"></i>`).join('') : '';
+    const trueMark = results.revealed ? `<i class="gtrue" style="left:${at(g.answer)}"></i>` : '';
+    const info = results.revealed
+      ? `<p class="reveal-line">${esc(g.answerLabel)} <span class="mono">· ${esc(g.source)}</span></p>`
+      : waiting;
+    return `${label}<h2>${esc(g.question)}</h2>
+      <div class="gscale">
+        <div class="gtrack">${guessDots}${trueMark}</div>
+        <div class="gends mono"><span>${fmt(g.min)} ${esc(g.unit)}</span><span>${fmt(g.max)} ${esc(g.unit)}</span></div>
+      </div>${info}`;
+  };
+
   const renderDeep = () => {
     const s = state.activeSignalId ? byId.get(state.activeSignalId) : undefined;
     const show = (state.phase === 'guess' || state.phase === 'hottake' || state.phase === 'discuss') && !!s;
     deep.hidden = !show;
     if (!show || !s) return;
 
-    if (state.phase === 'guess' && s.guess) {
-      const g = s.guess;
-      const span = g.max - g.min || 1;
-      const at = (v: number) => `${Math.max(0, Math.min(100, ((v - g.min) / span) * 100))}%`;
-      const guessDots = results.revealed
-        ? results.guessValues.map((v) => `<i class="gdot" style="left:${at(v)}"></i>`).join('')
-        : '';
-      const trueMark = results.revealed ? `<i class="gtrue" style="left:${at(g.answer)}"></i>` : '';
-      const info = results.revealed
-        ? `<p class="reveal-line">${esc(g.answerLabel)} <span class="mono">· ${esc(g.source)}</span></p>`
-        : `<p class="lede">${results.guessCount} guessed so far. Press <kbd>R</kbd> to reveal.</p>`;
-      deep.innerHTML = `
-        <p class="eyebrow mono">${esc(s.short)} · guess the number</p>
-        <h2>${esc(g.question)}</h2>
-        <div class="gscale">
-          <div class="gtrack">${guessDots}${trueMark}</div>
-          <div class="gends mono"><span>${fmt(g.min)} ${esc(g.unit)}</span><span>${fmt(g.max)} ${esc(g.unit)}</span></div>
-        </div>
-        ${info}`;
+    if (state.phase === 'guess') {
+      deep.innerHTML = gameHtml(s);
       return;
     }
 
@@ -294,17 +348,29 @@ export async function startStage(o: StageOptions): Promise<void> {
       .join('');
   };
 
+  /** Trend phases: collecting (a waiting card) and the separate trend view. */
   const renderWall = () => {
-    wall.hidden = !wallOpen;
-    if (!wallOpen) return;
+    const collecting = state.phase === 'askTrends';
+    const viewing = state.phase === 'trendView';
+    wall.hidden = !(collecting || viewing);
+    if (wall.hidden) return;
+    if (collecting) {
+      wall.innerHTML = `
+        <div class="wall-card ask-card">
+          <p class="eyebrow mono">Add your trend</p>
+          <h2>Phones can add a trend now</h2>
+          <p class="lede">Each person can add up to 2 lines. Trends so far: <strong>${results.trends.length}</strong></p>
+          <p class="mono small-note">When you're ready, press <kbd>V</kbd> to show them on screen.</p>
+        </div>`;
+      return;
+    }
     const items = results.trends.length
       ? results.trends.map((t) => `<li>${esc(t)}</li>`).join('')
-      : '<li class="empty">No trends yet. Phones can add them with “Suggest a trend”.</li>';
+      : '<li class="empty">No trends were added.</li>';
     wall.innerHTML = `
-      <div class="wall-card">
+      <div class="wall-card view-card">
         <p class="eyebrow mono">Your trends · ${results.trends.length}</p>
         <ol>${items}</ol>
-        <p class="mono small-note">Press <kbd>U</kbd> to close</p>
       </div>`;
   };
 
@@ -418,7 +484,8 @@ export async function startStage(o: StageOptions): Promise<void> {
     }
     switch (k) {
       case 'j': case 'J': qrOpen = !qrOpen; render(); break;
-      case 'u': case 'U': wallOpen = !wallOpen; render(); break;
+      case 'a': case 'A': setPhase('askTrends'); break;
+      case 'v': case 'V': setPhase('trendView'); break;
       case 'w': case 'W': setPhase('warmup'); break;
       case 'h': case 'H': setPhase('hearts'); break;
       case 'g': case 'G': setPhase('guess'); break;

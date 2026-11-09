@@ -34,7 +34,7 @@ interface Stored {
   participants: Record<string, { name?: string }>;
   warmup: Record<string, number>;
   hearts: Record<string, string[]>;
-  guesses: Record<string, Record<string, number>>; // signalId -> pid -> value
+  games: Record<string, Record<string, number>>; // signalId -> pid -> answer (number, 0/1, or option index)
   takes: Record<string, Record<string, Take>>; // signalId -> pid -> vote
   trends: { id: string; text: string }[];
   trendsBy: Record<string, number>;
@@ -52,7 +52,7 @@ const freshState = (): Stored => ({
   participants: {},
   warmup: {},
   hearts: {},
-  guesses: {},
+  games: {},
   takes: {},
   trends: [],
   trendsBy: {},
@@ -194,13 +194,13 @@ export class Room extends DurableObject<Env> {
           } else {
             s.hearts[pid] = [...mine, msg.signalId];
           }
-        } else if (msg.kind === 'guess') {
+        } else if (msg.kind === 'game') {
           const range = s.activeRange;
           if (s.phase !== 'guess' || s.revealed || s.activeSignalId !== msg.signalId || !range) {
-            return { type: 'error', message: 'Guessing is closed' };
+            return { type: 'error', message: 'The game is closed' };
           }
-          if (msg.value < range.min || msg.value > range.max) return { type: 'error', message: 'Your guess is outside the scale' };
-          s.guesses[msg.signalId] = { ...(s.guesses[msg.signalId] ?? {}), [pid]: msg.value };
+          if (msg.value < range.min || msg.value > range.max) return { type: 'error', message: 'Your answer is outside the options' };
+          s.games[msg.signalId] = { ...(s.games[msg.signalId] ?? {}), [pid]: msg.value };
         } else if (msg.kind === 'take') {
           if (s.phase !== 'hottake' || s.revealed || s.activeSignalId !== msg.signalId) {
             return { type: 'error', message: 'Voting is closed' };
@@ -274,7 +274,7 @@ export class Room extends DurableObject<Env> {
       .map(([id]) => id);
 
     const active = s.activeSignalId;
-    const guessMap = active ? s.guesses[active] ?? {} : {};
+    const gameMap = active ? s.games[active] ?? {} : {};
     const takeMap = active ? s.takes[active] ?? {} : {};
     const agree = Object.values(takeMap).filter((t) => t === 'agree').length;
     const disagree = Object.values(takeMap).filter((t) => t === 'disagree').length;
@@ -285,8 +285,8 @@ export class Room extends DurableObject<Env> {
       hearts,
       topN,
       revealed: s.revealed,
-      guessCount: Object.keys(guessMap).length,
-      guessValues: s.revealed ? Object.values(guessMap) : [],
+      gameCount: Object.keys(gameMap).length,
+      gameValues: s.revealed ? Object.values(gameMap) : [],
       takes: s.revealed ? { agree, disagree } : { agree: 0, disagree: 0 },
       trends: s.trends.slice().reverse().map((t) => t.text),
     };
@@ -298,7 +298,7 @@ export class Room extends DurableObject<Env> {
       type: 'you',
       warmup: pid in s.warmup ? s.warmup[pid] : null,
       hearts: s.hearts[pid] ?? [],
-      guess: active && s.guesses[active] ? (s.guesses[active][pid] ?? null) : null,
+      game: active && s.games[active] ? (s.games[active][pid] ?? null) : null,
       take: active && s.takes[active] ? (s.takes[active][pid] ?? null) : null,
       trendCount: s.trendsBy[pid] ?? 0,
     };

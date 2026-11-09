@@ -10,9 +10,13 @@ export type Phase =
   | 'hottake'
   | 'discuss'
   | 'flyover'
+  | 'askTrends'
+  | 'trendView'
   | 'close';
 
-export const PHASES: Phase[] = ['lobby', 'warmup', 'hearts', 'guess', 'story', 'hottake', 'discuss', 'flyover', 'close'];
+export const PHASES: Phase[] = [
+  'lobby', 'warmup', 'hearts', 'guess', 'story', 'hottake', 'discuss', 'flyover', 'askTrends', 'trendView', 'close',
+];
 
 /** The steps of one deep dive, in order. Arrow keys move through these. */
 export const DEEP_STEPS: Phase[] = ['guess', 'story', 'hottake', 'discuss'];
@@ -38,8 +42,8 @@ export interface Results {
   hearts: Record<string, number>; // signalId -> count
   topN: string[]; // the most-hearted signals (TOP_N), highest first
   revealed: boolean;
-  guessCount: number; // how many guessed the active signal
-  guessValues: number[]; // the guesses, only after reveal
+  gameCount: number; // how many answered the game for the active signal
+  gameValues: number[]; // their answers (number, 0/1 for true-false, option index), only after reveal
   takes: { agree: number; disagree: number }; // only after reveal
   trends: string[]; // the audience's own trends, newest first
 }
@@ -49,7 +53,7 @@ export interface You {
   type: 'you';
   warmup: number | null;
   hearts: string[];
-  guess: number | null;
+  game: number | null;
   take: Take | null;
   trendCount: number;
 }
@@ -60,7 +64,7 @@ export type ClientMessage =
   | { type: 'join'; participantId: string; name?: string }
   | { type: 'answer'; participantId: string; kind: 'warmup'; value: number }
   | { type: 'answer'; participantId: string; kind: 'heart'; signalId: string }
-  | { type: 'answer'; participantId: string; kind: 'guess'; signalId: string; value: number }
+  | { type: 'answer'; participantId: string; kind: 'game'; signalId: string; value: number }
   | { type: 'answer'; participantId: string; kind: 'take'; signalId: string; value: Take }
   | { type: 'trend'; participantId: string; text: string }
   | { type: 'control'; key: string; action: 'setPhase'; value: Phase }
@@ -111,8 +115,8 @@ export function parseClientMessage(raw: string): ClientMessage | null {
       if (!pid) return null;
       if (o.kind === 'warmup' && Number.isInteger(o.value)) return { type: 'answer', participantId: pid, kind: 'warmup', value: o.value as number };
       if (o.kind === 'heart' && sid(o.signalId)) return { type: 'answer', participantId: pid, kind: 'heart', signalId: o.signalId as string };
-      if (o.kind === 'guess' && sid(o.signalId) && num(o.value) !== null) {
-        return { type: 'answer', participantId: pid, kind: 'guess', signalId: o.signalId as string, value: o.value as number };
+      if (o.kind === 'game' && sid(o.signalId) && num(o.value) !== null) {
+        return { type: 'answer', participantId: pid, kind: 'game', signalId: o.signalId as string, value: o.value as number };
       }
       if (o.kind === 'take' && sid(o.signalId) && (o.value === 'agree' || o.value === 'disagree')) {
         return { type: 'answer', participantId: pid, kind: 'take', signalId: o.signalId as string, value: o.value };

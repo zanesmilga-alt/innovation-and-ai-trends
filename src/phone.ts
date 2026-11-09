@@ -24,6 +24,16 @@ const ROOM_CODE = /^[A-Za-z0-9]{3,12}$/;
 /** Phone view at /join/<CODE>. One action per screen. */
 export async function mountPhone(root: HTMLElement, code: string | null): Promise<void> {
   if (!code || !ROOM_CODE.test(code)) {
+    // Came back without the code (for example after a stray click): return to the last room.
+    try {
+      const last = localStorage.getItem('signalroom.room');
+      if (last && ROOM_CODE.test(last)) {
+        location.replace(`/join/${last}`);
+        return;
+      }
+    } catch {
+      /* no storage */
+    }
     root.innerHTML = `
       <main class="phone">
         <p class="eyebrow mono">Join the room</p>
@@ -42,6 +52,11 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
   }
 
   const roomCode = code.toUpperCase();
+  try {
+    localStorage.setItem('signalroom.room', roomCode);
+  } catch {
+    /* ignore */
+  }
   const pid = participantId();
   const [cfg, signalFile] = await Promise.all([
     fetch('/config.json').then((r) => r.json() as Promise<Config>),
@@ -54,7 +69,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
     type: 'state', phase: 'lobby', activeSignalId: null, activeRange: null, revealed: false,
     participantCount: 0, heartsEndsAt: null, covered: [],
   };
-  let you: You = { type: 'you', warmup: null, hearts: [], guess: null, take: null, trendCount: 0 };
+  let you: You = { type: 'you', warmup: null, hearts: [], game: null, take: null, trendCount: 0 };
   let joined = false;
   let status: LinkStatus = 'reconnecting';
   let toast = '';
@@ -156,18 +171,10 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
 
     if (phase === 'guess') {
       const s = active();
-      const range = state.activeRange;
-      if (!s || !s.guess || !range) return panel('Get ready', 'The next question is coming.');
+      if (!s || !state.activeRange) return panel('Get ready', 'The next question is coming.');
       if (state.revealed) return panel('Look at the big screen', 'The answer is up there.');
-      if (you.guess !== null) return panel('Locked in', `You said ${fmt(you.guess)} ${s.guess.unit}. Waiting for the reveal.`);
-      const step = range.max - range.min <= 10 ? 0.05 : 1;
-      const value = guessDraft ?? (range.min + range.max) / 2;
-      return `
-        <p class="eyebrow mono">Guess the number</p>
-        <h1 class="small">${esc(s.guess.question)}</h1>
-        <p class="gvalue mono" id="gval">${fmt(value)} ${esc(s.guess.unit)}</p>
-        <input id="grange" class="slider" type="range" min="${range.min}" max="${range.max}" step="${step}" value="${value}" />
-        <button class="big-btn" id="glock" type="button">Lock in my guess</button>`;
+      if (you.game !== null) return panel('Locked in', 'Waiting for the reveal.');
+      return gameScreen(s);
     }
 
     if (phase === 'hottake') {
@@ -184,6 +191,13 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
         </div>`;
     }
 
+    if (phase === 'askTrends') {
+      return `
+        <p class="eyebrow mono">Your turn</p>
+        <h1 class="small">Which trend should we talk about next?</h1>
+        <p class="lede">Write one line. The best ones go up on the big screen.</p>`;
+    }
+    if (phase === 'trendView') return panel('Look at the big screen', 'Your trends are up there.');
     if (phase === 'lobby') return panel("You're in", 'Waiting for the next prompt.', `${state.participantCount} joined`);
     if (phase === 'close') {
       return `
@@ -197,8 +211,41 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
     return panel('Eyes up', 'Look at the big screen.');
   };
 
+  /** One game per trend. Its kind comes from the trend's gameType. */
+  const gameScreen = (sig: Signal): string => {
+    const range = state.activeRange!;
+    if (sig.gameType === 'truefalse' && sig.trueFalse) {
+      return `
+        <p class="eyebrow mono">True or false</p>
+        <h1 class="small">${esc(sig.trueFalse.statement)}</h1>
+        <div class="stack two">
+          <button class="option-btn" data-game="1" type="button">True</button>
+          <button class="option-btn" data-game="0" type="button">False</button>
+        </div>`;
+    }
+    if (sig.gameType === 'choice' && sig.choice) {
+      return `
+        <p class="eyebrow mono">Pick one</p>
+        <h1 class="small">${esc(sig.choice.question)}</h1>
+        <div class="stack">
+          ${sig.choice.options.map((o, i) => `<button class="option-btn" data-game="${i}" type="button">${esc(o)}</button>`).join('')}
+        </div>`;
+    }
+    // guess the number (default)
+    const g = sig.guess;
+    const unit = g?.unit ?? '';
+    const step = range.max - range.min <= 10 ? 0.05 : 1;
+    const value = guessDraft ?? (range.min + range.max) / 2;
+    return `
+      <p class="eyebrow mono">Guess the number</p>
+      <h1 class="small">${esc(g?.question ?? 'Your guess')}</h1>
+      <p class="gvalue mono" id="gval">${fmt(value)} ${esc(unit)}</p>
+      <input id="grange" class="slider" type="range" min="${range.min}" max="${range.max}" step="${step}" value="${value}" />
+      <button class="big-btn" id="glock" type="button">Lock in my guess</button>`;
+  };
+
   const trendForm = () => {
-    if (!trendOpen) return '';
+    if (!trendOpen && state.phase !== 'askTrends') return '';
     const full = you.trendCount >= TREND_MAX_PER_PERSON;
     return `
       <section class="trend-box">
@@ -221,7 +268,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
         <input id="name" class="field" maxlength="24" placeholder="First name" value="${esc(nameDraft)}" />
         <button id="join" class="big-btn" type="button">Join</button>`
       : screenFor(state.phase);
-    const addButton = joined && state.phase !== 'close' && !trendOpen
+    const addButton = joined && state.phase !== 'close' && state.phase !== 'askTrends' && !trendOpen
       ? `<button class="ghost-btn" id="trend-open" type="button">+ Suggest a trend</button>`
       : '';
     root.innerHTML = `
@@ -260,11 +307,16 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
       root.querySelector('#gval')!.textContent = `${fmt(guessDraft)} ${active()?.guess?.unit ?? ''}`;
     });
     root.querySelector<HTMLButtonElement>('#glock')?.addEventListener('click', () => {
-      const s = active();
-      if (!s || !state.activeSignalId) return;
+      if (!state.activeSignalId) return;
       const value = guessDraft ?? Number(range?.value ?? 0);
-      send({ type: 'answer', participantId: pid, kind: 'guess', signalId: state.activeSignalId, value });
+      send({ type: 'answer', participantId: pid, kind: 'game', signalId: state.activeSignalId, value });
     });
+    root.querySelectorAll<HTMLButtonElement>('[data-game]').forEach((b) =>
+      b.addEventListener('click', () => {
+        if (!state.activeSignalId) return;
+        send({ type: 'answer', participantId: pid, kind: 'game', signalId: state.activeSignalId, value: Number(b.dataset.game) });
+      }),
+    );
     root.querySelectorAll<HTMLButtonElement>('[data-take]').forEach((b) =>
       b.addEventListener('click', () => {
         if (!state.activeSignalId) return;
