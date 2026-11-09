@@ -665,3 +665,8 @@ a { color: inherit; }
   .st-stats { position: relative; right: auto; bottom: auto; width: auto; grid-template-columns: 1fr; padding: 0 20px; margin-top: 18px; }
   .story-foot { position: relative; left: auto; right: auto; bottom: auto; padding: 0 20px 24px; }
 }
+
+/* ---------- Full colour photos, boosted saturation (replaces the duotone) ---------- */
+.pic:not(.no-img)::after { content: none; display: none; }
+.duo,
+.story-pic img { filter: saturate(1.75) contrast(1.12) brightness(1.04); }
