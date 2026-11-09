@@ -112,7 +112,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     participantCount: 0, heartsEndsAt: null, covered: [],
   };
   let results: Results = {
-    type: 'results', warmup: [0, 0, 0], hearts: {}, top3: [], revealed: false,
+    type: 'results', warmup: [0, 0, 0], hearts: {}, topN: [], revealed: false,
     guessCount: 0, guessValues: [], takes: { agree: 0, disagree: 0 }, trends: [],
   };
   let qrOpen = false;
@@ -319,7 +319,7 @@ export async function startStage(o: StageOptions): Promise<void> {
 
   const renderHearts = () => {
     const counts = results.hearts;
-    const top = new Set(results.revealed ? results.top3 : []);
+    const top = new Set(results.revealed ? results.topN : []);
     for (const s of o.signals) {
       const el = o.nodeEls.get(s.id);
       if (!el) continue;

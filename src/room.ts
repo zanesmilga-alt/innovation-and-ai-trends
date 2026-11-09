@@ -4,6 +4,7 @@ import {
   HEART_SECONDS,
   MAX_HEARTS,
   PHASES,
+  TOP_N,
   TREND_MAX_PER_PERSON,
   WARMUP_OPTIONS,
   parseClientMessage,
@@ -266,10 +267,10 @@ export class Room extends DurableObject<Env> {
     for (const v of Object.values(s.warmup)) warmup[v] += 1;
     const hearts: Record<string, number> = {};
     for (const list of Object.values(s.hearts)) for (const id of list) hearts[id] = (hearts[id] ?? 0) + 1;
-    const top3 = Object.entries(hearts)
+    const topN = Object.entries(hearts)
       .filter(([, n]) => n > 0)
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-      .slice(0, 3)
+      .slice(0, TOP_N)
       .map(([id]) => id);
 
     const active = s.activeSignalId;
@@ -282,7 +283,7 @@ export class Room extends DurableObject<Env> {
       type: 'results',
       warmup: s.revealed ? warmup : warmup.map(() => 0),
       hearts,
-      top3,
+      topN,
       revealed: s.revealed,
       guessCount: Object.keys(guessMap).length,
       guessValues: s.revealed ? Object.values(guessMap) : [],

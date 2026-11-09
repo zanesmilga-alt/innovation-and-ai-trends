@@ -36,7 +36,7 @@ export interface Results {
   type: 'results';
   warmup: number[]; // count per option index (zeros until reveal)
   hearts: Record<string, number>; // signalId -> count
-  top3: string[]; // most-hearted signals, highest first
+  topN: string[]; // the most-hearted signals (TOP_N), highest first
   revealed: boolean;
   guessCount: number; // how many guessed the active signal
   guessValues: number[]; // the guesses, only after reveal
@@ -71,6 +71,7 @@ export type ClientMessage =
   | { type: 'hello'; role: 'phone' };
 
 export const MAX_HEARTS = 3;
+export const TOP_N = 5; // how many most-hearted trends stand out on the map
 export const HEART_SECONDS = 60;
 export const WARMUP_OPTIONS = 3;
 export const TREND_MAX_PER_PERSON = 2;

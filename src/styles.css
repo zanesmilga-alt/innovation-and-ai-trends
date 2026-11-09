@@ -767,7 +767,7 @@ kbd { font-family: var(--f-mono); font-size: 0.9em; padding: 1px 6px; border: 1p
 
 /* Map glow: more hearts, brighter node. Top three glow hardest once revealed. */
 .node.hot .disc { border-color: var(--orange); box-shadow: 0 0 min(60px, calc(10px + var(--h) * 6px)) rgba(240, 122, 46, 0.9); }
-.node.top .disc { outline: 4px solid var(--hi); outline-offset: 6px; }
+.node.top .disc { outline: 4px solid var(--hi); outline-offset: 6px; box-shadow: 0 0 60px rgba(255, 179, 122, 0.95); filter: brightness(1.25); }
 .node.top .node-title { color: var(--hi); }
 .heart-pop {
   position: absolute;
