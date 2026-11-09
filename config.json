@@ -1,0 +1,11 @@
+{
+  "deepDives": 3,
+  "revealMode": "onKeypress",
+  "heartsPerPerson": 3,
+  "heartPickSeconds": 60,
+  "guessSeconds": 30,
+  "hotTakeSeconds": 20,
+  "flyoverSecondsPerSignal": 15,
+  "aiSummary": false,
+  "askFirstName": true
+}

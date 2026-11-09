@@ -1,0 +1,249 @@
+/* Stage: designed at 1920x1080 and scaled to fit any screen (projectors crop edges, so keep content inside). */
+html,
+body {
+  overflow: hidden;
+  background: #000;
+}
+
+.stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%) scale(var(--s, 1));
+  transform-origin: center center;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Hero photo (duotone) with a navy wash on the left so the text stays readable. */
+.stage-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../images/hero.jpg") 70% 45% / cover no-repeat;
+  opacity: 0.55;
+}
+
+.stage-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 12, 30, 0.97) 0%,
+    rgba(8, 12, 30, 0.88) 40%,
+    rgba(8, 12, 30, 0.35) 75%,
+    rgba(8, 12, 30, 0.6) 100%
+  );
+}
+
+.lobby {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 560px;
+  column-gap: 110px;
+  align-items: center;
+  padding: 110px 140px 190px;
+}
+
+.lobby-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.kicker {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 26px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-hi);
+}
+
+.title {
+  margin: 40px 0 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 176px;
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+}
+
+.title em {
+  display: block;
+  font-style: normal;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.pitch {
+  margin: 48px 0 0;
+  max-width: 880px;
+  font-size: 36px;
+  line-height: 1.38;
+  color: var(--muted);
+}
+
+.pitch b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 40px;
+  font-size: 28px;
+  color: var(--ink);
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.steps span {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--surface-2);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--accent-hi);
+}
+
+.join-card {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+  color: var(--ink-on-paper);
+  border-radius: 32px;
+  padding: 44px;
+  text-align: center;
+  box-shadow: 0 48px 120px rgba(0, 0, 0, 0.55);
+}
+
+.qr {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.qr svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.room-label {
+  margin: 36px 0 0;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-on-paper-muted);
+}
+
+.room-code {
+  margin: 6px 0 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 104px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.join-url {
+  margin: 20px 0 0;
+  font-size: 26px;
+  line-height: 1.35;
+  color: var(--ink-on-paper-muted);
+}
+
+.join-url b {
+  color: var(--ink-on-paper);
+  font-weight: 600;
+}
+
+/* First paint: the three blocks rise in one after another. Reduced motion turns this off (base.css). */
+.lobby-copy,
+.join-card,
+.band {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.join-card {
+  animation-delay: 0.15s;
+}
+
+.band {
+  animation-delay: 0.3s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Bottom band: live count on the left, the three steps on the right. */
+.band {
+  position: absolute;
+  left: 140px;
+  right: 140px;
+  bottom: 56px;
+  height: 112px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.count-num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.count-label {
+  font-size: 36px;
+  color: var(--muted);
+}
+
+.live-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--new);
+  box-shadow: 0 0 0 0 rgba(94, 211, 194, 0.6);
+  animation: live-pulse 2s infinite;
+}
+
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(94, 211, 194, 0.6); }
+  70% { box-shadow: 0 0 0 16px rgba(94, 211, 194, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(94, 211, 194, 0); }
+}

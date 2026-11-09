@@ -1,0 +1,265 @@
+/* Phone: single column, one big action per screen, high contrast for bright rooms. */
+body.phone-body {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.phone {
+  max-width: 460px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 20px 20px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 14px;
+  white-space: nowrap;
+}
+
+.view {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.view[hidden] {
+  display: none;
+}
+
+.kicker {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-hi);
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+#join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field label {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.field label span {
+  color: var(--faint);
+}
+
+.field input {
+  width: 100%;
+  height: 60px;
+  padding: 0 18px;
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 22px;
+}
+
+.field input::placeholder {
+  color: #5C668C;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.field input.code-input {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hint {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.error {
+  margin: 0;
+  font-size: 16px;
+  color: var(--accent-hi);
+}
+
+.btn {
+  width: 100%;
+  height: 64px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.privacy {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--faint);
+}
+
+.code-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.code-big {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+}
+
+.check {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--bg);
+  animation: pop 0.6s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.check svg {
+  width: 44px;
+  height: 44px;
+}
+
+.wait {
+  margin-top: 12px;
+  padding: 28px 24px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eyes {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--accent-hi);
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.dots i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.25;
+  animation: dot-pulse 1.4s infinite ease-in-out;
+}
+
+.dots i:nth-child(2) { animation-delay: 0.2s; }
+.dots i:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+.footer-note {
+  margin: auto 0 0;
+  padding-top: 40px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}

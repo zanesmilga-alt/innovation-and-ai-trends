@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signal Room · Stage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/stage.css">
+  <!-- Temporary: QR generator from a CDN. Vendor it into js/ before the venue (no internet there). -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+  <script type="module" src="js/stage.js"></script>
+</head>
+<body>
+  <main class="stage" id="stage" aria-label="Signal Room stage">
+    <div class="stage-bg" aria-hidden="true"></div>
+
+    <section class="lobby">
+      <div class="lobby-copy">
+        <p class="kicker">Innovation In &amp; Out · 25 signals</p>
+        <h1 class="title">Too Late<em>To Ignore</em></h1>
+        <p class="pitch">AI is moving too fast to ignore, and too fast to catch up on later. <b>Staying current is part of the job.</b></p>
+      </div>
+
+      <aside class="join-card" aria-label="How to join">
+        <div class="qr" id="qr"></div>
+        <p class="room-label">Room code</p>
+        <p class="room-code" id="room-code">----</p>
+        <p class="join-url" id="join-url"></p>
+      </aside>
+    </section>
+
+    <footer class="band">
+      <div class="count" aria-live="polite">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="count-num" id="count-num">0</span>
+        <span class="count-label" id="count-label">Waiting for people to scan</span>
+      </div>
+      <ol class="steps">
+        <li><span>1</span>Scan the code</li>
+        <li><span>2</span>Join with your name</li>
+        <li><span>3</span>Vote for 3</li>
+      </ol>
+    </footer>
+  </main>
+</body>
+</html>

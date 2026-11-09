@@ -1,0 +1,11 @@
+# Cloudflare config for Signal Room, served on workers.dev.
+# Phase 1: static site only, served from ./public.
+# The Room Durable Object is added in Phase 2 (a `main` entry and a binding).
+name = "signal-room"
+compatibility_date = "2026-01-01"
+workers_dev = true
+
+[assets]
+directory = "./public"
+html_handling = "auto-trailing-slash"
+not_found_handling = "single-page-application"

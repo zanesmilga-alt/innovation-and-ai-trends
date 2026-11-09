@@ -1,0 +1,20 @@
+/* Design tokens. Palette and type follow BRIEF.md ("Design direction"). */
+:root {
+  --bg: #080C1E;
+  --surface: #10162F;
+  --surface-2: #182044;
+  --line: #273160;
+  --ink: #F2F1EC;
+  --muted: #A6ADCB;
+  --faint: #7F88AD;
+  --accent: #F07A2E;      /* signal orange: the one accent */
+  --accent-hi: #FFB37A;   /* warm highlight */
+  --new: #5ED3C2;         /* teal: "new since June" and live indicators only */
+  --paper: #F2F1EC;       /* light card for QR codes */
+  --ink-on-paper: #080C1E;
+  --ink-on-paper-muted: #4B5173;
+
+  --font-display: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", Calibri, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+}

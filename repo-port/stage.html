@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080C1E">
+  <title>Signal Room · Stage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Temporary: QR generator from a CDN. Replace with a bundled copy before the venue (no internet there). -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+  <script type="module" src="/src/client/stage/main.ts"></script>
+</head>
+<body>
+  <main class="canvas" id="canvas" aria-label="Signal Room stage"></main>
+  <button class="hint" id="help-open" type="button" aria-keyshortcuts="?">Keys ?</button>
+</body>
+</html>
