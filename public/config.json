@@ -1,0 +1,11 @@
+{
+  "_note": "Session settings the app reads at runtime. Heart limits and timer live in src/protocol.ts.",
+  "warmup": {
+    "question": "How much has AI touched your work this week?",
+    "options": [
+      "Not at all",
+      "A bit",
+      "A lot"
+    ]
+  }
+}

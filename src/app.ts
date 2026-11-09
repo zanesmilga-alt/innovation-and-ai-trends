@@ -369,6 +369,12 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         <dt>Esc</dt><dd>Close a game, or go back to the map</dd>
         <dt>M</dt><dd>Show the map</dd>
         <dt>?</dt><dd>Show or hide this panel</dd>
+        ${mode === 'stage' ? `
+        <dt>J</dt><dd>Show or hide the join QR code</dd>
+        <dt>W</dt><dd>Open the warm-up for phones</dd>
+        <dt>H</dt><dd>Start the heart pick (60 s)</dd>
+        <dt>R</dt><dd>Reveal the results on screen</dd>
+        <dt>Shift+R</dt><dd>Clear all answers in the room</dd>` : ''}
       </dl>
       <p class="mono">Press ? or Esc to close</p>
     </div>`;
@@ -418,6 +424,11 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   }
 
   document.body.dataset.mode = mode;
+
+  if (mode === 'stage') {
+    const { startStage } = await import('./stage-live');
+    await startStage({ root, nodeEls, signals });
+  }
 }
 
 function groupByAct(signals: Signal[]): Signal[][] {

@@ -5,16 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && cp dist/index.html dist/404.html && mkdir -p dist/explore dist/stage && cp dist/index.html dist/explore/index.html && cp dist/index.html dist/stage/index.html",
+    "build": "tsc --noEmit && tsc -p tsconfig.worker.json && vite build && cp dist/index.html dist/404.html && mkdir -p dist/explore dist/stage && cp dist/index.html dist/explore/index.html && cp dist/index.html dist/stage/index.html",
     "preview": "vite preview --host 0.0.0.0",
     "test:e2e": "node scripts/smoke.mjs",
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "lucide": "1.61.0",
+    "qrcode": "1.5.4",
     "vite": "8.3.5"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "5.20261025.1",
+    "@types/qrcode": "1.5.5",
     "typescript": "5.9.3",
     "wrangler": "4.152.0"
   }
