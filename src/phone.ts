@@ -1,6 +1,15 @@
 import { connectRoom, participantId, type LinkStatus } from './live/socket';
 import { loadSignals } from './data';
-import { MAX_HEARTS, type Phase, type PublicState, type You, type ServerMessage } from './protocol';
+import {
+  MAX_HEARTS,
+  TREND_MAX_LENGTH,
+  TREND_MAX_PER_PERSON,
+  type ClientMessage,
+  type Phase,
+  type PublicState,
+  type ServerMessage,
+  type You,
+} from './protocol';
 import type { Signal } from './types';
 
 interface Config {
@@ -39,15 +48,22 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
     loadSignals().catch(() => null),
   ]);
   const signals: Signal[] = signalFile?.signals ?? [];
+  const byId = new Map(signals.map((s) => [s.id, s]));
 
-  let state: PublicState = { type: 'state', phase: 'lobby', activeSignalId: null, revealed: false, participantCount: 0, heartsEndsAt: null };
-  let you: You = { type: 'you', warmup: null, hearts: [] };
+  let state: PublicState = {
+    type: 'state', phase: 'lobby', activeSignalId: null, activeRange: null, revealed: false,
+    participantCount: 0, heartsEndsAt: null, covered: [],
+  };
+  let you: You = { type: 'you', warmup: null, hearts: [], guess: null, take: null, trendCount: 0 };
   let joined = false;
-  let link: { send: (m: import('./protocol').ClientMessage) => void } | null = null;
   let status: LinkStatus = 'reconnecting';
   let toast = '';
   let toastTimer: number | undefined;
   let nameDraft = '';
+  let trendOpen = false;
+  let trendDraft = '';
+  let guessDraft: number | null = null;
+  let closeLink = '/explore';
   try {
     nameDraft = localStorage.getItem('signalroom.name') ?? '';
   } catch {
@@ -64,7 +80,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
     render();
   };
 
-  link = connectRoom({
+  const link = connectRoom({
     code: roomCode,
     pid,
     hello: { type: 'hello', role: 'phone' },
@@ -76,12 +92,19 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
       render();
     },
     onMessage: (m: ServerMessage) => {
-      if (m.type === 'state') state = m;
-      else if (m.type === 'you') you = m;
-      else if (m.type === 'error') showToast(m.message);
+      if (m.type === 'state') {
+        if (m.activeSignalId !== state.activeSignalId || m.phase !== state.phase) guessDraft = null;
+        state = m;
+      } else if (m.type === 'you') {
+        you = m;
+      } else if (m.type === 'error') {
+        showToast(m.message);
+      }
       render();
     },
   });
+
+  const send = (m: ClientMessage) => link.send(m);
 
   const join = () => {
     joined = true;
@@ -90,21 +113,18 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
     } catch {
       /* ignore */
     }
-    link?.send({ type: 'join', participantId: pid, name: nameDraft || undefined });
+    send({ type: 'join', participantId: pid, name: nameDraft || undefined });
     render();
   };
 
-  const body = () => {
-    if (!joined) {
-      return `
-        <p class="eyebrow mono">Room ${esc(roomCode)}</p>
-        <h1>You're almost in</h1>
-        <p class="lede">Add your first name (optional). It's never shown on the big screen.</p>
-        <input id="name" class="field" maxlength="24" placeholder="First name" value="${esc(nameDraft)}" />
-        <button id="join" class="big-btn" type="button">Join</button>`;
-    }
-    return screenFor(state.phase);
-  };
+  const panel = (title: string, text: string, extra = '') => `
+    <div class="centre">
+      <h1 class="huge">${esc(title)}</h1>
+      <p class="lede">${esc(text)}</p>
+      ${extra ? `<p class="mono small-note">${esc(extra)}</p>` : ''}
+    </div>`;
+
+  const active = (): Signal | undefined => (state.activeSignalId ? byId.get(state.activeSignalId) : undefined);
 
   const screenFor = (phase: Phase): string => {
     if (phase === 'warmup') {
@@ -117,9 +137,10 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
           ${cfg.warmup.options.map((o, i) => `<button class="option-btn" data-warm="${i}" type="button">${esc(o)}</button>`).join('')}
         </div>`;
     }
+
     if (phase === 'hearts') {
-      const left = MAX_HEARTS - you.hearts.length;
       if (state.revealed) return panel('Hearts are in', 'Look at the big screen.');
+      const left = MAX_HEARTS - you.hearts.length;
       return `
         <p class="eyebrow mono">Pick up to ${MAX_HEARTS} signals</p>
         <h1 class="small">${left > 0 ? `${left} heart${left === 1 ? '' : 's'} left` : 'All hearts used'}</h1>
@@ -132,26 +153,84 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
           }).join('')}
         </ul>`;
     }
-    if (phase === 'lobby') {
-      return panel("You're in", 'Waiting for the next prompt.', `${state.participantCount} joined`);
+
+    if (phase === 'guess') {
+      const s = active();
+      const range = state.activeRange;
+      if (!s || !s.guess || !range) return panel('Get ready', 'The next question is coming.');
+      if (state.revealed) return panel('Look at the big screen', 'The answer is up there.');
+      if (you.guess !== null) return panel('Locked in', `You said ${fmt(you.guess)} ${s.guess.unit}. Waiting for the reveal.`);
+      const step = range.max - range.min <= 10 ? 0.05 : 1;
+      const value = guessDraft ?? (range.min + range.max) / 2;
+      return `
+        <p class="eyebrow mono">Guess the number</p>
+        <h1 class="small">${esc(s.guess.question)}</h1>
+        <p class="gvalue mono" id="gval">${fmt(value)} ${esc(s.guess.unit)}</p>
+        <input id="grange" class="slider" type="range" min="${range.min}" max="${range.max}" step="${step}" value="${value}" />
+        <button class="big-btn" id="glock" type="button">Lock in my guess</button>`;
     }
+
+    if (phase === 'hottake') {
+      const s = active();
+      if (!s) return panel('Get ready', 'The next question is coming.');
+      if (state.revealed) return panel('Look at the big screen', 'The split is up there.');
+      if (you.take !== null) return panel('Locked in', `You said ${you.take === 'agree' ? 'agree' : 'disagree'}. Waiting for the reveal.`);
+      return `
+        <p class="eyebrow mono">Hot take</p>
+        <h1 class="small">${esc(s.hotTake)}</h1>
+        <div class="stack two">
+          <button class="option-btn" data-take="agree" type="button">Agree</button>
+          <button class="option-btn" data-take="disagree" type="button">Disagree</button>
+        </div>`;
+    }
+
+    if (phase === 'lobby') return panel("You're in", 'Waiting for the next prompt.', `${state.participantCount} joined`);
+    if (phase === 'close') {
+      return `
+        <div class="centre">
+          <h1 class="huge">Thanks</h1>
+          <p class="lede">Keep exploring the 25 signals in your own time.</p>
+          <a class="big-btn link-btn" href="${esc(closeLink)}">Keep exploring</a>
+        </div>`;
+    }
+    // story, discuss, flyover
     return panel('Eyes up', 'Look at the big screen.');
   };
 
-  const panel = (title: string, text: string, extra = '') => `
-    <div class="centre">
-      <h1 class="huge">${esc(title)}</h1>
-      <p class="lede">${esc(text)}</p>
-      ${extra ? `<p class="mono small-note">${esc(extra)}</p>` : ''}
-    </div>`;
+  const trendForm = () => {
+    if (!trendOpen) return '';
+    const full = you.trendCount >= TREND_MAX_PER_PERSON;
+    return `
+      <section class="trend-box">
+        <p class="eyebrow mono">Your trend</p>
+        ${full
+          ? `<p class="lede">You have added ${TREND_MAX_PER_PERSON} trends. Thank you.</p>`
+          : `<textarea id="trend" class="field" maxlength="${TREND_MAX_LENGTH}" placeholder="One line about a trend you'd like to discuss">${esc(trendDraft)}</textarea>
+             <p class="mono small-note">${trendDraft.length}/${TREND_MAX_LENGTH} · ${TREND_MAX_PER_PERSON - you.trendCount} left</p>
+             <button class="big-btn" id="trend-send" type="button">Send trend</button>`}
+      </section>`;
+  };
 
   const render = () => {
     const banner = status === 'live' ? '' : status === 'polling' ? '<p class="banner">Connection is slow. Updating every few seconds.</p>' : '<p class="banner">Reconnecting…</p>';
+    const body = !joined
+      ? `
+        <p class="eyebrow mono">Room ${esc(roomCode)}</p>
+        <h1>You're almost in</h1>
+        <p class="lede">Add your first name (optional). It's never shown on the big screen.</p>
+        <input id="name" class="field" maxlength="24" placeholder="First name" value="${esc(nameDraft)}" />
+        <button id="join" class="big-btn" type="button">Join</button>`
+      : screenFor(state.phase);
+    const addButton = joined && state.phase !== 'close' && !trendOpen
+      ? `<button class="ghost-btn" id="trend-open" type="button">+ Suggest a trend</button>`
+      : '';
     root.innerHTML = `
       <main class="phone">
         ${banner}
         ${toast ? `<p class="toast" role="status">${esc(toast)}</p>` : ''}
-        ${body()}
+        ${trendForm()}
+        ${body}
+        ${addButton}
       </main>`;
     bind();
     tick();
@@ -165,17 +244,50 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
     root.querySelectorAll<HTMLButtonElement>('[data-warm]').forEach((b) =>
       b.addEventListener('click', () => {
         const value = Number(b.dataset.warm);
-        link?.send({ type: 'answer', participantId: pid, kind: 'warmup', value });
+        send({ type: 'answer', participantId: pid, kind: 'warmup', value });
         you = { ...you, warmup: value };
         render();
       }),
     );
     root.querySelectorAll<HTMLButtonElement>('[data-heart]').forEach((b) =>
       b.addEventListener('click', () => {
-        const signalId = b.dataset.heart!;
-        link?.send({ type: 'answer', participantId: pid, kind: 'heart', signalId });
+        send({ type: 'answer', participantId: pid, kind: 'heart', signalId: b.dataset.heart! });
       }),
     );
+    const range = root.querySelector<HTMLInputElement>('#grange');
+    range?.addEventListener('input', () => {
+      guessDraft = Number(range.value);
+      root.querySelector('#gval')!.textContent = `${fmt(guessDraft)} ${active()?.guess?.unit ?? ''}`;
+    });
+    root.querySelector<HTMLButtonElement>('#glock')?.addEventListener('click', () => {
+      const s = active();
+      if (!s || !state.activeSignalId) return;
+      const value = guessDraft ?? Number(range?.value ?? 0);
+      send({ type: 'answer', participantId: pid, kind: 'guess', signalId: state.activeSignalId, value });
+    });
+    root.querySelectorAll<HTMLButtonElement>('[data-take]').forEach((b) =>
+      b.addEventListener('click', () => {
+        if (!state.activeSignalId) return;
+        send({ type: 'answer', participantId: pid, kind: 'take', signalId: state.activeSignalId, value: b.dataset.take as 'agree' | 'disagree' });
+      }),
+    );
+    root.querySelector<HTMLButtonElement>('#trend-open')?.addEventListener('click', () => {
+      trendOpen = true;
+      render();
+    });
+    const ta = root.querySelector<HTMLTextAreaElement>('#trend');
+    ta?.addEventListener('input', () => {
+      trendDraft = ta.value;
+      root.querySelector('.trend-box .small-note')!.textContent = `${trendDraft.length}/${TREND_MAX_LENGTH} · ${TREND_MAX_PER_PERSON - you.trendCount} left`;
+    });
+    root.querySelector<HTMLButtonElement>('#trend-send')?.addEventListener('click', () => {
+      const text = trendDraft.trim();
+      if (text.length < 3) return showToast('Write a few words first');
+      send({ type: 'trend', participantId: pid, text });
+      trendDraft = '';
+      trendOpen = false;
+      showToast('Thanks, your trend is in');
+    });
   };
 
   // Countdown for the heart pick.
@@ -194,4 +306,4 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
   render();
 }
 
-export type { PublicState };
+const fmt = (n: number) => (Number.isInteger(n) ? n.toLocaleString('en-GB') : String(Number(n.toFixed(2))));

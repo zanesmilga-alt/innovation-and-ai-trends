@@ -396,13 +396,13 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         else closeStory();
         break;
       case 'ArrowRight':
-        if (gameOpen) break;
+        if (gameOpen || mode === 'stage') break;
         e.preventDefault();
         if (current) step(1);
         else openSignal(signals[0].id);
         break;
       case 'ArrowLeft':
-        if (gameOpen) break;
+        if (gameOpen || mode === 'stage') break;
         e.preventDefault();
         if (current) step(-1);
         else openSignal(signals[signals.length - 1].id);
@@ -427,7 +427,13 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
 
   if (mode === 'stage') {
     const { startStage } = await import('./stage-live');
-    await startStage({ root, nodeEls, signals });
+    await startStage({
+      root,
+      nodeEls,
+      signals,
+      openStory: (id) => openSignal(id),
+      closeStory: () => closeStory(),
+    });
   }
 }
 
