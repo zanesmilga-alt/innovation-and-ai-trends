@@ -1,1131 +1,1398 @@
 {
-  "_note": "PLACEHOLDER CONTENT. Replace this file with the real signals.json. The app reads whatever is here.",
+  "_note": "DRAFT. Content from the June AI Trends deck (figures as the deck states them, not re-checked). \"why\", hot takes and signals 21–25 are placeholders. Images: public/images/trends/<id>.jpg",
   "placeholder": true,
   "signals": [
     {
       "id": "s01",
       "n": 1,
       "act": 1,
-      "title": "PLACEHOLDER signal 1",
-      "short": "Placeholder 1",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "cpu",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s01.jpg",
       "art": "network",
-      "hook": "Replace this with the real one-line hook for signal 1.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 1.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "English is the new code",
+      "title": "The most important programming language in 2025 is English",
+      "hook": "Anthropic says 80% of the code it merges is now machine-written.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "80%",
+          "label": "of code merged at Anthropic is now machine-written",
+          "fresh": "deck",
+          "source": "Anthropic Institute, June 2026"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "8x",
+          "label": "engineering throughput at Anthropic vs 2021–2025",
+          "fresh": "deck",
+          "source": "same engineers, 8x the output"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "63%",
+          "label": "of \"vibe coders\" are domain experts, not developers",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
+      "sources": [
+        "Anthropic Institute, June 2026"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 1?",
+        "question": "What share of code merged at Anthropic is now machine-written?",
         "min": 0,
         "max": 100,
         "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "answer": 80,
+        "answerLabel": "80%",
+        "source": "Anthropic Institute, June 2026"
       },
-      "hotTake": "Placeholder hot take for signal 1.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Most \"vibe coders\" are professional developers.",
+        "answer": false,
+        "explanation": "The deck says 63% of vibe coders are domain experts, not developers."
+      },
+      "chance": {
+        "question": "What is the chance that a \"vibe coder\" is a developer by profession?",
+        "answer": 37,
+        "explanation": "The deck says 63% are domain experts, so about 37% are developers."
+      }
     },
     {
       "id": "s02",
       "n": 2,
       "act": 1,
-      "title": "PLACEHOLDER signal 2",
-      "short": "Placeholder 2",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "brain",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s02.jpg",
       "art": "molecules",
-      "hook": "Replace this with the real one-line hook for signal 2.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 2.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Humanoid robots at work",
+      "title": "The robot is already working at BMW",
+      "hook": "Figure 03 has helped build 30,000+ vehicles at BMW Spartanburg.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "30,000+",
+          "label": "vehicles built with Figure 03 at BMW Spartanburg",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$16,000",
+          "label": "Unitree G1 humanoid robot, available to buy right now",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "674%",
+          "label": "Unitree net profit jump in 2025, $610M IPO filing",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 2?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 2.",
       "sources": [
-        "Placeholder source"
-      ]
+        "June deck (BMW, Unitree)"
+      ],
+      "guess": {
+        "question": "How much does the Unitree G1 humanoid robot cost?",
+        "min": 0,
+        "max": 50000,
+        "unit": "$",
+        "answer": 16000,
+        "answerLabel": "$16,000",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "A humanoid robot is on sale today for under $20,000.",
+        "answer": true,
+        "explanation": "The deck lists the Unitree G1 at $16,000, available to buy now."
+      }
     },
     {
       "id": "s03",
       "n": 3,
       "act": 1,
-      "title": "PLACEHOLDER signal 3",
-      "short": "Placeholder 3",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "bot",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s03.jpg",
       "art": "orbit",
-      "hook": "Replace this with the real one-line hook for signal 3.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 3.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "AI companions",
+      "title": "Your child’s best friend might be an AI",
+      "hook": "AI companion apps have grown 700% since 2022.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "700%",
+          "label": "AI companion app growth since 2022",
+          "fresh": "deck",
+          "source": "TechCrunch"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "20M",
+          "label": "monthly users on Character.AI, 50%+ under age 24",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "57%",
+          "label": "of people globally worry AI will harm society",
+          "fresh": "deck",
+          "source": "Ipsos 2025"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 3?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 3.",
       "sources": [
-        "Placeholder source"
-      ]
+        "TechCrunch",
+        "Character.AI",
+        "Ipsos 2025"
+      ],
+      "guess": {
+        "question": "How many monthly users does Character.AI have?",
+        "min": 0,
+        "max": 50,
+        "unit": "M",
+        "answer": 20,
+        "answerLabel": "20M monthly users",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "Over half of Character.AI’s users are under 24.",
+        "answer": true,
+        "explanation": "The deck says 50%+ of users are under 24."
+      },
+      "chance": {
+        "question": "What is the chance a random person worldwide worries AI will harm society?",
+        "answer": 57,
+        "explanation": "Ipsos 2025: 57% of people globally worry about it."
+      }
     },
     {
       "id": "s04",
       "n": 4,
       "act": 1,
-      "title": "PLACEHOLDER signal 4",
-      "short": "Placeholder 4",
-      "status": "PLACEHOLDER",
       "isNew": true,
       "icon": "shield-check",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s04.jpg",
       "art": "ripples",
-      "hook": "Replace this with the real one-line hook for signal 4.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 4.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "$700B AI build-out",
+      "title": "The hyperscalers are spending like oil companies",
+      "hook": "The big four cloud providers will spend about $630B on capex in 2026 alone.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "$630B",
+          "label": "big 4 hyperscaler capital expenditure, 2026 alone",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$460B",
+          "label": "Google’s contracted cloud backlog, doubled year over year",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "$66B",
+          "label": "Gulf sovereign wealth deployed into AI infrastructure in 2025",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 4?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 4.",
       "sources": [
-        "Placeholder source"
-      ]
+        "June deck"
+      ],
+      "guess": {
+        "question": "How much will the big four hyperscalers spend on capex in 2026?",
+        "min": 0,
+        "max": 1000,
+        "unit": "$B",
+        "answer": 630,
+        "answerLabel": "$630B",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "Google’s contracted cloud backlog roughly doubled year over year.",
+        "answer": true,
+        "explanation": "The deck says it doubled, to $460B."
+      }
     },
     {
       "id": "s05",
       "n": 5,
       "act": 2,
-      "title": "PLACEHOLDER signal 5",
-      "short": "Placeholder 5",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "zap",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s05.jpg",
       "art": "lenses",
-      "hook": "Replace this with the real one-line hook for signal 5.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 5.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Models in your building",
+      "title": "The next data center is in your building",
+      "hook": "Gartner expects enterprises to use small specialised models more than LLMs by 2027.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "3x",
+          "label": "Gartner: enterprises use small specialised models vs LLMs by 2027",
+          "fresh": "deck",
+          "source": "Gartner"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "90%",
+          "label": "cost cut: cloud inference ($0.50) to on-premise SLM ($0.05)",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "$2.1B",
+          "label": "GDPR fines in 2025, cloud AI data processing exposure",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
+      "sources": [
+        "Gartner",
+        "June deck"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 5?",
+        "question": "By how much does the deck say on-premise small-model inference cuts cost vs cloud?",
         "min": 0,
         "max": 100,
         "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "answer": 90,
+        "answerLabel": "90%",
+        "source": "deck"
       },
-      "hotTake": "Placeholder hot take for signal 5.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "The deck quotes $0.50 for cloud inference and $0.05 for an on-premise small model.",
+        "answer": true,
+        "explanation": "Those are the two figures the deck gives for the cost comparison."
+      }
     },
     {
       "id": "s06",
       "n": 6,
       "act": 2,
-      "title": "PLACEHOLDER signal 6",
-      "short": "Placeholder 6",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "network",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s06.jpg",
       "art": "waves",
-      "hook": "Replace this with the real one-line hook for signal 6.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 6.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Nvidia’s 92%",
+      "title": "Nvidia has 92% market share, and everyone is building chips",
+      "hook": "Google, Amazon, Microsoft, Meta and Apple are all building their own chips.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "92%",
+          "label": "Nvidia discrete GPU market share, H1 2025",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$5T",
+          "label": "Nvidia peak market cap, larger than Japan’s GDP",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "$1.5B",
+          "label": "Groq Saudi investment for the largest non-Nvidia inference center",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
+      "sources": [
+        "June deck"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 6?",
+        "question": "What was Nvidia’s discrete GPU market share in H1 2025?",
         "min": 0,
         "max": 100,
         "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "answer": 92,
+        "answerLabel": "92%",
+        "source": "deck"
       },
-      "hotTake": "Placeholder hot take for signal 6.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Nvidia’s peak market cap was larger than Japan’s GDP.",
+        "answer": true,
+        "explanation": "The deck gives Nvidia’s peak market cap as $5T, which it compares to Japan’s GDP."
+      }
     },
     {
       "id": "s07",
       "n": 7,
       "act": 2,
-      "title": "PLACEHOLDER signal 7",
-      "short": "Placeholder 7",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "coins",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s07.jpg",
       "art": "hub",
-      "hook": "Replace this with the real one-line hook for signal 7.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 7.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Agents connecting agents",
+      "title": "The AI that hires the AI",
+      "hook": "Agents now connect to each other directly, without a human in the middle.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "50+",
+          "label": "enterprise companies on the A2A protocol within weeks of launch",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "1,445%",
+          "label": "Gartner surge in multi-agent orchestration inquiries, 2025",
+          "fresh": "deck",
+          "source": "Gartner"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "1,000+",
+          "label": "MCP server integrations within months of release",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 7?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 7.",
       "sources": [
-        "Placeholder source"
-      ]
+        "Gartner",
+        "June deck"
+      ],
+      "guess": {
+        "question": "How many MCP server integrations appeared within months of the protocol’s release?",
+        "min": 0,
+        "max": 2000,
+        "unit": "",
+        "answer": 1000,
+        "answerLabel": "1,000+",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "More than 50 enterprises adopted the A2A protocol within weeks of launch.",
+        "answer": true,
+        "explanation": "The deck says 50+ enterprise companies adopted it within weeks."
+      }
     },
     {
       "id": "s08",
       "n": 8,
       "act": 2,
-      "title": "PLACEHOLDER signal 8",
-      "short": "Placeholder 8",
-      "status": "PLACEHOLDER",
       "isNew": true,
       "icon": "chart-line",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s08.jpg",
       "art": "ladder",
-      "hook": "Replace this with the real one-line hook for signal 8.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 8.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "SaaS under pressure",
+      "title": "SaaS is having its Kodak moment",
+      "hook": "$800B was erased from software market cap in five sessions in February 2026.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "$800B",
+          "label": "erased from the software sector market cap in 5 sessions, Feb 2026",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "-60%",
+          "label": "Atlassian year to date by mid-February 2026",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "20 yrs",
+          "label": "how long the per-seat SaaS model lasted",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 8?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 8.",
       "sources": [
-        "Placeholder source"
-      ]
+        "June deck"
+      ],
+      "guess": {
+        "question": "How much software-sector market cap was erased in five sessions in February 2026?",
+        "min": 0,
+        "max": 1500,
+        "unit": "$B",
+        "answer": 800,
+        "answerLabel": "$800B",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "Atlassian was down about 60% year to date by mid-February 2026.",
+        "answer": true,
+        "explanation": "The deck gives −60% for Atlassian at that point."
+      }
     },
     {
       "id": "s09",
       "n": 9,
       "act": 3,
-      "title": "PLACEHOLDER signal 9",
-      "short": "Placeholder 9",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "flask-conical",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s09.jpg",
       "art": "tiers",
-      "hook": "Replace this with the real one-line hook for signal 9.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 9.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Klarna vs JPMorgan",
+      "title": "Klarna failed. JPMorgan won. Same AI, different strategy.",
+      "hook": "95% of enterprises see zero measurable AI return. JPMorgan gets its $2B back every year.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "95%",
+          "label": "of enterprises: zero measurable AI financial return (MIT 2025)",
+          "fresh": "deck",
+          "source": "MIT 2025"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$2B→$2B",
+          "label": "JPMorgan: $2B invested, $2B returned annually",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "6–8 wks",
+          "label": "idea-to-deployed cycle for companies with real AI ROI",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
+      "sources": [
+        "MIT 2025",
+        "June deck"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 9?",
+        "question": "What share of enterprises see zero measurable AI financial return (MIT 2025)?",
         "min": 0,
         "max": 100,
         "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "answer": 95,
+        "answerLabel": "95%",
+        "source": "MIT 2025"
       },
-      "hotTake": "Placeholder hot take for signal 9.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "JPMorgan’s AI returned about its $2B investment each year.",
+        "answer": true,
+        "explanation": "The deck: $2B invested, $2B returned annually."
+      },
+      "chance": {
+        "question": "What is the chance a given enterprise has measurable AI return (MIT 2025)?",
+        "answer": 5,
+        "explanation": "If 95% see zero return, about 5% see measurable return."
+      }
     },
     {
       "id": "s10",
       "n": 10,
       "act": 3,
-      "title": "PLACEHOLDER signal 10",
-      "short": "Placeholder 10",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "users",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s10.jpg",
       "art": "falling",
-      "hook": "Replace this with the real one-line hook for signal 10.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 10.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "AI vs AI fraud",
+      "title": "AI vs AI: the battles you’ll never see",
+      "hook": "Deepfakes are now behind 1 in 20 failed identity checks.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "$1.65B",
+          "label": "deepfake fraud losses in 2025 (Surfshark)",
+          "fresh": "deck",
+          "source": "Surfshark"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$40B",
+          "label": "Deloitte projection: AI-facilitated fraud globally by 2027",
+          "fresh": "deck",
+          "source": "Deloitte"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "1 in 20",
+          "label": "identity verification failures now deepfake-driven (Veriff 2025)",
+          "fresh": "deck",
+          "source": "Veriff 2025"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 10?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 10.",
       "sources": [
-        "Placeholder source"
-      ]
+        "Surfshark",
+        "Deloitte",
+        "Veriff 2025"
+      ],
+      "guess": {
+        "question": "How big were deepfake fraud losses in 2025 (Surfshark)?",
+        "min": 0,
+        "max": 5,
+        "unit": "$B",
+        "answer": 1.65,
+        "answerLabel": "$1.65B",
+        "source": "Surfshark"
+      },
+      "trueFalse": {
+        "statement": "About 1 in 20 identity verification failures are now deepfake-driven.",
+        "answer": true,
+        "explanation": "Veriff 2025, as cited in the deck."
+      },
+      "chance": {
+        "question": "What is the chance a failed identity check is deepfake-driven (Veriff 2025)?",
+        "answer": 5,
+        "explanation": "1 in 20 is 5%."
+      }
     },
     {
       "id": "s11",
       "n": 11,
       "act": 3,
-      "title": "PLACEHOLDER signal 11",
-      "short": "Placeholder 11",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "message-square",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s11.jpg",
       "art": "rising",
-      "hook": "Replace this with the real one-line hook for signal 11.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 11.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Models every week",
+      "title": "A new frontier model lands before you finish evaluating the last one",
+      "hook": "Inference costs fell 99% in one year.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "300+",
+          "label": "models on the 2026 LLM leaderboard, up from 1 worth watching in 2021",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "99%",
+          "label": "drop in inference cost in one year, $3.50 to $0.32 per million tokens",
+          "fresh": "deck",
+          "source": "ARK Invest 2026"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "5x",
+          "label": "jump in AI agent task reliability during 2025",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 11?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 11.",
       "sources": [
-        "Placeholder source"
-      ]
+        "ARK Invest 2026",
+        "June deck"
+      ],
+      "guess": {
+        "question": "How many models are on the 2026 LLM leaderboard?",
+        "min": 0,
+        "max": 500,
+        "unit": "",
+        "answer": 300,
+        "answerLabel": "300+",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "Inference cost fell from $3.50 to $0.32 per million tokens in a year.",
+        "answer": true,
+        "explanation": "ARK Invest 2026, as cited in the deck."
+      }
     },
     {
       "id": "s12",
       "n": 12,
       "act": 3,
-      "title": "PLACEHOLDER signal 12",
-      "short": "Placeholder 12",
-      "status": "PLACEHOLDER",
       "isNew": true,
       "icon": "eye",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s12.jpg",
       "art": "layers",
-      "hook": "Replace this with the real one-line hook for signal 12.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 12.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Argentina’s bid",
+      "title": "Argentina just created the world’s first legal category for a non-human corporation",
+      "hook": "Argentina is bidding for $20B+ in Stargate data centers, and it has a legal framework for non-human AI corporations.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "1st",
+          "label": "legal framework for non-human AI corporations anywhere, June 2026",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$20B+",
+          "label": "Stargate data center bid for Patagonia",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "99.9%",
+          "label": "AI financial advice accuracy; can’t deploy in the US over the 0.1% liability",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 12?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 12.",
       "sources": [
-        "Placeholder source"
-      ]
+        "June deck"
+      ],
+      "guess": {
+        "question": "How much is Argentina bidding for in Stargate data centers?",
+        "min": 0,
+        "max": 50,
+        "unit": "$B",
+        "answer": 20,
+        "answerLabel": "$20B+",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "Argentina created a legal framework for non-human AI corporations in June 2026.",
+        "answer": true,
+        "explanation": "The deck says this is the first such framework anywhere."
+      }
     },
     {
       "id": "s13",
       "n": 13,
       "act": 4,
-      "title": "PLACEHOLDER signal 13",
-      "short": "Placeholder 13",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "globe",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s13.jpg",
       "art": "bolt",
-      "hook": "Replace this with the real one-line hook for signal 13.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 13.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "AI builds AI code",
+      "title": "AI is now building the next AI",
+      "hook": "Mythos Preview achieved a 52x speedup on AI training code.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "80%",
+          "label": "of Anthropic’s own code is written by Claude, Anthropic Institute June 2026",
+          "fresh": "deck",
+          "source": "Anthropic Institute"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "8x",
+          "label": "engineering throughput vs 2021–2025, same headcount",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "52x",
+          "label": "speedup Mythos Preview achieved on AI training code, from 3x in May 2024",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
+      "sources": [
+        "Anthropic Institute, June 2026"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 13?",
+        "question": "What speedup did Mythos Preview achieve on AI training code?",
         "min": 0,
         "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "unit": "x",
+        "answer": 52,
+        "answerLabel": "52x",
+        "source": "deck"
       },
-      "hotTake": "Placeholder hot take for signal 13.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Anthropic’s engineering throughput is 8x that of 2021–2025, with the same headcount.",
+        "answer": true,
+        "explanation": "The deck: same engineers, same headcount, 8x the output."
+      }
     },
     {
       "id": "s14",
       "n": 14,
       "act": 4,
-      "title": "PLACEHOLDER signal 14",
-      "short": "Placeholder 14",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "layers",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s14.jpg",
       "art": "stars",
-      "hook": "Replace this with the real one-line hook for signal 14.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 14.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Cheap AI, rising bills",
+      "title": "The cost of intelligence is falling. Your AI bill is rising.",
+      "hook": "Per-token cost fell sharply, but the average enterprise AI budget went from $1.2M to $7M.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "98%",
+          "label": "drop in GPT-4-class inference cost, $60 to $0.60 per M tokens (2024 to 2026). Check: this arithmetic gives 99%",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$7M",
+          "label": "average enterprise AI budget 2026, up from $1.2M in 2024",
+          "fresh": "deck",
+          "source": "FinOps Foundation"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "-$5B",
+          "label": "OpenAI annual loss in 2025 despite $3.7B revenue",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 14?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 14.",
       "sources": [
-        "Placeholder source"
-      ]
+        "FinOps Foundation",
+        "June deck"
+      ],
+      "guess": {
+        "question": "What is the average enterprise AI budget in 2026 (FinOps Foundation)?",
+        "min": 0,
+        "max": 10,
+        "unit": "$M",
+        "answer": 7,
+        "answerLabel": "$7M",
+        "source": "FinOps Foundation"
+      },
+      "trueFalse": {
+        "statement": "GPT-4-class inference fell from $60 to $0.60 per million tokens between 2024 and 2026.",
+        "answer": true,
+        "explanation": "That is the deck’s figure. The deck’s \"98%\" label does not match it; the arithmetic gives 99%. Check before the session."
+      }
     },
     {
       "id": "s15",
       "n": 15,
       "act": 4,
-      "title": "PLACEHOLDER signal 15",
-      "short": "Placeholder 15",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "rocket",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s15.jpg",
       "art": "ecg",
-      "hook": "Replace this with the real one-line hook for signal 15.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 15.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Compute is the new oil",
+      "title": "AI compute is the new oil",
+      "hook": "The US holds 55% of global hyperscale AI compute, with China second.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "55%",
+          "label": "US share of global hyperscale AI compute, China second",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$15.2B",
+          "label": "Microsoft committed to the UAE alone through 2029",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "$1T",
+          "label": "Saudi Arabia’s AI investment pledge, about the GDP of the Netherlands",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
+      "sources": [
+        "June deck"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 15?",
+        "question": "What share of global hyperscale AI compute does the US hold?",
         "min": 0,
         "max": 100,
         "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "answer": 55,
+        "answerLabel": "55%",
+        "source": "deck"
       },
-      "hotTake": "Placeholder hot take for signal 15.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Microsoft committed $15.2B to the UAE through 2029.",
+        "answer": true,
+        "explanation": "The deck gives this figure, quadrupling local capacity."
+      }
     },
     {
       "id": "s16",
       "n": 16,
       "act": 4,
-      "title": "PLACEHOLDER signal 16",
-      "short": "Placeholder 16",
-      "status": "PLACEHOLDER",
       "isNew": true,
       "icon": "scale",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s16.jpg",
       "art": "network",
-      "hook": "Replace this with the real one-line hook for signal 16.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 16.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Six-company stack",
+      "title": "Six companies now control the global AI stack",
+      "hook": "OpenAI, Anthropic, Google, Meta, Microsoft and Nvidia control the model, the cloud, the chip or the interface.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "3.5x",
+          "label": "BATX market cap growth vs Magnificent Seven, Q3 2024 to Q3 2025 (CSIS)",
+          "fresh": "deck",
+          "source": "CSIS"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$5T",
+          "label": "Nvidia peak market cap, the largest company by value ever",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "€200B",
+          "label": "EU AI investment plan, including AI Gigafactories",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 16?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 16.",
       "sources": [
-        "Placeholder source"
-      ]
+        "CSIS",
+        "June deck"
+      ],
+      "guess": {
+        "question": "How much did BATX’s market cap grow vs the Magnificent Seven, Q3 2024 to Q3 2025 (CSIS)?",
+        "min": 0,
+        "max": 10,
+        "unit": "x",
+        "answer": 3.5,
+        "answerLabel": "3.5x",
+        "source": "CSIS"
+      },
+      "trueFalse": {
+        "statement": "The EU’s AI investment plan is worth €200B.",
+        "answer": true,
+        "explanation": "The deck gives €200B, including AI Gigafactories."
+      }
     },
     {
       "id": "s17",
       "n": 17,
       "act": 5,
-      "title": "PLACEHOLDER signal 17",
-      "short": "Placeholder 17",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "database",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s17.jpg",
       "art": "molecules",
-      "hook": "Replace this with the real one-line hook for signal 17.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 17.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Leading AI teams",
+      "title": "Your next colleague will be an AI. Make the teamwork right.",
+      "hook": "Only 14% of leaders are adept at shaping how humans and AI work together.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "14%",
+          "label": "of leaders adept at shaping human-AI interactions (Deloitte 2026)",
+          "fresh": "deck",
+          "source": "Deloitte 2026"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$5.5T",
+          "label": "economic value at risk from AI skills shortages by 2026 (IDC)",
+          "fresh": "deck",
+          "source": "IDC"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "90%+",
+          "label": "of global enterprises face critical AI skills gaps by end-2026 (IDC)",
+          "fresh": "deck",
+          "source": "IDC"
         }
       ],
+      "sources": [
+        "Deloitte 2026",
+        "IDC"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 17?",
+        "question": "What share of leaders are adept at shaping human-AI interactions (Deloitte 2026)?",
         "min": 0,
         "max": 100,
         "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "answer": 14,
+        "answerLabel": "14%",
+        "source": "Deloitte 2026"
       },
-      "hotTake": "Placeholder hot take for signal 17.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "IDC puts the value at risk from AI skills shortages at $5.5T by 2026.",
+        "answer": true,
+        "explanation": "The deck cites IDC for this figure."
+      },
+      "chance": {
+        "question": "What is the chance a global enterprise faces critical AI skills gaps by end-2026 (IDC)?",
+        "answer": 90,
+        "explanation": "IDC: 90%+ of enterprises."
+      }
     },
     {
       "id": "s18",
       "n": 18,
       "act": 5,
-      "title": "PLACEHOLDER signal 18",
-      "short": "Placeholder 18",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "cloud",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s18.jpg",
       "art": "orbit",
-      "hook": "Replace this with the real one-line hook for signal 18.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 18.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "Europe: rules, no models",
+      "title": "Europe has the rules. It doesn’t have the models.",
+      "hook": "The EU AI Act has been fully in force since August 2025.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "€200B",
+          "label": "EU AI investment plan, including AI Gigafactories",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$6.4B",
+          "label": "Microsoft AI investment in Germany alone, US-owned compute on EU soil",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "Aug 2025",
+          "label": "EU AI Act fully in force, the most comprehensive AI law",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 18?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 18.",
       "sources": [
-        "Placeholder source"
-      ]
+        "June deck"
+      ],
+      "guess": {
+        "question": "How much is Microsoft investing in AI in Germany alone (deck)?",
+        "min": 0,
+        "max": 10,
+        "unit": "$B",
+        "answer": 6.4,
+        "answerLabel": "$6.4B",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "The EU AI Act has been fully in force since August 2025.",
+        "answer": true,
+        "explanation": "The deck gives August 2025."
+      }
     },
     {
       "id": "s19",
       "n": 19,
       "act": 5,
-      "title": "PLACEHOLDER signal 19",
-      "short": "Placeholder 19",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "code",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s19.jpg",
       "art": "ripples",
-      "hook": "Replace this with the real one-line hook for signal 19.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 19.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "AI in clinics",
+      "title": "AI diagnosed a lung cancer the doctor missed.",
+      "hook": "In the UK, India and Kenya, AI is already saving lives, the deck says.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "94%",
+          "label": "NHS AI retinopathy detection rate, serving 40M patients without specialist access",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "96%",
+          "label": "Wadhwani AI TB detection accuracy in India, 2,000+ rural clinics",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "1 in 3",
+          "label": "people globally lack access to essential health services",
+          "fresh": "deck",
+          "source": "deck"
         }
       ],
-      "guess": {
-        "question": "Placeholder guess question for signal 19?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
-      },
-      "hotTake": "Placeholder hot take for signal 19.",
       "sources": [
-        "Placeholder source"
-      ]
+        "June deck"
+      ],
+      "guess": {
+        "question": "In how many rural clinics is Wadhwani AI’s TB detection deployed?",
+        "min": 0,
+        "max": 5000,
+        "unit": "",
+        "answer": 2000,
+        "answerLabel": "2,000+",
+        "source": "deck"
+      },
+      "trueFalse": {
+        "statement": "About 1 in 3 people globally lack access to essential health services.",
+        "answer": true,
+        "explanation": "The deck gives this figure."
+      },
+      "chance": {
+        "question": "What is the chance a person worldwide lacks access to essential health services?",
+        "answer": 33,
+        "explanation": "The deck says 1 in 3."
+      }
     },
     {
       "id": "s20",
       "n": 20,
       "act": 5,
-      "title": "PLACEHOLDER signal 20",
-      "short": "Placeholder 20",
-      "status": "PLACEHOLDER",
       "isNew": true,
       "icon": "file-text",
-      "image": null,
+      "status": "DRAFT FROM DECK",
+      "image": "/images/trends/s20.jpg",
       "art": "lenses",
-      "hook": "Replace this with the real one-line hook for signal 20.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 20.",
+      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "story": "",
+      "hotTake": "Draft hot take: to be written.",
+      "short": "The ROI moment of truth",
+      "title": "Show me the money",
+      "hook": "Most enterprises cannot yet show a measurable return on their AI spend.",
       "stats": [
         {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "value": "95%",
+          "label": "of enterprises: zero measurable financial return from AI (MIT GenAI Divide 2025)",
+          "fresh": "deck",
+          "source": "MIT 2025"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "value": "$30–40B",
+          "label": "estimated global enterprise AI spend with no measurable return",
+          "fresh": "deck",
+          "source": "deck"
         },
         {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "value": "2027",
+          "label": "Gartner: 40% of agentic AI projects cancelled for poor ROI",
+          "fresh": "deck",
+          "source": "Gartner"
         }
       ],
+      "sources": [
+        "MIT GenAI Divide 2025",
+        "Gartner"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 20?",
+        "question": "What share of agentic AI projects does Gartner expect to be cancelled by 2027 for poor ROI?",
         "min": 0,
         "max": 100,
         "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "answer": 40,
+        "answerLabel": "40%",
+        "source": "Gartner"
       },
-      "hotTake": "Placeholder hot take for signal 20.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Estimated global enterprise AI spend with no measurable return is $30–40B.",
+        "answer": true,
+        "explanation": "The deck gives this range."
+      }
     },
     {
       "id": "s21",
       "n": 21,
       "act": 6,
-      "title": "PLACEHOLDER signal 21",
-      "short": "Placeholder 21",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "gauge",
-      "image": null,
+      "status": "PLACEHOLDER",
+      "image": "/images/trends/s21.jpg",
       "art": "waves",
-      "hook": "Replace this with the real one-line hook for signal 21.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 21.",
+      "why": "Placeholder: write the \"why it matters for our customers\" text.",
+      "story": "",
+      "hotTake": "Placeholder hot take.",
+      "short": "Placeholder 21",
+      "title": "Placeholder signal 21",
+      "hook": "Replace with the real one-line hook.",
       "stats": [
         {
           "value": "00",
           "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         }
       ],
+      "sources": [
+        "Placeholder source"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 21?",
+        "question": "Placeholder question for signal 21?",
         "min": 0,
         "max": 100,
         "unit": "%",
         "answer": 50,
         "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "source": "placeholder"
       },
-      "hotTake": "Placeholder hot take for signal 21.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Placeholder statement 21.",
+        "answer": true,
+        "explanation": "Placeholder explanation."
+      },
+      "chance": {
+        "question": "Placeholder chance question 21?",
+        "answer": 50,
+        "explanation": "Placeholder."
+      }
     },
     {
       "id": "s22",
       "n": 22,
       "act": 6,
-      "title": "PLACEHOLDER signal 22",
-      "short": "Placeholder 22",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "workflow",
-      "image": null,
+      "status": "PLACEHOLDER",
+      "image": "/images/trends/s22.jpg",
       "art": "hub",
-      "hook": "Replace this with the real one-line hook for signal 22.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 22.",
+      "why": "Placeholder: write the \"why it matters for our customers\" text.",
+      "story": "",
+      "hotTake": "Placeholder hot take.",
+      "short": "Placeholder 22",
+      "title": "Placeholder signal 22",
+      "hook": "Replace with the real one-line hook.",
       "stats": [
         {
           "value": "00",
           "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         }
       ],
+      "sources": [
+        "Placeholder source"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 22?",
+        "question": "Placeholder question for signal 22?",
         "min": 0,
         "max": 100,
         "unit": "%",
         "answer": 50,
         "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "source": "placeholder"
       },
-      "hotTake": "Placeholder hot take for signal 22.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Placeholder statement 22.",
+        "answer": true,
+        "explanation": "Placeholder explanation."
+      },
+      "chance": {
+        "question": "Placeholder chance question 22?",
+        "answer": 50,
+        "explanation": "Placeholder."
+      }
     },
     {
       "id": "s23",
       "n": 23,
       "act": 6,
-      "title": "PLACEHOLDER signal 23",
-      "short": "Placeholder 23",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "search",
-      "image": null,
+      "status": "PLACEHOLDER",
+      "image": "/images/trends/s23.jpg",
       "art": "ladder",
-      "hook": "Replace this with the real one-line hook for signal 23.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 23.",
+      "why": "Placeholder: write the \"why it matters for our customers\" text.",
+      "story": "",
+      "hotTake": "Placeholder hot take.",
+      "short": "Placeholder 23",
+      "title": "Placeholder signal 23",
+      "hook": "Replace with the real one-line hook.",
       "stats": [
         {
           "value": "00",
           "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         }
       ],
+      "sources": [
+        "Placeholder source"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 23?",
+        "question": "Placeholder question for signal 23?",
         "min": 0,
         "max": 100,
         "unit": "%",
         "answer": 50,
         "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "source": "placeholder"
       },
-      "hotTake": "Placeholder hot take for signal 23.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Placeholder statement 23.",
+        "answer": true,
+        "explanation": "Placeholder explanation."
+      },
+      "chance": {
+        "question": "Placeholder chance question 23?",
+        "answer": 50,
+        "explanation": "Placeholder."
+      }
     },
     {
       "id": "s24",
       "n": 24,
       "act": 6,
-      "title": "PLACEHOLDER signal 24",
-      "short": "Placeholder 24",
-      "status": "PLACEHOLDER",
       "isNew": true,
       "icon": "lock",
-      "image": null,
+      "status": "PLACEHOLDER",
+      "image": "/images/trends/s24.jpg",
       "art": "tiers",
-      "hook": "Replace this with the real one-line hook for signal 24.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 24.",
+      "why": "Placeholder: write the \"why it matters for our customers\" text.",
+      "story": "",
+      "hotTake": "Placeholder hot take.",
+      "short": "Placeholder 24",
+      "title": "Placeholder signal 24",
+      "hook": "Replace with the real one-line hook.",
       "stats": [
         {
           "value": "00",
           "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         }
       ],
+      "sources": [
+        "Placeholder source"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 24?",
+        "question": "Placeholder question for signal 24?",
         "min": 0,
         "max": 100,
         "unit": "%",
         "answer": 50,
         "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "source": "placeholder"
       },
-      "hotTake": "Placeholder hot take for signal 24.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Placeholder statement 24.",
+        "answer": true,
+        "explanation": "Placeholder explanation."
+      },
+      "chance": {
+        "question": "Placeholder chance question 24?",
+        "answer": 50,
+        "explanation": "Placeholder."
+      }
     },
     {
       "id": "s25",
       "n": 25,
       "act": 6,
-      "title": "PLACEHOLDER signal 25",
-      "short": "Placeholder 25",
-      "status": "PLACEHOLDER",
       "isNew": false,
       "icon": "activity",
-      "image": null,
+      "status": "PLACEHOLDER",
+      "image": "/images/trends/s25.jpg",
       "art": "falling",
-      "hook": "Replace this with the real one-line hook for signal 25.",
-      "why": "Replace with the real \"why it matters for our customers\" text.",
-      "story": "Replace with the real story text for signal 25.",
+      "why": "Placeholder: write the \"why it matters for our customers\" text.",
+      "story": "",
+      "hotTake": "Placeholder hot take.",
+      "short": "Placeholder 25",
+      "title": "Placeholder signal 25",
+      "hook": "Replace with the real one-line hook.",
       "stats": [
         {
           "value": "00",
           "label": "Placeholder stat 1",
-          "fresh": "checked"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 2",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         },
         {
           "value": "00",
           "label": "Placeholder stat 3",
-          "fresh": "deck"
+          "fresh": "deck",
+          "source": "placeholder"
         }
       ],
+      "sources": [
+        "Placeholder source"
+      ],
       "guess": {
-        "question": "Placeholder guess question for signal 25?",
+        "question": "Placeholder question for signal 25?",
         "min": 0,
         "max": 100,
         "unit": "%",
         "answer": 50,
         "answerLabel": "Placeholder answer",
-        "source": "Placeholder source"
+        "source": "placeholder"
       },
-      "hotTake": "Placeholder hot take for signal 25.",
-      "sources": [
-        "Placeholder source"
-      ]
+      "trueFalse": {
+        "statement": "Placeholder statement 25.",
+        "answer": true,
+        "explanation": "Placeholder explanation."
+      },
+      "chance": {
+        "question": "Placeholder chance question 25?",
+        "answer": 50,
+        "explanation": "Placeholder."
+      }
     }
   ]
 }

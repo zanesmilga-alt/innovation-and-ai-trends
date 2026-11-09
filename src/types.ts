@@ -4,8 +4,10 @@ export interface Stat {
   value: string;
   label: string;
   fresh: Freshness;
+  source?: string;
 }
 
+/** "Guess the number" game: the audience-style slider. */
 export interface Guess {
   question: string;
   min: number;
@@ -14,6 +16,20 @@ export interface Guess {
   answer: number;
   answerLabel: string;
   source: string;
+}
+
+/** "True or false" game. */
+export interface TrueFalse {
+  statement: string;
+  answer: boolean;
+  explanation: string;
+}
+
+/** "What are the chances" game: a 0–100% slider. */
+export interface Chance {
+  question: string;
+  answer: number;
+  explanation: string;
 }
 
 export interface Signal {
@@ -25,13 +41,16 @@ export interface Signal {
   status: string;
   isNew: boolean;
   icon: string;
+  /** Path to the trend picture. Missing file = upload slot is shown. */
   image: string | null;
   art: string | null;
   hook: string;
   why: string;
   story: string;
   stats: Stat[];
-  guess: Guess;
+  guess?: Guess;
+  trueFalse?: TrueFalse;
+  chance?: Chance;
   hotTake: string;
   sources: string[];
 }
