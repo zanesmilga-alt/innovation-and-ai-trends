@@ -147,41 +147,43 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     const idx = signals.indexOf(s);
     const sourceFor = (i: number, fallback: string) => fallback || s.sources[i] || s.sources[0] || '';
     storyBody.innerHTML = `
-      <header class="story-top">
-        <span class="mono">${esc(actLabel(s.act))} · ${String(idx + 1).padStart(2, '0')} / ${String(signals.length).padStart(2, '0')}</span>
-        ${s.isNew ? '<span class="tag tag-new mono">New since June</span>' : ''}
-        ${s.status ? `<span class="tag mono">${esc(s.status)}</span>` : ''}
-      </header>
-      <div class="story-main">
-        <div class="story-icon"></div>
+      <div class="st-left">
+        <header class="story-top">
+          <span class="mono">${esc(actLabel(s.act))} · ${String(idx + 1).padStart(2, '0')} / ${String(signals.length).padStart(2, '0')}</span>
+          ${s.isNew ? '<span class="tag tag-new mono">New since June</span>' : ''}
+        </header>
         <h2 class="story-title">${esc(s.title)}</h2>
         <p class="story-hook">${esc(s.hook)}</p>
-        <div class="stats">
-          ${s.stats.map((st, i) => `
-            <div class="stat">
-              <div class="stat-value">${esc(st.value)}</div>
-              <div class="stat-label">${esc(st.label)}</div>
-              <div class="stat-meta mono">
-                <span class="fresh fresh-${st.fresh}">${st.fresh === 'checked' ? 'Checked Nov 2026' : 'From June deck · verify'}</span>
-                ${sourceFor(i, st.source ?? '') ? `<span class="src">${esc(sourceFor(i, st.source ?? ''))}</span>` : ''}
-              </div>
-            </div>`).join('')}
-        </div>
-        <div class="why">
-          <h3 class="mono">Why it matters for our customers</h3>
-          <p>${esc(s.why)}</p>
-        </div>
         <div class="play-row">
           <button class="play-btn" type="button" id="play-btn">
             <span class="play-dot" aria-hidden="true"></span> Play a game on this trend
           </button>
         </div>
+        <div class="why">
+          <h3 class="mono">Why it matters for our customers</h3>
+          <p>${esc(s.why)}</p>
+        </div>
+      </div>
+      <div class="st-stats">
+        ${s.stats.map((st, i) => `
+          <div class="stat">
+            <div class="stat-value">${esc(st.value)}</div>
+            <div class="stat-label">${esc(st.label)}</div>
+            <div class="stat-meta mono">
+              <span class="fresh fresh-${st.fresh}">${st.fresh === 'checked' ? 'Checked Nov 2026' : 'June deck · verify'}</span>
+              ${sourceFor(i, st.source ?? '') ? `<span class="src">${esc(sourceFor(i, st.source ?? ''))}</span>` : ''}
+            </div>
+          </div>`).join('')}
       </div>
       <footer class="story-foot">
         <p class="sources mono">Sources: ${s.sources.map(esc).join(' · ')}</p>
         <p class="keys mono">← → next / previous · Esc map · ? keys</p>
       </footer>`;
-    storyBody.querySelector('.story-icon')!.appendChild(iconSvg(s.icon));
+    storyBody.querySelector('#play-btn')!.addEventListener('click', () => openGame(s));
+    const iconWrap = document.createElement('div');
+    iconWrap.className = 'story-icon';
+    iconWrap.appendChild(iconSvg(s.icon));
+    storyBody.querySelector('.st-left')!.prepend(iconWrap);
     storyBody.querySelector('#play-btn')!.addEventListener('click', () => openGame(s));
 
     // Trend photo, duotone, with an upload slot if the file is missing.

@@ -549,3 +549,119 @@ a { color: inherit; }
   .tf-row { grid-template-columns: 1fr; }
   .story-pic.no-img .slot { display: none; }
 }
+
+/* ---------- Story v2: the picture leads, the text supports ---------- */
+.story-body { position: absolute; inset: 0; padding: 0; display: block; overflow: hidden; }
+
+/* The photo fills the right ~62% edge to edge. */
+.story-pic { left: 36%; top: 0; right: 0; bottom: 0; }
+.story-pic img { opacity: 1; filter: grayscale(1) contrast(1.25) brightness(1.05); }
+.story-pic::after { opacity: 0.55; }
+.story-art::after {
+  background:
+    linear-gradient(90deg, #080c1e 0%, rgba(8, 12, 30, 0.9) 30%, rgba(8, 12, 30, 0) 50%),
+    linear-gradient(0deg, rgba(8, 12, 30, 0.85) 0%, rgba(8, 12, 30, 0) 30%);
+}
+.story-pic.no-img .slot { right: 6vw; top: 22vh; transform: none; }
+
+/* Left column: the words. */
+.st-left {
+  position: absolute;
+  left: clamp(24px, 4vw, 96px);
+  top: clamp(72px, 9vh, 110px);
+  width: min(38vw, 720px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vh, 22px);
+  z-index: 3;
+}
+.st-left .story-icon { width: clamp(44px, 3.4vw, 64px); height: clamp(44px, 3.4vw, 64px); }
+.st-left .story-icon svg { width: 100%; height: 100%; }
+.st-left .story-title { font-size: clamp(44px, 4.2vw, 88px); line-height: 0.95; text-shadow: 0 4px 30px rgba(8, 12, 30, 0.6); }
+.st-left .story-title::after {
+  content: '';
+  display: block;
+  width: 96px;
+  height: 6px;
+  margin-top: 18px;
+  background: var(--orange);
+  border-radius: 3px;
+}
+.st-left .story-hook { font-size: clamp(22px, 1.7vw, 32px); color: var(--cream); }
+.st-left .why { background: rgba(8, 12, 30, 0.72); }
+.st-left .why p { font-size: clamp(18px, 1.3vw, 24px); }
+
+/* Figures: big cards over the photo, bottom-right. */
+.st-stats {
+  position: absolute;
+  right: clamp(24px, 3vw, 64px);
+  bottom: clamp(70px, 10vh, 110px);
+  width: min(56vw, 1000px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1vw, 18px);
+  z-index: 3;
+}
+.st-stats .stat {
+  background: rgba(8, 12, 30, 0.82);
+  border: none;
+  border-top: 5px solid var(--orange);
+  border-radius: 6px;
+  padding: clamp(14px, 1.4vw, 24px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+.st-stats .stat-value { font-size: clamp(54px, 5.4vw, 120px); color: var(--hi); text-shadow: 0 0 40px rgba(240, 122, 46, 0.5); }
+.st-stats .stat-label { font-size: clamp(16px, 1.15vw, 22px); }
+.st-stats .stat-meta { font-size: clamp(11px, 0.75vw, 14px); }
+
+.story-foot { position: absolute; left: clamp(24px, 4vw, 96px); right: clamp(24px, 3vw, 64px); bottom: clamp(16px, 2.5vh, 32px); margin: 0; z-index: 3; }
+.story-foot .keys { display: none; }
+
+/* Entrance: picture zooms in first, then the words rise. */
+.story.open .story-pic img { animation: pic-in 1100ms var(--ease) both; }
+.story.open .st-left > * { animation: rise 700ms var(--ease) both; }
+.story.open .st-left > *:nth-child(2) { animation-delay: 80ms; }
+.story.open .st-left > *:nth-child(3) { animation-delay: 160ms; }
+.story.open .st-left > *:nth-child(4) { animation-delay: 240ms; }
+.story.open .st-stats .stat { animation: rise 700ms var(--ease) both; }
+.story.open .st-stats .stat:nth-child(2) { animation-delay: 120ms; }
+.story.open .st-stats .stat:nth-child(3) { animation-delay: 240ms; }
+@keyframes pic-in { from { transform: scale(1.08); opacity: 0.2; } to { transform: scale(1); opacity: 1; } }
+@keyframes rise { from { transform: translateY(18px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* Phones and narrow windows: picture on top, text under it. */
+@media (max-width: 760px) {
+  .story-body { overflow-y: auto; }
+  .story-pic { left: 0; right: 0; bottom: auto; height: 46vh; }
+  .story-art::after { background: linear-gradient(0deg, #080c1e 0%, rgba(8, 12, 30, 0) 60%); }
+  .st-left { position: relative; left: auto; top: auto; width: auto; padding: 44vh 20px 0; }
+  .st-stats { position: relative; right: auto; bottom: auto; width: auto; grid-template-columns: 1fr; padding: 0 20px; margin-top: 18px; }
+  .story-foot { position: relative; left: auto; right: auto; bottom: auto; padding: 0 20px 24px; }
+}
+/* Soft left edge so the photo melts into the navy text column. */
+.story-pic {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 22%);
+}
+/* Shorter screens (1280x720 and similar): keep the text clear of the figures. */
+.st-left { width: min(34vw, 720px); }
+.st-left .story-title { font-size: clamp(36px, min(3.4vw, 7vh), 88px); }
+.st-left .story-hook { font-size: clamp(19px, min(1.6vw, 3.2vh), 32px); }
+.st-stats { width: min(58vw, 1000px); }
+@media (max-height: 800px) {
+  .st-left .story-icon { display: none; }
+  .st-left .story-title::after { margin-top: 10px; }
+  .st-left { top: 56px; gap: 10px; }
+  .st-left .why p { font-size: 17px; }
+  .st-stats .stat-value { font-size: clamp(44px, 4.6vw, 80px); }
+  .st-stats .stat-label { font-size: 15px; }
+}
+/* Phones: repeated at the end so the desktop rules above do not override them. */
+@media (max-width: 760px) {
+  .note { display: none; }
+  .story-pic { left: 0; right: 0; bottom: auto; height: 46vh; }
+  .st-left { position: relative; left: auto; top: auto; width: auto; padding: 44vh 20px 0; }
+  .st-left .story-title { font-size: 40px; }
+  .st-stats { position: relative; right: auto; bottom: auto; width: auto; grid-template-columns: 1fr; padding: 0 20px; margin-top: 18px; }
+  .story-foot { position: relative; left: auto; right: auto; bottom: auto; padding: 0 20px 24px; }
+}
