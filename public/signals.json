@@ -1,6 +1,6 @@
 {
-  "_note": "DRAFT. Content from the June AI Trends deck (figures as the deck states them, not re-checked). \"why\", hot takes and signals 21–25 are placeholders. Images: public/images/trends/<id>.jpg Multiple-choice wrong answers were written for the game; check them. Optional: \"video\" = YouTube link or ID; \"more\" = extra detail text for each of the three figures.",
-  "placeholder": true,
+  "_note": "Content from the June AI Trends deck. Figures are as the deck states them and are not re-checked. Taglines are short summaries of the deck. Hot takes are the deck headlines. The \"why\" text is empty until written.",
+  "placeholder": false,
   "signals": [
     {
       "id": "s01",
@@ -8,12 +8,12 @@
       "act": 1,
       "isNew": false,
       "icon": "cpu",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s01.jpg",
       "art": "network",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "The most important programming language in 2025 is English",
       "short": "English is the new code",
       "title": "The most important programming language in 2025 is English",
       "hook": "Anthropic says 80% of the code it merges is now machine-written.",
@@ -65,7 +65,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Anthropic says 80% of the code it merges is now machine-written, while its engineers' output has grown about 8x."
     },
     {
       "id": "s02",
@@ -73,12 +74,12 @@
       "act": 1,
       "isNew": false,
       "icon": "brain",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s02.jpg",
       "art": "molecules",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "The robot is already working at BMW",
       "short": "Humanoid robots at work",
       "title": "The robot is already working at BMW",
       "hook": "Figure 03 has helped build 30,000+ vehicles at BMW Spartanburg.",
@@ -125,7 +126,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Figure 03 has been working on BMW’s Spartanburg line since early 2025, and the cheaper Unitree G1 humanoid is on sale for $16,000."
     },
     {
       "id": "s03",
@@ -133,12 +135,12 @@
       "act": 1,
       "isNew": false,
       "icon": "bot",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s03.jpg",
       "art": "orbit",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "Your child’s best friend might be an AI",
       "short": "AI companions",
       "title": "Your child’s best friend might be an AI",
       "hook": "AI companion apps have grown 700% since 2022.",
@@ -203,7 +205,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "AI companion apps have grown 700% since 2022. Character.AI reports 20M monthly users, more than half under 24."
     },
     {
       "id": "s04",
@@ -211,12 +214,12 @@
       "act": 1,
       "isNew": true,
       "icon": "shield-check",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s04.jpg",
       "art": "ripples",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "The hyperscalers are spending like oil companies",
       "short": "$700B AI build-out",
       "title": "The hyperscalers are spending like oil companies",
       "hook": "The big four cloud providers will spend about $630B on capex in 2026 alone.",
@@ -263,7 +266,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "The four biggest cloud providers plan about $630B of AI infrastructure spending in 2026 alone."
     },
     {
       "id": "s05",
@@ -271,12 +275,12 @@
       "act": 2,
       "isNew": false,
       "icon": "zap",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s05.jpg",
       "art": "lenses",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "The next data center is in your building",
       "short": "Models in your building",
       "title": "The next data center is in your building",
       "hook": "Gartner expects enterprises to use small specialised models more than LLMs by 2027.",
@@ -324,7 +328,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Gartner expects enterprises to use small, specialised models more than general LLMs by 2027, cutting inference cost by about 90%."
     },
     {
       "id": "s06",
@@ -332,12 +337,12 @@
       "act": 2,
       "isNew": false,
       "icon": "network",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s06.jpg",
       "art": "waves",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "Nvidia has 92% market share, and everyone is building chips",
       "short": "Nvidia’s 92%",
       "title": "Nvidia has 92% market share, and everyone is building chips",
       "hook": "Google, Amazon, Microsoft, Meta and Apple are all building their own chips.",
@@ -395,7 +400,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Nvidia holds 92% of the discrete GPU market, while Google, Amazon, Microsoft, Meta and Apple all build their own chips."
     },
     {
       "id": "s07",
@@ -403,12 +409,12 @@
       "act": 2,
       "isNew": false,
       "icon": "coins",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s07.jpg",
       "art": "hub",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "The AI that hires the AI",
       "short": "Agents connecting agents",
       "title": "The AI that hires the AI",
       "hook": "Agents now connect to each other directly, without a human in the middle.",
@@ -456,7 +462,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "AI agents now connect directly to each other. Over 50 enterprises adopted the A2A protocol within weeks of launch."
     },
     {
       "id": "s08",
@@ -464,12 +471,12 @@
       "act": 2,
       "isNew": true,
       "icon": "chart-line",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s08.jpg",
       "art": "ladder",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "SaaS is having its Kodak moment",
       "short": "SaaS under pressure",
       "title": "SaaS is having its Kodak moment",
       "hook": "$800B was erased from software market cap in five sessions in February 2026.",
@@ -516,7 +523,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "About $800B of software market value was wiped out in five sessions in February 2026, as the per-seat subscription model came under question."
     },
     {
       "id": "s09",
@@ -524,12 +532,12 @@
       "act": 3,
       "isNew": false,
       "icon": "flask-conical",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s09.jpg",
       "art": "tiers",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "Klarna failed. JPMorgan won. Same AI, different strategy.",
       "short": "Klarna vs JPMorgan",
       "title": "Klarna failed. JPMorgan won. Same AI, different strategy.",
       "hook": "95% of enterprises see zero measurable AI return. JPMorgan gets its $2B back every year.",
@@ -593,7 +601,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Most enterprises see no measurable AI return (MIT 2025). JPMorgan reports that its $2B AI investment returns about $2B a year."
     },
     {
       "id": "s10",
@@ -601,12 +610,12 @@
       "act": 3,
       "isNew": false,
       "icon": "users",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s10.jpg",
       "art": "falling",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "AI vs AI: the battles you’ll never see",
       "short": "AI vs AI fraud",
       "title": "AI vs AI: the battles you’ll never see",
       "hook": "Deepfakes are now behind 1 in 20 failed identity checks.",
@@ -660,7 +669,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Deepfake fraud losses reached $1.65B in 2025, and 1 in 20 failed identity checks is now deepfake-driven."
     },
     {
       "id": "s11",
@@ -668,12 +678,12 @@
       "act": 3,
       "isNew": false,
       "icon": "message-square",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s11.jpg",
       "art": "rising",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "A new frontier model lands before you finish evaluating the last one",
       "short": "Models every week",
       "title": "A new frontier model lands before you finish evaluating the last one",
       "hook": "Inference costs fell 99% in one year.",
@@ -721,7 +731,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "The 2026 LLM leaderboard lists 300+ models. Inference cost fell 99% in one year, from $3.50 to $0.32 per million tokens."
     },
     {
       "id": "s12",
@@ -729,12 +740,12 @@
       "act": 3,
       "isNew": true,
       "icon": "eye",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s12.jpg",
       "art": "layers",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "Argentina just created the world’s first legal category for a non-human corporation",
       "short": "Argentina’s bid",
       "title": "Argentina just created the world’s first legal category for a non-human corporation",
       "hook": "Argentina is bidding for $20B+ in Stargate data centers, and it has a legal framework for non-human AI corporations.",
@@ -792,7 +803,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Argentina passed a legal framework for non-human AI corporations in June 2026, and is bidding for $20B+ of Stargate data centers."
     },
     {
       "id": "s13",
@@ -800,12 +812,12 @@
       "act": 4,
       "isNew": false,
       "icon": "globe",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s13.jpg",
       "art": "bolt",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "AI is now building the next AI",
       "short": "AI builds AI code",
       "title": "AI is now building the next AI",
       "hook": "Mythos Preview achieved a 52x speedup on AI training code.",
@@ -852,7 +864,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Anthropic says Claude now writes 80% of its own code, and Mythos Preview reached a 52x speedup on AI training code."
     },
     {
       "id": "s14",
@@ -860,12 +873,12 @@
       "act": 4,
       "isNew": false,
       "icon": "layers",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s14.jpg",
       "art": "stars",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "The cost of intelligence is falling. Your AI bill is rising.",
       "short": "Cheap AI, rising bills",
       "title": "The cost of intelligence is falling. Your AI bill is rising.",
       "hook": "Per-token cost fell sharply, but the average enterprise AI budget went from $1.2M to $7M.",
@@ -913,7 +926,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "The price of a unit of AI intelligence fell sharply between 2024 and 2026, yet the average enterprise AI budget rose from $1.2M to $7M."
     },
     {
       "id": "s15",
@@ -921,12 +935,12 @@
       "act": 4,
       "isNew": false,
       "icon": "rocket",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s15.jpg",
       "art": "ecg",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "AI compute is the new oil",
       "short": "Compute is the new oil",
       "title": "AI compute is the new oil",
       "hook": "The US holds 55% of global hyperscale AI compute, with China second.",
@@ -984,7 +998,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "The US holds 55% of global hyperscale AI compute, with China second. Microsoft has committed $15.2B to the UAE through 2029."
     },
     {
       "id": "s16",
@@ -992,12 +1007,12 @@
       "act": 4,
       "isNew": true,
       "icon": "scale",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s16.jpg",
       "art": "network",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "Six companies now control the global AI stack",
       "short": "Six-company stack",
       "title": "Six companies now control the global AI stack",
       "hook": "OpenAI, Anthropic, Google, Meta, Microsoft and Nvidia control the model, the cloud, the chip or the interface.",
@@ -1045,7 +1060,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "OpenAI, Anthropic, Google, Meta, Microsoft and Nvidia are described as controlling the model, the cloud, the chip or the interface of AI."
     },
     {
       "id": "s17",
@@ -1053,12 +1069,12 @@
       "act": 5,
       "isNew": false,
       "icon": "database",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s17.jpg",
       "art": "molecules",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "Your next colleague will be an AI. Make the teamwork right.",
       "short": "Leading AI teams",
       "title": "Your next colleague will be an AI. Make the teamwork right.",
       "hook": "Only 14% of leaders are adept at shaping how humans and AI work together.",
@@ -1111,7 +1127,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "Only 14% of leaders are adept at shaping how people and AI work together (Deloitte 2026). IDC puts $5.5T of value at risk from AI skills shortages by 2026."
     },
     {
       "id": "s18",
@@ -1119,12 +1136,12 @@
       "act": 5,
       "isNew": false,
       "icon": "cloud",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s18.jpg",
       "art": "orbit",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "Europe has the rules. It doesn’t have the models.",
       "short": "Europe: rules, no models",
       "title": "Europe has the rules. It doesn’t have the models.",
       "hook": "The EU AI Act has been fully in force since August 2025.",
@@ -1182,7 +1199,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "The EU AI Act has been fully in force since August 2025, and the EU plans €200B of AI investment, including AI Gigafactories."
     },
     {
       "id": "s19",
@@ -1190,12 +1208,12 @@
       "act": 5,
       "isNew": false,
       "icon": "code",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s19.jpg",
       "art": "ripples",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "AI diagnosed a lung cancer the doctor missed.",
       "short": "AI in clinics",
       "title": "AI diagnosed a lung cancer the doctor missed.",
       "hook": "In the UK, India and Kenya, AI is already saving lives, the deck says.",
@@ -1247,7 +1265,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "tagline": "AI is already in use in healthcare. The NHS uses AI to screen for retinopathy, and Wadhwani AI’s TB detection is in 2,000+ rural clinics in India."
     },
     {
       "id": "s20",
@@ -1255,12 +1274,12 @@
       "act": 5,
       "isNew": true,
       "icon": "file-text",
-      "status": "DRAFT FROM DECK",
+      "status": "",
       "image": "/images/trends/s20.jpg",
       "art": "lenses",
-      "why": "Draft: write the \"why it matters for our customers\" text for this trend.",
+      "why": "",
       "story": "",
-      "hotTake": "Draft hot take: to be written.",
+      "hotTake": "Show me the money",
       "short": "The ROI moment of truth",
       "title": "Show me the money",
       "hook": "Most enterprises cannot yet show a measurable return on their AI spend.",
@@ -1308,332 +1327,8 @@
         "",
         "",
         ""
-      ]
-    },
-    {
-      "id": "s21",
-      "n": 21,
-      "act": 6,
-      "isNew": false,
-      "icon": "gauge",
-      "status": "PLACEHOLDER",
-      "image": "/images/trends/s21.jpg",
-      "art": "waves",
-      "why": "Placeholder: write the \"why it matters for our customers\" text.",
-      "story": "",
-      "hotTake": "Placeholder hot take.",
-      "short": "Placeholder 21",
-      "title": "Placeholder signal 21",
-      "hook": "Replace with the real one-line hook.",
-      "stats": [
-        {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck",
-          "source": "placeholder"
-        }
       ],
-      "sources": [
-        "Placeholder source"
-      ],
-      "guess": {
-        "question": "Placeholder question for signal 21?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "placeholder"
-      },
-      "trueFalse": {
-        "statement": "Placeholder statement 21.",
-        "answer": true,
-        "explanation": "Placeholder explanation."
-      },
-      "chance": {
-        "question": "Placeholder chance question 21?",
-        "answer": 50,
-        "explanation": "Placeholder."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ]
-    },
-    {
-      "id": "s22",
-      "n": 22,
-      "act": 6,
-      "isNew": false,
-      "icon": "workflow",
-      "status": "PLACEHOLDER",
-      "image": "/images/trends/s22.jpg",
-      "art": "hub",
-      "why": "Placeholder: write the \"why it matters for our customers\" text.",
-      "story": "",
-      "hotTake": "Placeholder hot take.",
-      "short": "Placeholder 22",
-      "title": "Placeholder signal 22",
-      "hook": "Replace with the real one-line hook.",
-      "stats": [
-        {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck",
-          "source": "placeholder"
-        }
-      ],
-      "sources": [
-        "Placeholder source"
-      ],
-      "guess": {
-        "question": "Placeholder question for signal 22?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "placeholder"
-      },
-      "trueFalse": {
-        "statement": "Placeholder statement 22.",
-        "answer": true,
-        "explanation": "Placeholder explanation."
-      },
-      "chance": {
-        "question": "Placeholder chance question 22?",
-        "answer": 50,
-        "explanation": "Placeholder."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ]
-    },
-    {
-      "id": "s23",
-      "n": 23,
-      "act": 6,
-      "isNew": false,
-      "icon": "search",
-      "status": "PLACEHOLDER",
-      "image": "/images/trends/s23.jpg",
-      "art": "ladder",
-      "why": "Placeholder: write the \"why it matters for our customers\" text.",
-      "story": "",
-      "hotTake": "Placeholder hot take.",
-      "short": "Placeholder 23",
-      "title": "Placeholder signal 23",
-      "hook": "Replace with the real one-line hook.",
-      "stats": [
-        {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck",
-          "source": "placeholder"
-        }
-      ],
-      "sources": [
-        "Placeholder source"
-      ],
-      "guess": {
-        "question": "Placeholder question for signal 23?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "placeholder"
-      },
-      "trueFalse": {
-        "statement": "Placeholder statement 23.",
-        "answer": true,
-        "explanation": "Placeholder explanation."
-      },
-      "chance": {
-        "question": "Placeholder chance question 23?",
-        "answer": 50,
-        "explanation": "Placeholder."
-      },
-      "gameType": "truefalse",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ]
-    },
-    {
-      "id": "s24",
-      "n": 24,
-      "act": 6,
-      "isNew": true,
-      "icon": "lock",
-      "status": "PLACEHOLDER",
-      "image": "/images/trends/s24.jpg",
-      "art": "tiers",
-      "why": "Placeholder: write the \"why it matters for our customers\" text.",
-      "story": "",
-      "hotTake": "Placeholder hot take.",
-      "short": "Placeholder 24",
-      "title": "Placeholder signal 24",
-      "hook": "Replace with the real one-line hook.",
-      "stats": [
-        {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck",
-          "source": "placeholder"
-        }
-      ],
-      "sources": [
-        "Placeholder source"
-      ],
-      "guess": {
-        "question": "Placeholder question for signal 24?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "placeholder"
-      },
-      "trueFalse": {
-        "statement": "Placeholder statement 24.",
-        "answer": true,
-        "explanation": "Placeholder explanation."
-      },
-      "chance": {
-        "question": "Placeholder chance question 24?",
-        "answer": 50,
-        "explanation": "Placeholder."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ]
-    },
-    {
-      "id": "s25",
-      "n": 25,
-      "act": 6,
-      "isNew": false,
-      "icon": "activity",
-      "status": "PLACEHOLDER",
-      "image": "/images/trends/s25.jpg",
-      "art": "falling",
-      "why": "Placeholder: write the \"why it matters for our customers\" text.",
-      "story": "",
-      "hotTake": "Placeholder hot take.",
-      "short": "Placeholder 25",
-      "title": "Placeholder signal 25",
-      "hook": "Replace with the real one-line hook.",
-      "stats": [
-        {
-          "value": "00",
-          "label": "Placeholder stat 1",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 2",
-          "fresh": "deck",
-          "source": "placeholder"
-        },
-        {
-          "value": "00",
-          "label": "Placeholder stat 3",
-          "fresh": "deck",
-          "source": "placeholder"
-        }
-      ],
-      "sources": [
-        "Placeholder source"
-      ],
-      "guess": {
-        "question": "Placeholder question for signal 25?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 50,
-        "answerLabel": "Placeholder answer",
-        "source": "placeholder"
-      },
-      "trueFalse": {
-        "statement": "Placeholder statement 25.",
-        "answer": true,
-        "explanation": "Placeholder explanation."
-      },
-      "chance": {
-        "question": "Placeholder chance question 25?",
-        "answer": 50,
-        "explanation": "Placeholder."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ]
+      "tagline": "Gartner expects 40% of agentic AI projects to be cancelled by 2027 for poor ROI, and an estimated $30–40B of enterprise AI spend shows no measurable return."
     }
   ]
 }

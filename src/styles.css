@@ -966,3 +966,9 @@ kbd { font-family: var(--f-mono); font-size: 0.9em; padding: 1px 6px; border: 1p
 .ctrl-label { width: 92px; font-size: 11px; }
 .ctrl button, .picks button { min-height: 0; padding: 4px 9px; font-size: clamp(12px, 0.85vw, 15px); border-radius: 8px; }
 .picks { gap: 6px; }
+
+/* ---------- One-line context under each trend (small print) ---------- */
+.story-tagline { margin: -6px 0 0; font-size: clamp(15px, 1.15vw, 20px); line-height: 1.45; color: var(--cream-dim); max-width: 62ch; }
+.heart-tag { display: block; margin-top: 4px; font-size: 13px; line-height: 1.35; color: var(--cream-faint); font-weight: 400; }
+.ht { display: block; min-width: 0; }
+.story-tagline { font-size: clamp(13px, 0.95vw, 16px); }

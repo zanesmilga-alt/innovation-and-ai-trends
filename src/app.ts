@@ -60,9 +60,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   let current: string | null = null;
   let gameOpen = false;
 
-  if (data.placeholder) {
-    note.textContent = 'Draft · deck figures not re-checked · placeholders still to fill';
-  }
+  note.textContent = 'Figures from the June deck · not re-checked';
 
   // ---------- Map ----------
   const clusters = groupByAct(signals);
@@ -137,16 +135,18 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
           ${s.isNew ? '<span class="tag tag-new mono">New since June</span>' : ''}
         </header>
         <h2 class="story-title">${esc(s.title)}</h2>
-        <p class="story-hook">${esc(s.hook)}</p>
+        <p class="story-tagline">${esc(s.tagline ?? '')}</p>
         <div class="play-row">
           <button class="play-btn" type="button" id="play-btn">
             <span class="play-dot" aria-hidden="true"></span> Play a game on this trend
           </button>
         </div>
+        ${s.why ? `
         <div class="why">
           <h3 class="mono">Why it matters for our customers</h3>
           <p>${esc(s.why)}</p>
         </div>
+        ` : ''}
       </div>
       <div class="st-stats">
         ${s.stats.map((st, i) => `

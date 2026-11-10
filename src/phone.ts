@@ -164,7 +164,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
           ${signals.map((s) => {
             const on = you.hearts.includes(s.id);
             return `<li><button class="heart-row ${on ? 'on' : ''}" data-heart="${esc(s.id)}" type="button" aria-pressed="${on}">
-              <span class="heart" aria-hidden="true">${on ? '♥' : '♡'}</span><span>${esc(s.short)}</span></button></li>`;
+              <span class="heart" aria-hidden="true">${on ? '♥' : '♡'}</span><span class="ht"><span>${esc(s.short)}</span>${s.tagline ? `<small class="heart-tag">${esc(s.tagline)}</small>` : ''}</span></button></li>`;
           }).join('')}
         </ul>`;
     }
