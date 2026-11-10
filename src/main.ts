@@ -6,6 +6,21 @@ import { mountPhone } from './phone';
 const root = document.getElementById('app');
 if (!root) throw new Error('#app missing');
 
+// After a new deploy, open pages reload themselves so phones and the stage run the same version.
+let build: string | null = null;
+const checkBuild = async () => {
+  try {
+    const stamp = await (await fetch('/version.txt', { cache: 'no-store' })).text();
+    const typing = document.activeElement instanceof HTMLInputElement || document.activeElement instanceof HTMLTextAreaElement;
+    if (build && stamp !== build && !typing) location.reload();
+    build = stamp;
+  } catch {
+    /* offline for a moment: try again later */
+  }
+};
+void checkBuild();
+window.setInterval(checkBuild, 30_000);
+
 const path = location.pathname.replace(/\/+$/, '') || '/';
 const join = path.match(/^\/join(?:\/([^/]+))?$/);
 

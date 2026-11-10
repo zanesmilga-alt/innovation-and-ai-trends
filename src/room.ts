@@ -101,6 +101,26 @@ export class Room extends DurableObject<Env> {
       return Response.json(body);
     }
 
+    // Trend pictures: uploaded by the presenter, served to everyone (see worker.ts).
+    const pic = url.pathname.match(/^\/picture\/(s\d{2})$/);
+    if (pic) {
+      const id = pic[1];
+      if (req.method === 'GET') {
+        const rec = await this.ctx.storage.get<{ type: string; data: ArrayBuffer }>(`pic:${id}`);
+        if (!rec) return new Response('No picture', { status: 404 });
+        return new Response(rec.data, { headers: { 'content-type': rec.type, 'cache-control': 'no-cache' } });
+      }
+      if (req.method === 'PUT') {
+        if (url.searchParams.get('key') !== this.env.PRESENTER_KEY) return new Response('Presenter key is wrong', { status: 403 });
+        const type = req.headers.get('content-type') ?? '';
+        if (!type.startsWith('image/')) return new Response('Not an image', { status: 415 });
+        const data = await req.arrayBuffer();
+        if (data.byteLength > 1_900_000) return new Response('Picture too large', { status: 413 });
+        await this.ctx.storage.put(`pic:${id}`, { type, data });
+        return Response.json({ ok: true, bytes: data.byteLength });
+      }
+    }
+
     if (url.pathname === '/message' && req.method === 'POST') {
       const msg = parseClientMessage(await req.text());
       if (!msg) return Response.json({ type: 'error', message: 'Not understood' } satisfies ServerMessage, { status: 400 });

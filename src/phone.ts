@@ -278,12 +278,22 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
         ${trendForm()}
         ${body}
         ${addButton}
+        <button class="leave-btn mono" id="leave-phone" type="button">Leave room</button>
       </main>`;
     bind();
     tick();
   };
 
   const bind = () => {
+    root.querySelector<HTMLButtonElement>('#leave-phone')?.addEventListener('click', () => {
+      if (!confirm('Leave this room? Your answers stay saved, but you will need the room code to come back.')) return;
+      try {
+        localStorage.removeItem('signalroom.room');
+      } catch {
+        /* ignore */
+      }
+      location.href = '/join';
+    });
     root.querySelector<HTMLButtonElement>('#join')?.addEventListener('click', () => {
       nameDraft = root.querySelector<HTMLInputElement>('#name')?.value.trim().slice(0, 24) ?? '';
       join();

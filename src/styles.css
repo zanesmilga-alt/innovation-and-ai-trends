@@ -915,3 +915,44 @@ kbd { font-family: var(--f-mono); font-size: 0.9em; padding: 1px 6px; border: 1p
 .wall .view-card ol { grid-template-columns: repeat(2, 1fr); }
 .wall .view-card li { animation: rise 600ms var(--ease) both; }
 .wall .view-card li:nth-child(2n) { animation-delay: 80ms; }
+
+/* ---------- Detail layer: click a figure or a trend ---------- */
+.detail { position: fixed; inset: 0; z-index: 85; display: grid; place-items: center; padding: 20px; background: rgba(8, 12, 30, 0.88); backdrop-filter: blur(4px); }
+.detail[hidden] { display: none; }
+.detail-card { position: relative; width: min(1100px, 100%); max-height: 92vh; overflow-y: auto; padding: clamp(24px, 3vw, 44px); border-radius: 20px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6); }
+.detail-close { position: absolute; top: 16px; right: 16px; background: none; border: 1px solid var(--line); color: var(--cream-dim); border-radius: 999px; padding: 8px 14px; cursor: pointer; font-size: 13px; }
+.detail-card .eyebrow { margin: 0 0 10px; color: var(--hi); text-transform: uppercase; letter-spacing: 0.12em; font-size: 14px; }
+.detail-fig { font-family: var(--f-display); font-weight: 900; font-size: clamp(64px, 8vw, 130px); color: var(--orange); line-height: 1; }
+.detail-card h2 { margin: 8px 0 16px; font-family: var(--f-display); font-weight: 900; font-size: clamp(30px, 3vw, 52px); line-height: 1.08; }
+.detail-more { font-size: clamp(20px, 1.7vw, 28px); line-height: 1.45; color: var(--cream-dim); margin: 0 0 12px; max-width: 70ch; }
+.detail-src { color: var(--cream-faint); font-size: 14px; margin: 14px 0 0; }
+.detail-video { margin-top: 22px; position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #000; }
+.detail-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.st-stats .stat { cursor: pointer; }
+.st-stats .stat:hover { border-top-color: var(--hi); }
+
+/* ---------- Presenter buttons (bottom of the stage) ---------- */
+.ctrl { position: fixed; left: 330px; right: 16px; bottom: 12px; z-index: 70; font-family: var(--f-body); }
+.ctrl-toggle { display: block; margin: 0 0 6px auto; background: rgba(8, 12, 30, 0.85); border: 1px solid var(--line); color: var(--cream-dim); border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+.ctrl-body { display: grid; gap: 8px; padding: 12px; border-radius: 16px; background: rgba(8, 12, 30, 0.92); border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); }
+.ctrl-body[hidden] { display: none; }
+.ctrl-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ctrl-label { width: 118px; flex: none; font-size: 12px; color: var(--hi); text-transform: uppercase; letter-spacing: 0.1em; }
+.ctrl button, .picks button {
+  min-height: 38px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--cream);
+  font: 500 15px var(--f-body);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ctrl button:hover, .picks button:hover { border-color: var(--orange); }
+.ctrl button.on { background: var(--orange); border-color: var(--orange); color: var(--navy); font-weight: 600; }
+.picks { display: flex; flex-wrap: wrap; gap: 8px; }
+.picks button { background: rgba(240, 122, 46, 0.12); }
+.flash { position: fixed; left: 50%; top: 84px; transform: translateX(-50%); z-index: 90; margin: 0; padding: 10px 18px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--orange); color: var(--cream); font-size: 15px; }
+.flash[hidden] { display: none; }
+.leave-btn { display: block; margin: 36px auto 0; background: none; border: 1px solid var(--line); color: var(--cream-faint); border-radius: 999px; padding: 8px 16px; font-size: 13px; cursor: pointer; }

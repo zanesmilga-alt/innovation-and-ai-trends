@@ -1,5 +1,5 @@
 {
-  "_note": "DRAFT. Content from the June AI Trends deck (figures as the deck states them, not re-checked). \"why\", hot takes and signals 21–25 are placeholders. Images: public/images/trends/<id>.jpg Multiple-choice wrong answers were written for the game; check them.",
+  "_note": "DRAFT. Content from the June AI Trends deck (figures as the deck states them, not re-checked). \"why\", hot takes and signals 21–25 are placeholders. Images: public/images/trends/<id>.jpg Multiple-choice wrong answers were written for the game; check them. Optional: \"video\" = YouTube link or ID; \"more\" = extra detail text for each of the three figures.",
   "placeholder": true,
   "signals": [
     {
@@ -59,7 +59,13 @@
         "answer": 37,
         "explanation": "The deck says 63% are domain experts, so about 37% are developers."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s02",
@@ -113,7 +119,13 @@
         "answer": true,
         "explanation": "The deck lists the Unitree G1 at $16,000, available to buy now."
       },
-      "gameType": "truefalse"
+      "gameType": "truefalse",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s03",
@@ -185,7 +197,13 @@
         ],
         "answer": 2,
         "explanation": "The deck: 20M monthly users, 50%+ of them under 24."
-      }
+      },
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s04",
@@ -239,7 +257,13 @@
         "answer": true,
         "explanation": "The deck says it doubled, to $460B."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s05",
@@ -294,7 +318,13 @@
         "answer": true,
         "explanation": "Those are the two figures the deck gives for the cost comparison."
       },
-      "gameType": "truefalse"
+      "gameType": "truefalse",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s06",
@@ -359,7 +389,13 @@
         ],
         "answer": 2,
         "explanation": "The deck: 92% in H1 2025."
-      }
+      },
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s07",
@@ -414,7 +450,13 @@
         "answer": true,
         "explanation": "The deck says 50+ enterprise companies adopted it within weeks."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s08",
@@ -468,7 +510,13 @@
         "answer": true,
         "explanation": "The deck gives −60% for Atlassian at that point."
       },
-      "gameType": "truefalse"
+      "gameType": "truefalse",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s09",
@@ -539,7 +587,13 @@
         ],
         "answer": 3,
         "explanation": "MIT 2025, as cited in the deck: 95%."
-      }
+      },
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s10",
@@ -600,7 +654,13 @@
         "answer": 5,
         "explanation": "1 in 20 is 5%."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s11",
@@ -655,7 +715,13 @@
         "answer": true,
         "explanation": "ARK Invest 2026, as cited in the deck."
       },
-      "gameType": "truefalse"
+      "gameType": "truefalse",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s12",
@@ -720,7 +786,13 @@
         ],
         "answer": 2,
         "explanation": "The deck: $20B+ for Patagonia."
-      }
+      },
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s13",
@@ -774,7 +846,13 @@
         "answer": true,
         "explanation": "The deck: same engineers, same headcount, 8x the output."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s14",
@@ -829,7 +907,13 @@
         "answer": true,
         "explanation": "That is the deck’s figure. The deck’s \"98%\" label does not match it; the arithmetic gives 99%. Check before the session."
       },
-      "gameType": "truefalse"
+      "gameType": "truefalse",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s15",
@@ -894,7 +978,13 @@
         ],
         "answer": 2,
         "explanation": "The deck: 55%, with China in second place."
-      }
+      },
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s16",
@@ -949,7 +1039,13 @@
         "answer": true,
         "explanation": "The deck gives €200B, including AI Gigafactories."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s17",
@@ -1009,7 +1105,13 @@
         "answer": 90,
         "explanation": "IDC: 90%+ of enterprises."
       },
-      "gameType": "truefalse"
+      "gameType": "truefalse",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s18",
@@ -1074,7 +1176,13 @@
         ],
         "answer": 1,
         "explanation": "The deck: €200B, including AI Gigafactories."
-      }
+      },
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s19",
@@ -1133,7 +1241,13 @@
         "answer": 33,
         "explanation": "The deck says 1 in 3."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s20",
@@ -1188,7 +1302,13 @@
         "answer": true,
         "explanation": "The deck gives this range."
       },
-      "gameType": "truefalse"
+      "gameType": "truefalse",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s21",
@@ -1247,7 +1367,13 @@
         "answer": 50,
         "explanation": "Placeholder."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s22",
@@ -1306,7 +1432,13 @@
         "answer": 50,
         "explanation": "Placeholder."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s23",
@@ -1365,7 +1497,13 @@
         "answer": 50,
         "explanation": "Placeholder."
       },
-      "gameType": "truefalse"
+      "gameType": "truefalse",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s24",
@@ -1424,7 +1562,13 @@
         "answer": 50,
         "explanation": "Placeholder."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     },
     {
       "id": "s25",
@@ -1483,7 +1627,13 @@
         "answer": 50,
         "explanation": "Placeholder."
       },
-      "gameType": "guess"
+      "gameType": "guess",
+      "video": null,
+      "more": [
+        "",
+        "",
+        ""
+      ]
     }
   ]
 }

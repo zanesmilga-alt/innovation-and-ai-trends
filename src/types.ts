@@ -61,6 +61,10 @@ export interface Signal {
   chance?: Chance;
   /** The one game for this trend on the phones. */
   gameType?: 'guess' | 'truefalse' | 'choice';
+  /** Optional YouTube link or video ID shown in the details layer. */
+  video?: string | null;
+  /** Extra detail for each of the three figures, shown when a figure is clicked. */
+  more?: string[];
   choice?: Choice;
   hotTake: string;
   sources: string[];

@@ -21,6 +21,15 @@ export default {
       return stub.fetch(new Request(target.toString(), req));
     }
 
+    // /api/picture/<id>  GET (everyone) and PUT (presenter, with ?key=)
+    const pic = url.pathname.match(/^\/api\/picture\/(s\d{2})$/);
+    if (pic) {
+      const stub = env.ROOM.get(env.ROOM.idFromName('__content__'));
+      const target = new URL(req.url);
+      target.pathname = `/picture/${pic[1]}`;
+      return stub.fetch(new Request(target.toString(), req));
+    }
+
     if (url.pathname.startsWith('/api/')) return new Response('Not found', { status: 404 });
     return env.ASSETS.fetch(req);
   },

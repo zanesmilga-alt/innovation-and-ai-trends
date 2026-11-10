@@ -1,6 +1,7 @@
 import { actLabel, loadSignals } from './data';
 import { drawArt } from './art';
 import { iconSvg } from './icons';
+import { pictureEl } from './picture';
 import type { Signal, SignalFile } from './types';
 
 export type Mode = 'stage' | 'explore';
@@ -16,24 +17,6 @@ const esc = (s: string) =>
 
 const fmt = (n: number) => (Number.isInteger(n) ? n.toLocaleString('en-GB') : String(Number(n.toFixed(2))));
 
-/** Trend picture with an upload slot underneath. Both are always in the DOM; CSS shows the slot when the picture is missing. */
-function picture(s: Signal, cls: string): HTMLElement {
-  const wrap = document.createElement('div');
-  wrap.className = `${cls}`;
-  const img = document.createElement('img');
-  img.className = 'trend-img duo';
-  img.alt = '';
-  img.loading = 'lazy';
-  img.src = s.image ?? `/images/trends/${s.id}.jpg`;
-  img.onerror = () => wrap.classList.add('no-img');
-  wrap.appendChild(img);
-  const slot = document.createElement('span');
-  slot.className = 'slot mono';
-  slot.textContent = cls.includes('story') ? `+ add public/images/trends/${s.id}.jpg` : `+ ${s.id}.jpg`;
-  wrap.appendChild(slot);
-  return wrap;
-}
-
 export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   root.innerHTML = `
     <div class="viewport">
@@ -47,6 +30,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         <div class="story-body" id="story-body"></div>
         <div class="game" id="game" hidden></div>
       </section>
+      <div class="detail" id="detail" role="dialog" aria-modal="true" aria-label="More detail" hidden></div>
       <div class="help" id="help" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts" hidden></div>
       <p class="note mono" id="note"></p>
     </div>`;
@@ -109,7 +93,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         <span class="node-title">${esc(s.short)}</span>
         ${s.isNew ? '<span class="new-dot" title="New since June"></span>' : ''}`;
       const disc = btn.querySelector<HTMLElement>('.disc')!;
-      disc.appendChild(picture(s, 'pic'));
+      disc.appendChild(pictureEl(s.id, 'pic', `+ ${s.id}.jpg`));
       disc.appendChild(iconSvg(s.icon));
       btn.addEventListener('click', () => openSignal(s.id));
       board.appendChild(btn);
@@ -180,15 +164,17 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         <p class="keys mono">← → next / previous · Esc map · ? keys</p>
       </footer>`;
     storyBody.querySelector('#play-btn')!.addEventListener('click', () => openGame(s));
+    storyBody.querySelectorAll<HTMLElement>('.st-stats .stat').forEach((el, i) =>
+      el.addEventListener('click', () => openDetail(s.id, i)),
+    );
     const iconWrap = document.createElement('div');
     iconWrap.className = 'story-icon';
     iconWrap.appendChild(iconSvg(s.icon));
     storyBody.querySelector('.st-left')!.prepend(iconWrap);
-    storyBody.querySelector('#play-btn')!.addEventListener('click', () => openGame(s));
 
     // Trend photo, duotone, with an upload slot if the file is missing.
     storyArt.querySelectorAll('.pic').forEach((el) => el.remove());
-    const pic = picture(s, 'pic story-pic');
+    const pic = pictureEl(s.id, 'pic story-pic', `+ add public/images/trends/${s.id}.jpg`);
     storyArt.appendChild(pic);
     renderArtFor(s.id);
   }
@@ -241,6 +227,39 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     const next = signals[(idx + delta + signals.length) % signals.length];
     openSignal(next.id);
   }
+
+  // ---------- Detail layer: a figure, or the whole trend ----------
+  const detail = root.querySelector<HTMLElement>('#detail')!;
+  function openDetail(id: string, statIndex?: number) {
+    const sg = byId.get(id);
+    if (!sg) return;
+    const st = statIndex !== undefined ? sg.stats[statIndex] : undefined;
+    const more = st ? (sg.more?.[statIndex!] || 'More detail for this figure is still to be written.') : '';
+    const yt = sg.video ? youtubeId(sg.video) : null;
+    detail.innerHTML = `
+      <div class="detail-card">
+        <button class="detail-close mono" type="button" id="detail-x">Close · Esc</button>
+        <p class="eyebrow mono">${esc(actLabel(sg.act))} · ${esc(sg.short)}</p>
+        ${st ? `
+          <div class="detail-fig">${esc(st.value)}</div>
+          <h2>${esc(st.label)}</h2>
+          <p class="detail-more">${esc(more)}</p>
+          <p class="mono detail-src">Source: ${esc(st.source || sg.sources[0] || 'June deck')} · ${st.fresh === 'checked' ? 'checked Nov 2026' : 'from the June deck, verify'}</p>`
+          : `<h2>${esc(sg.title)}</h2><p class="detail-more">${esc(sg.hook)}</p><p class="detail-more">${esc(sg.why)}</p>`}
+        ${yt
+          ? `<div class="detail-video"><iframe src="https://www.youtube-nocookie.com/embed/${yt}" title="Video" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
+          : sg.video ? '<p class="mono detail-src">The video link is not a YouTube link.</p>' : ''}
+      </div>`;
+    detail.hidden = false;
+    detail.querySelector('#detail-x')!.addEventListener('click', closeDetail);
+  }
+  function closeDetail() {
+    detail.hidden = true;
+    detail.innerHTML = '';
+  }
+  detail.addEventListener('click', (e) => {
+    if (e.target === detail) closeDetail();
+  });
 
   // ---------- Games ----------
   function openGame(s: Signal) {
@@ -391,7 +410,8 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA')) return;
     switch (e.key) {
       case 'Escape':
-        if (!help.hidden) toggleHelp(false);
+        if (!detail.hidden) closeDetail();
+        else if (!help.hidden) toggleHelp(false);
         else if (gameOpen) closeGame();
         else closeStory();
         break;
@@ -433,8 +453,15 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
       signals,
       openStory: (id) => openSignal(id),
       closeStory: () => closeStory(),
+      openDetail: (id) => openDetail(id),
     });
   }
+}
+
+function youtubeId(v: string): string | null {
+  const m = v.match(/(?:youtu\.be\/|v=|embed\/)([A-Za-z0-9_-]{11})/);
+  if (m) return m[1];
+  return /^[A-Za-z0-9_-]{11}$/.test(v.trim()) ? v.trim() : null;
 }
 
 function groupByAct(signals: Signal[]): Signal[][] {
