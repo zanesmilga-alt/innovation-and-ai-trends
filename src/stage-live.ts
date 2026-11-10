@@ -211,7 +211,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     type: 'results', warmup: [0, 0, 0], hearts: {}, topN: [], revealed: false,
     gameCount: 0, gameValues: [], takes: { agree: 0, disagree: 0 }, trends: [],
   };
-  let qrOpen = false;
+  let qrOpen = true; // the join code shows by default; the Join QR button hides and shows it
   let linkStatus: LinkStatus = 'reconnecting';
   let lastHearts: Record<string, number> = {};
   let storyShown: string | null = null;
@@ -597,7 +597,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     badge.innerHTML = `<span class="live-dot ${status}"></span> Room ${esc(code)} · ${state.participantCount} joined${status === 'live' ? '' : ` · ${status}`}`;
     phaseEl.hidden = false;
     phaseEl.textContent = PHASE_LABEL[state.phase];
-    qr.hidden = !(state.phase === 'lobby' || qrOpen) || state.phase === 'close';
+    qr.hidden = !qrOpen || state.phase === 'close';
     $('qr-count').textContent = `${state.participantCount} joined so far`;
     closep.hidden = state.phase !== 'close';
     renderWarm();

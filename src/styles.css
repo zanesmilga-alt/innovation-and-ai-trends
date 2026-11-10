@@ -956,3 +956,13 @@ kbd { font-family: var(--f-mono); font-size: 0.9em; padding: 1px 6px; border: 1p
 .flash { position: fixed; left: 50%; top: 84px; transform: translateX(-50%); z-index: 90; margin: 0; padding: 10px 18px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--orange); color: var(--cream); font-size: 15px; }
 .flash[hidden] { display: none; }
 .leave-btn { display: block; margin: 36px auto 0; background: none; border: 1px solid var(--line); color: var(--cream-faint); border-radius: 999px; padding: 8px 16px; font-size: 13px; cursor: pointer; }
+
+/* ---------- Compact presenter bar: fits laptops, including scaled screens ---------- */
+.live-badge { top: clamp(58px, 8vh, 80px); bottom: auto; left: clamp(16px, 2vw, 36px); }
+.ctrl { left: 12px; right: 12px; bottom: 8px; }
+.ctrl-toggle { font-size: 12px; padding: 4px 10px; }
+.ctrl-body { padding: 8px 10px; gap: 6px; max-height: 44vh; overflow-y: auto; }
+.ctrl-row { gap: 6px; }
+.ctrl-label { width: 92px; font-size: 11px; }
+.ctrl button, .picks button { min-height: 0; padding: 4px 9px; font-size: clamp(12px, 0.85vw, 15px); border-radius: 8px; }
+.picks { gap: 6px; }
