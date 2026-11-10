@@ -1,4 +1,5 @@
-# Signal Room: one Worker serves the site and the live room.
+# Too Late To Ignore: one Worker serves the site and the live room.
+# The Worker name below is the Cloudflare address; keep it so the live link does not change.
 # Each room is a Durable Object (named by its room code). Idle rooms cost nothing.
 name = "signal-room"
 main = "src/worker.ts"

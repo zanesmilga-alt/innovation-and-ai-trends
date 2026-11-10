@@ -10,7 +10,7 @@ export function mountLanding(root: HTMLElement): void {
       <img class="landing-img" src="/images/hero.jpg" alt="" hidden />
       <div class="landing-inner">
         <p class="eyebrow mono">Innovation In &amp; Out · AI trends</p>
-        <h1>Signal Room</h1>
+        <h1>Too Late To Ignore</h1>
         <p class="lede">Twenty-five external AI signals, one map. Read the stories, play the numbers, then see what they mean for our customers.</p>
         <nav class="ctas" aria-label="Main">
           <a class="btn primary" href="/explore">Explore the 25 signals</a>
