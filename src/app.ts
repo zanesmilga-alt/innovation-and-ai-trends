@@ -9,27 +9,35 @@ export type Mode = 'stage' | 'explore';
 // Map is designed on a fixed 1600x900 board and scaled to fit any screen.
 const BOARD_W = 1600;
 const BOARD_H = 900;
-const CLUSTER_X = [300, 800, 1300];
-const CLUSTER_Y = [230, 680];
 
-/** Positions of the trends inside one act's cluster, centred, up to three per row. */
-function clusterPositions(n: number): [number, number][] {
-  const cols = n <= 3 ? n : n === 4 ? 2 : 3;
+const esc = (s: string) =>
+  s.replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch] as string);
+
+const fmt = (n: number) => (Number.isInteger(n) ? n.toLocaleString('en-GB') : String(Number(n.toFixed(2))));
+
+const DX = 130; // horizontal spacing between trends in one act
+const DY = 120; // vertical spacing between trends in one act
+const GAP = 56; // space between acts in a row
+const COLS: Record<number, number> = { 1: 1, 2: 2, 3: 3, 4: 2, 5: 3, 6: 3, 7: 4, 8: 4, 9: 5, 10: 5 };
+
+function clusterSize(n: number): { cols: number; rows: number; w: number } {
+  const cols = Math.min(n, COLS[n] ?? 5);
+  const rows = Math.ceil(n / cols);
+  return { cols, rows, w: (cols - 1) * DX + 124 };
+}
+
+/** Offsets of n trends in a grid with `cols` columns, centred on the act. */
+function gridPositions(n: number, cols: number): [number, number][] {
   const rows = Math.ceil(n / cols);
   const pts: [number, number][] = [];
   for (let i = 0; i < n; i++) {
     const c = i % cols;
     const r = Math.floor(i / cols);
     const inRow = Math.min(cols, n - r * cols);
-    pts.push([(c - (inRow - 1) / 2) * 170, (r - (rows - 1) / 2) * 125]);
+    pts.push([(c - (inRow - 1) / 2) * DX, (r - (rows - 1) / 2) * DY]);
   }
   return pts;
 }
-
-const esc = (s: string) =>
-  s.replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch] as string);
-
-const fmt = (n: number) => (Number.isInteger(n) ? n.toLocaleString('en-GB') : String(Number(n.toFixed(2))));
 
 export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   root.innerHTML = `
@@ -74,51 +82,60 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   let current: string | null = null;
   let gameOpen = false;
 
-  note.textContent = 'Figures from the June deck · not re-checked';
+  note.textContent = 'Figures as rated in the presenter briefing · 11 Nov 2026';
   const acts = data.acts;
 
   // ---------- Map ----------
+  // Two rows of three acts. Each act is a small grid whose width depends on how many trends it has.
   const clusters = groupByAct(signals);
-  clusters.forEach((list, idx) => {
-    const cx = CLUSTER_X[idx % 3];
-    const cy = CLUSTER_Y[Math.floor(idx / 3)];
-    const pts = clusterPositions(list.length);
-    const rows = Math.ceil(list.length / Math.min(3, list.length <= 3 ? list.length : list.length === 4 ? 2 : 3));
+  const rowsOf = [clusters.slice(0, 3), clusters.slice(3, 6)];
+  const ROW_Y = [200, 620];
+  rowsOf.forEach((row, ri) => {
+    const sizes = row.map((list) => clusterSize(list.length));
+    const total = sizes.reduce((a, z) => a + z.w, 0) + GAP * (row.length - 1);
+    let x = (BOARD_W - total) / 2;
+    row.forEach((list, ci) => {
+      const z = sizes[ci];
+      const cx = x + z.w / 2;
+      const cy = ROW_Y[ri];
+      x += z.w + GAP;
+      const pts = gridPositions(list.length, z.cols);
+      const top = cy - ((z.rows - 1) * DY) / 2 - 36 - 52;
 
-    const label = document.createElement('div');
-    label.className = 'cluster-label mono';
-    label.style.left = `${cx}px`;
-    label.style.top = `${cy - ((rows - 1) * 125) / 2 - 88}px`;
-    label.textContent = actLens(acts, list[0].act);
-    board.appendChild(label);
+      const label = document.createElement('div');
+      label.className = 'cluster-label mono';
+      label.style.left = `${cx}px`;
+      label.style.top = `${top}px`;
+      label.textContent = actLens(acts, list[0].act);
+      board.appendChild(label);
 
-    list.forEach((s, i) => {
-      const [dx, dy] = pts[i];
-      const btn = document.createElement('button');
-      btn.className = 'node';
-      btn.style.left = `${cx + dx}px`;
-      btn.style.top = `${cy + dy}px`;
-      btn.dataset.id = s.id;
-      btn.setAttribute('aria-label', `${s.n}. ${s.title}`);
-      btn.innerHTML = `
-        <span class="disc"></span>
-        <span class="node-title">${esc(s.short)}</span>
-        ${s.isNew ? '<span class="new-dot" title="New since June"></span>' : ''}`;
-      btn.querySelector<HTMLElement>('.disc')!.appendChild(pictureEl(s.id, s.art, 'pic'));
-      btn.addEventListener('click', () => openSignal(s.id));
-      board.appendChild(btn);
-      nodeEls.set(s.id, btn);
+      list.forEach((s, i) => {
+        const [dx, dy] = pts[i];
+        const btn = document.createElement('button');
+        btn.className = 'node';
+        btn.style.left = `${cx + dx}px`;
+        btn.style.top = `${cy + dy}px`;
+        btn.dataset.id = s.id;
+        btn.setAttribute('aria-label', `${s.n}. ${s.title}`);
+        btn.innerHTML = `
+          <span class="disc"></span>
+          <span class="node-title">${esc(s.short)}</span>
+          ${s.isNew ? '<span class="new-dot" title="New since June"></span>' : ''}`;
+        btn.querySelector<HTMLElement>('.disc')!.appendChild(pictureEl(s.id, s.art, 'pic'));
+        btn.addEventListener('click', () => openSignal(s.id));
+        board.appendChild(btn);
+        nodeEls.set(s.id, btn);
+      });
+
+      for (let i = 1; i < pts.length; i++) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', String(cx + pts[i - 1][0]));
+        line.setAttribute('y1', String(cy + pts[i - 1][1]));
+        line.setAttribute('x2', String(cx + pts[i][0]));
+        line.setAttribute('y2', String(cy + pts[i][1]));
+        links.appendChild(line);
+      }
     });
-
-    // Lines between neighbouring trends in the same act.
-    for (let i = 1; i < pts.length; i++) {
-      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      line.setAttribute('x1', String(cx + pts[i - 1][0]));
-      line.setAttribute('y1', String(cy + pts[i - 1][1]));
-      line.setAttribute('x2', String(cx + pts[i][0]));
-      line.setAttribute('y2', String(cy + pts[i][1]));
-      links.appendChild(line);
-    }
   });
 
   // Fit the 1600x900 board into the window, centred.
