@@ -63,6 +63,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
     loadSignals().catch(() => null),
   ]);
   const signals: Signal[] = signalFile?.signals ?? [];
+  const acts = signalFile?.acts ?? [];
   const byId = new Map(signals.map((s) => [s.id, s]));
 
   let state: PublicState = {
@@ -158,14 +159,15 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
       return `
         <p class="eyebrow mono">Pick up to ${MAX_HEARTS} signals</p>
         <h1 class="small">${left > 0 ? `${left} heart${left === 1 ? '' : 's'} left` : 'All hearts used'}</h1>
-        <p class="mono timer" id="timer"></p>
-        <ul class="hearts">
-          ${signals.map((s) => {
-            const on = you.hearts.includes(s.id);
-            return `<li><button class="heart-row ${on ? 'on' : ''}" data-heart="${esc(s.id)}" type="button" aria-pressed="${on}">
-              <span class="heart" aria-hidden="true">${on ? '♥' : '♡'}</span><span class="ht"><span>${esc(s.title)}</span><small class="heart-tag">${esc(s.hook)}</small></span></button></li>`;
-          }).join('')}
-        </ul>`;
+        ${acts.filter((a) => signals.some((x) => x.act === a.id)).map((a) => `
+          <h2 class="heart-act mono">${esc(a.lens)}</h2>
+          <ul class="hearts">
+            ${signals.filter((x) => x.act === a.id).map((s) => {
+              const on = you.hearts.includes(s.id);
+              return `<li><button class="heart-row ${on ? 'on' : ''}" data-heart="${esc(s.id)}" type="button" aria-pressed="${on}">
+                <span class="heart" aria-hidden="true">${on ? '♥' : '♡'}</span><span class="ht"><span>${esc(s.title)}</span><small class="heart-tag">${esc(s.hook)}</small></span></button></li>`;
+            }).join('')}
+          </ul>`).join('')}`;
     }
 
     if (phase === 'guess') {

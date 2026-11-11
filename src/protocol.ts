@@ -45,6 +45,7 @@ export interface Results {
   gameCount: number; // how many answered the game for the active signal
   gameValues: number[]; // their answers (number, 0/1 for true-false, option index), only after reveal
   takes: { agree: number; disagree: number }; // only after reveal
+  heartVoters: number; // how many people have given at least one heart
   trends: string[]; // the audience's own trends, newest first
 }
 

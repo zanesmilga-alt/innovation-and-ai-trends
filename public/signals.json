@@ -170,7 +170,7 @@
         },
         {
           "value": "40%",
-          "label": "40% of enterprise apps embed task-specific agents by end 2026 (&lt;5% in 2025)",
+          "label": "40% of enterprise apps embed task-specific agents by end 2026 (<5% in 2025)",
           "source": "Gartner",
           "evidence": "Reported",
           "fresh": "checked"
@@ -204,13 +204,13 @@
       },
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Gartner expects 40% of enterprise apps to embed task-specific AI agents by the end of 2026.",
-        "answer": true,
-        "explanation": "Gartner forecast: 40%, up from under 5% in 2025."
+        "statement": "Most AI agent projects make it into production.",
+        "answer": false,
+        "explanation": "Only 11% of agent use cases reached production in the past year (Camunda 2026)."
       },
       "more": [
         "Large firms scaling AI agents: 27% → 40%. Rating: Reported.",
-        "40% of enterprise apps embed task-specific agents by end 2026 (&lt;5% in 2025). Rating: Reported.",
+        "40% of enterprise apps embed task-specific agents by end 2026 (<5% in 2025). Rating: Reported.",
         "71% of organisations use agents; 11% of use cases reached production. Rating: Verified."
       ]
     },
@@ -258,14 +258,14 @@
         },
         {
           "value": "+272%",
-          "label": "19,100 humanoids shipped in H1 2026 (+272%), &gt;97% Chinese",
+          "label": "19,100 humanoids shipped in H1 2026 (+272%), >97% Chinese",
           "source": "Smart Analytics Global, via Bloomberg",
           "evidence": "Reported",
           "fresh": "checked"
         },
         {
           "value": "300%",
-          "label": "22,000+ in H1 (+~300%); top five vendors 86%; &gt;60% for entertainment or research",
+          "label": "22,000+ in H1 (+~300%); top five vendors 86%; >60% for entertainment or research",
           "source": "Counterpoint",
           "evidence": "Verified",
           "fresh": "checked"
@@ -312,8 +312,8 @@
       },
       "more": [
         "Figure 02 helped build 30,000+ BMW X3s in an 11-month pilot (1,250 hours, 90,000+ parts); Figure 03 now in logistics. Rating: Verified.",
-        "19,100 humanoids shipped in H1 2026 (+272%), &gt;97% Chinese. Rating: Reported.",
-        "22,000+ in H1 (+~300%); top five vendors 86%; &gt;60% for entertainment or research. Rating: Verified."
+        "19,100 humanoids shipped in H1 2026 (+272%), >97% Chinese. Rating: Reported.",
+        "22,000+ in H1 (+~300%); top five vendors 86%; >60% for entertainment or research. Rating: Verified."
       ]
     },
     {
@@ -481,7 +481,7 @@
       "trueFalse": {
         "statement": "No AI-discovered drug had full FDA approval as of mid-2026.",
         "answer": true,
-        "explanation": "Industry trackers: zero, as of mid-2026."
+        "explanation": "Zero approvals so far; 173+ programmes are in clinical development."
       },
       "more": [
         "Danaher’s first autonomous research lab at scale in early 2027. Rating: Reported.",
@@ -554,9 +554,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Large quantitative models lead Gartner’s Top 10 Strategic Technology Trends for 2027 (20 Oct 2026)",
-        "answer": true,
-        "explanation": "Source: Gartner press release; Network World. Rating: Verified."
+        "statement": "Gartner's number one technology trend for 2027 is large language models.",
+        "answer": false,
+        "explanation": "It is large quantitative models: AI built for numbers first."
       },
       "more": [
         "Large quantitative models lead Gartner’s Top 10 Strategic Technology Trends for 2027 (20 Oct 2026). Rating: Verified.",
@@ -601,7 +601,7 @@
       "figures": [
         {
           "value": "10%",
-          "label": "Enterprise voice interactions handled autonomously by speech models: &lt;10% (2026) → 70%+ (2030)",
+          "label": "Enterprise voice interactions handled autonomously by speech models: <10% (2026) → 70%+ (2030)",
           "source": "Gartner, Oct 2026",
           "evidence": "Forecast",
           "fresh": "checked"
@@ -633,12 +633,12 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Enterprise voice interactions handled autonomously by speech models: &lt;10% (2026) → 70%+ (2030)",
+        "statement": "Gartner expects speech models to handle over 70% of enterprise voice interactions by 2030.",
         "answer": true,
-        "explanation": "Source: Gartner, Oct 2026. Rating: Forecast."
+        "explanation": "Up from under 10% in 2026 (Gartner forecast)."
       },
       "more": [
-        "Enterprise voice interactions handled autonomously by speech models: &lt;10% (2026) → 70%+ (2030). Rating: Forecast.",
+        "Enterprise voice interactions handled autonomously by speech models: <10% (2026) → 70%+ (2030). Rating: Forecast.",
         "Speech reasoning models are #2 on Gartner’s 2027 list. Rating: Verified.",
         "Voice is “the enterprise’s highest-volume but least-automated interaction channel”. Rating: Verified."
       ]
@@ -715,9 +715,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Kimi K3.1 Pro: 2.8T parameters (104B active), 1M-token context; weights on Hugging Face 4 Nov 2026",
-        "answer": true,
-        "explanation": "Source: Moonshot via TechNode, model card reports. Rating: Verified."
+        "statement": "The gap between the best open and closed AI models widened this year.",
+        "answer": false,
+        "explanation": "It shrank from 12 to 3 points on the Artificial Analysis index with Kimi K3.1 Pro."
       },
       "more": [
         "Kimi K3.1 Pro: 2.8T parameters (104B active), 1M-token context; weights on Hugging Face 4 Nov 2026. Rating: Verified.",
@@ -796,9 +796,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Gemini Omni 1.2 Flash GA on 5 Nov 2026; clips up to 15 s (from 10)",
-        "answer": true,
-        "explanation": "Source: Google blog. Rating: Verified."
+        "statement": "Generating AI video now costs about $7 per second.",
+        "answer": false,
+        "explanation": "Gemini Omni 1.2 Flash costs $0.07 per second at 720p."
       },
       "more": [
         "Gemini Omni 1.2 Flash GA on 5 Nov 2026; clips up to 15 s (from 10). Rating: Verified.",
@@ -878,9 +878,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Wetware as a service is #10 on Gartner’s 2027 list",
+        "statement": "Gartner lists computers made of living cells as a strategic technology trend for 2027.",
         "answer": true,
-        "explanation": "Source: Gartner. Rating: Verified."
+        "explanation": "Wetware as a service is #10 on the list. It is still at pilot stage."
       },
       "more": [
         "Wetware as a service is #10 on Gartner’s 2027 list. Rating: Verified.",
@@ -1318,9 +1318,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "3.24B monthly GenAI users, 38.9% of world population",
+        "statement": "More than one in three people worldwide now uses generative AI each month.",
         "answer": true,
-        "explanation": "Source: Digital 2027 (We Are Social / Meltwater), 21 Oct 2026. Rating: Verified."
+        "explanation": "3.24 billion monthly users, 38.9% of the world's population."
       },
       "more": [
         "3.24B monthly GenAI users, 38.9% of world population. Rating: Verified.",
@@ -1663,9 +1663,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "By late 2026, autonomous coding agents generate 20% of all public commits",
-        "answer": true,
-        "explanation": "Source: Gartner. Rating: Forecast."
+        "statement": "Gartner expects coding agents to write about half of all public code commits by late 2026.",
+        "answer": false,
+        "explanation": "The forecast is 20%: one in five."
       },
       "more": [
         "By late 2026, autonomous coding agents generate 20% of all public commits. Rating: Forecast.",
@@ -1729,9 +1729,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "By 2027, organisations prioritising semantics in AI-ready data raise agentic AI accuracy by up to 80% and cut costs by up to 60%",
+        "statement": "Gartner expects better business context to make AI agents up to 80% more accurate.",
         "answer": true,
-        "explanation": "Source: Gartner. Rating: Forecast."
+        "explanation": "By 2027, for organisations that prioritise semantics in AI-ready data (Gartner forecast)."
       },
       "more": [
         "By 2027, organisations prioritising semantics in AI-ready data raise agentic AI accuracy by up to 80% and cut costs by up to 60%. Rating: Forecast.",
@@ -1810,9 +1810,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "By 2029, 80% of new applications will be intentionally disposable, used for less than a year",
-        "answer": true,
-        "explanation": "Source: Gartner Strategic Predictions, Sep 2026. Rating: Forecast."
+        "statement": "Gartner expects most new apps in 2029 to be built to last ten years or more.",
+        "answer": false,
+        "explanation": "It expects 80% to be disposable, used for less than a year."
       },
       "more": [
         "By 2029, 80% of new applications will be intentionally disposable, used for less than a year. Rating: Forecast.",
@@ -1989,7 +1989,7 @@
       "trueFalse": {
         "statement": "GPT-4-class inference cost fell by more than 90% between 2024 and 2026.",
         "answer": true,
-        "explanation": "From $60 to about $0.60 per million tokens (the file says 98%)."
+        "explanation": "From $60 to about $0.60 per million tokens (June deck figure)."
       },
       "more": [
         "A notable new model every ~12 days (2025); GPT-4-class cost −98%; average enterprise AI budget $7M (from $1.2M). Rating: Unchecked.",
@@ -2794,9 +2794,9 @@
       },
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Gartner expects small task-specific models to be used 3x more than general LLMs by 2027.",
-        "answer": true,
-        "explanation": "Gartner, as cited in the file."
+        "statement": "Gartner expects general LLMs to be used three times more than small task-specific models by 2027.",
+        "answer": false,
+        "explanation": "The reverse: small task-specific models, 3x more."
       },
       "more": [
         "3x more small task-specific models than LLMs by 2027; −90% inference cost on-premise. Rating: Unchecked.",
@@ -3229,9 +3229,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "By 2028, 25% of enterprise security breaches trace back to AI agent abuse",
+        "statement": "Gartner expects a quarter of enterprise security breaches to trace back to AI agent abuse by 2028.",
         "answer": true,
-        "explanation": "Source: Gartner. Rating: Forecast."
+        "explanation": "Gartner forecast: 25% by 2028."
       },
       "more": [
         "By 2028, 25% of enterprise security breaches trace back to AI agent abuse. Rating: Forecast.",
@@ -3310,9 +3310,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Signature-forgery method ~1,600x better than the previous best for 1024-bit RSA",
+        "statement": "AI-assisted researchers found a forgery attack on legacy 1024-bit RSA about 1,600 times better than the previous best.",
         "answer": true,
-        "explanation": "Source: Google DeepMind, 6 Nov 2026. Rating: Verified (theoretical estimate)."
+        "explanation": "It applies to legacy 1024-bit RSA, per the briefing."
       },
       "more": [
         "Signature-forgery method ~1,600x better than the previous best for 1024-bit RSA. Rating: Verified (theoretical estimate).",
@@ -3453,10 +3453,10 @@
         "Open-weight cyber capability within 6–18 months (Flare)",
         "Not verified",
         "Epoch: open models trail by 6–7 months",
-        "Humanoids H1 19,100 (+272%), &gt;97% Chinese",
+        "Humanoids H1 19,100 (+272%), >97% Chinese",
         "Confirmed (Smart Analytics Global)",
         "Counterpoint counts 22,000+; quote 19–22K",
-        "&gt;60% of humanoid shipments for entertainment and research",
+        ">60% of humanoid shipments for entertainment and research",
         "Confirmed",
         "Counterpoint",
         "Waymo ~4,000 vehicles, 15 metros, ~500K rides a week",
@@ -3605,9 +3605,9 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "“AI-free” trust revolution is one of Gartner Futures Lab’s 7 Disruptions You Might Not See Coming: 2025–2030",
+        "statement": "Gartner expects half of organisations to require 'AI-free' skills assessments.",
         "answer": true,
-        "explanation": "Source: Gartner (Daryl Plummer), Nov 2025. Rating: Verified."
+        "explanation": "Through 2026, 50% of global organisations (Gartner forecast)."
       },
       "more": [
         "“AI-free” trust revolution is one of Gartner Futures Lab’s 7 Disruptions You Might Not See Coming: 2025–2030. Rating: Verified.",

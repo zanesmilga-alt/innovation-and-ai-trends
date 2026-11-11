@@ -1,7 +1,6 @@
 import { DurableObject } from 'cloudflare:workers';
 import {
   DEEP_STEPS,
-  HEART_SECONDS,
   MAX_HEARTS,
   PHASES,
   TOP_N,
@@ -30,6 +29,7 @@ interface Stored {
   activeRange: { min: number; max: number } | null;
   revealed: boolean;
   heartsEndsAt: number | null;
+  heartsRevealed: boolean; // set by Reveal during the heart pick; keeps the votes visible afterwards
   covered: string[];
   participants: Record<string, { name?: string }>;
   warmup: Record<string, number>;
@@ -48,6 +48,7 @@ const freshState = (): Stored => ({
   activeRange: null,
   revealed: false,
   heartsEndsAt: null,
+  heartsRevealed: false,
   covered: [],
   participants: {},
   warmup: {},
@@ -248,14 +249,12 @@ export class Room extends DurableObject<Env> {
           }
           // The split stays on screen during the conversation, so reveal it straight away.
           if (msg.value === 'discuss') s.revealed = true;
-          if (msg.value === 'hearts') {
-            s.heartsEndsAt = Date.now() + HEART_SECONDS * 1000;
-            await this.ctx.storage.setAlarm(s.heartsEndsAt);
-          } else {
-            s.heartsEndsAt = null;
-          }
+          // No timer: the heart pick stays open until the presenter presses Reveal.
+          s.heartsEndsAt = null;
+          if (msg.value === 'hearts') s.heartsRevealed = false;
         } else if (msg.action === 'reveal') {
           s.revealed = true;
+          if (s.phase === 'hearts') s.heartsRevealed = true;
         } else if (msg.action === 'reset') {
           Object.assign(s, freshState(), { participants: s.participants });
           await this.ctx.storage.deleteAlarm();
@@ -302,8 +301,9 @@ export class Room extends DurableObject<Env> {
     return {
       type: 'results',
       warmup: s.revealed ? warmup : warmup.map(() => 0),
-      hearts,
-      topN,
+      hearts: s.heartsRevealed ? hearts : {},
+      topN: s.heartsRevealed ? topN : [],
+      heartVoters: Object.values(s.hearts).filter((l) => l.length > 0).length,
       revealed: s.revealed,
       gameCount: Object.keys(gameMap).length,
       gameValues: s.revealed ? Object.values(gameMap) : [],

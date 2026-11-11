@@ -163,11 +163,13 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         </header>
         <h2 class="story-title">${esc(s.title)}</h2>
         <p class="story-tagline">${esc(s.hook)}</p>
+        ${mode === 'stage' ? '' : `
         <div class="play-row">
           <button class="play-btn" type="button" id="play-btn">
             <span class="play-dot" aria-hidden="true"></span> Play a game on this trend
           </button>
         </div>
+        `}
         ${s.why ? `
         <div class="why">
           <h3 class="mono">Why it matters for our customers</h3>
@@ -190,7 +192,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         <p class="sources mono">Sources: ${s.sources.map((x) => esc(srcTitle(x))).join(' · ')}</p>
         <p class="keys mono">← → next / previous · Esc map · ? keys</p>
       </footer>`;
-    storyBody.querySelector('#play-btn')!.addEventListener('click', () => openGame(s));
+    storyBody.querySelector('#play-btn')?.addEventListener('click', () => openGame(s));
     storyBody.querySelectorAll<HTMLElement>('.st-stats .stat').forEach((el, i) =>
       el.addEventListener('click', () => openDetail(s.id, i)),
     );

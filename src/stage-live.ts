@@ -4,7 +4,6 @@ import { pictureEl, uploadPicture } from './picture';
 import {
   DEEP_STEPS,
   FLY_SECONDS,
-  HEART_SECONDS,
   MAX_HEARTS,
   type ClientMessage,
   type Phase,
@@ -194,7 +193,7 @@ export async function startStage(o: StageOptions): Promise<void> {
   };
   let results: Results = {
     type: 'results', warmup: [0, 0, 0], hearts: {}, topN: [], revealed: false,
-    gameCount: 0, gameValues: [], takes: { agree: 0, disagree: 0 }, trends: [],
+    gameCount: 0, gameValues: [], takes: { agree: 0, disagree: 0 }, heartVoters: 0, trends: [],
   };
   let qrOpen = true; // the join code shows by default; the Join QR button hides and shows it
   let linkStatus: LinkStatus = 'reconnecting';
@@ -534,18 +533,19 @@ export async function startStage(o: StageOptions): Promise<void> {
     wall.innerHTML = `<div class="wall-card view-card"><p class="eyebrow mono">Your trends · ${results.trends.length}</p><ol>${items}</ol></div>`;
   };
 
+  /** Heart pick status: how many have voted. It stays open until Reveal. */
   const renderTimer = () => {
-    const show = state.phase === 'hearts' && state.heartsEndsAt !== null;
-    timer.hidden = !show;
-    if (!show || state.heartsEndsAt === null) return;
-    const left = Math.max(0, (state.heartsEndsAt - Date.now()) / 1000);
-    $('timer-label').textContent = state.revealed || left <= 0 ? `Heart pick closed · ${MAX_HEARTS} each` : `Heart pick · ${Math.ceil(left)} s`;
-    $('timer-fill').style.width = `${Math.max(0, Math.min(100, (left / HEART_SECONDS) * 100))}%`;
+    timer.hidden = state.phase !== 'hearts';
+    if (timer.hidden) return;
+    $('timer-label').textContent = state.revealed
+      ? `Heart pick closed · ${results.heartVoters} voted`
+      : `Heart pick open · ${results.heartVoters} of ${state.participantCount} voted · up to ${MAX_HEARTS} each · press Reveal`;
+    $('timer-fill').style.width = state.participantCount ? `${Math.min(100, (results.heartVoters / state.participantCount) * 100)}%` : '0%';
   };
 
   const renderHearts = () => {
     const counts = results.hearts;
-    const top = new Set(results.revealed ? results.topN : []);
+    const top = new Set(results.topN);
     for (const s of o.signals) {
       const el = o.nodeEls.get(s.id);
       if (!el) continue;
@@ -590,6 +590,7 @@ export async function startStage(o: StageOptions): Promise<void> {
         <span class="ov-tile-body">
           <span class="mono ov-tile-n">${String(sg.n).padStart(2, '0')}${hearts ? ` · ♥ ${hearts}` : ''}${state.covered.includes(sg.id) ? ' · played' : ''}</span>
           <span class="ov-tile-title">${esc(sg.title)}</span>
+          <span class="ov-tile-tag">${esc(sg.hook)}</span>
         </span>`;
       card.querySelector<HTMLElement>('.ov-tile-pic')!.appendChild(pictureEl(sg.id, sg.art, 'pic'));
       card.addEventListener('click', () => {
