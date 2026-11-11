@@ -1,8 +1,8 @@
-import { actLabel, loadSignals } from './data';
+import { actLens, loadSignals } from './data';
 import { drawArt } from './art';
 import { iconSvg } from './icons';
 import { pictureEl } from './picture';
-import type { Signal, SignalFile } from './types';
+import type { Signal, SignalFile, Source } from './types';
 
 export type Mode = 'stage' | 'explore';
 
@@ -10,7 +10,21 @@ export type Mode = 'stage' | 'explore';
 const BOARD_W = 1600;
 const BOARD_H = 900;
 const CLUSTER_X = [300, 800, 1300];
-const CLUSTER_Y = [300, 640];
+const CLUSTER_Y = [230, 680];
+
+/** Positions of the trends inside one act's cluster, centred, up to three per row. */
+function clusterPositions(n: number): [number, number][] {
+  const cols = n <= 3 ? n : n === 4 ? 2 : 3;
+  const rows = Math.ceil(n / cols);
+  const pts: [number, number][] = [];
+  for (let i = 0; i < n; i++) {
+    const c = i % cols;
+    const r = Math.floor(i / cols);
+    const inRow = Math.min(cols, n - r * cols);
+    pts.push([(c - (inRow - 1) / 2) * 170, (r - (rows - 1) / 2) * 125]);
+  }
+  return pts;
+}
 
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch] as string);
@@ -61,25 +75,25 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   let gameOpen = false;
 
   note.textContent = 'Figures from the June deck · not re-checked';
+  const acts = data.acts;
 
   // ---------- Map ----------
   const clusters = groupByAct(signals);
   clusters.forEach((list, idx) => {
     const cx = CLUSTER_X[idx % 3];
     const cy = CLUSTER_Y[Math.floor(idx / 3)];
-    const offsets = list.length === 5
-      ? [[0, 0], [-125, -78], [125, -78], [-125, 78], [125, 78]]
-      : [[-125, -70], [125, -70], [-125, 70], [125, 70]];
+    const pts = clusterPositions(list.length);
+    const rows = Math.ceil(list.length / Math.min(3, list.length <= 3 ? list.length : list.length === 4 ? 2 : 3));
 
     const label = document.createElement('div');
     label.className = 'cluster-label mono';
     label.style.left = `${cx}px`;
-    label.style.top = `${cy - 175}px`;
-    label.textContent = actLabel(list[0].act);
+    label.style.top = `${cy - ((rows - 1) * 125) / 2 - 88}px`;
+    label.textContent = actLens(acts, list[0].act);
     board.appendChild(label);
 
     list.forEach((s, i) => {
-      const [dx, dy] = offsets[i] ?? [0, 0];
+      const [dx, dy] = pts[i];
       const btn = document.createElement('button');
       btn.className = 'node';
       btn.style.left = `${cx + dx}px`;
@@ -90,25 +104,21 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         <span class="disc"></span>
         <span class="node-title">${esc(s.short)}</span>
         ${s.isNew ? '<span class="new-dot" title="New since June"></span>' : ''}`;
-      const disc = btn.querySelector<HTMLElement>('.disc')!;
-      disc.appendChild(pictureEl(s.id, 'pic', `+ ${s.id}.jpg`));
-      disc.appendChild(iconSvg(s.icon));
+      btn.querySelector<HTMLElement>('.disc')!.appendChild(pictureEl(s.id, s.art, 'pic'));
       btn.addEventListener('click', () => openSignal(s.id));
       board.appendChild(btn);
       nodeEls.set(s.id, btn);
     });
 
-    // Lines from the cluster's first node to the others.
-    const first = offsets[0];
-    list.slice(1).forEach((_, i) => {
-      const [dx, dy] = offsets[i + 1] ?? [0, 0];
+    // Lines between neighbouring trends in the same act.
+    for (let i = 1; i < pts.length; i++) {
       const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      line.setAttribute('x1', String(cx + first[0]));
-      line.setAttribute('y1', String(cy + first[1]));
-      line.setAttribute('x2', String(cx + dx));
-      line.setAttribute('y2', String(cy + dy));
+      line.setAttribute('x1', String(cx + pts[i - 1][0]));
+      line.setAttribute('y1', String(cy + pts[i - 1][1]));
+      line.setAttribute('x2', String(cx + pts[i][0]));
+      line.setAttribute('y2', String(cy + pts[i][1]));
       links.appendChild(line);
-    });
+    }
   });
 
   // Fit the 1600x900 board into the window, centred.
@@ -127,15 +137,15 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   // ---------- Story ----------
   function renderStory(s: Signal) {
     const idx = signals.indexOf(s);
-    const sourceFor = (i: number, fallback: string) => fallback || s.sources[i] || s.sources[0] || '';
+    const sourceFor = (i: number, fallback: string) => fallback || srcTitle(s.sources[i]) || srcTitle(s.sources[0]) || '';
     storyBody.innerHTML = `
       <div class="st-left">
         <header class="story-top">
-          <span class="mono">${esc(actLabel(s.act))} · ${String(idx + 1).padStart(2, '0')} / ${String(signals.length).padStart(2, '0')}</span>
+          <span class="mono">${esc(actLens(acts, s.act))} · ${String(idx + 1).padStart(2, '0')} / ${String(signals.length).padStart(2, '0')}</span>
           ${s.isNew ? '<span class="tag tag-new mono">New since June</span>' : ''}
         </header>
         <h2 class="story-title">${esc(s.title)}</h2>
-        <p class="story-tagline">${esc(s.tagline ?? '')}</p>
+        <p class="story-tagline">${esc(s.hook)}</p>
         <div class="play-row">
           <button class="play-btn" type="button" id="play-btn">
             <span class="play-dot" aria-hidden="true"></span> Play a game on this trend
@@ -160,7 +170,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
           </div>`).join('')}
       </div>
       <footer class="story-foot">
-        <p class="sources mono">Sources: ${s.sources.map(esc).join(' · ')}</p>
+        <p class="sources mono">Sources: ${s.sources.map((x) => esc(srcTitle(x))).join(' · ')}</p>
         <p class="keys mono">← → next / previous · Esc map · ? keys</p>
       </footer>`;
     storyBody.querySelector('#play-btn')!.addEventListener('click', () => openGame(s));
@@ -174,7 +184,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
 
     // Trend photo, duotone, with an upload slot if the file is missing.
     storyArt.querySelectorAll('.pic').forEach((el) => el.remove());
-    const pic = pictureEl(s.id, 'pic story-pic', `+ add public/images/trends/${s.id}.jpg`);
+    const pic = pictureEl(s.id, s.art, 'pic story-pic');
     storyArt.appendChild(pic);
     renderArtFor(s.id);
   }
@@ -239,13 +249,13 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     detail.innerHTML = `
       <div class="detail-card">
         <button class="detail-close mono" type="button" id="detail-x">Close · Esc</button>
-        <p class="eyebrow mono">${esc(actLabel(sg.act))} · ${esc(sg.short)}</p>
+        <p class="eyebrow mono">${esc(actLens(acts, sg.act))} · ${esc(sg.short)}</p>
         ${st ? `
           <div class="detail-fig">${esc(st.value)}</div>
           <h2>${esc(st.label)}</h2>
           <p class="detail-more">${esc(more)}</p>
-          <p class="mono detail-src">Source: ${esc(st.source || sg.sources[0] || 'June deck')} · ${st.fresh === 'checked' ? 'checked Nov 2026' : 'from the June deck, verify'}</p>`
-          : `<h2>${esc(sg.title)}</h2><p class="detail-more">${esc(sg.hook)}</p><p class="detail-more">${esc(sg.why)}</p>`}
+          <p class="mono detail-src">Source: ${esc(st.source || srcTitle(sg.sources[0]) || 'June deck')} · ${st.fresh === 'checked' ? 'checked Nov 2026' : 'from the June deck, verify'}</p>`
+          : `<h2>${esc(sg.title)}</h2><p class="detail-more">${esc(sg.hook)}</p>${sg.why ? `<p class="detail-more">${esc(sg.why)}</p>` : ''}`}
         ${yt
           ? `<div class="detail-video"><iframe src="https://www.youtube-nocookie.com/embed/${yt}" title="Video" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
           : sg.video ? '<p class="mono detail-src">The video link is not a YouTube link.</p>' : ''}
@@ -462,6 +472,12 @@ function youtubeId(v: string): string | null {
   const m = v.match(/(?:youtu\.be\/|v=|embed\/)([A-Za-z0-9_-]{11})/);
   if (m) return m[1];
   return /^[A-Za-z0-9_-]{11}$/.test(v.trim()) ? v.trim() : null;
+}
+
+/** A source's name: plain text, or the title of a linked source. */
+export function srcTitle(x: Source | undefined): string {
+  if (!x) return '';
+  return typeof x === 'string' ? x : x.title;
 }
 
 function groupByAct(signals: Signal[]): Signal[][] {

@@ -78,7 +78,6 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
   let trendOpen = false;
   let trendDraft = '';
   let guessDraft: number | null = null;
-  let closeLink = '/explore';
   try {
     nameDraft = localStorage.getItem('signalroom.name') ?? '';
   } catch {
@@ -164,7 +163,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
           ${signals.map((s) => {
             const on = you.hearts.includes(s.id);
             return `<li><button class="heart-row ${on ? 'on' : ''}" data-heart="${esc(s.id)}" type="button" aria-pressed="${on}">
-              <span class="heart" aria-hidden="true">${on ? '♥' : '♡'}</span><span class="ht"><span>${esc(s.short)}</span>${s.tagline ? `<small class="heart-tag">${esc(s.tagline)}</small>` : ''}</span></button></li>`;
+              <span class="heart" aria-hidden="true">${on ? '♥' : '♡'}</span><span class="ht"><span>${esc(s.title)}</span><small class="heart-tag">${esc(s.hook)}</small></span></button></li>`;
           }).join('')}
         </ul>`;
     }
@@ -204,7 +203,8 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
         <div class="centre">
           <h1 class="huge">Thanks</h1>
           <p class="lede">Keep exploring the 25 signals in your own time.</p>
-          <a class="big-btn link-btn" href="${esc(closeLink)}">Keep exploring</a>
+          <a class="big-btn link-btn" href="/overview">See all the trends</a>
+          <a class="ghost-link" href="/explore">Explore the map</a>
         </div>`;
     }
     // story, discuss, flyover

@@ -40,10 +40,20 @@ export interface Chance {
   explanation: string;
 }
 
+export interface Act {
+  id: string;
+  lens: string;
+  title: string;
+  sub: string;
+}
+
+export type Source = string | { title: string; url?: string };
+
 export interface Signal {
   id: string;
   n: number;
-  act: number | string;
+  act: string;
+  include?: boolean;
   title: string;
   short: string;
   status: string;
@@ -69,10 +79,12 @@ export interface Signal {
   more?: string[];
   choice?: Choice;
   hotTake: string;
-  sources: string[];
+  sources: Source[];
 }
 
 export interface SignalFile {
   placeholder?: boolean;
   signals: Signal[];
+  acts: Act[];
+  pitch: string;
 }

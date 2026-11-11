@@ -82,7 +82,7 @@ export const TREND_MAX_PER_PERSON = 2;
 export const TREND_MAX_LENGTH = 140;
 export const FLY_SECONDS = 15;
 
-const SIGNAL_ID = /^s\d{2}$/;
+export const SIGNAL_ID = /^[a-z0-9-]{2,40}$/;
 
 export function parseClientMessage(raw: string): ClientMessage | null {
   let m: unknown;

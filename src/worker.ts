@@ -22,7 +22,7 @@ export default {
     }
 
     // /api/picture/<id>  GET (everyone) and PUT (presenter, with ?key=)
-    const pic = url.pathname.match(/^\/api\/picture\/(s\d{2})$/);
+    const pic = url.pathname.match(/^\/api\/picture\/([a-z0-9-]{2,40})$/);
     if (pic) {
       const stub = env.ROOM.get(env.ROOM.idFromName('__content__'));
       const target = new URL(req.url);

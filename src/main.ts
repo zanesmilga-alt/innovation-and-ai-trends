@@ -2,6 +2,7 @@ import './styles.css';
 import { mountApp } from './app';
 import { mountLanding } from './landing';
 import { mountPhone } from './phone';
+import { mountOverview } from './overview';
 
 const root = document.getElementById('app');
 if (!root) throw new Error('#app missing');
@@ -29,7 +30,9 @@ if (path === '/stage' || join) {
   document.querySelector<HTMLAnchorElement>('.brand')?.addEventListener('click', (e) => e.preventDefault());
 }
 
-if (path === '/explore') {
+if (path === '/overview') {
+  void mountOverview(root);
+} else if (path === '/explore') {
   void mountApp(root, 'explore');
 } else if (path === '/stage') {
   void mountApp(root, 'stage');

@@ -1,6 +1,6 @@
 import QRCode from 'qrcode';
 import { connectRoom, type LinkStatus } from './live/socket';
-import { uploadPicture } from './picture';
+import { pictureEl, uploadPicture } from './picture';
 import {
   DEEP_STEPS,
   FLY_SECONDS,
@@ -111,45 +111,35 @@ export async function startStage(o: StageOptions): Promise<void> {
     <div class="wall" id="wall" hidden></div>
     <div class="timer-bar" id="timer" hidden><span class="timer-label mono" id="timer-label"></span><span class="timer-track"><span class="timer-fill" id="timer-fill"></span></span></div>
     <nav class="ctrl" id="ctrl" aria-label="Presenter controls">
-      <button class="ctrl-toggle mono" id="ctrl-toggle" type="button">Hide controls</button>
-      <div class="ctrl-body" id="ctrl-body">
-        <div class="ctrl-row">
-          <span class="ctrl-label mono">Session</span>
-          <button type="button" data-act="qr">Join QR</button>
-          <button type="button" data-act="warm">Warm-up</button>
-          <button type="button" data-act="hearts">Heart pick</button>
-          <button type="button" data-act="reveal">Reveal</button>
-          <button type="button" data-act="fly">Flyover</button>
-          <button type="button" data-act="close">Closing screen</button>
-        </div>
-        <div class="ctrl-row">
-          <span class="ctrl-label mono">Next trend</span>
-          <span class="picks" id="picks"></span>
-        </div>
-        <div class="ctrl-row">
-          <span class="ctrl-label mono">This trend</span>
-          <button type="button" data-act="back">◀ Back</button>
-          <button type="button" data-act="next">Next ▶</button>
-          <button type="button" data-act="game">Game</button>
-          <button type="button" data-act="story">Story</button>
-          <button type="button" data-act="hot">Hot take</button>
-          <button type="button" data-act="discuss">Discuss</button>
-          <button type="button" data-act="details">Details</button>
-          <button type="button" data-act="picture">Change picture</button>
-        </div>
-        <div class="ctrl-row">
-          <span class="ctrl-label mono">Trends</span>
-          <button type="button" data-act="ask">Ask audience for trends</button>
-          <button type="button" data-act="view">Show trends</button>
-        </div>
-        <div class="ctrl-row">
-          <span class="ctrl-label mono">Room</span>
-          <button type="button" data-act="reset">Clear answers</button>
-          <button type="button" data-act="newroom">New room</button>
-          <button type="button" data-act="leave">Leave room</button>
-        </div>
-      </div>
+      <button type="button" data-act="overview">Overview</button>
+      <button type="button" data-act="warm">Warm-up</button>
+      <button type="button" data-act="reveal">Reveal</button>
+      <button type="button" data-act="hearts">Heart pick</button>
+      <button type="button" data-act="leave">Exit room</button>
+      <button type="button" data-act="newroom">New room</button>
     </nav>
+    <nav class="steps" id="steps" aria-label="This trend" hidden>
+      <button type="button" data-act="back">◀</button>
+      <button type="button" data-act="game">Game</button>
+      <button type="button" data-act="story">Story</button>
+      <button type="button" data-act="hot">Hot take</button>
+      <button type="button" data-act="discuss">Discuss</button>
+      <button type="button" data-act="next">▶</button>
+      <button type="button" data-act="details">Details</button>
+      <button type="button" data-act="picture">Change picture</button>
+      <button type="button" data-act="overview">Overview</button>
+    </nav>
+    <section class="ovstage" id="ovstage" aria-label="All trends" hidden>
+      <div class="ovstage-bar">
+        <span class="mono ovstage-title" id="ov-title"></span>
+        <button type="button" data-act="ask">Ask phones for trends</button>
+        <button type="button" data-act="view">Show trends</button>
+        <button type="button" data-act="fly">Flyover</button>
+        <button type="button" data-act="close">Closing screen</button>
+        <button type="button" data-act="overview">Close</button>
+      </div>
+      <div class="ovstage-grid" id="ov-grid"></div>
+    </section>
     <p class="flash mono" id="flash" hidden></p>
     <div class="setup" id="setup" hidden>
       <div class="setup-card">
@@ -217,7 +207,7 @@ export async function startStage(o: StageOptions): Promise<void> {
   let storyShown: string | null = null;
   let flyTimer: number | undefined;
   let flown: string[] = [];
-  let pickHtml = '';
+  let ovOpen = false;
   let flashTimer: number | undefined;
 
   const joinUrl = `${location.origin}/join/${code}`;
@@ -366,6 +356,10 @@ export async function startStage(o: StageOptions): Promise<void> {
       qrOpen = !qrOpen;
       render();
     },
+    overview: () => {
+      ovOpen = !ovOpen;
+      render();
+    },
     warm: () => setPhase('warmup'),
     hearts: () => setPhase('hearts'),
     reveal: () => reveal(),
@@ -402,17 +396,12 @@ export async function startStage(o: StageOptions): Promise<void> {
     },
   };
 
-  ctrl.addEventListener('click', (e) => {
+  layer.addEventListener('click', (e) => {
     const t = e.target as HTMLElement;
     const pick = t.closest<HTMLElement>('[data-pick]');
     if (pick) return choose(pick.dataset.pick!, 'guess');
     const btn = t.closest<HTMLElement>('[data-act]');
     if (btn) actions[btn.dataset.act!]?.();
-  });
-  $('ctrl-toggle').addEventListener('click', () => {
-    const hidden = $('ctrl-body').hidden;
-    $('ctrl-body').hidden = !hidden;
-    $('ctrl-toggle').textContent = hidden ? 'Hide controls' : 'Show controls';
   });
 
   // ---------- Drawing ----------
@@ -568,20 +557,47 @@ export async function startStage(o: StageOptions): Promise<void> {
     lastHearts = { ...counts };
   };
 
-  /** The next trends by hearts, as buttons (not yet covered). */
-  const renderPicks = () => {
-    const ranked = Object.entries(results.hearts)
-      .filter(([id, n]) => n > 0 && !state.covered.includes(id))
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-      .slice(0, 9);
-    const html = ranked.length
-      ? ranked.map(([id, n], i) => `<button type="button" data-pick="${id}">${i + 1} · ${esc(byId.get(id)?.short ?? id)} ♥${n}</button>`).join('')
-      : '<span class="mono small-note">Trends appear here after the heart pick.</span>';
-    if (html !== pickHtml) {
-      $('picks').innerHTML = html;
-      pickHtml = html;
+  /** Every trend as a card, most-hearted first. Trends already played are dimmed. */
+  const renderOverview = () => {
+    const panel = $('ovstage');
+    const steps = $('steps');
+    const inDeep = ['guess', 'story', 'hottake', 'discuss'].includes(state.phase) && !!state.activeSignalId;
+    panel.hidden = !ovOpen;
+    steps.hidden = !inDeep;
+    steps.querySelectorAll<HTMLElement>('[data-act]').forEach((b) => {
+      const onStep: Record<string, Phase> = { game: 'guess', story: 'story', hot: 'hottake', discuss: 'discuss' };
+      b.classList.toggle('on', onStep[b.dataset.act!] === state.phase);
+    });
+    if (!ovOpen) return;
+    const total = signalsOrdered().length;
+    $('ov-title').textContent = `All trends · ${total}`;
+    const grid = $('ov-grid');
+    grid.innerHTML = '';
+    for (const sg of signalsOrdered()) {
+      const hearts = results.hearts[sg.id] ?? 0;
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = `ov-tile${state.covered.includes(sg.id) ? ' done' : ''}${state.activeSignalId === sg.id ? ' now' : ''}`;
+      card.dataset.trend = sg.id;
+      card.innerHTML = `
+        <span class="ov-tile-pic"></span>
+        <span class="ov-tile-body">
+          <span class="mono ov-tile-n">${String(sg.n).padStart(2, '0')}${hearts ? ` · ♥ ${hearts}` : ''}${state.covered.includes(sg.id) ? ' · played' : ''}</span>
+          <span class="ov-tile-title">${esc(sg.title)}</span>
+        </span>`;
+      card.querySelector<HTMLElement>('.ov-tile-pic')!.appendChild(pictureEl(sg.id, sg.art, 'pic'));
+      card.addEventListener('click', () => {
+        ovOpen = false;
+        choose(sg.id, 'guess');
+        renderOverview();
+      });
+      grid.appendChild(card);
     }
   };
+
+  /** Included trends: most-hearted first, then by number. */
+  const signalsOrdered = (): Signal[] =>
+    [...o.signals].sort((a, b) => (results.hearts[b.id] ?? 0) - (results.hearts[a.id] ?? 0) || a.n - b.n);
 
   const renderButtons = () => {
     const active = BUTTON_FOR_PHASE[state.phase];
@@ -605,7 +621,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     renderHearts();
     renderTimer();
     renderWall();
-    renderPicks();
+    renderOverview();
     renderButtons();
   };
 
@@ -625,7 +641,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     const keyMap: Record<string, string> = {
       j: 'qr', J: 'qr', w: 'warm', W: 'warm', h: 'hearts', H: 'hearts', g: 'game', G: 'game',
       s: 'story', S: 'story', t: 'hot', T: 'hot', e: 'discuss', E: 'discuss', f: 'fly', F: 'fly',
-      c: 'close', C: 'close', a: 'ask', A: 'ask', v: 'view', V: 'view',
+      c: 'close', C: 'close', a: 'ask', A: 'ask', v: 'view', V: 'view', o: 'overview', O: 'overview',
     };
     if (keyMap[k]) return actions[keyMap[k]]();
     if (k === 'ArrowRight') return (e.preventDefault(), stepBy(1));

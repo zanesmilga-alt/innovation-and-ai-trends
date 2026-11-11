@@ -1,6 +1,6 @@
 import { drawArt } from './art';
 import { loadSignals } from './data';
-import type { Signal } from './types';
+import { pictureEl } from './picture';
 
 /** Landing page: the front door. Brand sits top-right via index.html. */
 export function mountLanding(root: HTMLElement): void {
@@ -11,10 +11,11 @@ export function mountLanding(root: HTMLElement): void {
       <div class="landing-inner">
         <p class="eyebrow mono">Innovation In &amp; Out · AI trends</p>
         <h1>Too Late To Ignore</h1>
-        <p class="lede">Twenty-five external AI signals, one map. Read the stories, play the numbers, then see what they mean for our customers.</p>
+        <p class="lede">AI is moving too fast to ignore, and too fast to catch up on later. Read the trends, play the numbers, then see what they mean for us.</p>
         <nav class="ctas" aria-label="Main">
-          <a class="btn primary" href="/explore">Explore the 25 signals</a>
-          <a class="btn" href="/stage">Open the presenter stage</a>
+          <a class="btn primary" href="/explore">Explore the trends</a>
+          <a class="btn" href="/overview">Overview</a>
+          <a class="btn" href="/stage">Presenter stage</a>
         </nav>
         <div class="strip" id="strip" aria-label="Trend pictures"></div>
       </div>
@@ -25,32 +26,23 @@ export function mountLanding(root: HTMLElement): void {
   const paint = () => drawArt(canvas, 'orbit', 'landing');
   paint();
   window.addEventListener('resize', paint);
-  img.onload = () => { img.hidden = false; canvas.style.opacity = '0.25'; };
+  img.onload = () => {
+    img.hidden = false;
+    canvas.style.opacity = '0.25';
+  };
 
-  // A few trend pictures, each linking into the explorer.
   loadSignals()
     .then(({ signals }) => {
       const strip = root.querySelector<HTMLElement>('#strip')!;
-      signals.slice(0, 6).forEach((s: Signal) => {
+      signals.slice(0, 6).forEach((s) => {
         const a = document.createElement('a');
         a.href = `/explore#s=${s.id}`;
         a.setAttribute('aria-label', s.title);
-        const pic = document.createElement('div');
-        pic.className = 'pic';
-        const i = document.createElement('img');
-        i.className = 'duo';
-        i.alt = '';
-        i.loading = 'lazy';
-        i.src = `/images/trends/${s.id}.jpg`;
-        i.onerror = () => pic.classList.add('no-img');
-        pic.appendChild(i);
-        const slot = document.createElement('span');
-        slot.className = 'slot mono';
-        slot.textContent = `+ ${s.id}.jpg`;
-        pic.appendChild(slot);
-        a.appendChild(pic);
+        a.appendChild(pictureEl(s.id, s.art, 'pic'));
         strip.appendChild(a);
       });
     })
-    .catch(() => { /* strip is decoration; the page works without it */ });
+    .catch(() => {
+      /* the strip is decoration; the page works without it */
+    });
 }

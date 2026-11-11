@@ -102,7 +102,7 @@ export class Room extends DurableObject<Env> {
     }
 
     // Trend pictures: uploaded by the presenter, served to everyone (see worker.ts).
-    const pic = url.pathname.match(/^\/picture\/(s\d{2})$/);
+    const pic = url.pathname.match(/^\/picture\/([a-z0-9-]{2,40})$/);
     if (pic) {
       const id = pic[1];
       if (req.method === 'GET') {

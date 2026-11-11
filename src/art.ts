@@ -270,6 +270,76 @@ const motifs: Record<string, Draw> = {
     c.stroke();
     c.shadowBlur = 0;
   },
+  chips(c, w, h, r) {
+    const cols = 6;
+    const rows = 4;
+    const cw = w * 0.11;
+    const ch = h * 0.14;
+    const gx = (w - cols * cw) / (cols + 1);
+    const gy = (h - rows * ch) / (rows + 1);
+    for (let i = 0; i < cols; i++)
+      for (let j = 0; j < rows; j++) {
+        const x = gx + i * (cw + gx);
+        const y = gy + j * (ch + gy);
+        const hot = r() < 0.3;
+        c.strokeStyle = alpha(PAL.orange, 0.35);
+        c.lineWidth = 1;
+        for (let k = 1; k < 4; k++) {
+          c.beginPath();
+          c.moveTo(x + (k * cw) / 4, y - 6);
+          c.lineTo(x + (k * cw) / 4, y);
+          c.moveTo(x + (k * cw) / 4, y + ch);
+          c.lineTo(x + (k * cw) / 4, y + ch + 6);
+          c.stroke();
+        }
+        if (hot) {
+          c.shadowColor = PAL.orange;
+          c.shadowBlur = 18;
+        }
+        c.fillStyle = hot ? alpha(PAL.orange, 0.85) : 'rgba(20,15,38,0.95)';
+        c.strokeStyle = hot ? PAL.hi : PAL.orange;
+        c.lineWidth = 1.5;
+        c.beginPath();
+        c.roundRect(x, y, cw, ch, 4);
+        c.fill();
+        c.stroke();
+        c.shadowBlur = 0;
+      }
+  },
+
+  fork(c, w, h) {
+    const cx = w * 0.5;
+    const y0 = h * 0.9;
+    c.shadowColor = PAL.orange;
+    c.shadowBlur = 16;
+    c.strokeStyle = PAL.hi;
+    c.lineWidth = 4;
+    c.beginPath();
+    c.moveTo(cx, y0);
+    c.lineTo(cx, h * 0.55);
+    c.stroke();
+    c.shadowBlur = 0;
+    const arms: [number, string][] = [
+      [-1, PAL.orange],
+      [1, 'rgba(255,210,168,0.9)'],
+    ];
+    for (const [d, col] of arms) {
+      c.strokeStyle = col;
+      c.lineWidth = 3;
+      c.beginPath();
+      c.moveTo(cx, h * 0.55);
+      c.bezierCurveTo(cx, h * 0.4, cx + d * w * 0.22, h * 0.45, cx + d * w * 0.22, h * 0.3);
+      c.stroke();
+      for (let k = 0; k < 4; k++) {
+        const y = h * (0.24 - k * 0.055);
+        const bw = w * 0.2;
+        c.fillStyle = k === 0 ? col : alpha(PAL.orange, 0.5 - k * 0.1);
+        c.beginPath();
+        c.roundRect(cx + d * w * 0.22 - bw / 2, y - h * 0.02, bw, h * 0.04, 4);
+        c.fill();
+      }
+    }
+  },
 };
 
 export const MOTIF_NAMES = Object.keys(motifs);

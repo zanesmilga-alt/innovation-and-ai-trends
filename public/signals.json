@@ -1,1334 +1,1739 @@
 {
-  "_note": "Content from the June AI Trends deck. Figures are as the deck states them and are not re-checked. Taglines are short summaries of the deck. Hot takes are the deck headlines. The \"why\" text is empty until written.",
-  "placeholder": false,
+  "title": "Too Late To Ignore",
+  "session": "Innovation In & Out",
+  "pitch": "AI is moving too fast to ignore, and too fast to catch up on later. Staying current isn't optional anymore. It's part of the job.",
+  "acts": [
+    {
+      "id": "capability",
+      "lens": "Capability",
+      "title": "The machines get capable",
+      "sub": "AI now writes most of the code, hands work to other AI, and is learning to act in the physical world."
+    },
+    {
+      "id": "customers",
+      "lens": "Customers",
+      "title": "Your customers change",
+      "sub": "How people find, compare, buy and even befriend is moving into AI."
+    },
+    {
+      "id": "work",
+      "lens": "Work",
+      "title": "Work gets rewired",
+      "sub": "New colleagues, new platforms, and a career ladder missing its bottom rungs."
+    },
+    {
+      "id": "money",
+      "lens": "Money",
+      "title": "Follow the money",
+      "sub": "Trillions going in, prices moving, business models breaking, and the CFO asking for proof."
+    },
+    {
+      "id": "infrastructure",
+      "lens": "Infrastructure & Rules",
+      "title": "The limits get physical",
+      "sub": "Power, permission, memory chips, borders and regulation now decide where AI can scale."
+    },
+    {
+      "id": "trust",
+      "lens": "Trust & Society",
+      "title": "Trust is the new frontier",
+      "sub": "AI fights AI, and expertise reaches places it never reached before."
+    }
+  ],
+  "warmup": {
+    "question": "AI touched my work this week",
+    "options": [
+      "Not at all",
+      "A bit",
+      "A lot"
+    ]
+  },
   "signals": [
     {
-      "id": "s01",
+      "id": "ai-builds-ai",
       "n": 1,
-      "act": 1,
+      "act": "capability",
+      "title": "AI Is Building the Next AI",
+      "short": "AI builds AI",
+      "status": "Now",
       "isNew": false,
-      "icon": "cpu",
-      "status": "",
-      "image": "/images/trends/s01.jpg",
-      "art": "network",
-      "why": "",
-      "story": "",
-      "hotTake": "The most important programming language in 2025 is English",
-      "short": "English is the new code",
-      "title": "The most important programming language in 2025 is English",
-      "hook": "Anthropic says 80% of the code it merges is now machine-written.",
+      "icon": "code-xml",
+      "image": "images/ai-builds-ai.jpg",
+      "art": null,
+      "hook": "Engineers increasingly steer while machines write the code, and the length of work AI can do on its own keeps doubling.",
+      "why": "Anyone with domain knowledge can now build working software. Customers will expect prototypes in days, not quarters.",
+      "story": "Vibe coding went from a 2025 joke to how real products get built. Most new builders are domain experts, not developers. The engineer is no longer the bottleneck; the idea is.",
       "stats": [
         {
           "value": "80%",
-          "label": "of code merged at Anthropic is now machine-written",
-          "fresh": "deck",
-          "source": "Anthropic Institute, June 2026"
+          "label": "of code merged at Anthropic is machine-written (Anthropic Institute, June 2026)",
+          "fresh": "deck"
         },
         {
           "value": "8x",
-          "label": "engineering throughput at Anthropic vs 2021–2025",
-          "fresh": "deck",
-          "source": "same engineers, 8x the output"
+          "label": "engineering throughput vs 2021–2025, same engineers",
+          "fresh": "deck"
         },
         {
-          "value": "63%",
-          "label": "of \"vibe coders\" are domain experts, not developers",
-          "fresh": "deck",
-          "source": "deck"
+          "value": "3–4 mo",
+          "label": "time for the length of tasks AI agents complete reliably to double (METR, 2026; it was ~7 months before)",
+          "fresh": "checked"
         }
       ],
-      "sources": [
-        "Anthropic Institute, June 2026"
-      ],
       "guess": {
-        "question": "What share of code merged at Anthropic is now machine-written?",
+        "question": "What share of the code merged at Anthropic is now written by AI?",
         "min": 0,
         "max": 100,
         "unit": "%",
         "answer": 80,
         "answerLabel": "80%",
-        "source": "Anthropic Institute, June 2026"
+        "source": "Anthropic Institute, June 2026 (from June deck)"
       },
-      "trueFalse": {
-        "statement": "Most \"vibe coders\" are professional developers.",
-        "answer": false,
-        "explanation": "The deck says 63% of vibe coders are domain experts, not developers."
-      },
-      "chance": {
-        "question": "What is the chance that a \"vibe coder\" is a developer by profession?",
-        "answer": 37,
-        "explanation": "The deck says 63% are domain experts, so about 37% are developers."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
+      "hotTake": "Within three years, most of the software our customers use will be written by AI.",
+      "include": true,
+      "sources": [
+        {
+          "title": "The Star / NYT: How do you measure an AI boom? (METR)",
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/04/21/how-do-you-measure-an-ai-boom"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
       ],
-      "tagline": "Anthropic says 80% of the code it merges is now machine-written, while its engineers' output has grown about 8x."
+      "gameType": "guess",
+      "tagline": "Engineers increasingly steer while machines write the code, and the length of work AI can do on its own keeps doubling."
     },
     {
-      "id": "s02",
+      "id": "ai-hires-ai",
       "n": 2,
-      "act": 1,
+      "act": "capability",
+      "title": "The AI That Hires the AI",
+      "short": "AI hires AI",
+      "status": "Scaling",
       "isNew": false,
-      "icon": "brain",
-      "status": "",
-      "image": "/images/trends/s02.jpg",
-      "art": "molecules",
-      "why": "",
-      "story": "",
-      "hotTake": "The robot is already working at BMW",
-      "short": "Humanoid robots at work",
-      "title": "The robot is already working at BMW",
-      "hook": "Figure 03 has helped build 30,000+ vehicles at BMW Spartanburg.",
+      "icon": "network",
+      "image": null,
+      "art": "network",
+      "hook": "Agents used to need humans to connect them. Now they hand work to each other, but most still never reach production.",
+      "why": "Customers' processes will increasingly run agent to agent. Whatever we sell has to be reachable by their agents, and we can help close the gap from pilot to production.",
+      "story": "Protocols like MCP and A2A let agents call tools and each other. The ambition is far ahead of execution: nearly three in four organisations admit a gap between their agent vision and reality.",
+      "stats": [
+        {
+          "value": "27→40%",
+          "label": "large firms scaling AI agents, 2025 to 2026 (McKinsey State of AI)",
+          "fresh": "checked"
+        },
+        {
+          "value": "40%",
+          "label": "of enterprise apps will embed task-specific agents by end of 2026, up from under 5% in 2025 (Gartner)",
+          "fresh": "checked"
+        },
+        {
+          "value": "71% / 11%",
+          "label": "of organisations use AI agents, but only 11% of agent use cases reached production in the past year (Camunda, 2026)",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "What share of enterprise apps will embed task-specific AI agents by the end of 2026?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 40,
+        "answerLabel": "40%, up from under 5% in 2025",
+        "source": "Gartner forecast"
+      },
+      "hotTake": "In two years, our customers' AI agents will talk to our systems more than their people do.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Second Talent: McKinsey 2026 survey data",
+          "url": "https://secondtalent.com/resources/ai-adoption-in-enterprise-statistics"
+        },
+        {
+          "title": "Prefactor: Gartner agent forecast",
+          "url": "https://prefactor.tech/learn/ai-agent-adoption-statistics"
+        },
+        {
+          "title": "Camunda: 2026 State of Agentic Orchestration and Automation",
+          "url": "https://camunda.com/blog/2026/01/closing-agentic-ai-vision-reality-gap-camunda-2026-state-of-agentic-orchestration-automation-report/"
+        }
+      ],
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "Gartner expects 40% of enterprise apps to embed task-specific AI agents by the end of 2026.",
+        "answer": true,
+        "explanation": "Gartner forecast: 40%, up from under 5% in 2025."
+      },
+      "tagline": "Agents used to need humans to connect them. Now they hand work to each other, but most still never reach production."
+    },
+    {
+      "id": "robot-bmw",
+      "n": 3,
+      "act": "capability",
+      "title": "The Robot Is Already Working at BMW",
+      "short": "Robots at work",
+      "status": "Scaling",
+      "isNew": false,
+      "icon": "bot",
+      "image": "images/robot-bmw.jpg",
+      "art": null,
+      "hook": "Humanoid robots and driverless cars have moved from demo videos to real shifts, and China builds almost all the robots.",
+      "why": "Physical work is now in scope for AI. Customers in manufacturing, logistics and mobility will ask what this means for them.",
+      "story": "Caveat that keeps you credible: more than 60% of humanoid shipments still go to entertainment, performances and research data collection, not factory work. Waymo targets 1 million rides a week by year-end.",
       "stats": [
         {
           "value": "30,000+",
-          "label": "vehicles built with Figure 03 at BMW Spartanburg",
-          "fresh": "deck",
-          "source": "deck"
+          "label": "BMW X3s built with help from Figure 02 humanoids in an 11-month pilot at Spartanburg; Figure 03 now works in logistics there",
+          "fresh": "checked"
         },
         {
-          "value": "$16,000",
-          "label": "Unitree G1 humanoid robot, available to buy right now",
-          "fresh": "deck",
-          "source": "deck"
+          "value": "19–22K",
+          "label": "humanoids shipped worldwide in H1 2026, up roughly 270–300%; over 97% from Chinese vendors (Smart Analytics Global, Counterpoint)",
+          "fresh": "checked"
         },
         {
-          "value": "674%",
-          "label": "Unitree net profit jump in 2025, $610M IPO filing",
-          "fresh": "deck",
-          "source": "deck"
+          "value": "500K",
+          "label": "paid Waymo robotaxi rides per week across 15 US cities",
+          "fresh": "checked"
         }
       ],
+      "guess": {
+        "question": "How many vehicles were built with Figure humanoid robots on the line at BMW Spartanburg?",
+        "min": 0,
+        "max": 100000,
+        "unit": "",
+        "answer": 30000,
+        "answerLabel": "30,000+",
+        "source": "From June deck"
+      },
+      "hotTake": "Humanoid robots will be a normal sight in European factories before 2030.",
+      "include": true,
       "sources": [
-        "June deck (BMW, Unitree)"
+        {
+          "title": "Figure: F.02 contributed to the production of 30,000 cars at BMW",
+          "url": "https://figure.ai/news/production-at-bmw"
+        },
+        {
+          "title": "Counterpoint: Global humanoid robot shipments H1 2026",
+          "url": "https://counterpointresearch.com/cn/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026"
+        },
+        {
+          "title": "AI Weekly: Smart Analytics Global humanoid data",
+          "url": "https://aiweekly.co/alerts/chinese-firms-shipped-97-of-the-worlds-humanoid-robots-in-h1-2026-as-volumes"
+        },
+        {
+          "title": "Dealroom / TechCrunch: Waymo fleet data",
+          "url": "https://dealroom.co/news/156473-waymo-hits-4-000-robotaxis-as-texas-fleet-jumps-49-on-new-zeekr-minivans/"
+        }
+      ],
+      "gameType": "choice",
+      "choice": {
+        "question": "How many vehicles were built with Figure humanoid robots at BMW Spartanburg?",
+        "options": [
+          "3,000+",
+          "30,000+",
+          "300,000+",
+          "1,000,000+"
+        ],
+        "answer": 1,
+        "explanation": "30,000+ BMW X3s built with help from Figure 02."
+      },
+      "tagline": "Humanoid robots and driverless cars have moved from demo videos to real shifts, and China builds almost all the robots."
+    },
+    {
+      "id": "physical-world",
+      "n": 4,
+      "act": "capability",
+      "title": "AI Learns the Physical World",
+      "short": "Physical AI",
+      "status": "Emerging",
+      "isNew": true,
+      "icon": "box",
+      "image": "images/physical-world.jpg",
+      "art": null,
+      "hook": "Models that simulate the real world in real time are the training ground for robots, factories and digital twins.",
+      "why": "Industrial customers get simulation-first engineering: test a line, a warehouse or a process virtually before spending on it.",
+      "story": "Language models learned from text. World models learn how things move and interact. That is the missing piece for robots and digital twins, where real-world motion data is scarce.",
+      "stats": [
+        {
+          "value": "Oct 2026",
+          "label": "Google releases Genie 4 for real-time interactive world simulation with native audio",
+          "fresh": "checked"
+        },
+        {
+          "value": "Oct 20",
+          "label": "Germany signs a joint declaration with NVIDIA to advance AI models for industrial physical AI",
+          "fresh": "checked"
+        },
+        {
+          "value": "50,000+",
+          "label": "humanoid robots Counterpoint expects to ship worldwide in 2026, about 3x 2025",
+          "fresh": "checked"
+        }
       ],
       "guess": {
-        "question": "How much does the Unitree G1 humanoid robot cost?",
+        "question": "What does a Unitree G1 humanoid robot cost today, in US dollars?",
         "min": 0,
-        "max": 50000,
+        "max": 200000,
         "unit": "$",
         "answer": 16000,
         "answerLabel": "$16,000",
-        "source": "deck"
+        "source": "From June deck"
       },
-      "trueFalse": {
-        "statement": "A humanoid robot is on sale today for under $20,000.",
-        "answer": true,
-        "explanation": "The deck lists the Unitree G1 at $16,000, available to buy now."
-      },
-      "gameType": "truefalse",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
+      "hotTake": "Simulating a factory or process before building it will be the default way to design within five years.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Google: The latest AI news we announced in October 2026",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/"
+        },
+        {
+          "title": "AI News",
+          "url": "https://www.artificialintelligence-news.com/"
+        },
+        {
+          "title": "Counterpoint: humanoid forecast",
+          "url": "https://counterpointresearch.com/cn/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026"
+        }
       ],
-      "tagline": "Figure 03 has been working on BMW’s Spartanburg line since early 2025, and the cheaper Unitree G1 humanoid is on sale for $16,000."
+      "gameType": "guess",
+      "tagline": "Models that simulate the real world in real time are the training ground for robots, factories and digital twins."
     },
     {
-      "id": "s03",
-      "n": 3,
-      "act": 1,
-      "isNew": false,
-      "icon": "bot",
-      "status": "",
-      "image": "/images/trends/s03.jpg",
+      "id": "lab-runs-itself",
+      "n": 5,
+      "act": "capability",
+      "title": "The Lab That Runs Itself",
+      "short": "Self-driving labs",
+      "status": "Emerging",
+      "isNew": true,
+      "icon": "flask-conical",
+      "image": null,
+      "art": "molecules",
+      "hook": "AI now designs the experiment, robots run it, and the result trains the next design. The pipeline is full; the first approval is still pending.",
+      "why": "R&D cycles that took years can compress into weeks. Customers in life sciences, materials and chemicals will reorganise R&D around it.",
+      "story": "Science is becoming a compute problem. AI-designed molecules pass early safety trials more often, but in Phase II they fail at about the same rate as conventional ones. Phase III is the real test.",
+      "stats": [
+        {
+          "value": "Early 2027",
+          "label": "Danaher's first AI-powered autonomous research lab due to operate at scale",
+          "fresh": "checked"
+        },
+        {
+          "value": "173+",
+          "label": "AI-designed drug programmes in clinical development in early 2026, up from about two dozen in late 2023",
+          "fresh": "checked"
+        },
+        {
+          "value": "0",
+          "label": "AI-discovered drugs with full FDA approval as of mid-2026; 15–20 programmes reach Phase III readouts in 2026–27",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "How many AI-discovered drugs have full FDA approval today?",
+        "min": 0,
+        "max": 50,
+        "unit": "",
+        "answer": 0,
+        "answerLabel": "Zero (as of mid-2026)",
+        "source": "Industry trackers, July 2026"
+      },
+      "hotTake": "Within five years, most new materials and medicines will be discovered by AI rather than by people.",
+      "include": true,
+      "sources": [
+        {
+          "title": "The Star / Reuters: Danaher autonomous research lab",
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/10/07/life-sciences-firm-danaher-to-launch-ai-powered-autonomous-research-lab-in-2027"
+        },
+        {
+          "title": "IntuitionLabs: AI-discovered drugs in clinical trials 2026",
+          "url": "https://intuitionlabs.ai/articles/ai-discovered-drugs-clinical-trials-2026"
+        },
+        {
+          "title": "IntuitionLabs: AI drug discovery FDA approvals",
+          "url": "https://intuitionlabs.ai/articles/ai-drug-discovery-fda-approvals"
+        }
+      ],
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "No AI-discovered drug had full FDA approval as of mid-2026.",
+        "answer": true,
+        "explanation": "Industry trackers: zero, as of mid-2026."
+      },
+      "tagline": "AI now designs the experiment, robots run it, and the result trains the next design. The pipeline is full; the first approval is still pending."
+    },
+    {
+      "id": "customer-agent",
+      "n": 6,
+      "act": "customers",
+      "title": "Your Next Customer Is an Agent",
+      "short": "Agent customers",
+      "status": "Emerging",
+      "isNew": true,
+      "icon": "shopping-cart",
+      "image": null,
       "art": "orbit",
-      "why": "",
-      "story": "",
-      "hotTake": "Your child’s best friend might be an AI",
+      "hook": "Shopping is starting inside AI assistants, those shoppers now convert better than everyone else, and banks are building the payment rails for machines.",
+      "why": "If an agent does the comparing, our offer has to be readable by machines: clean data, clear pricing, trusted identity.",
+      "story": "Adobe found many retail pages are only partly readable by AI. Open standards for agent checkout (ACP from OpenAI and Stripe, UCP from Google and Shopify) are live. Some banks are blocking AI agents while US open-banking rules stall: identity and permission are the new checkout.",
+      "stats": [
+        {
+          "value": "+393%",
+          "label": "AI-referred traffic to US retail sites in Q1 2026; in March it converted 42% better than other traffic (Adobe)",
+          "fresh": "checked"
+        },
+        {
+          "value": "47.6%",
+          "label": "of consumers use AI to compare products or prices, up from 35% in 2025 (Bloomreach)",
+          "fresh": "checked"
+        },
+        {
+          "value": "21 banks",
+          "label": "including Goldman Sachs, Bank of America and Citi, plan a joint dollar stablecoin for H1 2027",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "By how much did AI-referred traffic to US retail sites grow in Q1 2026 compared with a year earlier?",
+        "min": 0,
+        "max": 1000,
+        "unit": "%",
+        "answer": 393,
+        "answerLabel": "+393%",
+        "source": "Adobe Analytics"
+      },
+      "hotTake": "By 2028, most of our customers will buy through AI agents.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Adobe: AI traffic surge to retail sites",
+          "url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable"
+        },
+        {
+          "title": "GemPages: Agentic commerce 2026 (Bloomreach data)",
+          "url": "https://gempages.net/es/blogs/shopify/agentic-commerce"
+        },
+        {
+          "title": "Decrypt: 21 banks plan joint dollar stablecoin",
+          "url": "https://decrypt.co/377216/goldman-sachs-bofa-banks-stablecoin?amp=1"
+        }
+      ],
+      "gameType": "choice",
+      "choice": {
+        "question": "By how much did AI-referred traffic to US retail sites grow in Q1 2026?",
+        "options": [
+          "+39%",
+          "+93%",
+          "+393%",
+          "+1,393%"
+        ],
+        "answer": 2,
+        "explanation": "Adobe: +393%."
+      },
+      "tagline": "Shopping is starting inside AI assistants, those shoppers now convert better than everyone else, and banks are building the payment rails for machines."
+    },
+    {
+      "id": "google-zero",
+      "n": 7,
+      "act": "customers",
+      "title": "Google Zero: The Click Is Dying",
+      "short": "Google Zero",
+      "status": "Scaling",
+      "isNew": true,
+      "icon": "search-x",
+      "image": null,
+      "art": "ripples",
+      "hook": "People get the answer from AI and never visit the website. Discovery is moving away from search results.",
+      "why": "How customers find us is changing. Being cited by AI answers matters as much as ranking on Google.",
+      "story": "Condé Nast told staff to plan for a world with no Google traffic. The flip side: retailers are gaining AI-referred visitors who buy more. Treat exact numbers with care; the direction is clear.",
+      "stats": [
+        {
+          "value": "~83%",
+          "label": "of searches end without a click when an AI Overview appears",
+          "fresh": "checked"
+        },
+        {
+          "value": "Up to 40%",
+          "label": "fall in publisher ad supply in Q2 2026 (Ozone data via Digiday)",
+          "fresh": "checked"
+        },
+        {
+          "value": "22.4%",
+          "label": "overall US zero-click rate in March 2026 (SparkToro), so measures vary widely",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "When an AI Overview appears in search, what share of searches end without a click?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 83,
+        "answerLabel": "About 83%",
+        "source": "Zero-click research 2026"
+      },
+      "hotTake": "Being quoted by AI answers will matter more than ranking on Google.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Gist: Zero-click crisis",
+          "url": "https://gist.ai/blog/zero-click-crisis-publisher-traffic"
+        },
+        {
+          "title": "The ATDB: Publisher ad supply fell up to 40%",
+          "url": "https://www.theatdb.com/news/publisher-ad-supply-fell-by-up-to-40-in-q2-as-ai-search-choked-the-open-web"
+        },
+        {
+          "title": "PPC Land: SparkToro zero-click data",
+          "url": "https://ppc.land/all-about-berlin-loses-75-of-traffic-as-zero-click-searches-hit-68/"
+        }
+      ],
+      "gameType": "guess",
+      "tagline": "People get the answer from AI and never visit the website. Discovery is moving away from search results."
+    },
+    {
+      "id": "ai-glasses",
+      "n": 8,
+      "act": "customers",
+      "title": "AI Moves Onto Your Face",
+      "short": "AI glasses",
+      "status": "Scaling",
+      "isNew": true,
+      "icon": "glasses",
+      "image": null,
+      "art": "lenses",
+      "hook": "The first AI device people actually buy looks like a normal pair of glasses.",
+      "why": "A camera and assistant always on means new hands-free use cases for field staff and frontline workers, and new privacy questions.",
+      "story": "Apple is reportedly preparing its own glasses for 2027. The interface after the smartphone may be voice plus vision.",
+      "stats": [
+        {
+          "value": "+263%",
+          "label": "AI glasses shipments, H1 2026 vs H1 2025 (Counterpoint)",
+          "fresh": "checked"
+        },
+        {
+          "value": "94%",
+          "label": "Meta's share of display-less AI glasses shipments, H1 2026",
+          "fresh": "checked"
+        },
+        {
+          "value": "7M+",
+          "label": "AI glasses sold by EssilorLuxottica in 2025",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "By how much did AI glasses shipments grow in H1 2026 compared with H1 2025?",
+        "min": 0,
+        "max": 500,
+        "unit": "%",
+        "answer": 263,
+        "answerLabel": "+263%",
+        "source": "Counterpoint Research"
+      },
+      "hotTake": "Within ten years, smart glasses will replace the phone for most work tasks.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Android Authority: Counterpoint AI glasses data",
+          "url": "https://androidauthority.com/smart-glasses-shipments-statistics-3713810"
+        },
+        {
+          "title": "9to5Mac: AI glasses shipments surged 263%",
+          "url": "https://9to5mac.com/2026/09/21/report-ai-glasses-shipments-surged-263-in-h1-2026-as-apple-prepares-to-enter-the-market/"
+        }
+      ],
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "Meta made 94% of display-less AI glasses shipments in H1 2026.",
+        "answer": true,
+        "explanation": "Counterpoint: 94% for Meta."
+      },
+      "tagline": "The first AI device people actually buy looks like a normal pair of glasses."
+    },
+    {
+      "id": "ai-companion",
+      "n": 9,
+      "act": "customers",
+      "title": "Your Child's Best Friend Might Be an AI",
       "short": "AI companions",
-      "title": "Your child’s best friend might be an AI",
-      "hook": "AI companion apps have grown 700% since 2022.",
+      "status": "Now",
+      "isNew": false,
+      "icon": "heart-handshake",
+      "image": null,
+      "art": "waves",
+      "hook": "AI now competes for the most intimate resource humans have: emotional attention.",
+      "why": "The next generation of customers and employees expects to talk to AI as a matter of course, and trust will be earned differently.",
+      "story": "The relationship layer is moving into software. That is both a market and a responsibility.",
       "stats": [
         {
           "value": "700%",
-          "label": "AI companion app growth since 2022",
-          "fresh": "deck",
-          "source": "TechCrunch"
+          "label": "AI companion app growth since 2022 (TechCrunch)",
+          "fresh": "deck"
         },
         {
           "value": "20M",
-          "label": "monthly users on Character.AI, 50%+ under age 24",
-          "fresh": "deck",
-          "source": "deck"
+          "label": "monthly users on Character.AI, over half under 24",
+          "fresh": "deck"
         },
         {
           "value": "57%",
-          "label": "of people globally worry AI will harm society",
-          "fresh": "deck",
-          "source": "Ipsos 2025"
+          "label": "of people globally worry AI will harm society (Ipsos 2025)",
+          "fresh": "deck"
         }
       ],
-      "sources": [
-        "TechCrunch",
-        "Character.AI",
-        "Ipsos 2025"
-      ],
       "guess": {
-        "question": "How many monthly users does Character.AI have?",
+        "question": "How many people use Character.AI every month, in millions?",
         "min": 0,
-        "max": 50,
+        "max": 100,
         "unit": "M",
         "answer": 20,
-        "answerLabel": "20M monthly users",
-        "source": "deck"
+        "answerLabel": "20 million",
+        "source": "From June deck"
       },
-      "trueFalse": {
-        "statement": "Over half of Character.AI’s users are under 24.",
-        "answer": true,
-        "explanation": "The deck says 50%+ of users are under 24."
-      },
-      "chance": {
-        "question": "What is the chance a random person worldwide worries AI will harm society?",
-        "answer": 57,
-        "explanation": "Ipsos 2025: 57% of people globally worry about it."
-      },
+      "hotTake": "AI companions will do more good than harm for young people.",
+      "include": true,
+      "sources": [
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
+      ],
       "gameType": "choice",
       "choice": {
-        "question": "How many monthly users does Character.AI have?",
+        "question": "How many people use Character.AI every month?",
         "options": [
-          "2M",
-          "8M",
-          "20M",
-          "50M"
+          "2 million",
+          "20 million",
+          "50 million",
+          "200 million"
         ],
-        "answer": 2,
-        "explanation": "The deck: 20M monthly users, 50%+ of them under 24."
+        "answer": 1,
+        "explanation": "20 million monthly users, over half under 24."
       },
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "AI companion apps have grown 700% since 2022. Character.AI reports 20M monthly users, more than half under 24."
+      "tagline": "AI now competes for the most intimate resource humans have: emotional attention."
     },
     {
-      "id": "s04",
-      "n": 4,
-      "act": 1,
-      "isNew": true,
-      "icon": "shield-check",
-      "status": "",
-      "image": "/images/trends/s04.jpg",
-      "art": "ripples",
-      "why": "",
-      "story": "",
-      "hotTake": "The hyperscalers are spending like oil companies",
-      "short": "$700B AI build-out",
-      "title": "The hyperscalers are spending like oil companies",
-      "hook": "The big four cloud providers will spend about $630B on capex in 2026 alone.",
-      "stats": [
-        {
-          "value": "$630B",
-          "label": "big 4 hyperscaler capital expenditure, 2026 alone",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$460B",
-          "label": "Google’s contracted cloud backlog, doubled year over year",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$66B",
-          "label": "Gulf sovereign wealth deployed into AI infrastructure in 2025",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "June deck"
-      ],
-      "guess": {
-        "question": "How much will the big four hyperscalers spend on capex in 2026?",
-        "min": 0,
-        "max": 1000,
-        "unit": "$B",
-        "answer": 630,
-        "answerLabel": "$630B",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "Google’s contracted cloud backlog roughly doubled year over year.",
-        "answer": true,
-        "explanation": "The deck says it doubled, to $460B."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "The four biggest cloud providers plan about $630B of AI infrastructure spending in 2026 alone."
-    },
-    {
-      "id": "s05",
-      "n": 5,
-      "act": 2,
-      "isNew": false,
-      "icon": "zap",
-      "status": "",
-      "image": "/images/trends/s05.jpg",
-      "art": "lenses",
-      "why": "",
-      "story": "",
-      "hotTake": "The next data center is in your building",
-      "short": "Models in your building",
-      "title": "The next data center is in your building",
-      "hook": "Gartner expects enterprises to use small specialised models more than LLMs by 2027.",
-      "stats": [
-        {
-          "value": "3x",
-          "label": "Gartner: enterprises use small specialised models vs LLMs by 2027",
-          "fresh": "deck",
-          "source": "Gartner"
-        },
-        {
-          "value": "90%",
-          "label": "cost cut: cloud inference ($0.50) to on-premise SLM ($0.05)",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$2.1B",
-          "label": "GDPR fines in 2025, cloud AI data processing exposure",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "Gartner",
-        "June deck"
-      ],
-      "guess": {
-        "question": "By how much does the deck say on-premise small-model inference cuts cost vs cloud?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 90,
-        "answerLabel": "90%",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "The deck quotes $0.50 for cloud inference and $0.05 for an on-premise small model.",
-        "answer": true,
-        "explanation": "Those are the two figures the deck gives for the cost comparison."
-      },
-      "gameType": "truefalse",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "Gartner expects enterprises to use small, specialised models more than general LLMs by 2027, cutting inference cost by about 90%."
-    },
-    {
-      "id": "s06",
-      "n": 6,
-      "act": 2,
-      "isNew": false,
-      "icon": "network",
-      "status": "",
-      "image": "/images/trends/s06.jpg",
-      "art": "waves",
-      "why": "",
-      "story": "",
-      "hotTake": "Nvidia has 92% market share, and everyone is building chips",
-      "short": "Nvidia’s 92%",
-      "title": "Nvidia has 92% market share, and everyone is building chips",
-      "hook": "Google, Amazon, Microsoft, Meta and Apple are all building their own chips.",
-      "stats": [
-        {
-          "value": "92%",
-          "label": "Nvidia discrete GPU market share, H1 2025",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$5T",
-          "label": "Nvidia peak market cap, larger than Japan’s GDP",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$1.5B",
-          "label": "Groq Saudi investment for the largest non-Nvidia inference center",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "June deck"
-      ],
-      "guess": {
-        "question": "What was Nvidia’s discrete GPU market share in H1 2025?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 92,
-        "answerLabel": "92%",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "Nvidia’s peak market cap was larger than Japan’s GDP.",
-        "answer": true,
-        "explanation": "The deck gives Nvidia’s peak market cap as $5T, which it compares to Japan’s GDP."
-      },
-      "gameType": "choice",
-      "choice": {
-        "question": "What was Nvidia’s discrete GPU market share in H1 2025?",
-        "options": [
-          "45%",
-          "62%",
-          "92%",
-          "99%"
-        ],
-        "answer": 2,
-        "explanation": "The deck: 92% in H1 2025."
-      },
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "Nvidia holds 92% of the discrete GPU market, while Google, Amazon, Microsoft, Meta and Apple all build their own chips."
-    },
-    {
-      "id": "s07",
-      "n": 7,
-      "act": 2,
-      "isNew": false,
-      "icon": "coins",
-      "status": "",
-      "image": "/images/trends/s07.jpg",
-      "art": "hub",
-      "why": "",
-      "story": "",
-      "hotTake": "The AI that hires the AI",
-      "short": "Agents connecting agents",
-      "title": "The AI that hires the AI",
-      "hook": "Agents now connect to each other directly, without a human in the middle.",
-      "stats": [
-        {
-          "value": "50+",
-          "label": "enterprise companies on the A2A protocol within weeks of launch",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "1,445%",
-          "label": "Gartner surge in multi-agent orchestration inquiries, 2025",
-          "fresh": "deck",
-          "source": "Gartner"
-        },
-        {
-          "value": "1,000+",
-          "label": "MCP server integrations within months of release",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "Gartner",
-        "June deck"
-      ],
-      "guess": {
-        "question": "How many MCP server integrations appeared within months of the protocol’s release?",
-        "min": 0,
-        "max": 2000,
-        "unit": "",
-        "answer": 1000,
-        "answerLabel": "1,000+",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "More than 50 enterprises adopted the A2A protocol within weeks of launch.",
-        "answer": true,
-        "explanation": "The deck says 50+ enterprise companies adopted it within weeks."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "AI agents now connect directly to each other. Over 50 enterprises adopted the A2A protocol within weeks of launch."
-    },
-    {
-      "id": "s08",
-      "n": 8,
-      "act": 2,
-      "isNew": true,
-      "icon": "chart-line",
-      "status": "",
-      "image": "/images/trends/s08.jpg",
-      "art": "ladder",
-      "why": "",
-      "story": "",
-      "hotTake": "SaaS is having its Kodak moment",
-      "short": "SaaS under pressure",
-      "title": "SaaS is having its Kodak moment",
-      "hook": "$800B was erased from software market cap in five sessions in February 2026.",
-      "stats": [
-        {
-          "value": "$800B",
-          "label": "erased from the software sector market cap in 5 sessions, Feb 2026",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "-60%",
-          "label": "Atlassian year to date by mid-February 2026",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "20 yrs",
-          "label": "how long the per-seat SaaS model lasted",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "June deck"
-      ],
-      "guess": {
-        "question": "How much software-sector market cap was erased in five sessions in February 2026?",
-        "min": 0,
-        "max": 1500,
-        "unit": "$B",
-        "answer": 800,
-        "answerLabel": "$800B",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "Atlassian was down about 60% year to date by mid-February 2026.",
-        "answer": true,
-        "explanation": "The deck gives −60% for Atlassian at that point."
-      },
-      "gameType": "truefalse",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "About $800B of software market value was wiped out in five sessions in February 2026, as the per-seat subscription model came under question."
-    },
-    {
-      "id": "s09",
-      "n": 9,
-      "act": 3,
-      "isNew": false,
-      "icon": "flask-conical",
-      "status": "",
-      "image": "/images/trends/s09.jpg",
-      "art": "tiers",
-      "why": "",
-      "story": "",
-      "hotTake": "Klarna failed. JPMorgan won. Same AI, different strategy.",
-      "short": "Klarna vs JPMorgan",
-      "title": "Klarna failed. JPMorgan won. Same AI, different strategy.",
-      "hook": "95% of enterprises see zero measurable AI return. JPMorgan gets its $2B back every year.",
-      "stats": [
-        {
-          "value": "95%",
-          "label": "of enterprises: zero measurable AI financial return (MIT 2025)",
-          "fresh": "deck",
-          "source": "MIT 2025"
-        },
-        {
-          "value": "$2B→$2B",
-          "label": "JPMorgan: $2B invested, $2B returned annually",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "6–8 wks",
-          "label": "idea-to-deployed cycle for companies with real AI ROI",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "MIT 2025",
-        "June deck"
-      ],
-      "guess": {
-        "question": "What share of enterprises see zero measurable AI financial return (MIT 2025)?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 95,
-        "answerLabel": "95%",
-        "source": "MIT 2025"
-      },
-      "trueFalse": {
-        "statement": "JPMorgan’s AI returned about its $2B investment each year.",
-        "answer": true,
-        "explanation": "The deck: $2B invested, $2B returned annually."
-      },
-      "chance": {
-        "question": "What is the chance a given enterprise has measurable AI return (MIT 2025)?",
-        "answer": 5,
-        "explanation": "If 95% see zero return, about 5% see measurable return."
-      },
-      "gameType": "choice",
-      "choice": {
-        "question": "What share of enterprises report zero measurable AI financial return (MIT 2025)?",
-        "options": [
-          "15%",
-          "50%",
-          "75%",
-          "95%"
-        ],
-        "answer": 3,
-        "explanation": "MIT 2025, as cited in the deck: 95%."
-      },
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "Most enterprises see no measurable AI return (MIT 2025). JPMorgan reports that its $2B AI investment returns about $2B a year."
-    },
-    {
-      "id": "s10",
+      "id": "one-agent",
       "n": 10,
-      "act": 3,
+      "act": "work",
+      "title": "One Agent for All Your Work",
+      "short": "One work agent",
+      "status": "Scaling",
+      "isNew": true,
+      "icon": "layout-grid",
+      "image": null,
+      "art": "hub",
+      "hook": "The big platforms are racing to own the single agent that does your knowledge work, with its own account and budget.",
+      "why": "Customers will pick a primary work agent. Our services need to plug into it, not compete with it.",
+      "story": "The question in 2026 shifted from which chatbot to which agent runs the work, and who controls its permissions.",
+      "stats": [
+        {
+          "value": "Oct 8",
+          "label": "Google announces the Gemini agent with its own account, permissions and a spend cap",
+          "fresh": "checked"
+        },
+        {
+          "value": "Oct 7",
+          "label": "OpenAI begins rolling out GPT-6 in ChatGPT",
+          "fresh": "checked"
+        },
+        {
+          "value": "Mar 2027",
+          "label": "Google's Gems give way to reusable skills in Workspace",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "What share of large firms were scaling AI agents in 2026?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 40,
+        "answerLabel": "40%, up from 27% a year earlier",
+        "source": "McKinsey State of AI 2026"
+      },
+      "hotTake": "Within two years, each of us will have one AI agent doing a large part of our daily work.",
+      "include": true,
+      "sources": [
+        {
+          "title": "HelloGrowth: Google AI news October 2026",
+          "url": "https://hellogrowth.ai/en/blog/google-ai-news-october-2026"
+        },
+        {
+          "title": "Tech AI Magazine: October 2026 AI stories",
+          "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
+        }
+      ],
+      "gameType": "guess",
+      "tagline": "The big platforms are racing to own the single agent that does your knowledge work, with its own account and budget."
+    },
+    {
+      "id": "ai-colleague",
+      "n": 11,
+      "act": "work",
+      "title": "Your Next Colleague Will Be an AI",
+      "short": "AI colleagues",
+      "status": "Now",
       "isNew": false,
       "icon": "users",
-      "status": "",
-      "image": "/images/trends/s10.jpg",
-      "art": "falling",
-      "why": "",
-      "story": "",
-      "hotTake": "AI vs AI: the battles you’ll never see",
-      "short": "AI vs AI fraud",
-      "title": "AI vs AI: the battles you’ll never see",
-      "hook": "Deepfakes are now behind 1 in 20 failed identity checks.",
-      "stats": [
-        {
-          "value": "$1.65B",
-          "label": "deepfake fraud losses in 2025 (Surfshark)",
-          "fresh": "deck",
-          "source": "Surfshark"
-        },
-        {
-          "value": "$40B",
-          "label": "Deloitte projection: AI-facilitated fraud globally by 2027",
-          "fresh": "deck",
-          "source": "Deloitte"
-        },
-        {
-          "value": "1 in 20",
-          "label": "identity verification failures now deepfake-driven (Veriff 2025)",
-          "fresh": "deck",
-          "source": "Veriff 2025"
-        }
-      ],
-      "sources": [
-        "Surfshark",
-        "Deloitte",
-        "Veriff 2025"
-      ],
-      "guess": {
-        "question": "How big were deepfake fraud losses in 2025 (Surfshark)?",
-        "min": 0,
-        "max": 5,
-        "unit": "$B",
-        "answer": 1.65,
-        "answerLabel": "$1.65B",
-        "source": "Surfshark"
-      },
-      "trueFalse": {
-        "statement": "About 1 in 20 identity verification failures are now deepfake-driven.",
-        "answer": true,
-        "explanation": "Veriff 2025, as cited in the deck."
-      },
-      "chance": {
-        "question": "What is the chance a failed identity check is deepfake-driven (Veriff 2025)?",
-        "answer": 5,
-        "explanation": "1 in 20 is 5%."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "Deepfake fraud losses reached $1.65B in 2025, and 1 in 20 failed identity checks is now deepfake-driven."
-    },
-    {
-      "id": "s11",
-      "n": 11,
-      "act": 3,
-      "isNew": false,
-      "icon": "message-square",
-      "status": "",
-      "image": "/images/trends/s11.jpg",
-      "art": "rising",
-      "why": "",
-      "story": "",
-      "hotTake": "A new frontier model lands before you finish evaluating the last one",
-      "short": "Models every week",
-      "title": "A new frontier model lands before you finish evaluating the last one",
-      "hook": "Inference costs fell 99% in one year.",
-      "stats": [
-        {
-          "value": "300+",
-          "label": "models on the 2026 LLM leaderboard, up from 1 worth watching in 2021",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "99%",
-          "label": "drop in inference cost in one year, $3.50 to $0.32 per million tokens",
-          "fresh": "deck",
-          "source": "ARK Invest 2026"
-        },
-        {
-          "value": "5x",
-          "label": "jump in AI agent task reliability during 2025",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "ARK Invest 2026",
-        "June deck"
-      ],
-      "guess": {
-        "question": "How many models are on the 2026 LLM leaderboard?",
-        "min": 0,
-        "max": 500,
-        "unit": "",
-        "answer": 300,
-        "answerLabel": "300+",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "Inference cost fell from $3.50 to $0.32 per million tokens in a year.",
-        "answer": true,
-        "explanation": "ARK Invest 2026, as cited in the deck."
-      },
-      "gameType": "truefalse",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "The 2026 LLM leaderboard lists 300+ models. Inference cost fell 99% in one year, from $3.50 to $0.32 per million tokens."
-    },
-    {
-      "id": "s12",
-      "n": 12,
-      "act": 3,
-      "isNew": true,
-      "icon": "eye",
-      "status": "",
-      "image": "/images/trends/s12.jpg",
-      "art": "layers",
-      "why": "",
-      "story": "",
-      "hotTake": "Argentina just created the world’s first legal category for a non-human corporation",
-      "short": "Argentina’s bid",
-      "title": "Argentina just created the world’s first legal category for a non-human corporation",
-      "hook": "Argentina is bidding for $20B+ in Stargate data centers, and it has a legal framework for non-human AI corporations.",
-      "stats": [
-        {
-          "value": "1st",
-          "label": "legal framework for non-human AI corporations anywhere, June 2026",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$20B+",
-          "label": "Stargate data center bid for Patagonia",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "99.9%",
-          "label": "AI financial advice accuracy; can’t deploy in the US over the 0.1% liability",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "June deck"
-      ],
-      "guess": {
-        "question": "How much is Argentina bidding for in Stargate data centers?",
-        "min": 0,
-        "max": 50,
-        "unit": "$B",
-        "answer": 20,
-        "answerLabel": "$20B+",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "Argentina created a legal framework for non-human AI corporations in June 2026.",
-        "answer": true,
-        "explanation": "The deck says this is the first such framework anywhere."
-      },
-      "gameType": "choice",
-      "choice": {
-        "question": "How big is Argentina’s Stargate data center bid?",
-        "options": [
-          "$2B+",
-          "$5B+",
-          "$20B+",
-          "$100B+"
-        ],
-        "answer": 2,
-        "explanation": "The deck: $20B+ for Patagonia."
-      },
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "Argentina passed a legal framework for non-human AI corporations in June 2026, and is bidding for $20B+ of Stargate data centers."
-    },
-    {
-      "id": "s13",
-      "n": 13,
-      "act": 4,
-      "isNew": false,
-      "icon": "globe",
-      "status": "",
-      "image": "/images/trends/s13.jpg",
-      "art": "bolt",
-      "why": "",
-      "story": "",
-      "hotTake": "AI is now building the next AI",
-      "short": "AI builds AI code",
-      "title": "AI is now building the next AI",
-      "hook": "Mythos Preview achieved a 52x speedup on AI training code.",
-      "stats": [
-        {
-          "value": "80%",
-          "label": "of Anthropic’s own code is written by Claude, Anthropic Institute June 2026",
-          "fresh": "deck",
-          "source": "Anthropic Institute"
-        },
-        {
-          "value": "8x",
-          "label": "engineering throughput vs 2021–2025, same headcount",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "52x",
-          "label": "speedup Mythos Preview achieved on AI training code, from 3x in May 2024",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "Anthropic Institute, June 2026"
-      ],
-      "guess": {
-        "question": "What speedup did Mythos Preview achieve on AI training code?",
-        "min": 0,
-        "max": 100,
-        "unit": "x",
-        "answer": 52,
-        "answerLabel": "52x",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "Anthropic’s engineering throughput is 8x that of 2021–2025, with the same headcount.",
-        "answer": true,
-        "explanation": "The deck: same engineers, same headcount, 8x the output."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "Anthropic says Claude now writes 80% of its own code, and Mythos Preview reached a 52x speedup on AI training code."
-    },
-    {
-      "id": "s14",
-      "n": 14,
-      "act": 4,
-      "isNew": false,
-      "icon": "layers",
-      "status": "",
-      "image": "/images/trends/s14.jpg",
-      "art": "stars",
-      "why": "",
-      "story": "",
-      "hotTake": "The cost of intelligence is falling. Your AI bill is rising.",
-      "short": "Cheap AI, rising bills",
-      "title": "The cost of intelligence is falling. Your AI bill is rising.",
-      "hook": "Per-token cost fell sharply, but the average enterprise AI budget went from $1.2M to $7M.",
-      "stats": [
-        {
-          "value": "98%",
-          "label": "drop in GPT-4-class inference cost, $60 to $0.60 per M tokens (2024 to 2026). Check: this arithmetic gives 99%",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$7M",
-          "label": "average enterprise AI budget 2026, up from $1.2M in 2024",
-          "fresh": "deck",
-          "source": "FinOps Foundation"
-        },
-        {
-          "value": "-$5B",
-          "label": "OpenAI annual loss in 2025 despite $3.7B revenue",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "FinOps Foundation",
-        "June deck"
-      ],
-      "guess": {
-        "question": "What is the average enterprise AI budget in 2026 (FinOps Foundation)?",
-        "min": 0,
-        "max": 10,
-        "unit": "$M",
-        "answer": 7,
-        "answerLabel": "$7M",
-        "source": "FinOps Foundation"
-      },
-      "trueFalse": {
-        "statement": "GPT-4-class inference fell from $60 to $0.60 per million tokens between 2024 and 2026.",
-        "answer": true,
-        "explanation": "That is the deck’s figure. The deck’s \"98%\" label does not match it; the arithmetic gives 99%. Check before the session."
-      },
-      "gameType": "truefalse",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "The price of a unit of AI intelligence fell sharply between 2024 and 2026, yet the average enterprise AI budget rose from $1.2M to $7M."
-    },
-    {
-      "id": "s15",
-      "n": 15,
-      "act": 4,
-      "isNew": false,
-      "icon": "rocket",
-      "status": "",
-      "image": "/images/trends/s15.jpg",
-      "art": "ecg",
-      "why": "",
-      "story": "",
-      "hotTake": "AI compute is the new oil",
-      "short": "Compute is the new oil",
-      "title": "AI compute is the new oil",
-      "hook": "The US holds 55% of global hyperscale AI compute, with China second.",
-      "stats": [
-        {
-          "value": "55%",
-          "label": "US share of global hyperscale AI compute, China second",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$15.2B",
-          "label": "Microsoft committed to the UAE alone through 2029",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$1T",
-          "label": "Saudi Arabia’s AI investment pledge, about the GDP of the Netherlands",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "June deck"
-      ],
-      "guess": {
-        "question": "What share of global hyperscale AI compute does the US hold?",
-        "min": 0,
-        "max": 100,
-        "unit": "%",
-        "answer": 55,
-        "answerLabel": "55%",
-        "source": "deck"
-      },
-      "trueFalse": {
-        "statement": "Microsoft committed $15.2B to the UAE through 2029.",
-        "answer": true,
-        "explanation": "The deck gives this figure, quadrupling local capacity."
-      },
-      "gameType": "choice",
-      "choice": {
-        "question": "What share of global hyperscale AI compute does the US hold?",
-        "options": [
-          "20%",
-          "35%",
-          "55%",
-          "80%"
-        ],
-        "answer": 2,
-        "explanation": "The deck: 55%, with China in second place."
-      },
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "The US holds 55% of global hyperscale AI compute, with China second. Microsoft has committed $15.2B to the UAE through 2029."
-    },
-    {
-      "id": "s16",
-      "n": 16,
-      "act": 4,
-      "isNew": true,
-      "icon": "scale",
-      "status": "",
-      "image": "/images/trends/s16.jpg",
-      "art": "network",
-      "why": "",
-      "story": "",
-      "hotTake": "Six companies now control the global AI stack",
-      "short": "Six-company stack",
-      "title": "Six companies now control the global AI stack",
-      "hook": "OpenAI, Anthropic, Google, Meta, Microsoft and Nvidia control the model, the cloud, the chip or the interface.",
-      "stats": [
-        {
-          "value": "3.5x",
-          "label": "BATX market cap growth vs Magnificent Seven, Q3 2024 to Q3 2025 (CSIS)",
-          "fresh": "deck",
-          "source": "CSIS"
-        },
-        {
-          "value": "$5T",
-          "label": "Nvidia peak market cap, the largest company by value ever",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "€200B",
-          "label": "EU AI investment plan, including AI Gigafactories",
-          "fresh": "deck",
-          "source": "deck"
-        }
-      ],
-      "sources": [
-        "CSIS",
-        "June deck"
-      ],
-      "guess": {
-        "question": "How much did BATX’s market cap grow vs the Magnificent Seven, Q3 2024 to Q3 2025 (CSIS)?",
-        "min": 0,
-        "max": 10,
-        "unit": "x",
-        "answer": 3.5,
-        "answerLabel": "3.5x",
-        "source": "CSIS"
-      },
-      "trueFalse": {
-        "statement": "The EU’s AI investment plan is worth €200B.",
-        "answer": true,
-        "explanation": "The deck gives €200B, including AI Gigafactories."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "OpenAI, Anthropic, Google, Meta, Microsoft and Nvidia are described as controlling the model, the cloud, the chip or the interface of AI."
-    },
-    {
-      "id": "s17",
-      "n": 17,
-      "act": 5,
-      "isNew": false,
-      "icon": "database",
-      "status": "",
-      "image": "/images/trends/s17.jpg",
-      "art": "molecules",
-      "why": "",
-      "story": "",
-      "hotTake": "Your next colleague will be an AI. Make the teamwork right.",
-      "short": "Leading AI teams",
-      "title": "Your next colleague will be an AI. Make the teamwork right.",
-      "hook": "Only 14% of leaders are adept at shaping how humans and AI work together.",
+      "image": "images/ai-colleague.jpg",
+      "art": null,
+      "hook": "The question is no longer whether AI is on your team. It's whether you know how to lead it.",
+      "why": "Customers need help with the people side, not only the technology: skills, roles and new ways of working.",
+      "story": "Teams using AI together can underperform individuals using it alone. Collaboration with AI is a skill, and few leaders have it yet.",
       "stats": [
         {
           "value": "14%",
-          "label": "of leaders adept at shaping human-AI interactions (Deloitte 2026)",
-          "fresh": "deck",
-          "source": "Deloitte 2026"
+          "label": "of leaders say they are adept at shaping human-AI interaction (Deloitte 2026)",
+          "fresh": "deck"
         },
         {
           "value": "$5.5T",
-          "label": "economic value at risk from AI skills shortages by 2026 (IDC)",
-          "fresh": "deck",
-          "source": "IDC"
+          "label": "economic value at risk from AI skills shortages (IDC)",
+          "fresh": "deck"
         },
         {
           "value": "90%+",
-          "label": "of global enterprises face critical AI skills gaps by end-2026 (IDC)",
-          "fresh": "deck",
-          "source": "IDC"
+          "label": "of enterprises face critical AI skills gaps by end of 2026 (IDC)",
+          "fresh": "deck"
         }
       ],
-      "sources": [
-        "Deloitte 2026",
-        "IDC"
-      ],
       "guess": {
-        "question": "What share of leaders are adept at shaping human-AI interactions (Deloitte 2026)?",
+        "question": "What share of leaders say they're good at shaping how people and AI work together?",
         "min": 0,
         "max": 100,
         "unit": "%",
         "answer": 14,
         "answerLabel": "14%",
-        "source": "Deloitte 2026"
+        "source": "Deloitte 2026 (from June deck)"
       },
-      "trueFalse": {
-        "statement": "IDC puts the value at risk from AI skills shortages at $5.5T by 2026.",
-        "answer": true,
-        "explanation": "The deck cites IDC for this figure."
-      },
-      "chance": {
-        "question": "What is the chance a global enterprise faces critical AI skills gaps by end-2026 (IDC)?",
-        "answer": 90,
-        "explanation": "IDC: 90%+ of enterprises."
-      },
-      "gameType": "truefalse",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "Only 14% of leaders are adept at shaping how people and AI work together (Deloitte 2026). IDC puts $5.5T of value at risk from AI skills shortages by 2026."
-    },
-    {
-      "id": "s18",
-      "n": 18,
-      "act": 5,
-      "isNew": false,
-      "icon": "cloud",
-      "status": "",
-      "image": "/images/trends/s18.jpg",
-      "art": "orbit",
-      "why": "",
-      "story": "",
-      "hotTake": "Europe has the rules. It doesn’t have the models.",
-      "short": "Europe: rules, no models",
-      "title": "Europe has the rules. It doesn’t have the models.",
-      "hook": "The EU AI Act has been fully in force since August 2025.",
-      "stats": [
+      "hotTake": "Managing AI agents will be a core skill for every manager by 2028.",
+      "include": true,
+      "sources": [
         {
-          "value": "€200B",
-          "label": "EU AI investment plan, including AI Gigafactories",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "$6.4B",
-          "label": "Microsoft AI investment in Germany alone, US-owned compute on EU soil",
-          "fresh": "deck",
-          "source": "deck"
-        },
-        {
-          "value": "Aug 2025",
-          "label": "EU AI Act fully in force, the most comprehensive AI law",
-          "fresh": "deck",
-          "source": "deck"
+          "title": "June 2026 deck (not re-checked)"
         }
       ],
-      "sources": [
-        "June deck"
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "Most leaders say they are good at shaping how people and AI work together.",
+        "answer": false,
+        "explanation": "Deloitte 2026: only 14% say so."
+      },
+      "tagline": "The question is no longer whether AI is on your team. It's whether you know how to lead it."
+    },
+    {
+      "id": "bottom-rung",
+      "n": 12,
+      "act": "work",
+      "title": "The Bottom Rung Is Breaking",
+      "short": "Bottom rung",
+      "status": "Now",
+      "isNew": true,
+      "icon": "graduation-cap",
+      "image": null,
+      "art": "ladder",
+      "hook": "Companies now name AI as a reason for job cuts, and the junior end feels it first. The evidence is contested, and that is the signal.",
+      "why": "If juniors don't learn by doing, who becomes the senior expert in five years? Every organisation, ours included, needs an answer.",
+      "story": "AI-cited cuts peaked at 38,579 in May (40% of that month's cuts) and dropped to 1,265 in October. Announced cuts are not the same as jobs lost, and the clearest pattern is a tilt toward experience rather than mass displacement.",
+      "stats": [
+        {
+          "value": "121,401",
+          "label": "US job cuts where employers cited AI, January–October 2026, more than double all of 2025 (Challenger, Gray & Christmas)",
+          "fresh": "checked"
+        },
+        {
+          "value": "−13%",
+          "label": "relative employment for 22–25-year-olds in the most AI-exposed jobs, 2022–2026 (Stanford study)",
+          "fresh": "checked"
+        },
+        {
+          "value": "2.7x",
+          "label": "more talent leaders expect AI to increase entry-level hiring than decrease it (Strada)",
+          "fresh": "checked"
+        }
       ],
       "guess": {
-        "question": "How much is Microsoft investing in AI in Germany alone (deck)?",
+        "question": "How many US job cuts did employers attribute to AI from January to October 2026?",
         "min": 0,
-        "max": 10,
-        "unit": "$B",
-        "answer": 6.4,
-        "answerLabel": "$6.4B",
-        "source": "deck"
+        "max": 300000,
+        "unit": "",
+        "answer": 121401,
+        "answerLabel": "121,401",
+        "source": "Challenger, Gray & Christmas"
       },
-      "trueFalse": {
-        "statement": "The EU AI Act has been fully in force since August 2025.",
-        "answer": true,
-        "explanation": "The deck gives August 2025."
-      },
+      "hotTake": "AI will make it harder, not easier, for young people to start a career.",
+      "include": true,
+      "sources": [
+        {
+          "title": "HCAMag: Challenger AI job cuts through October 2026",
+          "url": "https://www.hcamag.com/us/specialization/transformation/ai-blamed-for-121401-job-cuts-but-the-labor-data-isnt-buying-it/594129"
+        },
+        {
+          "title": "Challenger Report, May 2026",
+          "url": "https://www.challengergray.com/wp-content/uploads/2026/06/Challenger-Report-May-2026.pdf"
+        },
+        {
+          "title": "Amherst Careers: AI's effect on young workers",
+          "url": "https://careers.amherst.edu/blog/2026/05/08/ai-is-having-a-significant-and-disproportionate-effect-on-young-workers-job-prospects-study-finds/"
+        },
+        {
+          "title": "Strada: Entry-level hiring in the AI era",
+          "url": "https://www.strada.org/news-insights/entry-level-hiring-in-the-ai-era-what-employers-are-thinking-and-doing"
+        }
+      ],
       "gameType": "choice",
       "choice": {
-        "question": "How much is the EU’s AI investment plan worth?",
+        "question": "How many US job cuts did employers attribute to AI from January to October 2026?",
         "options": [
-          "€20B",
-          "€200B",
-          "€2T",
-          "€20T"
+          "1,265",
+          "12,127",
+          "121,401",
+          "1,214,010"
         ],
-        "answer": 1,
-        "explanation": "The deck: €200B, including AI Gigafactories."
+        "answer": 2,
+        "explanation": "Challenger, Gray & Christmas: 121,401."
       },
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
-      ],
-      "tagline": "The EU AI Act has been fully in force since August 2025, and the EU plans €200B of AI investment, including AI Gigafactories."
+      "tagline": "Companies now name AI as a reason for job cuts, and the junior end feels it first. The evidence is contested, and that is the signal."
     },
     {
-      "id": "s19",
-      "n": 19,
-      "act": 5,
+      "id": "one-trillion",
+      "n": 13,
+      "act": "money",
+      "title": "$730 Billion. And Nobody Can Stop.",
+      "short": "$1 trillion",
+      "status": "Now",
       "isNew": false,
-      "icon": "code",
-      "status": "",
-      "image": "/images/trends/s19.jpg",
-      "art": "ripples",
-      "why": "",
-      "story": "",
-      "hotTake": "AI diagnosed a lung cancer the doctor missed.",
-      "short": "AI in clinics",
-      "title": "AI diagnosed a lung cancer the doctor missed.",
-      "hook": "In the UK, India and Kenya, AI is already saving lives, the deck says.",
+      "icon": "landmark",
+      "image": "images/one-trillion.jpg",
+      "art": null,
+      "hook": "Big Tech's AI build-out now outruns its own cash flow. AI has become a capital-markets story, not just a product story.",
+      "why": "This money becomes cheaper, better AI services that our customers can use. The risk now sits with lenders, utilities and suppliers if demand disappoints.",
+      "story": "Q3 capex for the four came to about $202B, up 108% year on year. Global data centre capex passes $1 trillion in 2026 (Dell'Oro). Anthropic's IPO filing gives the first public view of an AI lab's books: fast revenue growth, a Q3 operating loss of $567M, and very large compute commitments.",
       "stats": [
         {
-          "value": "94%",
-          "label": "NHS AI retinopathy detection rate, serving 40M patients without specialist access",
-          "fresh": "deck",
-          "source": "deck"
+          "value": "$730B",
+          "label": "2026 capex guided by Amazon, Alphabet, Microsoft and Meta, about 78% above 2025 (Q3 2026 earnings)",
+          "fresh": "checked"
         },
         {
-          "value": "96%",
-          "label": "Wadhwani AI TB detection accuracy in India, 2,000+ rural clinics",
-          "fresh": "deck",
-          "source": "deck"
+          "value": "182%",
+          "label": "Amazon's Q3 capex as a share of its operating cash flow; Alphabet 121%, Meta 104% (Walnut, from 10-Qs)",
+          "fresh": "checked"
         },
         {
-          "value": "1 in 3",
-          "label": "people globally lack access to essential health services",
-          "fresh": "deck",
-          "source": "deck"
+          "value": "$17.0B",
+          "label": "Anthropic's Q3 2026 revenue, up 1,127% year on year, against $895B of compute commitments (amended S-1)",
+          "fresh": "checked"
         }
       ],
-      "sources": [
-        "June deck"
-      ],
       "guess": {
-        "question": "In how many rural clinics is Wadhwani AI’s TB detection deployed?",
+        "question": "How much will Amazon, Alphabet, Microsoft and Meta spend on capex in 2026, in billions of US dollars?",
         "min": 0,
-        "max": 5000,
-        "unit": "",
-        "answer": 2000,
-        "answerLabel": "2,000+",
-        "source": "deck"
+        "max": 1500,
+        "unit": "$B",
+        "answer": 730,
+        "answerLabel": "About $730 billion",
+        "source": "Company guidance, Q3 2026 earnings"
       },
-      "trueFalse": {
-        "statement": "About 1 in 3 people globally lack access to essential health services.",
-        "answer": true,
-        "explanation": "The deck gives this figure."
-      },
-      "chance": {
-        "question": "What is the chance a person worldwide lacks access to essential health services?",
-        "answer": 33,
-        "explanation": "The deck says 1 in 3."
-      },
-      "gameType": "guess",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
+      "hotTake": "The AI investment boom will end in a crash before 2030.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Walnut: AI capex tracker",
+          "url": "https://walnutinvest.com/stats/ai-capex-statistics"
+        },
+        {
+          "title": "ValueAdd VC: Big Tech AI spending 2026",
+          "url": "https://valueaddvc.com/ai-spending"
+        },
+        {
+          "title": "Anthropic S-1 (SEC)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm"
+        },
+        {
+          "title": "AY Automate: Anthropic S-1 figures",
+          "url": "https://www.ayautomate.com/blog/anthropic-s-1-claude-buyers"
+        },
+        {
+          "title": "Mobile World Live: Dell'Oro data centre capex",
+          "url": "https://www.mobileworldlive.com/ai-cloud/data-centre-capex-to-top-1t-as-ai-spending-accelerates/"
+        }
       ],
-      "tagline": "AI is already in use in healthcare. The NHS uses AI to screen for retinopathy, and Wadhwani AI’s TB detection is in 2,000+ rural clinics in India."
+      "gameType": "guess",
+      "tagline": "Big Tech's AI build-out now outruns its own cash flow. AI has become a capital-markets story, not just a product story."
     },
     {
-      "id": "s20",
-      "n": 20,
-      "act": 5,
-      "isNew": true,
-      "icon": "file-text",
-      "status": "",
-      "image": "/images/trends/s20.jpg",
-      "art": "lenses",
-      "why": "",
-      "story": "",
-      "hotTake": "Show me the money",
-      "short": "The ROI moment of truth",
-      "title": "Show me the money",
-      "hook": "Most enterprises cannot yet show a measurable return on their AI spend.",
+      "id": "cheaper-bigger",
+      "n": 14,
+      "act": "money",
+      "title": "Faster, Cheaper, and the Bill Still Grows",
+      "short": "Cheaper, bigger bill",
+      "status": "Now",
+      "isNew": false,
+      "icon": "receipt",
+      "image": "images/cheaper-bigger.jpg",
+      "art": null,
+      "hook": "A new frontier model lands before you finish testing the last one. Each token gets cheaper, yet total spend keeps rising.",
+      "why": "Model choice is no longer the differentiator. Value comes from what customers build with it and how they control the cost.",
+      "story": "October 2026 alone brought GPT-6, Gemini 4 Argon and Claude Haiku 5.5. Price per token falls; usage rises faster.",
       "stats": [
         {
-          "value": "95%",
-          "label": "of enterprises: zero measurable financial return from AI (MIT GenAI Divide 2025)",
-          "fresh": "deck",
-          "source": "MIT 2025"
+          "value": "~12 days",
+          "label": "between new notable AI models in 2025",
+          "fresh": "deck"
         },
         {
-          "value": "$30–40B",
-          "label": "estimated global enterprise AI spend with no measurable return",
-          "fresh": "deck",
-          "source": "deck"
+          "value": "−98%",
+          "label": "GPT-4-class inference cost, $60 to about $0.60 per million tokens (2024 to 2026)",
+          "fresh": "deck"
         },
         {
-          "value": "2027",
-          "label": "Gartner: 40% of agentic AI projects cancelled for poor ROI",
-          "fresh": "deck",
-          "source": "Gartner"
+          "value": "$7M",
+          "label": "average enterprise AI budget in 2026, up from $1.2M in 2024 (FinOps Foundation)",
+          "fresh": "deck"
         }
       ],
-      "sources": [
-        "MIT GenAI Divide 2025",
-        "Gartner"
-      ],
       "guess": {
-        "question": "What share of agentic AI projects does Gartner expect to be cancelled by 2027 for poor ROI?",
+        "question": "By how much has the price of GPT-4-class AI fallen since 2024?",
         "min": 0,
         "max": 100,
         "unit": "%",
-        "answer": 40,
-        "answerLabel": "40%",
-        "source": "Gartner"
+        "answer": 98,
+        "answerLabel": "About 98%",
+        "source": "From June deck"
       },
-      "trueFalse": {
-        "statement": "Estimated global enterprise AI spend with no measurable return is $30–40B.",
-        "answer": true,
-        "explanation": "The deck gives this range."
-      },
-      "gameType": "truefalse",
-      "video": null,
-      "more": [
-        "",
-        "",
-        ""
+      "hotTake": "Total AI spend will keep rising even as prices keep falling.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Google: October 2026 AI updates",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/"
+        },
+        {
+          "title": "Tech AI Magazine: October 2026 AI stories",
+          "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
       ],
-      "tagline": "Gartner expects 40% of agentic AI projects to be cancelled by 2027 for poor ROI, and an estimated $30–40B of enterprise AI spend shows no measurable return."
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "GPT-4-class inference cost fell by more than 90% between 2024 and 2026.",
+        "answer": true,
+        "explanation": "From $60 to about $0.60 per million tokens (the file says 98%)."
+      },
+      "tagline": "A new frontier model lands before you finish testing the last one. Each token gets cheaper, yet total spend keeps rising."
+    },
+    {
+      "id": "free-era-ends",
+      "n": 15,
+      "act": "money",
+      "title": "The Free AI Era Is Ending",
+      "short": "End of free AI",
+      "status": "Emerging",
+      "isNew": true,
+      "icon": "tag",
+      "image": null,
+      "art": "tiers",
+      "hook": "The best AI is moving behind paywalls as providers try to make the economics work.",
+      "why": "Customers need a clear view of what AI really costs per user and per task before scaling, not after.",
+      "story": "Pricing is still being discovered, in public. Expect more changes, more tiers and more bundles.",
+      "stats": [
+        {
+          "value": "Oct 9",
+          "label": "Google limits free Gemini users to Flash Lite; Pro sits behind paid plans",
+          "fresh": "checked"
+        },
+        {
+          "value": "$4.99–99.99",
+          "label": "monthly range of Google's AI plans, from AI Plus to AI Ultra",
+          "fresh": "checked"
+        },
+        {
+          "value": "Oct 29",
+          "label": "OpenAI reverses a planned cut to ChatGPT Pro usage limits after pushback",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "What does Google's top consumer AI plan cost per month, in US dollars?",
+        "min": 0,
+        "max": 200,
+        "unit": "$",
+        "answer": 99.99,
+        "answerLabel": "$99.99",
+        "source": "Google AI Ultra pricing, Oct 2026"
+      },
+      "hotTake": "Within two years, good AI will no longer be free for anyone.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Tech AI Magazine: October 2026 AI stories",
+          "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
+        }
+      ],
+      "gameType": "choice",
+      "choice": {
+        "question": "What does Google's top consumer AI plan cost per month?",
+        "options": [
+          "$9.99",
+          "$19.99",
+          "$49.99",
+          "$99.99"
+        ],
+        "answer": 3,
+        "explanation": "Google AI Ultra, Oct 2026: $99.99."
+      },
+      "tagline": "The best AI is moving behind paywalls as providers try to make the economics work."
+    },
+    {
+      "id": "saas-kodak",
+      "n": 16,
+      "act": "money",
+      "title": "SaaS Is Having Its Kodak Moment",
+      "short": "SaaS Kodak moment",
+      "status": "Now",
+      "isNew": false,
+      "icon": "trending-down",
+      "image": null,
+      "art": "falling",
+      "hook": "Software companies spent 20 years building per-seat revenue. Agents don't need seats.",
+      "why": "How customers buy software is shifting from licences to outcomes. Our offers and pricing need to follow.",
+      "story": "When an agent does the work of ten users, paying per user stops making sense. Outcome-based pricing is still rare (about 5% of companies) but a quarter expect to move to it by 2028.",
+      "stats": [
+        {
+          "value": "21%→15%",
+          "label": "share of software companies using pure per-seat pricing, in one year (Growth Unhinged survey of 240 companies, 2025)",
+          "fresh": "checked"
+        },
+        {
+          "value": "41%",
+          "label": "now use hybrid pricing such as seats plus usage, up from 27%",
+          "fresh": "checked"
+        },
+        {
+          "value": "$0.99",
+          "label": "what Intercom charges per conversation its AI resolves: pricing by outcome, not by user",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "What share of software companies still use pure per-seat pricing?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 15,
+        "answerLabel": "15%, down from 21% a year earlier",
+        "source": "Growth Unhinged survey, 2025"
+      },
+      "hotTake": "Paying per user for software will be gone within five years.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Growth Unhinged: State of B2B Monetization",
+          "url": "https://kylepoyar.substack.com/p/2025-state-of-b2b-monetization?open=false"
+        },
+        {
+          "title": "Pulse / CustomerThink: AI is killing seat-based pricing",
+          "url": "https://www.pulse.bot/ai/news/ai-is-killing-seat-based-pricing-what-cx-software-buyers-should-do-next-34ed157f-dce9-4041-a698-1678c8abc295/"
+        }
+      ],
+      "gameType": "guess",
+      "tagline": "Software companies spent 20 years building per-seat revenue. Agents don't need seats."
+    },
+    {
+      "id": "show-money",
+      "n": 17,
+      "act": "money",
+      "title": "Show Me the Money",
+      "short": "Show me the money",
+      "status": "Now",
+      "isNew": false,
+      "icon": "circle-dollar-sign",
+      "image": "images/show-money.jpg",
+      "art": null,
+      "hook": "Klarna pulled back, JPMorgan pays itself back. Same AI, different strategy, and every CFO is now asking for proof.",
+      "why": "Customers will buy outcomes they can measure. Lead with the business case, not the technology.",
+      "story": "The winners redesign workflows and own their data. The losers measured success by how many people opened Copilot.",
+      "stats": [
+        {
+          "value": "39→37%",
+          "label": "of firms seeing any EBIT impact from AI, 2025 to 2026 (McKinsey)",
+          "fresh": "checked"
+        },
+        {
+          "value": "95%",
+          "label": "of enterprises with no measurable financial return from GenAI (MIT, 2025)",
+          "fresh": "deck"
+        },
+        {
+          "value": "40%+",
+          "label": "of agentic AI projects Gartner expects to be cancelled by 2027 for poor ROI",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "What share of firms see any EBIT impact from AI?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 37,
+        "answerLabel": "37%, down from 39%",
+        "source": "McKinsey State of AI 2026"
+      },
+      "hotTake": "Most AI projects running today will never pay back.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Second Talent: McKinsey 2026 survey data",
+          "url": "https://secondtalent.com/resources/ai-adoption-in-enterprise-statistics"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
+      ],
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "The share of firms seeing any EBIT impact from AI rose from 2025 to 2026.",
+        "answer": false,
+        "explanation": "McKinsey: it fell from 39% to 37%."
+      },
+      "tagline": "Klarna pulled back, JPMorgan pays itself back. Same AI, different strategy, and every CFO is now asking for proof."
+    },
+    {
+      "id": "savings-real",
+      "n": 18,
+      "act": "money",
+      "title": "The Savings Are Getting Real",
+      "short": "Real savings",
+      "status": "Scaling",
+      "isNew": true,
+      "icon": "piggy-bank",
+      "image": null,
+      "art": "rising",
+      "hook": "Large European and US firms are now putting hard numbers on AI savings.",
+      "why": "Customers now have reference points. We can benchmark their ambitions against real targets.",
+      "story": "This is the counterweight to the ROI gloom: where AI is tied to specific processes, the numbers show up.",
+      "stats": [
+        {
+          "value": "€2.5B",
+          "label": "savings Deutsche Telekom is targeting from AI (Oct 2026)",
+          "fresh": "checked"
+        },
+        {
+          "value": "90%",
+          "label": "reported resolution rate behind UnitedHealthcare's AI assistant expansion",
+          "fresh": "checked"
+        },
+        {
+          "value": "$2B→$2B",
+          "label": "JPMorgan: about $2B invested, about $2B in annual value",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "How much is Deutsche Telekom aiming to save with AI, in billions of euros?",
+        "min": 0,
+        "max": 10,
+        "unit": "€B",
+        "answer": 2.5,
+        "answerLabel": "€2.5 billion",
+        "source": "Oct 2026"
+      },
+      "hotTake": "Within three years, AI savings will be a standard line in every annual report.",
+      "include": true,
+      "sources": [
+        {
+          "title": "AI News",
+          "url": "https://www.artificialintelligence-news.com/"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
+      ],
+      "gameType": "choice",
+      "choice": {
+        "question": "How much is Deutsche Telekom aiming to save with AI?",
+        "options": [
+          "€250 million",
+          "€2.5 billion",
+          "€25 billion",
+          "€250 billion"
+        ],
+        "answer": 1,
+        "explanation": "€2.5 billion, Oct 2026."
+      },
+      "tagline": "Large European and US firms are now putting hard numbers on AI savings."
+    },
+    {
+      "id": "ai-stack",
+      "n": 19,
+      "act": "money",
+      "title": "Who Controls the AI Stack",
+      "short": "AI stack",
+      "status": "Now",
+      "isNew": false,
+      "icon": "layers",
+      "image": null,
+      "art": "layers",
+      "hook": "A handful of firms control the chip, the cloud, the model or the interface, and they are now selling each other's products.",
+      "why": "Customers want choice and no lock-in. Being model-neutral is a selling point.",
+      "story": "Google, Amazon, Microsoft, Meta and Apple all build their own chips. At the same time, rivals now distribute each other's models.",
+      "stats": [
+        {
+          "value": "92%",
+          "label": "Nvidia discrete GPU market share, H1 2025",
+          "fresh": "deck"
+        },
+        {
+          "value": "$5T",
+          "label": "Nvidia peak market value, larger than Japan's GDP",
+          "fresh": "deck"
+        },
+        {
+          "value": "Oct 21",
+          "label": "OpenAI models enter private preview on Google Cloud for selected enterprises",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "What was Nvidia's peak market value, in trillions of US dollars?",
+        "min": 0,
+        "max": 10,
+        "unit": "$T",
+        "answer": 5,
+        "answerLabel": "$5 trillion",
+        "source": "From June deck"
+      },
+      "hotTake": "In five years, no single company will dominate AI chips.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Tech AI Magazine: October 2026 AI stories",
+          "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
+      ],
+      "gameType": "guess",
+      "tagline": "A handful of firms control the chip, the cloud, the model or the interface, and they are now selling each other's products."
+    },
+    {
+      "id": "power-wall",
+      "n": 20,
+      "act": "infrastructure",
+      "title": "Power and Permission Are the New Bottleneck",
+      "short": "Power & permission",
+      "status": "Now",
+      "isNew": true,
+      "icon": "zap",
+      "image": null,
+      "art": "bolt",
+      "hook": "Chips are no longer the main constraint. Grid connections and local consent now decide who can build.",
+      "why": "Energy and location now shape where and how fast AI scales. In Europe, grid access is a competitive factor.",
+      "story": "Data Center Watch counts 843 local opposition groups across 49 states. Other trackers give much lower moratorium counts because they measure different things, so quote the source with the number. In the UK, AI build-out is held back by grid queues; operators are turning to on-site gas, fuel cells and nuclear deals.",
+      "stats": [
+        {
+          "value": "+17%",
+          "label": "data centre electricity use in 2025; AI-focused data centres +50% (IEA)",
+          "fresh": "checked"
+        },
+        {
+          "value": "$198B",
+          "label": "US data centre projects blocked or delayed by local opposition in H1 2026 ($130B in Q1, $68B in Q2; Data Center Watch)",
+          "fresh": "checked"
+        },
+        {
+          "value": "270",
+          "label": "US jurisdictions that adopted a data centre moratorium, January to early September 2026 (GatherGov; trackers vary widely)",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "What value of US data centre projects was blocked or delayed by local opposition in the first half of 2026, in billions of US dollars?",
+        "min": 0,
+        "max": 500,
+        "unit": "$B",
+        "answer": 198,
+        "answerLabel": "About $198 billion",
+        "source": "Data Center Watch"
+      },
+      "hotTake": "Energy and local consent, not technology, will decide where AI grows in Europe.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Data Center Watch: Q1 2026 report",
+          "url": "https://datacenterwatch.org/q1-2026"
+        },
+        {
+          "title": "Bisnow: Opposition blocks $68B in Q2 projects",
+          "url": "https://www.bisnow.com/news/national/data-center-community-relations/community-backlash-upends-billions-of-dollars-in-new-data-center-projects"
+        },
+        {
+          "title": "GatherGov: Data center moratorium tracker",
+          "url": "https://preview-website-nextjs-5caojr-gqcgtm.preview.gathergov.com/articles/data-center-moratorium-2026-tracker"
+        },
+        {
+          "title": "INDmoney: IEA data centre electricity",
+          "url": "https://www.indmoney.com/blog/us-stocks/ai-energy-stocks-data-centre-power-demand"
+        }
+      ],
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "Local opposition blocked or delayed more than $100B of US data centre projects in H1 2026.",
+        "answer": true,
+        "explanation": "Data Center Watch: about $198B."
+      },
+      "tagline": "Chips are no longer the main constraint. Grid connections and local consent now decide who can build."
+    },
+    {
+      "id": "memory-supercycle",
+      "n": 21,
+      "act": "infrastructure",
+      "title": "Memory Is the New Bottleneck",
+      "short": "Memory squeeze",
+      "status": "Now",
+      "isNew": true,
+      "icon": "memory-stick",
+      "image": null,
+      "art": "chips",
+      "hook": "AI data centres are soaking up the world's memory chips. Korea's chipmakers post record profits while phones and PCs get pricier.",
+      "why": "Laptops, phones and connected devices our customers buy will cost more or ship with less. Plan hardware budgets and refresh cycles accordingly.",
+      "story": "SK hynix expects demand to exceed supply through 2030. Samsung's chip division earned almost all its profit while its mobile division slipped to a loss. IDC expects smartphone prices to rise 14% to a record $523 on average.",
+      "stats": [
+        {
+          "value": "80%",
+          "label": "SK hynix operating margin in Q3 2026, on record revenue of ₩104.6 trillion",
+          "fresh": "checked"
+        },
+        {
+          "value": "₩107.4T",
+          "label": "Samsung's Q3 operating profit, the first tech company above ₩100 trillion in a quarter",
+          "fresh": "checked"
+        },
+        {
+          "value": "−12.9%",
+          "label": "IDC's 2026 forecast for smartphone shipments; PCs −11.3%, both blamed on the memory shortage",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "What operating margin did SK hynix report for Q3 2026?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 80,
+        "answerLabel": "80%",
+        "source": "SK hynix results, 28 Oct 2026"
+      },
+      "hotTake": "AI will make our customers' devices more expensive for years, not months.",
+      "include": true,
+      "sources": [
+        {
+          "title": "SK hynix 3Q26 results (PR Newswire)",
+          "url": "https://www.webull.com/news/15822865136734208"
+        },
+        {
+          "title": "Samsung: Third quarter 2026 results",
+          "url": "https://news.samsung.com/global/samsung-electronics-announces-third-quarter-2026-results"
+        },
+        {
+          "title": "IDC: Memory crisis reshaping PC and smartphone outlook",
+          "url": "https://www.idc.com/?p=109987"
+        }
+      ],
+      "gameType": "choice",
+      "choice": {
+        "question": "What operating margin did SK hynix report for Q3 2026?",
+        "options": [
+          "8%",
+          "25%",
+          "50%",
+          "80%"
+        ],
+        "answer": 3,
+        "explanation": "80% on record revenue, 28 Oct 2026."
+      },
+      "tagline": "AI data centres are soaking up the world's memory chips. Korea's chipmakers post record profits while phones and PCs get pricier."
+    },
+    {
+      "id": "china-stack",
+      "n": 22,
+      "act": "infrastructure",
+      "title": "China Builds a Parallel AI Stack",
+      "short": "China AI stack",
+      "status": "Scaling",
+      "isNew": true,
+      "icon": "git-fork",
+      "image": null,
+      "art": "fork",
+      "hook": "Cheap Chinese open-weight models now carry most developer traffic on open marketplaces, and Chinese chips are replacing Nvidia at home.",
+      "why": "Near-frontier AI is becoming cheap and open. Customers will face real choices on model origin, data sovereignty and compliance.",
+      "story": "Volume is not money: open models carry a large share of tokens but a small share of spend, which still goes mostly to US closed labs. Bernstein expects Nvidia's China share to fall to about 8% in 2026 from about 40%.",
+      "stats": [
+        {
+          "value": "69%",
+          "label": "of tokens on OpenRouter came from Chinese labs in one September 2026 week (OpenRouter; a cost-sensitive developer marketplace)",
+          "fresh": "checked"
+        },
+        {
+          "value": "4 months",
+          "label": "how far the best open-weight models trail the closed frontier (Epoch AI, May 2026)",
+          "fresh": "checked"
+        },
+        {
+          "value": "56%",
+          "label": "domestic suppliers' share of China's AI server chip market in 2026, up from 46%; foreign share falls to 21% (TrendForce)",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "What share of tokens on OpenRouter came from Chinese labs in one September 2026 week?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 69,
+        "answerLabel": "69%",
+        "source": "OpenRouter"
+      },
+      "hotTake": "Within two years, most companies will run a Chinese open-weight model somewhere in their stack.",
+      "include": true,
+      "sources": [
+        {
+          "title": "OpenRouter: The token state of play",
+          "url": "https://openrouter.ai/data/newsletter/the-token-state-of-play"
+        },
+        {
+          "title": "Epoch AI: Open models lag closed models by 4 months",
+          "url": "https://epoch.ai/data-insights/open-closed-eci-gap"
+        },
+        {
+          "title": "SCMP: TrendForce on China's AI server chips",
+          "url": "https://www.scmp.com/tech/article/3358322/huawei-and-cambricon-lead-chinas-ai-server-chip-surge-piling-pressure-nvidia"
+        },
+        {
+          "title": "TrendForce: Bernstein forecast via Bloomberg/eToday",
+          "url": "https://www.trendforce.com/news/?p=60329"
+        }
+      ],
+      "gameType": "guess",
+      "tagline": "Cheap Chinese open-weight models now carry most developer traffic on open marketplaces, and Chinese chips are replacing Nvidia at home."
+    },
+    {
+      "id": "dc-building",
+      "n": 23,
+      "act": "infrastructure",
+      "title": "The Next Data Center Is in Your Building",
+      "short": "Local AI",
+      "status": "Scaling",
+      "isNew": false,
+      "icon": "server",
+      "image": "images/dc-building.jpg",
+      "art": null,
+      "hook": "The most valuable AI in your company may not live in someone else's cloud. It may run on your own hardware.",
+      "why": "Customers with sensitive data can run AI locally. Privacy and sovereignty become arguments for adoption, not against it.",
+      "story": "Small models on your own devices cut cost and keep data at home.",
+      "stats": [
+        {
+          "value": "3x",
+          "label": "more use of small task-specific models than general LLMs by 2027 (Gartner)",
+          "fresh": "deck"
+        },
+        {
+          "value": "−90%",
+          "label": "inference cost moving from cloud to an on-premise small model",
+          "fresh": "deck"
+        },
+        {
+          "value": "Oct 2026",
+          "label": "Google ships offline AI meeting notes on a Mac, with no cloud involved",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "By 2027, how many times more will companies use small task-specific models than general LLMs?",
+        "min": 0,
+        "max": 10,
+        "unit": "x",
+        "answer": 3,
+        "answerLabel": "3x",
+        "source": "Gartner (from June deck)"
+      },
+      "hotTake": "Most sensitive company AI will run on our own hardware, not in the public cloud.",
+      "include": true,
+      "sources": [
+        {
+          "title": "HelloGrowth: Google AI news October 2026",
+          "url": "https://hellogrowth.ai/en/blog/google-ai-news-october-2026"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
+      ],
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "Gartner expects small task-specific models to be used 3x more than general LLMs by 2027.",
+        "answer": true,
+        "explanation": "Gartner, as cited in the file."
+      },
+      "tagline": "The most valuable AI in your company may not live in someone else's cloud. It may run on your own hardware."
+    },
+    {
+      "id": "compute-geopolitics",
+      "n": 24,
+      "act": "infrastructure",
+      "title": "Compute Is Geopolitics",
+      "short": "Compute geopolitics",
+      "status": "Now",
+      "isNew": false,
+      "icon": "globe",
+      "image": "images/compute-geopolitics.jpg",
+      "art": null,
+      "hook": "Access to the most capable AI now depends on governments as well as vendors.",
+      "why": "Customers need resilience: more than one model, more than one provider, and a plan for when access changes.",
+      "story": "In June, Anthropic suspended access to two frontier models to comply with US export controls, then restored it on 1 July after the controls were lifted.",
+      "stats": [
+        {
+          "value": "19 days",
+          "label": "US export controls suspended access to two frontier AI models (12 June to 1 July 2026)",
+          "fresh": "checked"
+        },
+        {
+          "value": "55%",
+          "label": "US share of global hyperscale AI compute",
+          "fresh": "deck"
+        },
+        {
+          "value": "$15.2B",
+          "label": "Microsoft committed to the UAE through 2029",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "For how many days did US export controls suspend access to two frontier AI models in 2026?",
+        "min": 0,
+        "max": 90,
+        "unit": "days",
+        "answer": 19,
+        "answerLabel": "19 days (12 June to 1 July)",
+        "source": "Anthropic statement"
+      },
+      "hotTake": "Europe needs its own frontier AI models, whatever they cost.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Anthropic: Fable and Mythos access",
+          "url": "https://www.anthropic.com/news/fable-mythos-access"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
+      ],
+      "gameType": "choice",
+      "choice": {
+        "question": "For how many days were two frontier AI models unavailable in 2026 because of US export controls?",
+        "options": [
+          "3 days",
+          "19 days",
+          "45 days",
+          "90 days"
+        ],
+        "answer": 1,
+        "explanation": "12 June to 1 July 2026: 19 days."
+      },
+      "tagline": "Access to the most capable AI now depends on governments as well as vendors."
+    },
+    {
+      "id": "europe-rules",
+      "n": 25,
+      "act": "infrastructure",
+      "title": "Europe Has the Rules. Now It Wants the Models.",
+      "short": "EU rules",
+      "status": "Now",
+      "isNew": false,
+      "icon": "scale",
+      "image": null,
+      "art": "stars",
+      "hook": "The EU gave itself more time on its AI law and is putting record money into its own models and compute.",
+      "why": "Delayed is not cancelled: transparency and general-purpose AI rules stayed on schedule. And sovereign European options now exist for customers who need them.",
+      "story": "The Omnibus entered into force on 27 July 2026. Telekom's AI factory serves companies such as Siemens and Daimler Trucks. Mistral says it is on track for $1B in annual recurring revenue, still small next to US labs.",
+      "stats": [
+        {
+          "value": "2 Dec 2027",
+          "label": "new date for high-risk obligations on stand-alone AI systems after the Digital Omnibus (Aug 2028 for AI inside regulated products)",
+          "fresh": "checked"
+        },
+        {
+          "value": "€21B+",
+          "label": "Mistral's valuation after a €3B round, the largest equity raise by a European tech company (Sep 2026)",
+          "fresh": "checked"
+        },
+        {
+          "value": "7 months",
+          "label": "for Deutsche Telekom's Munich AI factory to sell out; now expanding to 20 MW (Nov 2026)",
+          "fresh": "checked"
+        }
+      ],
+      "guess": {
+        "question": "In which year do the EU AI Act's high-risk rules for stand-alone AI systems now start to apply?",
+        "min": 2025,
+        "max": 2030,
+        "unit": "",
+        "answer": 2027,
+        "answerLabel": "2 December 2027",
+        "source": "Digital Omnibus on AI, in force 27 July 2026"
+      },
+      "hotTake": "The EU AI Act will help European companies more than it hurts them.",
+      "include": true,
+      "sources": [
+        {
+          "title": "CSA: EU AI Act high-risk deadline deferred",
+          "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-deadline-omnibus-20260/"
+        },
+        {
+          "title": "Euronews: Mistral raises €3B",
+          "url": "https://www.euronews.com/2026/09/08/mistral-ai-raises-record-3-billion-in-samsung-led-funding-round"
+        },
+        {
+          "title": "Deutsche Telekom: Expands AI factory in Munich",
+          "url": "https://www.telekom.com/en/newsroom/latest-updates/media-information/2026/11/ai-demand-rises-deutsche-telekom-expands-ai-factory-in-munich"
+        }
+      ],
+      "gameType": "guess",
+      "tagline": "The EU gave itself more time on its AI law and is putting record money into its own models and compute."
+    },
+    {
+      "id": "ai-vs-ai",
+      "n": 26,
+      "act": "trust",
+      "title": "AI vs AI. The Battles You'll Never See.",
+      "short": "AI vs AI",
+      "status": "Now",
+      "isNew": false,
+      "icon": "shield-alert",
+      "image": "images/ai-vs-ai.jpg",
+      "art": null,
+      "hook": "AI can now find and exploit software flaws on its own. Defenders got it first; attackers will not wait long.",
+      "why": "Patch cycles built for human-speed discovery no longer hold. Customers will ask how fast we find and fix flaws, and how we verify what is real.",
+      "story": "Anthropic restricted the model to a defensive programme, Project Glasswing, with partners such as AWS, Apple, Google, Microsoft and CrowdStrike. The open-weight gap suggests similar capability could be widely available within months.",
+      "stats": [
+        {
+          "value": "Thousands",
+          "label": "of zero-day vulnerabilities found by Claude Mythos Preview across every major operating system and browser (Anthropic, April 2026)",
+          "fresh": "checked"
+        },
+        {
+          "value": "6–7 mo",
+          "label": "how far open-weight models trail closed models in cyber capabilities (Epoch AI, Oct 2026)",
+          "fresh": "checked"
+        },
+        {
+          "value": "$1.65B",
+          "label": "deepfake fraud losses in 2025 (Surfshark)",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "How many months do open-weight models trail closed models in cyber capabilities?",
+        "min": 0,
+        "max": 24,
+        "unit": "months",
+        "answer": 6.5,
+        "answerLabel": "6–7 months",
+        "source": "Epoch AI, Oct 2026"
+      },
+      "hotTake": "Within three years, AI will find software flaws faster than any company can patch them.",
+      "include": true,
+      "sources": [
+        {
+          "title": "Anthropic: Project Glasswing",
+          "url": "https://www.anthropic.com/project/glasswing"
+        },
+        {
+          "title": "Epoch AI: Open models topic",
+          "url": "https://epoch.ai/topics/open-models"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
+      ],
+      "gameType": "truefalse",
+      "trueFalse": {
+        "statement": "Open-weight models trail closed models in cyber capabilities by about 6 to 7 months.",
+        "answer": true,
+        "explanation": "Epoch AI, Oct 2026."
+      },
+      "tagline": "AI can now find and exploit software flaws on its own. Defenders got it first; attackers will not wait long."
+    },
+    {
+      "id": "doctor-missed",
+      "n": 27,
+      "act": "trust",
+      "title": "AI Spotted What the Doctor Missed",
+      "short": "AI in health",
+      "status": "Scaling",
+      "isNew": false,
+      "icon": "stethoscope",
+      "image": null,
+      "art": "ecg",
+      "hook": "AI in healthcare is not a future conversation. It's already in clinics, and starting to beat doctors in tests.",
+      "why": "Expertise can scale to places that never had it. The same pattern applies in every field where specialists are scarce.",
+      "story": "The caution: systems trained on Western data underperform elsewhere. The data gap is an equity gap.",
+      "stats": [
+        {
+          "value": "Oct 2026",
+          "label": "Microsoft AI diagnostic tool outperforms doctors in clinical tests",
+          "fresh": "checked"
+        },
+        {
+          "value": "94%",
+          "label": "NHS AI diabetic retinopathy detection rate",
+          "fresh": "deck"
+        },
+        {
+          "value": "96%",
+          "label": "Wadhwani AI TB detection accuracy, in 2,000+ clinics in India",
+          "fresh": "deck"
+        }
+      ],
+      "guess": {
+        "question": "How accurate is Wadhwani AI's TB detection in clinics in India?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 96,
+        "answerLabel": "96%",
+        "source": "From June deck"
+      },
+      "hotTake": "For a routine scan, I would trust an AI diagnosis over a human doctor's.",
+      "include": true,
+      "sources": [
+        {
+          "title": "AI News: Microsoft AI diagnostic tool",
+          "url": "https://www.artificialintelligence-news.com/"
+        },
+        {
+          "title": "June 2026 deck (not re-checked)"
+        }
+      ],
+      "gameType": "choice",
+      "choice": {
+        "question": "How accurate is Wadhwani AI's TB detection in India?",
+        "options": [
+          "66%",
+          "82%",
+          "96%",
+          "99.9%"
+        ],
+        "answer": 2,
+        "explanation": "96% accuracy, in 2,000+ clinics."
+      },
+      "tagline": "AI in healthcare is not a future conversation. It's already in clinics, and starting to beat doctors in tests."
     }
   ]
 }

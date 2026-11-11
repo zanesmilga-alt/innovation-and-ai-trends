@@ -1,4 +1,6 @@
-// Trend pictures. A picture uploaded from the stage wins; otherwise the file in public/images/trends is used.
+// Trend pictures. A picture uploaded from the stage wins; otherwise the file in public/images/trends
+// is used; otherwise the trend's generated artwork is drawn, so no empty box ever shows on screen.
+import { drawArt } from './art';
 
 const versions = new Map<string, number>(); // id -> time of the last upload, to refresh images
 
@@ -7,8 +9,8 @@ export function pictureSrc(id: string): string {
   return `/api/picture/${id}${v ? `?v=${v}` : ''}`;
 }
 
-/** A picture with an upload slot underneath. The slot shows only when no picture exists. */
-export function pictureEl(id: string, cls: string, slotText: string): HTMLElement {
+/** A picture box for a trend. `art` is the generated artwork used when no photo exists. */
+export function pictureEl(id: string, art: string | null, cls: string): HTMLElement {
   const wrap = document.createElement('div');
   wrap.className = cls;
   const img = document.createElement('img');
@@ -17,19 +19,20 @@ export function pictureEl(id: string, cls: string, slotText: string): HTMLElemen
   img.loading = 'lazy';
   img.dataset.pic = id;
   img.src = pictureSrc(id);
+  wrap.appendChild(img);
+  const canvas = document.createElement('canvas');
+  canvas.className = 'trend-art';
+  canvas.setAttribute('aria-hidden', 'true');
+  wrap.appendChild(canvas);
   img.onerror = () => {
     if (img.dataset.fallback !== '1') {
       img.dataset.fallback = '1';
       img.src = `/images/trends/${id}.jpg`;
     } else {
       wrap.classList.add('no-img');
+      requestAnimationFrame(() => drawArt(canvas, art, id));
     }
   };
-  wrap.appendChild(img);
-  const slot = document.createElement('span');
-  slot.className = 'slot mono';
-  slot.textContent = slotText;
-  wrap.appendChild(slot);
   return wrap;
 }
 
