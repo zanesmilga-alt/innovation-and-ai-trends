@@ -1034,3 +1034,8 @@ kbd { font-family: var(--f-mono); font-size: 0.9em; padding: 1px 6px; border: 1p
 .node .disc { inset: 0; }
 .node .node-title { left: -39px; top: 80px; width: 150px; font-size: 16px; line-height: 1.15; }
 .new-dot { right: -1px; top: -1px; }
+
+/* Presenter bars: full width, so the buttons sit in one row on laptops */
+.ctrl { left: 12px; right: 12px; transform: none; bottom: 8px; width: auto; }
+.steps { left: 12px; right: 12px; transform: none; width: auto; bottom: 66px; }
+.ctrl button, .steps button, .ovstage-bar button { font-size: clamp(14px, 1vw, 16px); padding: 6px 12px; min-height: 40px; }
