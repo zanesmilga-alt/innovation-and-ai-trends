@@ -119,6 +119,7 @@ export async function startStage(o: StageOptions): Promise<void> {
       <button type="button" data-act="newroom">New room</button>
     </nav>
     <nav class="trendbar" id="trendbar" aria-label="This trend" hidden>
+      <button type="button" data-act="playgame">Play a game</button>
       <button type="button" data-act="reveal">Reveal</button>
       <button type="button" data-act="story">Back to the trend</button>
     </nav>
@@ -202,6 +203,7 @@ export async function startStage(o: StageOptions): Promise<void> {
   let flyTimer: number | undefined;
   let flown: string[] = [];
   let ovOpen = false;
+  let previewId: string | null = null; // a trend the presenter is looking at; no game has started yet
   let flashTimer: number | undefined;
 
   const joinUrl = `${location.origin}/join/${code}`;
@@ -272,13 +274,13 @@ export async function startStage(o: StageOptions): Promise<void> {
     if (phase) setPhase(phase);
   };
 
-  /** Show the story for the active trend when the phase calls for it. */
+  /** Show the story for a trend: the one previewed by the presenter, or the active one in a story step. */
   function syncStory() {
-    const wantStory = (state.phase === 'story' || state.phase === 'flyover') && state.activeSignalId;
-    if (wantStory && state.activeSignalId !== storyShown) {
-      storyShown = state.activeSignalId;
-      o.openStory(state.activeSignalId!);
-    } else if (!wantStory && storyShown) {
+    const wantId = previewId ?? ((state.phase === 'story' || state.phase === 'flyover') ? state.activeSignalId : null);
+    if (wantId && wantId !== storyShown) {
+      storyShown = wantId;
+      o.openStory(wantId);
+    } else if (!wantId && storyShown) {
       storyShown = null;
       o.closeStory();
     }
@@ -352,6 +354,17 @@ export async function startStage(o: StageOptions): Promise<void> {
     },
     overview: () => {
       ovOpen = !ovOpen;
+      if (previewId) {
+        previewId = null;
+        syncStory();
+      }
+      render();
+    },
+    playgame: () => {
+      if (!previewId) return;
+      const id = previewId;
+      previewId = null;
+      choose(id, 'guess');
       render();
     },
     warm: () => setPhase('warmup'),
@@ -555,10 +568,12 @@ export async function startStage(o: StageOptions): Promise<void> {
   const renderOverview = () => {
     const panel = $('ovstage');
     const inTrend = ['guess', 'story'].includes(state.phase) && !!state.activeSignalId;
+    const preview = previewId !== null;
     panel.hidden = !ovOpen;
-    $('trendbar').hidden = !inTrend;
-    $('backvoted').hidden = !inTrend;
-    ctrl.hidden = inTrend || ovOpen;
+    $('trendbar').hidden = !(inTrend || preview);
+    $('backvoted').hidden = !(inTrend || preview);
+    trendbar_(preview);
+    ctrl.hidden = inTrend || preview || ovOpen;
     if (!ovOpen) return;
     const total = signalsOrdered().length;
     $('ov-title').textContent = `Trends by votes · ${total}`;
@@ -579,11 +594,20 @@ export async function startStage(o: StageOptions): Promise<void> {
       card.querySelector<HTMLElement>('.ov-tile-pic')!.appendChild(pictureEl(sg.id, sg.art, 'pic'));
       card.addEventListener('click', () => {
         ovOpen = false;
-        choose(sg.id, 'guess');
+        previewId = sg.id;
+        syncStory();
         renderOverview();
       });
       grid.appendChild(card);
     }
+  };
+
+  /** On the trend bar: "Play a game" while previewing; "Reveal" and "Back to the trend" once the game runs. */
+  const trendbar_ = (preview: boolean) => {
+    $('trendbar').querySelectorAll<HTMLElement>('[data-act]').forEach((b) => {
+      const isPlay = b.dataset.act === 'playgame';
+      b.hidden = preview ? !isPlay : isPlay;
+    });
   };
 
   /** Included trends: most-hearted first, then by number. */
