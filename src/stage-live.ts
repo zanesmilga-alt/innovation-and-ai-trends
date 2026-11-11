@@ -118,17 +118,11 @@ export async function startStage(o: StageOptions): Promise<void> {
       <button type="button" data-act="leave">Exit room</button>
       <button type="button" data-act="newroom">New room</button>
     </nav>
-    <nav class="steps" id="steps" aria-label="This trend" hidden>
-      <button type="button" data-act="back">◀</button>
-      <button type="button" data-act="game">Game</button>
-      <button type="button" data-act="story">Story</button>
-      <button type="button" data-act="hot">Hot take</button>
-      <button type="button" data-act="discuss">Discuss</button>
-      <button type="button" data-act="next">▶</button>
-      <button type="button" data-act="details">Details</button>
-      <button type="button" data-act="picture">Change picture</button>
-      <button type="button" data-act="overview">Overview</button>
+    <nav class="trendbar" id="trendbar" aria-label="This trend" hidden>
+      <button type="button" data-act="reveal">Reveal</button>
+      <button type="button" data-act="story">Back to the trend</button>
     </nav>
+    <button type="button" class="backvoted" id="backvoted" data-act="overview" hidden>Back to voted trends</button>
     <section class="ovstage" id="ovstage" aria-label="All trends" hidden>
       <div class="ovstage-bar">
         <span class="mono ovstage-title" id="ov-title"></span>
@@ -560,17 +554,14 @@ export async function startStage(o: StageOptions): Promise<void> {
   /** Every trend as a card, most-hearted first. Trends already played are dimmed. */
   const renderOverview = () => {
     const panel = $('ovstage');
-    const steps = $('steps');
-    const inDeep = ['guess', 'story', 'hottake', 'discuss'].includes(state.phase) && !!state.activeSignalId;
+    const inTrend = ['guess', 'story'].includes(state.phase) && !!state.activeSignalId;
     panel.hidden = !ovOpen;
-    steps.hidden = !inDeep;
-    steps.querySelectorAll<HTMLElement>('[data-act]').forEach((b) => {
-      const onStep: Record<string, Phase> = { game: 'guess', story: 'story', hot: 'hottake', discuss: 'discuss' };
-      b.classList.toggle('on', onStep[b.dataset.act!] === state.phase);
-    });
+    $('trendbar').hidden = !inTrend;
+    $('backvoted').hidden = !inTrend;
+    ctrl.hidden = inTrend || ovOpen;
     if (!ovOpen) return;
     const total = signalsOrdered().length;
-    $('ov-title').textContent = `All trends · ${total}`;
+    $('ov-title').textContent = `Trends by votes · ${total}`;
     const grid = $('ov-grid');
     grid.innerHTML = '';
     for (const sg of signalsOrdered()) {
@@ -613,7 +604,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     badge.innerHTML = `<span class="live-dot ${status}"></span> Room ${esc(code)} · ${state.participantCount} joined${status === 'live' ? '' : ` · ${status}`}`;
     phaseEl.hidden = false;
     phaseEl.textContent = PHASE_LABEL[state.phase];
-    qr.hidden = !qrOpen || state.phase === 'close';
+    qr.hidden = !(state.phase === 'lobby' && qrOpen);
     $('qr-count').textContent = `${state.participantCount} joined so far`;
     closep.hidden = state.phase !== 'close';
     renderWarm();

@@ -1039,3 +1039,13 @@ kbd { font-family: var(--f-mono); font-size: 0.9em; padding: 1px 6px; border: 1p
 .ctrl { left: 12px; right: 12px; transform: none; bottom: 8px; width: auto; }
 .steps { left: 12px; right: 12px; transform: none; width: auto; bottom: 66px; }
 .ctrl button, .steps button, .ovstage-bar button { font-size: clamp(14px, 1vw, 16px); padding: 6px 12px; min-height: 40px; }
+
+/* Trend screen: two buttons, and "Back to voted trends" in the bottom-right corner */
+.trendbar { position: fixed; left: 50%; transform: translateX(-50%); bottom: 18px; display: flex; gap: 12px; z-index: 70; }
+.trendbar[hidden] { display: none; }
+.trendbar button { min-height: 56px; padding: 10px 26px; border-radius: 14px; border: 1px solid var(--orange); background: var(--orange); color: var(--navy); font: 700 19px var(--f-body); cursor: pointer; }
+.trendbar button[data-act="story"] { background: rgba(8, 12, 30, 0.92); color: var(--cream); border-color: var(--line); }
+.backvoted { position: fixed; right: 18px; bottom: 18px; z-index: 75; min-height: 48px; padding: 10px 20px; border-radius: 12px; border: 1px solid var(--line); background: rgba(8, 12, 30, 0.92); color: var(--cream); font: 600 16px var(--f-body); cursor: pointer; }
+.backvoted[hidden] { display: none; }
+.backvoted:hover { border-color: var(--orange); }
+.ctrl[hidden] { display: none; }
