@@ -21,7 +21,7 @@ export interface StageOptions {
   root: HTMLElement;
   nodeEls: Map<string, HTMLButtonElement>;
   signals: Signal[];
-  openStory: (id: string) => void;
+  openStory: (id: string, showNumbers: boolean) => void;
   closeStory: () => void;
   openDetail: (id: string) => void;
 }
@@ -119,6 +119,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     </nav>
     <nav class="trendbar" id="trendbar" aria-label="This trend" hidden>
       <button type="button" data-act="playgame">Play a game</button>
+      <button type="button" data-act="numbers">Show the numbers</button>
       <button type="button" data-act="reveal">Reveal</button>
       <button type="button" data-act="story">Back to the trend</button>
     </nav>
@@ -202,6 +203,7 @@ export async function startStage(o: StageOptions): Promise<void> {
   let flyTimer: number | undefined;
   let flown: string[] = [];
   let ovOpen = false;
+  const shownLocal = new Set<string>(); // trends whose numbers the presenter chose to show without a game
   let previewId: string | null = null; // a trend the presenter is looking at; no game has started yet
   let flashTimer: number | undefined;
 
@@ -273,13 +275,17 @@ export async function startStage(o: StageOptions): Promise<void> {
     if (phase) setPhase(phase);
   };
 
+  /** A trend's figures show once its game has started, in the flyover, or when the presenter asks for them. */
+  const numbersVisible = (id: string) => state.covered.includes(id) || shownLocal.has(id) || state.phase === 'flyover';
+
   /** Show the story for a trend: the one previewed by the presenter, or the active one in a story step. */
   function syncStory() {
     const wantId = previewId ?? ((state.phase === 'story' || state.phase === 'flyover') ? state.activeSignalId : null);
-    if (wantId && wantId !== storyShown) {
-      storyShown = wantId;
-      o.openStory(wantId);
-    } else if (!wantId && storyShown) {
+    const key = wantId ? `${wantId}|${numbersVisible(wantId)}` : null;
+    if (key && wantId && key !== storyShown) {
+      storyShown = key;
+      o.openStory(wantId, numbersVisible(wantId));
+    } else if (!key && storyShown) {
       storyShown = null;
       o.closeStory();
     }
@@ -359,6 +365,12 @@ export async function startStage(o: StageOptions): Promise<void> {
       }
       render();
     },
+    numbers: () => {
+      if (!previewId) return;
+      shownLocal.add(previewId);
+      syncStory();
+      render();
+    },
     playgame: () => {
       if (!previewId) return;
       const id = previewId;
@@ -387,6 +399,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     reset: () => {
       if (!confirm('Clear all answers, hearts and trends in this room? This cannot be undone.')) return;
       stopFly();
+      shownLocal.clear();
       send({ type: 'control', key, action: 'reset' });
     },
     newroom: () => {
@@ -591,7 +604,6 @@ export async function startStage(o: StageOptions): Promise<void> {
         <span class="ov-tile-body">
           <span class="mono ov-tile-n">${String(sg.n).padStart(2, '0')}${hearts ? ` · ♥ ${hearts}` : ''}${state.covered.includes(sg.id) ? ' · played' : ''}</span>
           <span class="ov-tile-title">${esc(sg.title)}</span>
-          <span class="ov-tile-tag">${esc(sg.hook)}</span>
         </span>`;
       card.querySelector<HTMLElement>('.ov-tile-pic')!.appendChild(pictureEl(sg.id, sg.art, 'pic'));
       card.addEventListener('click', () => {
@@ -604,11 +616,12 @@ export async function startStage(o: StageOptions): Promise<void> {
     }
   };
 
-  /** On the trend bar: "Play a game" while previewing; "Reveal" and "Back to the trend" once the game runs. */
+  /** Trend bar: preview shows "Play a game" (and "Show the numbers"); the game shows "Reveal", then "Back to the trend". */
   const trendbar_ = (preview: boolean) => {
     $('trendbar').querySelectorAll<HTMLElement>('[data-act]').forEach((b) => {
-      const isPlay = b.dataset.act === 'playgame';
-      b.hidden = preview ? !isPlay : isPlay;
+      const act = b.dataset.act;
+      if (preview) b.hidden = !(act === 'playgame' || (act === 'numbers' && !!previewId && !numbersVisible(previewId)));
+      else b.hidden = !(act === 'reveal' || (act === 'story' && state.revealed));
     });
   };
 

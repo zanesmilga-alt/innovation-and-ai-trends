@@ -152,9 +152,21 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   });
 
   // ---------- Story ----------
+  // Stage: the figures stay hidden until the presenter shows them (after the game).
+  // Explorer: two figures show; the one the game asks about appears after the reader plays.
+  const played = new Set<string>();
+  let storyNumbers = true;
+  const safeUrl = (u: string) => /^https?:\/\//i.test(u);
+
   function renderStory(s: Signal) {
     const idx = signals.indexOf(s);
-    const sourceFor = (i: number, fallback: string) => fallback || srcTitle(s.sources[i]) || srcTitle(s.sources[0]) || '';
+    const onStage = mode === 'stage';
+    const hideAll = onStage && !storyNumbers;
+    const hiddenCard = !onStage && s.gameStat !== undefined && !played.has(s.id) ? s.gameStat : -1;
+    const links = (s.links ?? []).filter((l) => safeUrl(l.url));
+    const sourcesHtml = !onStage && links.length
+      ? `Sources: ${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.title)}</a>`).join(' · ')}`
+      : `Sources: ${s.sources.map((x) => esc(srcTitle(x))).join(' · ')}`;
     storyBody.innerHTML = `
       <div class="st-left">
         <header class="story-top">
@@ -163,45 +175,50 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         </header>
         <h2 class="story-title">${esc(s.title)}</h2>
         <p class="story-tagline">${esc(s.hook)}</p>
-        ${mode === 'stage' ? '' : `
+        ${onStage ? '' : `
         <div class="play-row">
           <button class="play-btn" type="button" id="play-btn">
-            <span class="play-dot" aria-hidden="true"></span> Play a game on this trend
+            <span class="play-dot" aria-hidden="true"></span> ${played.has(s.id) ? 'Play again' : 'Play the game'}
           </button>
         </div>
         `}
-        ${s.why ? `
+        ${s.why && !hideAll ? `
         <div class="why">
           <h3 class="mono">Why it matters for our customers</h3>
           <p>${esc(s.why)}</p>
         </div>
         ` : ''}
       </div>
+      ${hideAll ? '' : `
       <div class="st-stats">
-        ${s.stats.map((st, i) => `
+        ${s.stats.map((st, i) => i === hiddenCard ? `
+          <div class="stat stat-hidden" data-hidden="1">
+            <div class="stat-value">?</div>
+            <div class="stat-label">Play the game to reveal this number</div>
+          </div>` : `
           <div class="stat">
             <div class="stat-value" style="--vs:${st.value.length <= 5 ? 1 : st.value.length <= 8 ? 0.72 : 0.5}">${esc(st.value)}</div>
             <div class="stat-label">${esc(st.label)}</div>
             <div class="stat-meta mono">
               <span class="fresh fresh-${st.fresh}">${st.fresh === 'checked' ? 'Checked Nov 2026' : 'June deck · verify'}</span>
-              ${sourceFor(i, st.source ?? '') ? `<span class="src">${esc(sourceFor(i, st.source ?? ''))}</span>` : ''}
+              ${st.source ? `<span class="src">${esc(st.source)}</span>` : ''}
             </div>
           </div>`).join('')}
-      </div>
+      </div>`}
       <footer class="story-foot">
-        <p class="sources mono">Sources: ${s.sources.map((x) => esc(srcTitle(x))).join(' · ')}</p>
+        <p class="sources mono">${hideAll ? '' : sourcesHtml}</p>
         <p class="keys mono">← → next / previous · Esc map · ? keys</p>
       </footer>`;
     storyBody.querySelector('#play-btn')?.addEventListener('click', () => openGame(s));
     storyBody.querySelectorAll<HTMLElement>('.st-stats .stat').forEach((el, i) =>
-      el.addEventListener('click', () => openDetail(s.id, i)),
+      el.addEventListener('click', () => (el.dataset.hidden ? openGame(s) : openDetail(s.id, i))),
     );
     const iconWrap = document.createElement('div');
     iconWrap.className = 'story-icon';
     iconWrap.appendChild(iconSvg(s.icon));
     storyBody.querySelector('.st-left')!.prepend(iconWrap);
 
-    // Trend photo, duotone, with an upload slot if the file is missing.
+    // Trend photo, or the trend's generated artwork.
     storyArt.querySelectorAll('.pic').forEach((el) => el.remove());
     const pic = pictureEl(s.id, s.art, 'pic story-pic');
     storyArt.appendChild(pic);
@@ -278,6 +295,9 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         ${yt
           ? `<div class="detail-video"><iframe src="https://www.youtube-nocookie.com/embed/${yt}" title="Video" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
           : sg.video ? '<p class="mono detail-src">The video link is not a YouTube link.</p>' : ''}
+        ${mode !== 'stage' && (sg.links ?? []).some((l) => safeUrl(l.url)) ? `
+          <p class="eyebrow mono detail-links-h">Read the sources</p>
+          <ul class="detail-links">${(sg.links ?? []).filter((l) => safeUrl(l.url)).map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.title)}</a></li>`).join('')}</ul>` : ''}
       </div>`;
     detail.hidden = false;
     detail.querySelector('#detail-x')!.addEventListener('click', closeDetail);
@@ -290,13 +310,8 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     if (e.target === detail) closeDetail();
   });
 
-  // ---------- Games ----------
+  // ---------- Solo game (explorer): the trend's one game ----------
   function openGame(s: Signal) {
-    const tabs: { key: 'guess' | 'trueFalse' | 'chance'; label: string }[] = [];
-    if (s.guess) tabs.push({ key: 'guess', label: 'Guess the number' });
-    if (s.trueFalse) tabs.push({ key: 'trueFalse', label: 'True or false' });
-    if (s.chance) tabs.push({ key: 'chance', label: 'What are the chances?' });
-    if (tabs.length === 0) return;
     gameOpen = true;
     game.hidden = false;
     game.innerHTML = `
@@ -305,19 +320,10 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
           <span class="mono">Play · ${esc(s.short)}</span>
           <button class="game-close mono" type="button">Close · Esc</button>
         </div>
-        <div class="game-tabs" role="tablist">
-          ${tabs.map((t, i) => `<button role="tab" type="button" class="game-tab mono" data-key="${t.key}" aria-selected="${i === 0}">${esc(t.label)}</button>`).join('')}
-        </div>
         <div class="game-body" id="game-body"></div>
       </div>`;
     game.querySelector('.game-close')!.addEventListener('click', closeGame);
-    game.querySelectorAll<HTMLButtonElement>('.game-tab').forEach((b) =>
-      b.addEventListener('click', () => {
-        game.querySelectorAll('.game-tab').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
-        renderGame(s, b.dataset.key as 'guess' | 'trueFalse' | 'chance');
-      }),
-    );
-    renderGame(s, tabs[0].key);
+    renderGame(s);
   }
 
   function closeGame() {
@@ -326,38 +332,15 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     game.innerHTML = '';
   }
 
-  function renderGame(s: Signal, kind: 'guess' | 'trueFalse' | 'chance') {
+  /** After an answer: the hidden figure appears on the story behind the game. */
+  function markPlayed(s: Signal) {
+    played.add(s.id);
+    if (current === s.id) renderStory(s);
+  }
+
+  function renderGame(s: Signal) {
     const body = game.querySelector<HTMLElement>('#game-body')!;
-    if (kind === 'guess' && s.guess) {
-      const g = s.guess;
-      const step = g.max - g.min <= 10 ? 0.05 : 1;
-      const mid = Math.round(((g.min + g.max) / 2) / step) * step;
-      body.innerHTML = `
-        <p class="game-q">${esc(g.question)}</p>
-        <div class="slider-row">
-          <input type="range" id="gval" min="${g.min}" max="${g.max}" step="${step}" value="${mid}" />
-          <output class="gout mono" id="gout">${fmt(mid)} ${esc(g.unit)}</output>
-        </div>
-        <button class="game-go" type="button" id="go">Lock in my guess</button>
-        <div class="game-result" id="res"></div>`;
-      const input = body.querySelector<HTMLInputElement>('#gval')!;
-      const out = body.querySelector<HTMLElement>('#gout')!;
-      input.addEventListener('input', () => (out.textContent = `${fmt(Number(input.value))} ${g.unit}`));
-      body.querySelector('#go')!.addEventListener('click', () => {
-        const guess = Number(input.value);
-        const diff = Math.abs(guess - g.answer);
-        const range = g.max - g.min;
-        const verdict = diff === 0 ? 'Spot on.' : diff / range < 0.05 ? 'Very close.' : guess > g.answer ? 'Too high.' : 'Too low.';
-        body.querySelector('#res')!.innerHTML = `
-          <div class="reveal">
-            <p class="reveal-big">${esc(g.answerLabel)}</p>
-            <p>You said <strong>${fmt(guess)} ${esc(g.unit)}</strong>. ${verdict} ${diff ? `Off by ${fmt(Number(diff.toFixed(2)))} ${esc(g.unit)}.` : ''}</p>
-            <p class="reveal-src mono">Source: ${esc(g.source)}</p>
-          </div>`;
-        (body.querySelector('#go') as HTMLButtonElement).disabled = true;
-        input.disabled = true;
-      });
-    } else if (kind === 'trueFalse' && s.trueFalse) {
+    if (s.gameType === 'truefalse' && s.trueFalse) {
       const t = s.trueFalse;
       body.innerHTML = `
         <p class="game-q">${esc(t.statement)}</p>
@@ -368,42 +351,75 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         <div class="game-result" id="res"></div>`;
       body.querySelectorAll<HTMLButtonElement>('.tf-btn').forEach((b) =>
         b.addEventListener('click', () => {
-          const said = b.dataset.v === 'true';
-          const right = said === t.answer;
+          const right = (b.dataset.v === 'true') === t.answer;
           body.querySelector('#res')!.innerHTML = `
             <div class="reveal">
               <p class="reveal-big ${right ? 'ok' : 'nope'}">${right ? 'Right.' : 'Not quite.'} It is ${t.answer ? 'true' : 'false'}.</p>
               <p>${esc(t.explanation)}</p>
             </div>`;
           body.querySelectorAll<HTMLButtonElement>('.tf-btn').forEach((x) => (x.disabled = true));
+          markPlayed(s);
         }),
       );
-    } else if (kind === 'chance' && s.chance) {
-      const c = s.chance;
+      return;
+    }
+    if (s.gameType === 'choice' && s.choice) {
+      const c = s.choice;
       body.innerHTML = `
         <p class="game-q">${esc(c.question)}</p>
-        <div class="slider-row">
-          <input type="range" id="gval" min="0" max="100" step="1" value="50" />
-          <output class="gout mono" id="gout">50%</output>
+        <div class="choice-pick">
+          ${c.options.map((o, i) => `<button class="tf-btn pick-btn" type="button" data-i="${i}">${esc(o)}</button>`).join('')}
         </div>
-        <button class="game-go" type="button" id="go">Lock in my chance</button>
         <div class="game-result" id="res"></div>`;
-      const input = body.querySelector<HTMLInputElement>('#gval')!;
-      const out = body.querySelector<HTMLElement>('#gout')!;
-      input.addEventListener('input', () => (out.textContent = `${input.value}%`));
-      body.querySelector('#go')!.addEventListener('click', () => {
-        const guess = Number(input.value);
-        const diff = Math.abs(guess - c.answer);
-        body.querySelector('#res')!.innerHTML = `
-          <div class="reveal">
-            <p class="reveal-big">${c.answer}%</p>
-            <p>You said <strong>${guess}%</strong>. ${diff === 0 ? 'Spot on.' : `${diff} points ${guess > c.answer ? 'high' : 'low'}.`}</p>
-            <p>${esc(c.explanation)}</p>
-          </div>`;
-        (body.querySelector('#go') as HTMLButtonElement).disabled = true;
-        input.disabled = true;
-      });
+      body.querySelectorAll<HTMLButtonElement>('.pick-btn').forEach((b) =>
+        b.addEventListener('click', () => {
+          const right = Number(b.dataset.i) === c.answer;
+          body.querySelector('#res')!.innerHTML = `
+            <div class="reveal">
+              <p class="reveal-big ${right ? 'ok' : 'nope'}">${right ? 'Right.' : 'Not quite.'} ${esc(c.options[c.answer])}</p>
+              <p>${esc(c.explanation)}</p>
+            </div>`;
+          body.querySelectorAll<HTMLButtonElement>('.pick-btn').forEach((x, i) => {
+            x.disabled = true;
+            x.classList.toggle('right', i === c.answer);
+          });
+          markPlayed(s);
+        }),
+      );
+      return;
     }
+    const g = s.guess;
+    if (!g) {
+      body.innerHTML = '<p class="game-q">No game for this trend yet.</p>';
+      return;
+    }
+    const step = g.max - g.min <= 10 ? 0.05 : 1;
+    const mid = Math.round(((g.min + g.max) / 2) / step) * step;
+    body.innerHTML = `
+      <p class="game-q">${esc(g.question)}</p>
+      <div class="slider-row">
+        <input type="range" id="gval" min="${g.min}" max="${g.max}" step="${step}" value="${mid}" />
+        <output class="gout mono" id="gout">${fmt(mid)} ${esc(g.unit)}</output>
+      </div>
+      <button class="game-go" type="button" id="go">Lock in my guess</button>
+      <div class="game-result" id="res"></div>`;
+    const input = body.querySelector<HTMLInputElement>('#gval')!;
+    const out = body.querySelector<HTMLElement>('#gout')!;
+    input.addEventListener('input', () => (out.textContent = `${fmt(Number(input.value))} ${g.unit}`));
+    body.querySelector('#go')!.addEventListener('click', () => {
+      const guess = Number(input.value);
+      const diff = Math.abs(guess - g.answer);
+      const verdict = diff === 0 ? 'Spot on.' : diff / (g.max - g.min) < 0.05 ? 'Very close.' : guess > g.answer ? 'Too high.' : 'Too low.';
+      body.querySelector('#res')!.innerHTML = `
+        <div class="reveal">
+          <p class="reveal-big">${esc(g.answerLabel)}</p>
+          <p>You said <strong>${fmt(guess)} ${esc(g.unit)}</strong>. ${verdict}</p>
+          <p class="reveal-src mono">Source: ${esc(g.source)}</p>
+        </div>`;
+      (body.querySelector('#go') as HTMLButtonElement).disabled = true;
+      input.disabled = true;
+      markPlayed(s);
+    });
   }
 
   // ---------- Help ----------
@@ -480,7 +496,10 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
       root,
       nodeEls,
       signals,
-      openStory: (id) => openSignal(id),
+      openStory: (id, showNumbers) => {
+        storyNumbers = showNumbers;
+        openSignal(id);
+      },
       closeStory: () => closeStory(),
       openDetail: (id) => openDetail(id),
     });

@@ -125,6 +125,21 @@
         "80% of code merged at Anthropic is machine-written; 8x engineering throughput. Rating: Unchecked (June deck, company’s own claim).",
         "Task length AI agents complete reliably doubles every 3–4 months (was ~7). Rating: Reported.",
         "METR's independent assessment (5 Nov 2026) estimates Anthropic's model capabilities have improved 1.9x faster since October 2025 (95% CI 1.5–2.8x). One lab only. Rating: Verified."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "The Star / NYT: How do you measure an AI boom? (METR)",
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/04/21/how-do-you-measure-an-ai-boom"
+        },
+        {
+          "title": "METR assessment, via Let’s Data Science",
+          "url": "https://letsdatascience.com/news/metr-estimates-anthropics-ai-capability-progress-has-roughly-e64b77bb"
+        },
+        {
+          "title": "MIT weight-editing study, via Let’s Data Science",
+          "url": "https://letsdatascience.com/blog/gpt-6-astra-edited-0-016-percent-qwen-weights-math-sixfold"
+        }
       ]
     },
     {
@@ -203,7 +218,7 @@
         "answerLabel": "40%, up from under 5% in 2025",
         "source": "Gartner forecast"
       },
-      "gameType": "truefalse",
+      "gameType": "guess",
       "trueFalse": {
         "statement": "Most AI agent projects make it into production.",
         "answer": false,
@@ -213,6 +228,21 @@
         "Large firms scaling AI agents: 27% → 40%. Rating: Reported.",
         "40% of enterprise apps embed task-specific agents by end 2026 (<5% in 2025). Rating: Reported.",
         "71% of organisations use agents; 11% of use cases reached production. Rating: Verified."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Second Talent: McKinsey 2026 survey data",
+          "url": "https://secondtalent.com/resources/ai-adoption-in-enterprise-statistics"
+        },
+        {
+          "title": "Prefactor: Gartner agent forecast",
+          "url": "https://prefactor.tech/learn/ai-agent-adoption-statistics"
+        },
+        {
+          "title": "Camunda: 2026 State of Agentic Orchestration and Automation",
+          "url": "https://camunda.com/blog/2026/01/closing-agentic-ai-vision-reality-gap-camunda-2026-state-of-agentic-orchestration-automation-report/"
+        }
       ]
     },
     {
@@ -315,6 +345,29 @@
         "Figure 02 helped build 30,000+ BMW X3s in an 11-month pilot (1,250 hours, 90,000+ parts); Figure 03 now in logistics. Rating: Verified.",
         "19,100 humanoids shipped in H1 2026 (+272%), >97% Chinese. Rating: Reported.",
         "Waymo: ~500,000 paid rides a week, ~4,000 vehicles, 15 US cities. Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Figure: F.02 contributed to the production of 30,000 cars at BMW",
+          "url": "https://figure.ai/news/production-at-bmw"
+        },
+        {
+          "title": "Counterpoint: Global humanoid robot shipments H1 2026",
+          "url": "https://counterpointresearch.com/cn/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026"
+        },
+        {
+          "title": "AI Weekly: Smart Analytics Global humanoid data",
+          "url": "https://aiweekly.co/alerts/chinese-firms-shipped-97-of-the-worlds-humanoid-robots-in-h1-2026-as-volumes"
+        },
+        {
+          "title": "Dealroom / TechCrunch: Waymo fleet data",
+          "url": "https://dealroom.co/news/156473-waymo-hits-4-000-robotaxis-as-texas-fleet-jumps-49-on-new-zeekr-minivans/"
+        },
+        {
+          "title": "FutureSearch: Waymo forecast",
+          "url": "https://futuresearch.ai/app/p/a/waymo-weekly-paid-rides-q4-2026"
+        }
       ]
     },
     {
@@ -395,11 +448,41 @@
         "answerLabel": "$16,000",
         "source": "From June deck"
       },
-      "gameType": "guess",
+      "gameType": "choice",
       "more": [
         "Genie 4: real-time interactive world simulation. Rating: Verified.",
         "Germany–NVIDIA joint declaration on industrial physical AI (20 Oct). Rating: Reported.",
         "50,000+ humanoid shipments expected in 2026. Rating: Verified."
+      ],
+      "choice": {
+        "question": "How many humanoid robots are expected to ship worldwide in 2026?",
+        "options": [
+          "5,000+",
+          "50,000+",
+          "500,000+",
+          "5 million+"
+        ],
+        "answer": 1,
+        "explanation": "Counterpoint expects 50,000+, about three times 2025."
+      },
+      "gameStat": 2,
+      "links": [
+        {
+          "title": "Google: The latest AI news we announced in October 2026",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/"
+        },
+        {
+          "title": "AI News",
+          "url": "https://www.artificialintelligence-news.com/"
+        },
+        {
+          "title": "Counterpoint: humanoid forecast",
+          "url": "https://counterpointresearch.com/cn/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026"
+        },
+        {
+          "title": "NVIDIA: Cosmos 3",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai"
+        }
       ]
     },
     {
@@ -470,15 +553,15 @@
       "hotTake": "Within five years, most new materials and medicines will be discovered by AI rather than by people.",
       "include": true,
       "guess": {
-        "question": "How many AI-discovered drugs have full FDA approval today?",
+        "question": "How many AI-designed drug programmes are in clinical development?",
         "min": 0,
-        "max": 50,
+        "max": 500,
         "unit": "",
-        "answer": 0,
-        "answerLabel": "Zero (as of mid-2026)",
-        "source": "Industry trackers, July 2026"
+        "answer": 173,
+        "answerLabel": "173+ (counts range from 117 to 200+)",
+        "source": "Industry trackers via IntuitionLabs"
       },
-      "gameType": "truefalse",
+      "gameType": "guess",
       "trueFalse": {
         "statement": "No AI-discovered drug had full FDA approval as of mid-2026.",
         "answer": true,
@@ -488,6 +571,21 @@
         "173+ AI-designed drug programmes in clinical development (counts range 117–200+). Rating: Reported.",
         "0 full FDA approvals as of mid-2026; 15–20 Phase III readouts in 2026–27. Rating: Reported.",
         "Danaher’s first autonomous research lab at scale in early 2027. Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "The Star / Reuters: Danaher autonomous research lab",
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/10/07/life-sciences-firm-danaher-to-launch-ai-powered-autonomous-research-lab-in-2027"
+        },
+        {
+          "title": "IntuitionLabs: AI-discovered drugs in clinical trials 2026",
+          "url": "https://intuitionlabs.ai/articles/ai-discovered-drugs-clinical-trials-2026"
+        },
+        {
+          "title": "IntuitionLabs: AI drug discovery FDA approvals",
+          "url": "https://intuitionlabs.ai/articles/ai-drug-discovery-fda-approvals"
+        }
       ]
     },
     {
@@ -553,7 +651,7 @@
       ],
       "hotTake": "Language models are fluent but unreliable with numbers. Gartner’s #1 trend for 2027 is models built for quantitative data first.",
       "include": true,
-      "gameType": "truefalse",
+      "gameType": "guess",
       "trueFalse": {
         "statement": "Gartner's number one technology trend for 2027 is large language models.",
         "answer": false,
@@ -563,6 +661,34 @@
         "By 2030, LQMs replace LLMs in 25% of strategic forecasting and operational modelling tasks. Rating: Forecast.",
         "Large quantitative models lead Gartner’s Top 10 Strategic Technology Trends for 2027 (20 Oct 2026). Rating: Verified.",
         "Large quantitative models lead Gartner’s Top 10 Strategic Technology Trends for 2027 (20 Oct 2026). Rating: Verified."
+      ],
+      "guess": {
+        "question": "By 2030, in what share of strategic forecasting tasks does Gartner expect quantitative models to replace LLMs?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 25,
+        "answerLabel": "25% (Gartner forecast)",
+        "source": "Gartner"
+      },
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Gartner: Top Strategic Technology Trends for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2027"
+        },
+        {
+          "title": "Network World: Gartner’s top tech trends for 2027",
+          "url": "https://www.networkworld.com/article/4238030/gartners-top-tech-trends-for-2027-expand-and-constrain-ai-capabilities.html"
+        },
+        {
+          "title": "TechTarget: Gartner unveils top technology trends",
+          "url": "https://www.techtarget.com/it-strategy/feature/Gartner-unveils-top-technology-trends-at-Gartner-IT-Symposium"
+        },
+        {
+          "title": "Gartner: Strategic Predictions for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
+        }
       ]
     },
     {
@@ -642,6 +768,25 @@
         "Enterprise voice interactions handled autonomously by speech models: <10% (2026) → 70%+ (2030). Rating: Forecast.",
         "Speech reasoning models are #2 on Gartner’s 2027 list. Rating: Verified.",
         "Voice is “the enterprise’s highest-volume but least-automated interaction channel”. Rating: Verified."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Gartner: Top Strategic Technology Trends for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2027"
+        },
+        {
+          "title": "Network World: Gartner’s top tech trends for 2027",
+          "url": "https://www.networkworld.com/article/4238030/gartners-top-tech-trends-for-2027-expand-and-constrain-ai-capabilities.html"
+        },
+        {
+          "title": "TechTarget: Gartner unveils top technology trends",
+          "url": "https://www.techtarget.com/it-strategy/feature/Gartner-unveils-top-technology-trends-at-Gartner-IT-Symposium"
+        },
+        {
+          "title": "Gartner: Strategic Predictions for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
+        }
       ]
     },
     {
@@ -714,7 +859,7 @@
       ],
       "hotTake": "The best freely downloadable models are now only a few points behind the closed frontier.",
       "include": true,
-      "gameType": "truefalse",
+      "gameType": "choice",
       "trueFalse": {
         "statement": "The gap between the best open and closed AI models widened this year.",
         "answer": false,
@@ -724,6 +869,28 @@
         "Kimi K3.1 Pro: 2.8T parameters (104B active), 1M-token context; weights on Hugging Face 4 Nov 2026. Rating: Verified.",
         "Open–closed gap on the Artificial Analysis index shrinks from 12 to 3 points with K3.1 Pro. Rating: Reported.",
         "Inkling 2 Small: 594B parameters (17B active), 5 Nov 2026; weights closed at launch, Apache 2.0 release promised after safety testing. Rating: Verified."
+      ],
+      "choice": {
+        "question": "Kimi K3.1 Pro is a model with open weights. How many parameters does it have?",
+        "options": [
+          "28 billion",
+          "280 billion",
+          "2.8 trillion",
+          "28 trillion"
+        ],
+        "answer": 2,
+        "explanation": "2.8 trillion parameters, with 104 billion active."
+      },
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "TechNode: Kimi K3.1 Pro weights",
+          "url": "https://technode.com/2026/11/05/moonshot-ai-releases-kimi-k3-1-pro-model-weights/"
+        },
+        {
+          "title": "Let’s Data Science: Inkling 2 Small",
+          "url": "https://letsdatascience.com/news/thinking-machines-lab-releases-inkling-2-small-a-594b-moe-mo-2b2a96ce"
+        }
       ]
     },
     {
@@ -805,6 +972,13 @@
         "Gemini Omni 1.2 Flash GA on 5 Nov 2026; clips up to 15 s (from 10). Rating: Verified.",
         "$0.07 per second at 720p, 30% less than Omni 1.1. Rating: Verified.",
         "SynthID invisible watermark on outputs. Rating: Verified."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Google: Gemini Omni 1.2 Flash",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+        }
       ]
     },
     {
@@ -877,7 +1051,7 @@
       ],
       "hotTake": "Gartner lists renting living or synthetic biological systems as computers, over the cloud, as a 2027 strategic trend.",
       "include": true,
-      "gameType": "truefalse",
+      "gameType": "choice",
       "trueFalse": {
         "statement": "Gartner lists computers made of living cells as a strategic technology trend for 2027.",
         "answer": true,
@@ -887,6 +1061,36 @@
         "Wetware as a service is #10 on Gartner’s 2027 list. Rating: Verified.",
         "“Your brain runs on 20 watts” (Gene Alvarez, Gartner). Rating: Verified.",
         "Currently in pilot form; several years to maturity; bioethics and IP ownership open. Rating: Verified."
+      ],
+      "choice": {
+        "question": "Gartner compares computers with the human brain. How much power does a brain run on?",
+        "options": [
+          "20 watts",
+          "200 watts",
+          "2,000 watts",
+          "20 kilowatts"
+        ],
+        "answer": 0,
+        "explanation": "About 20 watts, in Gartner's comparison."
+      },
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Gartner: Top Strategic Technology Trends for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2027"
+        },
+        {
+          "title": "Network World: Gartner’s top tech trends for 2027",
+          "url": "https://www.networkworld.com/article/4238030/gartners-top-tech-trends-for-2027-expand-and-constrain-ai-capabilities.html"
+        },
+        {
+          "title": "TechTarget: Gartner unveils top technology trends",
+          "url": "https://www.techtarget.com/it-strategy/feature/Gartner-unveils-top-technology-trends-at-Gartner-IT-Symposium"
+        },
+        {
+          "title": "Gartner: Strategic Predictions for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
+        }
       ]
     },
     {
@@ -984,6 +1188,29 @@
         "AI-referred traffic to US retail sites +393% in Q1 2026; converted 42% better in March; revenue per visit 37% higher. Rating: Verified.",
         "47.6% of consumers use AI to compare products or prices (35% in 2025). Rating: Reported.",
         "21 banks (Goldman Sachs, Bank of America, Citi, Wells Fargo and others) plan a joint dollar stablecoin for H1 2027; JPMorgan not among them. Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Adobe: AI traffic surge to retail sites",
+          "url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable"
+        },
+        {
+          "title": "GemPages: Agentic commerce 2026 (Bloomreach data)",
+          "url": "https://gempages.net/es/blogs/shopify/agentic-commerce"
+        },
+        {
+          "title": "Decrypt: 21 banks plan joint dollar stablecoin",
+          "url": "https://decrypt.co/377216/goldman-sachs-bofa-banks-stablecoin?amp=1"
+        },
+        {
+          "title": "Morgan Stanley: Here come the shopping bots",
+          "url": "https://morganstanley.com/insights/articles/agentic-commerce-market-impact-outlook"
+        },
+        {
+          "title": "DHL: 2026 E-Commerce Trends Report",
+          "url": "https://www.dhl.com/global-en/microsites/ec/ecommerce-insights/insights/reports/2026-ecommerce-trends-report.html"
+        }
       ]
     },
     {
@@ -1070,6 +1297,25 @@
         "~83% zero-click rate when an AI Overview appears. Rating: Caution: single tracker.",
         "Publisher ad supply down up to 40% in Q2 2026. Rating: Reported.",
         "Overall US zero-click rate 22.4% (March 2026). Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Gist: Zero-click crisis",
+          "url": "https://gist.ai/blog/zero-click-crisis-publisher-traffic"
+        },
+        {
+          "title": "The ATDB: Publisher ad supply fell up to 40%",
+          "url": "https://www.theatdb.com/news/publisher-ad-supply-fell-by-up-to-40-in-q2-as-ai-search-choked-the-open-web"
+        },
+        {
+          "title": "PPC Land: SparkToro zero-click data",
+          "url": "https://ppc.land/all-about-berlin-loses-75-of-traffic-as-zero-click-searches-hit-68/"
+        },
+        {
+          "title": "Bain: Goodbye clicks, hello AI",
+          "url": "https://www.bain.com/insights/goodbye-clicks-hello-ai-zero-click-search-redefines-marketing/"
+        }
       ]
     },
     {
@@ -1150,14 +1396,25 @@
       },
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Meta made 94% of display-less AI glasses shipments in H1 2026.",
-        "answer": true,
-        "explanation": "Counterpoint: 94% for Meta."
+        "statement": "Apple made most of the display-less AI glasses shipped in H1 2026.",
+        "answer": false,
+        "explanation": "Meta made 94% of them (Counterpoint)."
       },
       "more": [
         "AI glasses shipments +263% in H1 2026; 96% have no display. Rating: Reported.",
         "Meta holds 94% of display-less shipments. Rating: Reported.",
         "EssilorLuxottica sold 7M+ AI glasses in 2025. Rating: Reported."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Android Authority: Counterpoint AI glasses data",
+          "url": "https://androidauthority.com/smart-glasses-shipments-statistics-3713810"
+        },
+        {
+          "title": "9to5Mac: AI glasses shipments surged 263%",
+          "url": "https://9to5mac.com/2026/09/21/report-ai-glasses-shipments-surged-263-in-h1-2026-as-apple-prepares-to-enter-the-market/"
+        }
       ]
     },
     {
@@ -1238,7 +1495,9 @@
         "700% companion app growth since 2022; Character.AI 20M monthly users, over half under 24; 57% worry about AI’s impact (Ipsos 2025). Rating: Unchecked.",
         "700% companion app growth since 2022; Character.AI 20M monthly users, over half under 24; 57% worry about AI’s impact (Ipsos 2025). Rating: Unchecked.",
         "700% companion app growth since 2022; Character.AI 20M monthly users, over half under 24; 57% worry about AI’s impact (Ipsos 2025). Rating: Unchecked."
-      ]
+      ],
+      "gameStat": 1,
+      "links": []
     },
     {
       "id": "one-in-three-people-now-uses-ai",
@@ -1316,7 +1575,7 @@
       ],
       "hotTake": "Generative AI became a mass-market habit in under four years.",
       "include": true,
-      "gameType": "truefalse",
+      "gameType": "guess",
       "trueFalse": {
         "statement": "More than one in three people worldwide now uses generative AI each month.",
         "answer": true,
@@ -1326,6 +1585,26 @@
         "3.24B monthly GenAI users, 38.9% of world population. Rating: Verified.",
         "3.24B monthly GenAI users, 38.9% of world population. Rating: Verified.",
         "+1.2B users (+57.2%) in 12 months. Rating: Verified."
+      ],
+      "guess": {
+        "question": "By how much did the number of generative AI users grow in 12 months?",
+        "min": 0,
+        "max": 200,
+        "unit": "%",
+        "answer": 57,
+        "answerLabel": "+57%: 1.2 billion more users",
+        "source": "Digital 2027 (We Are Social / Meltwater), 21 Oct 2026"
+      },
+      "gameStat": 2,
+      "links": [
+        {
+          "title": "Digital 2027 report",
+          "url": "https://martechedge.com/press-release/digital-2027-report-one-in-three-people-globally-now-use-gen-ai-as-social-media-users-reach-581-billion"
+        },
+        {
+          "title": "DataReportal: AI use around the world",
+          "url": "https://datareportal.com/reports/digital-2027-ai-use-around-the-world"
+        }
       ]
     },
     {
@@ -1404,11 +1683,27 @@
         "answerLabel": "40%, up from 27% a year earlier",
         "source": "McKinsey State of AI 2026"
       },
-      "gameType": "guess",
+      "gameType": "truefalse",
       "more": [
         "Gemini agent announced 8 Oct, with its own account, permissions and spend cap. Rating: Reported.",
         "GPT-6 rollout in ChatGPT from 7 Oct. Rating: Reported.",
         "Gems replaced by reusable skills in Workspace from 1 Mar 2027. Rating: Reported."
+      ],
+      "trueFalse": {
+        "statement": "Google's new Gemini agent comes with its own account, permissions and a spend cap.",
+        "answer": true,
+        "explanation": "Announced on 8 Oct 2026."
+      },
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "HelloGrowth: Google AI news October 2026",
+          "url": "https://hellogrowth.ai/en/blog/google-ai-news-october-2026"
+        },
+        {
+          "title": "Tech AI Magazine: October 2026 AI stories",
+          "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
+        }
       ]
     },
     {
@@ -1481,7 +1776,7 @@
         "answerLabel": "14%",
         "source": "Deloitte 2026 (from June deck)"
       },
-      "gameType": "truefalse",
+      "gameType": "guess",
       "trueFalse": {
         "statement": "Most leaders say they are good at shaping how people and AI work together.",
         "answer": false,
@@ -1491,7 +1786,9 @@
         "14% of leaders adept at shaping human-AI interaction. Rating: Unchecked.",
         "$5.5T economic value at risk; 90%+ of enterprises face skills gaps. Rating: Unchecked.",
         "$5.5T economic value at risk; 90%+ of enterprises face skills gaps. Rating: Unchecked."
-      ]
+      ],
+      "gameStat": 0,
+      "links": []
     },
     {
       "id": "bottom-rung",
@@ -1593,6 +1890,25 @@
         "AI cited in 121,401 US job cuts, Jan–Oct 2026, vs 54,836 in all of 2025. Rating: Reported.",
         "Peak: 38,579 AI-cited cuts in May (40% of the month); October: 1,265. Rating: Verified (May), Reported (Oct).",
         "~13% relative employment drop for 22–25-year-olds in the most AI-exposed jobs. Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "HCAMag: Challenger AI job cuts through October 2026",
+          "url": "https://www.hcamag.com/us/specialization/transformation/ai-blamed-for-121401-job-cuts-but-the-labor-data-isnt-buying-it/594129"
+        },
+        {
+          "title": "Challenger Report, May 2026",
+          "url": "https://www.challengergray.com/wp-content/uploads/2026/06/Challenger-Report-May-2026.pdf"
+        },
+        {
+          "title": "Amherst Careers: AI's effect on young workers",
+          "url": "https://careers.amherst.edu/blog/2026/05/08/ai-is-having-a-significant-and-disproportionate-effect-on-young-workers-job-prospects-study-finds/"
+        },
+        {
+          "title": "Strada: Entry-level hiring in the AI era",
+          "url": "https://www.strada.org/news-insights/entry-level-hiring-in-the-ai-era-what-employers-are-thinking-and-doing"
+        }
       ]
     },
     {
@@ -1663,14 +1979,33 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "Gartner expects coding agents to write about half of all public code commits by late 2026.",
+        "statement": "Gartner says writing the code is now the main bottleneck for software teams.",
         "answer": false,
-        "explanation": "The forecast is 20%: one in five."
+        "explanation": "With agents writing code, manual review is becoming the main bottleneck."
       },
       "more": [
         "By late 2026, autonomous coding agents generate 20% of all public commits. Rating: Forecast.",
         "Agent coding harness is #5 on Gartner’s 2027 list. Rating: Verified.",
         "Manual review is becoming the primary bottleneck. Rating: Verified."
+      ],
+      "gameStat": 2,
+      "links": [
+        {
+          "title": "Gartner: Top Strategic Technology Trends for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2027"
+        },
+        {
+          "title": "Network World: Gartner’s top tech trends for 2027",
+          "url": "https://www.networkworld.com/article/4238030/gartners-top-tech-trends-for-2027-expand-and-constrain-ai-capabilities.html"
+        },
+        {
+          "title": "TechTarget: Gartner unveils top technology trends",
+          "url": "https://www.techtarget.com/it-strategy/feature/Gartner-unveils-top-technology-trends-at-Gartner-IT-Symposium"
+        },
+        {
+          "title": "Gartner: Strategic Predictions for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
+        }
       ]
     },
     {
@@ -1736,6 +2071,25 @@
       "more": [
         "By 2027, organisations prioritising semantics in AI-ready data raise agentic AI accuracy by up to 80% and cut costs by up to 60%. Rating: Forecast.",
         "AI context platforms are #4 on Gartner’s 2027 list. Rating: Verified."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Gartner: Top Strategic Technology Trends for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2027"
+        },
+        {
+          "title": "Network World: Gartner’s top tech trends for 2027",
+          "url": "https://www.networkworld.com/article/4238030/gartners-top-tech-trends-for-2027-expand-and-constrain-ai-capabilities.html"
+        },
+        {
+          "title": "TechTarget: Gartner unveils top technology trends",
+          "url": "https://www.techtarget.com/it-strategy/feature/Gartner-unveils-top-technology-trends-at-Gartner-IT-Symposium"
+        },
+        {
+          "title": "Gartner: Strategic Predictions for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
+        }
       ]
     },
     {
@@ -1808,7 +2162,7 @@
       ],
       "hotTake": "When AI builds an app in minutes, apps become short-lived tools you replace rather than maintain.",
       "include": true,
-      "gameType": "truefalse",
+      "gameType": "guess",
       "trueFalse": {
         "statement": "Gartner expects most new apps in 2029 to be built to last ten years or more.",
         "answer": false,
@@ -1818,6 +2172,34 @@
         "By 2029, 80% of new applications will be intentionally disposable, used for less than a year. Rating: Forecast.",
         "By 2029, 80% of new applications will be intentionally disposable, used for less than a year. Rating: Forecast.",
         "Disposable applications are #9 on Gartner’s 2027 list. Rating: Verified."
+      ],
+      "guess": {
+        "question": "What share of new applications does Gartner expect to be disposable by 2029?",
+        "min": 0,
+        "max": 100,
+        "unit": "%",
+        "answer": 80,
+        "answerLabel": "80% (Gartner forecast)",
+        "source": "Gartner Strategic Predictions, Sep 2026"
+      },
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Gartner: Top Strategic Technology Trends for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2027"
+        },
+        {
+          "title": "Network World: Gartner’s top tech trends for 2027",
+          "url": "https://www.networkworld.com/article/4238030/gartners-top-tech-trends-for-2027-expand-and-constrain-ai-capabilities.html"
+        },
+        {
+          "title": "TechTarget: Gartner unveils top technology trends",
+          "url": "https://www.techtarget.com/it-strategy/feature/Gartner-unveils-top-technology-trends-at-Gartner-IT-Symposium"
+        },
+        {
+          "title": "Gartner: Strategic Predictions for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
+        }
       ]
     },
     {
@@ -1908,19 +2290,46 @@
       "hotTake": "The AI investment boom will end in a crash before 2030.",
       "include": true,
       "guess": {
-        "question": "How much will Amazon, Alphabet, Microsoft and Meta spend on capex in 2026, in billions of US dollars?",
+        "question": "Amazon's Q3 2026 capex was what share of its operating cash flow?",
         "min": 0,
-        "max": 1500,
-        "unit": "$B",
-        "answer": 730,
-        "answerLabel": "About $730 billion",
-        "source": "Company guidance, Q3 2026 earnings"
+        "max": 300,
+        "unit": "%",
+        "answer": 182,
+        "answerLabel": "182%",
+        "source": "Walnut"
       },
       "gameType": "guess",
       "more": [
         "Big-four 2026 capex guidance ~$720–740B (midpoint $730B), ~78% above ~$410B in 2025. Rating: Reported.",
         "Q3 capex vs operating cash flow: Amazon 182%, Alphabet 121%, Meta 104%. Rating: Reported.",
         "Q3 2026 capex $201.9B, +108% year on year. Rating: Reported."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Walnut: AI capex tracker",
+          "url": "https://walnutinvest.com/stats/ai-capex-statistics"
+        },
+        {
+          "title": "ValueAdd VC: Big Tech AI spending 2026",
+          "url": "https://valueaddvc.com/ai-spending"
+        },
+        {
+          "title": "Anthropic S-1 (SEC)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm"
+        },
+        {
+          "title": "AY Automate: Anthropic S-1 figures",
+          "url": "https://www.ayautomate.com/blog/anthropic-s-1-claude-buyers"
+        },
+        {
+          "title": "Mobile World Live: Dell'Oro data centre capex",
+          "url": "https://www.mobileworldlive.com/ai-cloud/data-centre-capex-to-top-1t-as-ai-spending-accelerates/"
+        },
+        {
+          "title": "Gartner: AI spending forecast",
+          "url": "https://gartner.com/en/newsroom/press-releases/2026-09-16-gartner-forecasts-worldwide-ai-spending-to-grow-49-point-5-percent-in-2026"
+        }
       ]
     },
     {
@@ -1995,6 +2404,17 @@
         "A notable new model every ~12 days (2025); GPT-4-class cost −98%; average enterprise AI budget $7M (from $1.2M). Rating: Unchecked.",
         "A notable new model every ~12 days (2025); GPT-4-class cost −98%; average enterprise AI budget $7M (from $1.2M). Rating: Unchecked.",
         "A notable new model every ~12 days (2025); GPT-4-class cost −98%; average enterprise AI budget $7M (from $1.2M). Rating: Unchecked."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Google: October 2026 AI updates",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/"
+        },
+        {
+          "title": "Tech AI Magazine: October 2026 AI stories",
+          "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
+        }
       ]
     },
     {
@@ -2082,6 +2502,13 @@
         "Google limits free Gemini to Flash Lite (9 Oct); plans $4.99–$99.99 a month. Rating: Reported.",
         "Google limits free Gemini to Flash Lite (9 Oct); plans $4.99–$99.99 a month. Rating: Reported.",
         "OpenAI reverses a planned cut to ChatGPT Pro limits (29 Oct). Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Tech AI Magazine: October 2026 AI stories",
+          "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
+        }
       ]
     },
     {
@@ -2159,6 +2586,17 @@
         "Pure per-seat pricing 21% → 15% of software companies; hybrid 27% → 41%. Rating: Reported.",
         "Pure per-seat pricing 21% → 15% of software companies; hybrid 27% → 41%. Rating: Reported.",
         "Intercom charges $0.99 per AI-resolved conversation. Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Growth Unhinged: State of B2B Monetization",
+          "url": "https://kylepoyar.substack.com/p/2025-state-of-b2b-monetization?open=false"
+        },
+        {
+          "title": "Pulse / CustomerThink: AI is killing seat-based pricing",
+          "url": "https://www.pulse.bot/ai/news/ai-is-killing-seat-based-pricing-what-cx-software-buyers-should-do-next-34ed157f-dce9-4041-a698-1678c8abc295/"
+        }
       ]
     },
     {
@@ -2247,6 +2685,13 @@
         "Firms seeing any EBIT impact from AI: 39% → 37%. Rating: Reported.",
         "95% of enterprises see no measurable return from GenAI. Rating: Unchecked; methodology widely debated.",
         "40%+ of agentic AI projects cancelled by 2027. Rating: Unchecked."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Second Talent: McKinsey 2026 survey data",
+          "url": "https://secondtalent.com/resources/ai-adoption-in-enterprise-statistics"
+        }
       ]
     },
     {
@@ -2342,6 +2787,13 @@
         "Deutsche Telekom targets €2.5B in AI savings. Rating: Reported.",
         "UnitedHealthcare AI assistant, reported 90% resolution rate. Rating: Reported, headline only.",
         "JPMorgan ~$2B invested, ~$2B annual value. Rating: Unchecked."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "AI News",
+          "url": "https://www.artificialintelligence-news.com/"
+        }
       ]
     },
     {
@@ -2420,6 +2872,13 @@
         "Nvidia 92% discrete GPU share (H1 2025); $5T peak market value. Rating: Unchecked.",
         "Nvidia 92% discrete GPU share (H1 2025); $5T peak market value. Rating: Unchecked.",
         "OpenAI models in private preview on Google Cloud (21 Oct). Rating: Reported."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Tech AI Magazine: October 2026 AI stories",
+          "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
+        }
       ]
     },
     {
@@ -2526,6 +2985,37 @@
         "$130B of US projects blocked or delayed by local opposition in Q1 2026 (75 projects), $68B in Q2 (45 projects): ~$198B in H1. Rating: Verified (sum is my arithmetic).",
         "Data centre electricity +17% in 2025; AI-focused data centres +50%. Rating: Reported.",
         "Data centre electricity +17% in 2025; AI-focused data centres +50%. Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Data Center Watch: Q1 2026 report",
+          "url": "https://datacenterwatch.org/q1-2026"
+        },
+        {
+          "title": "Bisnow: Opposition blocks $68B in Q2 projects",
+          "url": "https://www.bisnow.com/news/national/data-center-community-relations/community-backlash-upends-billions-of-dollars-in-new-data-center-projects"
+        },
+        {
+          "title": "GatherGov: Data center moratorium tracker",
+          "url": "https://preview-website-nextjs-5caojr-gqcgtm.preview.gathergov.com/articles/data-center-moratorium-2026-tracker"
+        },
+        {
+          "title": "INDmoney: IEA data centre electricity",
+          "url": "https://www.indmoney.com/blog/us-stocks/ai-energy-stocks-data-centre-power-demand"
+        },
+        {
+          "title": "Route Fifty: NLC tracker",
+          "url": "https://www.route-fifty.com/artificial-intelligence/2026/08/many-localities-have-tried-data-center-moratoriums-tracker-finds/415696/"
+        },
+        {
+          "title": "Tom’s Hardware: 69 jurisdictions",
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-data-center-bans-are-rapidly-multiplying-across-the-us-69-jurisdictions-block-new-builds-with-four-moves-noted-as-permanent"
+        },
+        {
+          "title": "NewMarketPitch: SemiAnalysis count",
+          "url": "https://newmarketpitch.com/blogs/news/data-center-states-blocking"
+        }
       ]
     },
     {
@@ -2620,6 +3110,21 @@
         "SK hynix Q3: revenue ₩104.6T, operating profit ₩83.3T, 80% margin; expects demand to exceed supply through 2030. Rating: Verified.",
         "Samsung Q3 operating profit ₩107.4T, first tech company above ₩100T; chip division ₩106.5T, mobile at a loss. Rating: Verified.",
         "2026 shipments: smartphones −12.9%, PCs −11.3%; smartphone average price +14% to $523. Rating: Verified (forecast may since be revised)."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "SK hynix 3Q26 results (PR Newswire)",
+          "url": "https://www.webull.com/news/15822865136734208"
+        },
+        {
+          "title": "Samsung: Third quarter 2026 results",
+          "url": "https://news.samsung.com/global/samsung-electronics-announces-third-quarter-2026-results"
+        },
+        {
+          "title": "IDC: Memory crisis reshaping PC and smartphone outlook",
+          "url": "https://www.idc.com/?p=109987"
+        }
       ]
     },
     {
@@ -2722,6 +3227,29 @@
         "69% of OpenRouter tokens from Chinese labs (one September week); 72% open-weight overall. Rating: Verified; Caution on representativeness.",
         "Best open-weight models trail the closed frontier by ~4 months. Rating: Verified.",
         "~61% of OpenRouter tokens Chinese by May 2026. Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "OpenRouter: The token state of play",
+          "url": "https://openrouter.ai/data/newsletter/the-token-state-of-play"
+        },
+        {
+          "title": "Epoch AI: Open models lag closed models by 4 months",
+          "url": "https://epoch.ai/data-insights/open-closed-eci-gap"
+        },
+        {
+          "title": "SCMP: TrendForce on China's AI server chips",
+          "url": "https://www.scmp.com/tech/article/3358322/huawei-and-cambricon-lead-chinas-ai-server-chip-surge-piling-pressure-nvidia"
+        },
+        {
+          "title": "TrendForce: Bernstein forecast via Bloomberg/eToday",
+          "url": "https://www.trendforce.com/news/?p=60329"
+        },
+        {
+          "title": "Wing VC: China’s open-weight takeover",
+          "url": "https://www.wing.vc/content/chinas-open-weight-takeover"
+        }
       ]
     },
     {
@@ -2802,6 +3330,13 @@
         "3x more small task-specific models than LLMs by 2027; −90% inference cost on-premise. Rating: Unchecked.",
         "3x more small task-specific models than LLMs by 2027; −90% inference cost on-premise. Rating: Unchecked.",
         "Google ships offline AI meeting notes on Mac (Oct 2026). Rating: Reported."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "HelloGrowth: Google AI news October 2026",
+          "url": "https://hellogrowth.ai/en/blog/google-ai-news-october-2026"
+        }
       ]
     },
     {
@@ -2892,6 +3427,13 @@
         "US export controls suspended access to two frontier models for 19 days (12 June–1 July 2026). Rating: Verified.",
         "US 55% of hyperscale AI compute; Microsoft $15.2B in the UAE. Rating: Unchecked.",
         "US 55% of hyperscale AI compute; Microsoft $15.2B in the UAE. Rating: Unchecked."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Anthropic: Fable and Mythos access",
+          "url": "https://www.anthropic.com/news/fable-mythos-access"
+        }
       ]
     },
     {
@@ -2978,6 +3520,21 @@
         "Digital Omnibus in force 27 July 2026; high-risk rules from 2 Dec 2027 (stand-alone) and 2 Aug 2028 (embedded). Rating: Verified.",
         "Mistral raised €3B at €21B+, the largest equity round by a European tech company; led by Samsung. Rating: Verified.",
         "Telekom’s Munich AI factory sold out 7 months after launch; expanding to 20 MW (~€250M). Rating: Verified."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "CSA: EU AI Act high-risk deadline deferred",
+          "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-deadline-omnibus-20260/"
+        },
+        {
+          "title": "Euronews: Mistral raises €3B",
+          "url": "https://www.euronews.com/2026/09/08/mistral-ai-raises-record-3-billion-in-samsung-led-funding-round"
+        },
+        {
+          "title": "Deutsche Telekom: Expands AI factory in Munich",
+          "url": "https://www.telekom.com/en/newsroom/latest-updates/media-information/2026/11/ai-demand-rises-deutsche-telekom-expands-ai-factory-in-munich"
+        }
       ]
     },
     {
@@ -3079,6 +3636,21 @@
         "Claude Mythos Preview found thousands of zero-day vulnerabilities across every major OS and browser; restricted to the defensive Project Glasswing (launched 7 April 2026). Rating: Verified.",
         "Open-weight models trail closed models in cyber capabilities by 6–7 months. Rating: Verified.",
         "Glasswing partners include AWS, Apple, Google, Microsoft, CrowdStrike and Palo Alto Networks. Rating: Reported."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Anthropic: Project Glasswing",
+          "url": "https://www.anthropic.com/project/glasswing"
+        },
+        {
+          "title": "Epoch AI: Open models topic",
+          "url": "https://epoch.ai/topics/open-models"
+        },
+        {
+          "title": "OpenAI: A thousand fewer paths to root",
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+        }
       ]
     },
     {
@@ -3167,6 +3739,13 @@
         "NHS retinopathy detection 94%; Wadhwani AI TB detection 96% in 2,000+ clinics. Rating: Unchecked.",
         "NHS retinopathy detection 94%; Wadhwani AI TB detection 96% in 2,000+ clinics. Rating: Unchecked.",
         "Microsoft AI diagnostic tool outperforms doctors in clinical tests (Oct 2026). Rating: Reported, headline only."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "AI News: Microsoft AI diagnostic tool",
+          "url": "https://www.artificialintelligence-news.com/"
+        }
       ]
     },
     {
@@ -3193,12 +3772,6 @@
         {
           "value": "#6",
           "label": "AI agent identity on Gartner's 2027 list",
-          "fresh": "checked",
-          "source": "Gartner"
-        },
-        {
-          "value": "2028",
-          "label": "year Gartner expects agent abuse to cause a quarter of breaches",
           "fresh": "checked",
           "source": "Gartner"
         }
@@ -3235,8 +3808,26 @@
       },
       "more": [
         "By 2028, 25% of enterprise security breaches trace back to AI agent abuse. Rating: Forecast.",
-        "AI agent identity is #6 on Gartner’s 2027 list: dynamic, policy-controlled access. Rating: Verified.",
-        "By 2028, 25% of enterprise security breaches trace back to AI agent abuse. Rating: Forecast."
+        "AI agent identity is #6 on Gartner’s 2027 list: dynamic, policy-controlled access. Rating: Verified."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "Gartner: Top Strategic Technology Trends for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2027"
+        },
+        {
+          "title": "Network World: Gartner’s top tech trends for 2027",
+          "url": "https://www.networkworld.com/article/4238030/gartners-top-tech-trends-for-2027-expand-and-constrain-ai-capabilities.html"
+        },
+        {
+          "title": "TechTarget: Gartner unveils top technology trends",
+          "url": "https://www.techtarget.com/it-strategy/feature/Gartner-unveils-top-technology-trends-at-Gartner-IT-Symposium"
+        },
+        {
+          "title": "Gartner: Strategic Predictions for 2027",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
+        }
       ]
     },
     {
@@ -3310,14 +3901,21 @@
       "include": true,
       "gameType": "truefalse",
       "trueFalse": {
-        "statement": "AI-assisted researchers found a forgery attack on legacy 1024-bit RSA about 1,600 times better than the previous best.",
-        "answer": true,
-        "explanation": "It applies to legacy 1024-bit RSA, per the briefing."
+        "statement": "AI-assisted researchers improved a forgery attack on legacy 1024-bit RSA by about 16 times.",
+        "answer": false,
+        "explanation": "About 1,600 times better than the previous best."
       },
       "more": [
         "Signature-forgery method ~1,600x better than the previous best for 1024-bit RSA. Rating: Verified (theoretical estimate).",
         "Batch factoring ~30x cheaper per additional 1024-bit key. Rating: Verified (theoretical).",
         "Re-run of a known attack used 3.5x less CPU (391 vs 1,380 core-years). Rating: Verified."
+      ],
+      "gameStat": 0,
+      "links": [
+        {
+          "title": "SecurityWeek: DeepMind and RSA-1024",
+          "url": "https://securityweek.com/google-deepminds-ai-agents-make-1024-bit-rsa-keys-cheaper-to-attack"
+        }
       ]
     },
     {
@@ -3613,6 +4211,21 @@
         "By 2028, 50% of organisations adopt zero-trust data governance as unverified AI-generated data grows. Rating: Forecast.",
         "Through 2026, 50% of global organisations require “AI-free” skills assessments as critical thinking atrophies. Rating: Forecast.",
         "“AI-free” trust revolution is one of Gartner Futures Lab’s 7 Disruptions You Might Not See Coming: 2025–2030. Rating: Verified."
+      ],
+      "gameStat": 1,
+      "links": [
+        {
+          "title": "Gartner: 7 Disruptions You Might Not See Coming 2025–2030",
+          "url": "https://www.gartner.com/en/documents/7216330"
+        },
+        {
+          "title": "Gartner: zero-trust data governance prediction",
+          "url": "https://gartner.com/en/newsroom/press-releases/2026-01-21-gartner-predicts-by-2028-50-percent-of-organizations-will-adopt-zero-trust-data-governance-as-unverified-ai-generated-data-grows"
+        },
+        {
+          "title": "Gartner: Strategic Predictions for 2026",
+          "url": "https://www.gartner.com/en/articles/strategic-predictions-for-2026"
+        }
       ]
     }
   ],

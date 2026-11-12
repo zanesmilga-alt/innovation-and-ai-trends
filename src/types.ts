@@ -73,6 +73,10 @@ export interface Signal {
   gameType?: 'guess' | 'truefalse' | 'choice';
   /** One or two short sentences in small print under the trend. */
   tagline?: string;
+  /** Which of the stats the game is about. Hidden in the explorer until the reader plays. */
+  gameStat?: number;
+  /** Linked sources: the original articles and reports. */
+  links?: { title: string; url: string }[];
   /** Optional YouTube link or video ID shown in the details layer. */
   video?: string | null;
   /** Extra detail for each of the three figures, shown when a figure is clicked. */
