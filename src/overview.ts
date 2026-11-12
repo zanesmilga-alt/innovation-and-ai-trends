@@ -37,7 +37,6 @@ export async function mountOverview(root: HTMLElement): Promise<void> {
                 <span class="ov-pic" data-id="${esc(s.id)}"></span>
                 <span class="ov-body">
                   <span class="ov-title">${esc(s.title)}</span>
-                  <span class="ov-tag">${esc(s.hook)}</span>
                   <span class="ov-more mono">Read the trend →</span>
                 </span>
               </a>`).join('')}

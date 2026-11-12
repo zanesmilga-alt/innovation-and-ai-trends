@@ -1083,3 +1083,4 @@ body[data-mode="stage"] .story-foot { bottom: 84px; right: 280px; }
 .choice-pick .pick-btn { min-height: 80px; font-size: clamp(20px, 2vw, 30px); }
 .choice-pick .pick-btn.right { border-color: var(--orange); background: rgba(240, 122, 46, 0.2); }
 .trendbar button[data-act="numbers"] { background: rgba(8, 12, 30, 0.92); color: var(--cream); border-color: var(--line); }
+.phone { padding-bottom: 96px; }
