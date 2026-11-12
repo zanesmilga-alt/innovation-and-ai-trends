@@ -79,7 +79,7 @@
           "value": "1.9x",
           "label": "faster capability gain at Anthropic since Oct 2025 (METR)",
           "fresh": "checked",
-          "source": ""
+          "source": "METR, 5 Nov 2026 (via press)"
         }
       ],
       "figures": [
@@ -100,6 +100,7 @@
       ],
       "sources": [
         "Anthropic Institute, June 2026",
+        "METR, 5 Nov 2026 (via press)",
         "METR, via NYT/The Star"
       ],
       "talk": "The bottleneck has moved from writing code to deciding what to build. Domain experts who can describe a problem can now build the first version themselves.",
@@ -123,7 +124,7 @@
       "more": [
         "80% of code merged at Anthropic is machine-written; 8x engineering throughput. Rating: Unchecked (June deck, company’s own claim).",
         "Task length AI agents complete reliably doubles every 3–4 months (was ~7). Rating: Reported.",
-        ""
+        "METR's independent assessment (5 Nov 2026) estimates Anthropic's model capabilities have improved 1.9x faster since October 2025 (95% CI 1.5–2.8x). One lab only. Rating: Verified."
       ]
     },
     {
@@ -239,13 +240,13 @@
           "value": "19–22K",
           "label": "humanoids shipped in H1 2026, over 97% from Chinese vendors",
           "fresh": "checked",
-          "source": "Smart Analytics Global, via Bloomberg"
+          "source": "Smart Analytics Global; Counterpoint"
         },
         {
           "value": "~500K",
           "label": "paid Waymo robotaxi rides a week in 15 US cities",
           "fresh": "checked",
-          "source": "Counterpoint"
+          "source": "TechCrunch fleet data, Waymo"
         }
       ],
       "figures": [
@@ -313,7 +314,7 @@
       "more": [
         "Figure 02 helped build 30,000+ BMW X3s in an 11-month pilot (1,250 hours, 90,000+ parts); Figure 03 now in logistics. Rating: Verified.",
         "19,100 humanoids shipped in H1 2026 (+272%), >97% Chinese. Rating: Reported.",
-        "22,000+ in H1 (+~300%); top five vendors 86%; >60% for entertainment or research. Rating: Verified."
+        "Waymo: ~500,000 paid rides a week, ~4,000 vehicles, 15 US cities. Rating: Reported."
       ]
     },
     {
@@ -420,19 +421,19 @@
           "value": "173+",
           "label": "AI-designed drug programmes in clinical development",
           "fresh": "checked",
-          "source": "Reuters"
+          "source": "Industry trackers via IntuitionLabs"
         },
         {
           "value": "0",
           "label": "AI-discovered drugs with full FDA approval (mid-2026)",
           "fresh": "checked",
-          "source": "Industry trackers via IntuitionLabs"
+          "source": "IntuitionLabs and others"
         },
         {
           "value": "Early 2027",
           "label": "Danaher's first autonomous research lab at scale",
           "fresh": "checked",
-          "source": "IntuitionLabs and others"
+          "source": "Reuters"
         }
       ],
       "figures": [
@@ -484,9 +485,9 @@
         "explanation": "Zero approvals so far; 173+ programmes are in clinical development."
       },
       "more": [
-        "Danaher’s first autonomous research lab at scale in early 2027. Rating: Reported.",
         "173+ AI-designed drug programmes in clinical development (counts range 117–200+). Rating: Reported.",
-        "0 full FDA approvals as of mid-2026; 15–20 Phase III readouts in 2026–27. Rating: Reported."
+        "0 full FDA approvals as of mid-2026; 15–20 Phase III readouts in 2026–27. Rating: Reported.",
+        "Danaher’s first autonomous research lab at scale in early 2027. Rating: Reported."
       ]
     },
     {
@@ -508,19 +509,19 @@
           "value": "25%",
           "label": "of strategic forecasting tasks use quantitative models by 2030 (Gartner)",
           "fresh": "checked",
-          "source": "Gartner press release; Network World"
+          "source": "Gartner"
         },
         {
           "value": "#1",
           "label": "Gartner's top trend for 2027: large quantitative models",
           "fresh": "checked",
-          "source": "Gartner"
+          "source": "Gartner press release; Network World"
         },
         {
           "value": "20 Oct",
           "label": "Gartner's 2027 trends list published",
           "fresh": "checked",
-          "source": ""
+          "source": "Gartner press release; Network World"
         }
       ],
       "figures": [
@@ -559,9 +560,9 @@
         "explanation": "It is large quantitative models: AI built for numbers first."
       },
       "more": [
-        "Large quantitative models lead Gartner’s Top 10 Strategic Technology Trends for 2027 (20 Oct 2026). Rating: Verified.",
         "By 2030, LQMs replace LLMs in 25% of strategic forecasting and operational modelling tasks. Rating: Forecast.",
-        ""
+        "Large quantitative models lead Gartner’s Top 10 Strategic Technology Trends for 2027 (20 Oct 2026). Rating: Verified.",
+        "Large quantitative models lead Gartner’s Top 10 Strategic Technology Trends for 2027 (20 Oct 2026). Rating: Verified."
       ]
     },
     {
@@ -1183,14 +1184,14 @@
         {
           "value": "20M",
           "label": "monthly users on Character.AI, over half under 24",
-          "fresh": "checked",
-          "source": ""
+          "fresh": "deck",
+          "source": "June deck"
         },
         {
           "value": "57%",
           "label": "of people worry AI will harm society (Ipsos 2025)",
-          "fresh": "checked",
-          "source": ""
+          "fresh": "deck",
+          "source": "June deck"
         }
       ],
       "figures": [
@@ -1235,8 +1236,8 @@
       },
       "more": [
         "700% companion app growth since 2022; Character.AI 20M monthly users, over half under 24; 57% worry about AI’s impact (Ipsos 2025). Rating: Unchecked.",
-        "",
-        ""
+        "700% companion app growth since 2022; Character.AI 20M monthly users, over half under 24; 57% worry about AI’s impact (Ipsos 2025). Rating: Unchecked.",
+        "700% companion app growth since 2022; Character.AI 20M monthly users, over half under 24; 57% worry about AI’s impact (Ipsos 2025). Rating: Unchecked."
       ]
     },
     {
@@ -1264,13 +1265,13 @@
           "value": "38.9%",
           "label": "of the world's population",
           "fresh": "checked",
-          "source": "Same"
+          "source": "Digital 2027 (We Are Social / Meltwater), 21 Oct 2026"
         },
         {
           "value": "+57%",
           "label": "more users in 12 months (+1.2B)",
           "fresh": "checked",
-          "source": "DataReportal"
+          "source": "Digital 2027 (We Are Social / Meltwater), 21 Oct 2026"
         }
       ],
       "figures": [
@@ -1284,7 +1285,7 @@
         {
           "value": "+1.2B",
           "label": "+1.2B users (+57.2%) in 12 months",
-          "source": "Same",
+          "source": "Digital 2027 (We Are Social / Meltwater), 21 Oct 2026",
           "evidence": "Verified",
           "fresh": "checked"
         },
@@ -1305,8 +1306,7 @@
       ],
       "sources": [
         "DataReportal",
-        "Digital 2027 (We Are Social / Meltwater), 21 Oct 2026",
-        "Same"
+        "Digital 2027 (We Are Social / Meltwater), 21 Oct 2026"
       ],
       "talk": "Counts differ widely by definition; quote the source with the number.",
       "question": "",
@@ -1324,8 +1324,8 @@
       },
       "more": [
         "3.24B monthly GenAI users, 38.9% of world population. Rating: Verified.",
-        "+1.2B users (+57.2%) in 12 months. Rating: Verified.",
-        "83.5% of internet users 16+ use some AI monthly, 4.1B+ people. Rating: Reported."
+        "3.24B monthly GenAI users, 38.9% of world population. Rating: Verified.",
+        "+1.2B users (+57.2%) in 12 months. Rating: Verified."
       ]
     },
     {
@@ -1441,8 +1441,8 @@
         {
           "value": "90%+",
           "label": "of enterprises face critical AI skills gaps by end 2026",
-          "fresh": "checked",
-          "source": ""
+          "fresh": "deck",
+          "source": "IDC (June deck)"
         }
       ],
       "figures": [
@@ -1490,7 +1490,7 @@
       "more": [
         "14% of leaders adept at shaping human-AI interaction. Rating: Unchecked.",
         "$5.5T economic value at risk; 90%+ of enterprises face skills gaps. Rating: Unchecked.",
-        ""
+        "$5.5T economic value at risk; 90%+ of enterprises face skills gaps. Rating: Unchecked."
       ]
     },
     {
@@ -1763,7 +1763,7 @@
           "value": "< 1 yr",
           "label": "how long those apps are used",
           "fresh": "checked",
-          "source": "Gartner 2027 trends"
+          "source": "Gartner Strategic Predictions, Sep 2026"
         },
         {
           "value": "#9",
@@ -1816,7 +1816,7 @@
       },
       "more": [
         "By 2029, 80% of new applications will be intentionally disposable, used for less than a year. Rating: Forecast.",
-        "By 2030, leading organisations ensure 80% of new apps are disposable. Rating: Forecast.",
+        "By 2029, 80% of new applications will be intentionally disposable, used for less than a year. Rating: Forecast.",
         "Disposable applications are #9 on Gartner’s 2027 list. Rating: Verified."
       ]
     },
@@ -1845,13 +1845,13 @@
           "value": "182%",
           "label": "Amazon's Q3 capex as a share of operating cash flow",
           "fresh": "checked",
-          "source": "Walnut, calculated from 10-Qs"
+          "source": "Walnut"
         },
         {
           "value": "+108%",
           "label": "Q3 2026 capex, year on year",
           "fresh": "checked",
-          "source": "Walnut"
+          "source": "Walnut, calculated from 10-Qs"
         }
       ],
       "figures": [
@@ -1919,8 +1919,8 @@
       "gameType": "guess",
       "more": [
         "Big-four 2026 capex guidance ~$720–740B (midpoint $730B), ~78% above ~$410B in 2025. Rating: Reported.",
-        "Q3 2026 capex $201.9B, +108% year on year. Rating: Reported.",
-        "Q3 capex vs operating cash flow: Amazon 182%, Alphabet 121%, Meta 104%. Rating: Reported."
+        "Q3 capex vs operating cash flow: Amazon 182%, Alphabet 121%, Meta 104%. Rating: Reported.",
+        "Q3 2026 capex $201.9B, +108% year on year. Rating: Reported."
       ]
     },
     {
@@ -1947,14 +1947,14 @@
         {
           "value": "−98%",
           "label": "GPT-4-class cost, 2024 to 2026 (from the June deck)",
-          "fresh": "checked",
-          "source": ""
+          "fresh": "deck",
+          "source": "June deck (ARK, FinOps Foundation)"
         },
         {
           "value": "$7M",
           "label": "average enterprise AI budget in 2026, up from $1.2M",
-          "fresh": "checked",
-          "source": ""
+          "fresh": "deck",
+          "source": "June deck (ARK, FinOps Foundation)"
         }
       ],
       "figures": [
@@ -1993,8 +1993,8 @@
       },
       "more": [
         "A notable new model every ~12 days (2025); GPT-4-class cost −98%; average enterprise AI budget $7M (from $1.2M). Rating: Unchecked.",
-        "",
-        ""
+        "A notable new model every ~12 days (2025); GPT-4-class cost −98%; average enterprise AI budget $7M (from $1.2M). Rating: Unchecked.",
+        "A notable new model every ~12 days (2025); GPT-4-class cost −98%; average enterprise AI budget $7M (from $1.2M). Rating: Unchecked."
       ]
     },
     {
@@ -2028,7 +2028,7 @@
           "value": "29 Oct",
           "label": "OpenAI reverses a planned cut to ChatGPT Pro limits",
           "fresh": "checked",
-          "source": ""
+          "source": "Tech AI Magazine"
         }
       ],
       "figures": [
@@ -2080,8 +2080,8 @@
       },
       "more": [
         "Google limits free Gemini to Flash Lite (9 Oct); plans $4.99–$99.99 a month. Rating: Reported.",
-        "OpenAI reverses a planned cut to ChatGPT Pro limits (29 Oct). Rating: Reported.",
-        ""
+        "Google limits free Gemini to Flash Lite (9 Oct); plans $4.99–$99.99 a month. Rating: Reported.",
+        "OpenAI reverses a planned cut to ChatGPT Pro limits (29 Oct). Rating: Reported."
       ]
     },
     {
@@ -2109,13 +2109,13 @@
           "value": "41%",
           "label": "now use hybrid pricing, up from 27%",
           "fresh": "checked",
-          "source": "CustomerThink, via Pulse"
+          "source": "Growth Unhinged, survey of 240 companies, April–May 2025"
         },
         {
           "value": "$0.99",
           "label": "per AI-resolved conversation (Intercom)",
           "fresh": "checked",
-          "source": ""
+          "source": "CustomerThink, via Pulse"
         }
       ],
       "figures": [
@@ -2157,8 +2157,8 @@
       "gameType": "guess",
       "more": [
         "Pure per-seat pricing 21% → 15% of software companies; hybrid 27% → 41%. Rating: Reported.",
-        "Intercom charges $0.99 per AI-resolved conversation. Rating: Reported.",
-        ""
+        "Pure per-seat pricing 21% → 15% of software companies; hybrid 27% → 41%. Rating: Reported.",
+        "Intercom charges $0.99 per AI-resolved conversation. Rating: Reported."
       ]
     },
     {
@@ -2368,14 +2368,14 @@
         {
           "value": "$5T",
           "label": "Nvidia's peak market value, larger than Japan's GDP",
-          "fresh": "checked",
-          "source": "Tech AI Magazine"
+          "fresh": "deck",
+          "source": "June deck"
         },
         {
           "value": "21 Oct",
           "label": "OpenAI models in private preview on Google Cloud",
           "fresh": "checked",
-          "source": ""
+          "source": "Tech AI Magazine"
         }
       ],
       "figures": [
@@ -2418,8 +2418,8 @@
       "gameType": "guess",
       "more": [
         "Nvidia 92% discrete GPU share (H1 2025); $5T peak market value. Rating: Unchecked.",
-        "OpenAI models in private preview on Google Cloud (21 Oct). Rating: Reported.",
-        ""
+        "Nvidia 92% discrete GPU share (H1 2025); $5T peak market value. Rating: Unchecked.",
+        "OpenAI models in private preview on Google Cloud (21 Oct). Rating: Reported."
       ]
     },
     {
@@ -2441,19 +2441,19 @@
           "value": "~$198B",
           "label": "US data centre projects blocked or delayed by local opposition in H1 2026",
           "fresh": "checked",
-          "source": "IEA, via INDmoney"
+          "source": "Data Center Watch, Bloomberg"
         },
         {
           "value": "+17%",
           "label": "data centre electricity use in 2025 (IEA)",
           "fresh": "checked",
-          "source": "Data Center Watch, Bloomberg"
+          "source": "IEA, via INDmoney"
         },
         {
           "value": "+50%",
           "label": "electricity use of AI-focused data centres",
           "fresh": "checked",
-          "source": "Data Center Watch"
+          "source": "IEA, via INDmoney"
         }
       ],
       "figures": [
@@ -2523,9 +2523,9 @@
         "explanation": "Data Center Watch: about $198B."
       },
       "more": [
-        "Data centre electricity +17% in 2025; AI-focused data centres +50%. Rating: Reported.",
         "$130B of US projects blocked or delayed by local opposition in Q1 2026 (75 projects), $68B in Q2 (45 projects): ~$198B in H1. Rating: Verified (sum is my arithmetic).",
-        "~$156B blocked or delayed in all of 2025. Rating: Reported."
+        "Data centre electricity +17% in 2025; AI-focused data centres +50%. Rating: Reported.",
+        "Data centre electricity +17% in 2025; AI-focused data centres +50%. Rating: Reported."
       ]
     },
     {
@@ -2647,13 +2647,13 @@
           "value": "~4 mo",
           "label": "how far the best open-weight models trail the closed frontier",
           "fresh": "checked",
-          "source": "Wing VC"
+          "source": "Epoch AI, May 2026"
         },
         {
           "value": "~61%",
           "label": "of OpenRouter tokens Chinese by May 2026",
           "fresh": "checked",
-          "source": "Epoch AI, May 2026"
+          "source": "Wing VC"
         }
       ],
       "figures": [
@@ -2720,8 +2720,8 @@
       "gameType": "guess",
       "more": [
         "69% of OpenRouter tokens from Chinese labs (one September week); 72% open-weight overall. Rating: Verified; Caution on representativeness.",
-        "~61% of OpenRouter tokens Chinese by May 2026. Rating: Reported.",
-        "Best open-weight models trail the closed frontier by ~4 months. Rating: Verified."
+        "Best open-weight models trail the closed frontier by ~4 months. Rating: Verified.",
+        "~61% of OpenRouter tokens Chinese by May 2026. Rating: Reported."
       ]
     },
     {
@@ -2748,14 +2748,14 @@
         {
           "value": "−90%",
           "label": "inference cost moving from cloud to an on-premise small model",
-          "fresh": "checked",
-          "source": "HelloGrowth"
+          "fresh": "deck",
+          "source": "Gartner and June deck"
         },
         {
           "value": "Offline",
           "label": "AI meeting notes on a Mac, with no cloud involved",
           "fresh": "checked",
-          "source": ""
+          "source": "HelloGrowth"
         }
       ],
       "figures": [
@@ -2800,8 +2800,8 @@
       },
       "more": [
         "3x more small task-specific models than LLMs by 2027; −90% inference cost on-premise. Rating: Unchecked.",
-        "Google ships offline AI meeting notes on Mac (Oct 2026). Rating: Reported.",
-        ""
+        "3x more small task-specific models than LLMs by 2027; −90% inference cost on-premise. Rating: Unchecked.",
+        "Google ships offline AI meeting notes on Mac (Oct 2026). Rating: Reported."
       ]
     },
     {
@@ -2834,8 +2834,8 @@
         {
           "value": "$15.2B",
           "label": "Microsoft committed to the UAE through 2029",
-          "fresh": "checked",
-          "source": ""
+          "fresh": "deck",
+          "source": "June deck"
         }
       ],
       "figures": [
@@ -2891,7 +2891,7 @@
       "more": [
         "US export controls suspended access to two frontier models for 19 days (12 June–1 July 2026). Rating: Verified.",
         "US 55% of hyperscale AI compute; Microsoft $15.2B in the UAE. Rating: Unchecked.",
-        ""
+        "US 55% of hyperscale AI compute; Microsoft $15.2B in the UAE. Rating: Unchecked."
       ]
     },
     {
@@ -3005,13 +3005,13 @@
           "value": "6–7 mo",
           "label": "how far open-weight models trail closed models in cyber capability",
           "fresh": "checked",
-          "source": "Anthropic, Oasis Security"
+          "source": "Epoch AI, Oct 2026"
         },
         {
           "value": "Defence first",
           "label": "the programme includes AWS, Apple, Google, Microsoft and CrowdStrike",
           "fresh": "checked",
-          "source": "Epoch AI, Oct 2026"
+          "source": "Anthropic, Oasis Security"
         }
       ],
       "figures": [
@@ -3077,8 +3077,8 @@
       },
       "more": [
         "Claude Mythos Preview found thousands of zero-day vulnerabilities across every major OS and browser; restricted to the defensive Project Glasswing (launched 7 April 2026). Rating: Verified.",
-        "Glasswing partners include AWS, Apple, Google, Microsoft, CrowdStrike and Palo Alto Networks. Rating: Reported.",
-        "Open-weight models trail closed models in cyber capabilities by 6–7 months. Rating: Verified."
+        "Open-weight models trail closed models in cyber capabilities by 6–7 months. Rating: Verified.",
+        "Glasswing partners include AWS, Apple, Google, Microsoft, CrowdStrike and Palo Alto Networks. Rating: Reported."
       ]
     },
     {
@@ -3099,8 +3099,8 @@
         {
           "value": "94%",
           "label": "NHS AI diabetic retinopathy detection rate",
-          "fresh": "checked",
-          "source": "AI News headline"
+          "fresh": "deck",
+          "source": "June deck"
         },
         {
           "value": "96%",
@@ -3112,7 +3112,7 @@
           "value": "Oct 2026",
           "label": "Microsoft's AI diagnostic tool beats doctors in clinical tests",
           "fresh": "checked",
-          "source": ""
+          "source": "AI News headline"
         }
       ],
       "figures": [
@@ -3164,9 +3164,9 @@
         "explanation": "96% accuracy, in 2,000+ clinics."
       },
       "more": [
-        "Microsoft AI diagnostic tool outperforms doctors in clinical tests (Oct 2026). Rating: Reported, headline only.",
         "NHS retinopathy detection 94%; Wadhwani AI TB detection 96% in 2,000+ clinics. Rating: Unchecked.",
-        ""
+        "NHS retinopathy detection 94%; Wadhwani AI TB detection 96% in 2,000+ clinics. Rating: Unchecked.",
+        "Microsoft AI diagnostic tool outperforms doctors in clinical tests (Oct 2026). Rating: Reported, headline only."
       ]
     },
     {
@@ -3200,7 +3200,7 @@
           "value": "2028",
           "label": "year Gartner expects agent abuse to cause a quarter of breaches",
           "fresh": "checked",
-          "source": ""
+          "source": "Gartner"
         }
       ],
       "figures": [
@@ -3236,7 +3236,7 @@
       "more": [
         "By 2028, 25% of enterprise security breaches trace back to AI agent abuse. Rating: Forecast.",
         "AI agent identity is #6 on Gartner’s 2027 list: dynamic, policy-controlled access. Rating: Verified.",
-        ""
+        "By 2028, 25% of enterprise security breaches trace back to AI agent abuse. Rating: Forecast."
       ]
     },
     {
@@ -3339,19 +3339,19 @@
           "value": "50%",
           "label": "of organisations adopt zero-trust data governance by 2028 (Gartner)",
           "fresh": "checked",
-          "source": "Gartner (Daryl Plummer), Nov 2025"
+          "source": "Gartner, 21 Jan 2026"
         },
         {
           "value": "50%",
           "label": "of organisations require 'AI-free' skills assessments through 2026 (Gartner)",
           "fresh": "checked",
-          "source": "Gartner, 21 Jan 2026"
+          "source": "Gartner Strategic Predictions 2026"
         },
         {
           "value": "#7",
           "label": "'AI-free' trust, one of Gartner's 7 disruptions for 2025–2030",
           "fresh": "checked",
-          "source": "Gartner Strategic Predictions 2026"
+          "source": "Gartner (Daryl Plummer), Nov 2025"
         }
       ],
       "figures": [
@@ -3610,9 +3610,9 @@
         "explanation": "Through 2026, 50% of global organisations (Gartner forecast)."
       },
       "more": [
-        "“AI-free” trust revolution is one of Gartner Futures Lab’s 7 Disruptions You Might Not See Coming: 2025–2030. Rating: Verified.",
         "By 2028, 50% of organisations adopt zero-trust data governance as unverified AI-generated data grows. Rating: Forecast.",
-        "Through 2026, 50% of global organisations require “AI-free” skills assessments as critical thinking atrophies. Rating: Forecast."
+        "Through 2026, 50% of global organisations require “AI-free” skills assessments as critical thinking atrophies. Rating: Forecast.",
+        "“AI-free” trust revolution is one of Gartner Futures Lab’s 7 Disruptions You Might Not See Coming: 2025–2030. Rating: Verified."
       ]
     }
   ],

@@ -180,7 +180,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
       <div class="st-stats">
         ${s.stats.map((st, i) => `
           <div class="stat">
-            <div class="stat-value">${esc(st.value)}</div>
+            <div class="stat-value" style="--vs:${st.value.length <= 5 ? 1 : st.value.length <= 8 ? 0.72 : 0.5}">${esc(st.value)}</div>
             <div class="stat-label">${esc(st.label)}</div>
             <div class="stat-meta mono">
               <span class="fresh fresh-${st.fresh}">${st.fresh === 'checked' ? 'Checked Nov 2026' : 'June deck · verify'}</span>

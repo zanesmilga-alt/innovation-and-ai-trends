@@ -570,7 +570,8 @@ export async function startStage(o: StageOptions): Promise<void> {
     const inTrend = ['guess', 'story'].includes(state.phase) && !!state.activeSignalId;
     const preview = previewId !== null;
     panel.hidden = !ovOpen;
-    $('trendbar').hidden = !(inTrend || preview);
+    // Buttons: "Play a game" while previewing; "Reveal" and "Back to the trend" while the game runs; none on the story.
+    $('trendbar').hidden = !(preview || (inTrend && state.phase === 'guess'));
     $('backvoted').hidden = !(inTrend || preview);
     trendbar_(preview);
     ctrl.hidden = inTrend || preview || ovOpen;
@@ -629,7 +630,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     badge.innerHTML = `<span class="live-dot ${status}"></span> Room ${esc(code)} · ${state.participantCount} joined${status === 'live' ? '' : ` · ${status}`}`;
     phaseEl.hidden = false;
     phaseEl.textContent = PHASE_LABEL[state.phase];
-    qr.hidden = !(state.phase === 'lobby' && qrOpen);
+    qr.hidden = !(state.phase === 'lobby' && qrOpen && !previewId && !ovOpen);
     $('qr-count').textContent = `${state.participantCount} joined so far`;
     closep.hidden = state.phase !== 'close';
     renderWarm();

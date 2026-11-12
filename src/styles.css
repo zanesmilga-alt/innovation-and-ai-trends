@@ -1057,3 +1057,14 @@ kbd { font-family: var(--f-mono); font-size: 0.9em; padding: 1px 6px; border: 1p
 .ov-tile-tag { font-size: 13px; line-height: 1.4; color: var(--cream-dim); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .ov-tile-tag { max-height: calc(1.4em * 3); }
 .ov-tile-body { align-content: start; }
+
+/* Story figures: always three equal cards inside the screen; long values shrink to fit */
+.st-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.st-stats .stat { min-width: 0; overflow: hidden; }
+.st-stats .stat-value { font-size: calc(clamp(44px, 4.6vw, 104px) * var(--vs, 1)); line-height: 1.05; }
+/* Stage: the room badge takes the top-left corner; the briefing note is for the explorer only */
+body[data-mode="stage"] .note { display: none; }
+body[data-mode="stage"] .live-badge { top: clamp(14px, 1.6vw, 28px); }
+/* Stage story: keep figures and sources clear of the bottom buttons */
+body[data-mode="stage"] .st-stats { bottom: clamp(120px, 15vh, 160px); }
+body[data-mode="stage"] .story-foot { bottom: 84px; right: 280px; }
