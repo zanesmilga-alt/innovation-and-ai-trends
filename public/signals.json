@@ -891,7 +891,8 @@
           "title": "Let’s Data Science: Inkling 2 Small",
           "url": "https://letsdatascience.com/news/thinking-machines-lab-releases-inkling-2-small-a-594b-moe-mo-2b2a96ce"
         }
-      ]
+      ],
+      "fit": "whole"
     },
     {
       "id": "type-a-sentence-get-a-film",
@@ -1316,7 +1317,8 @@
           "title": "Bain: Goodbye clicks, hello AI",
           "url": "https://www.bain.com/insights/goodbye-clicks-hello-ai-zero-click-search-redefines-marketing/"
         }
-      ]
+      ],
+      "fit": "whole"
     },
     {
       "id": "ai-glasses",
@@ -1605,7 +1607,8 @@
           "title": "DataReportal: AI use around the world",
           "url": "https://datareportal.com/reports/digital-2027-ai-use-around-the-world"
         }
-      ]
+      ],
+      "fit": "whole"
     },
     {
       "id": "one-agent",
@@ -2090,7 +2093,8 @@
           "title": "Gartner: Strategic Predictions for 2027",
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
-      ]
+      ],
+      "fit": "whole"
     },
     {
       "id": "software-you-throw-away",
@@ -2200,7 +2204,8 @@
           "title": "Gartner: Strategic Predictions for 2027",
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
-      ]
+      ],
+      "fit": "whole"
     },
     {
       "id": "one-trillion",
@@ -2509,7 +2514,8 @@
           "title": "Tech AI Magazine: October 2026 AI stories",
           "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
         }
-      ]
+      ],
+      "fit": "whole"
     },
     {
       "id": "saas-kodak",
@@ -2794,7 +2800,8 @@
           "title": "AI News",
           "url": "https://www.artificialintelligence-news.com/"
         }
-      ]
+      ],
+      "fit": "whole"
     },
     {
       "id": "ai-stack",

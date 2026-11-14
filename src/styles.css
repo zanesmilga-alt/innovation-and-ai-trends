@@ -1095,3 +1095,9 @@ body[data-mode="stage"] .story-foot { bottom: 84px; right: 280px; }
 .rehearse-btn { margin-top: 14px; padding: 8px 14px; border-radius: 999px; border: 1px dashed var(--line); background: transparent; color: var(--cream-faint); font-size: 12px; cursor: pointer; }
 .rehearse-btn:hover { color: var(--cream); border-color: var(--cream-faint); }
 .rehearsal-tag { color: var(--orange); }
+
+/* v21: charts, slides and quote cards show whole on the trend page */
+.story-pic.fit-whole img { object-fit: contain; object-position: 50% 0; inset: 11vh 3vw auto 3vw; width: calc(100% - 6vw); height: 50vh; }
+.story-pic.fit-whole::after { display: none; }
+.story-pic.fit-whole, .story-pic.fit-whole img { -webkit-mask-image: none; mask-image: none; }
+.story-pic.fit-whole img { border-radius: 14px; }

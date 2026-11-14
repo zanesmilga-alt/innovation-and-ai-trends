@@ -220,7 +220,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
 
     // Trend photo, or the trend's generated artwork.
     storyArt.querySelectorAll('.pic').forEach((el) => el.remove());
-    const pic = pictureEl(s.id, s.art, 'pic story-pic');
+    const pic = pictureEl(s.id, s.art, s.fit === 'whole' ? 'pic story-pic fit-whole' : 'pic story-pic');
     storyArt.appendChild(pic);
     renderArtFor(s.id);
   }

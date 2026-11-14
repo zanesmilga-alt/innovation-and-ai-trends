@@ -132,7 +132,6 @@ export async function startStage(o: StageOptions): Promise<void> {
         <span class="mono ovstage-title" id="ov-title"></span>
         <button type="button" data-act="ask">Ask phones for trends</button>
         <button type="button" data-act="view">Show trends</button>
-        <button type="button" data-act="fly">Flyover</button>
         <button type="button" data-act="close">Closing screen</button>
         <button type="button" data-act="overview">Close</button>
       </div>
@@ -652,8 +651,6 @@ export async function startStage(o: StageOptions): Promise<void> {
     if (!ovOpen) return;
     const total = signalsOrdered().length;
     $('ov-title').textContent = `Trends by votes · ${total}`;
-    const flyBtn = document.querySelector<HTMLElement>('#ovstage [data-act="fly"]');
-    if (flyBtn) flyBtn.textContent = `Flyover · top ${FLY_MAX}`;
     const viewBtn = document.querySelector<HTMLElement>('#ovstage [data-act="view"]');
     if (viewBtn) viewBtn.textContent = results.trends.length ? `Show trends (${results.trends.length})` : 'Show trends';
     const grid = $('ov-grid');
@@ -737,7 +734,7 @@ export async function startStage(o: StageOptions): Promise<void> {
     }
     const keyMap: Record<string, string> = {
       j: 'qr', J: 'qr', w: 'warm', W: 'warm', h: 'hearts', H: 'hearts', g: 'game', G: 'game',
-      s: 'story', S: 'story', t: 'hot', T: 'hot', e: 'discuss', E: 'discuss', f: 'fly', F: 'fly',
+      s: 'story', S: 'story', t: 'hot', T: 'hot', e: 'discuss', E: 'discuss',
       c: 'close', C: 'close', a: 'ask', A: 'ask', v: 'view', V: 'view', o: 'overview', O: 'overview',
     };
     if (keyMap[k]) return actions[keyMap[k]]();

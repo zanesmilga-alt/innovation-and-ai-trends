@@ -62,6 +62,7 @@ export interface Signal {
   /** Path to the trend picture. Missing file = upload slot is shown. */
   image: string | null;
   art: string | null;
+  fit?: 'whole'; // show the whole picture on the trend page (charts, slides, quote cards)
   hook: string;
   why: string;
   story: string;
