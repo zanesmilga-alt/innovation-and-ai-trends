@@ -1101,3 +1101,12 @@ body[data-mode="stage"] .story-foot { bottom: 84px; right: 280px; }
 .story-pic.fit-whole::after { display: none; }
 .story-pic.fit-whole, .story-pic.fit-whole img { -webkit-mask-image: none; mask-image: none; }
 .story-pic.fit-whole img { border-radius: 14px; }
+
+/* v22: the join card always fits above the button bar */
+.qr-panel { padding-bottom: 96px; box-sizing: border-box; }
+.qr-card { padding: clamp(16px, 2.4vh, 40px) clamp(24px, 3vw, 48px); }
+.qr-card .qr-svg { width: min(46vh, 600px); height: min(46vh, 600px); }
+.qr-card .eyebrow { margin-bottom: 1.4vh; }
+.qr-code { margin: 1.4vh 0 4px; }
+.rehearse-btn { margin-top: 1.2vh; }
+.qr-card .rehearse-btn { color: var(--cream-dim); border-color: var(--cream-faint); font-size: 13px; }
