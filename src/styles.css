@@ -1110,3 +1110,19 @@ body[data-mode="stage"] .story-foot { bottom: 84px; right: 280px; }
 .qr-code { margin: 1.4vh 0 4px; }
 .rehearse-btn { margin-top: 1.2vh; }
 .qr-card .rehearse-btn { color: var(--cream-dim); border-color: var(--cream-faint); font-size: 13px; }
+
+/* v23: the trends list shrinks as it grows, so 60 trends fit one screen */
+.wall { padding-bottom: 96px; box-sizing: border-box; }
+.wall .view-card { width: min(1800px, 96vw); max-height: calc(100vh - 150px); }
+.wall .view-card.d2 { padding: 22px 26px; }
+.wall .view-card.d2 ol { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.wall .view-card.d2 li { font-size: clamp(14px, 1.15vw, 20px); padding: 9px 13px; line-height: 1.25; }
+.wall .view-card.d2 .wall-h, .wall .view-card.d3 .wall-h { font-size: clamp(22px, 2vw, 34px); margin: 2px 0 8px; }
+.wall .view-card.d3 { padding: 16px 20px; }
+.wall .view-card.d3 ol { grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 8px; }
+.wall .view-card.d3 li { font-size: clamp(12px, 0.92vw, 16px); padding: 6px 10px; line-height: 1.2; border-left-width: 3px; border-radius: 8px; }
+.wall .view-card.d4 ol { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+.wall .view-card.d4 li { font-size: clamp(11px, 0.8vw, 15px); padding: 5px 9px; line-height: 1.18; }
+.wall .view-card.d4 .wall-h { display: inline-block; margin: 0 18px 0 0; font-size: clamp(18px, 1.5vw, 26px); }
+.wall .view-card.d4 .eyebrow { display: inline-block; margin: 0 14px 0 0; }
+.wall .view-card.d4 { max-height: calc(100vh - 125px); padding: 14px 18px; }

@@ -601,7 +601,9 @@ export async function startStage(o: StageOptions): Promise<void> {
     const head = collecting
       ? `<p class="eyebrow mono">Add your trend · on your phone now</p><h2 class="wall-h">Which trend did we miss?</h2>`
       : '';
-    const html = `<div class="wall-card view-card">${head}<p class="eyebrow mono">Your trends · ${results.trends.length}</p><ol>${items}</ol></div>`;
+    const n = results.trends.length;
+    const density = n > 44 ? ' d3 d4' : n > 30 ? ' d3' : n > 12 ? ' d2' : '';
+    const html = `<div class="wall-card view-card${density}">${head}<p class="eyebrow mono">Your trends · ${results.trends.length}</p><ol>${items}</ol></div>`;
     // Redraw only when the list changes, so the cards do not flicker.
     if (html !== wallHtml) { wall.innerHTML = html; wallHtml = html; }
   };
