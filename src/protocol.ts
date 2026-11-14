@@ -82,6 +82,8 @@ export const WARMUP_OPTIONS = 3;
 export const TREND_MAX_PER_PERSON = 2;
 export const TREND_MAX_LENGTH = 140;
 export const FLY_SECONDS = 15;
+export const FLY_MAX = 8; // the flyover shows at most this many trends, most-voted first
+export const REHEARSAL_PEOPLE = 30;
 
 export const SIGNAL_ID = /^[a-z0-9-]{2,40}$/;
 

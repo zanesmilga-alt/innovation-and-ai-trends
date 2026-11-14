@@ -4,6 +4,8 @@ import { pictureEl, uploadPicture } from './picture';
 import {
   DEEP_STEPS,
   FLY_SECONDS,
+  FLY_MAX,
+  REHEARSAL_PEOPLE,
   MAX_HEARTS,
   type ClientMessage,
   type Phase,
@@ -102,6 +104,7 @@ export async function startStage(o: StageOptions): Promise<void> {
         <p class="qr-code">Room <strong class="mono" id="qr-code"></strong></p>
         <p class="mono qr-url" id="qr-url"></p>
         <p class="mono" id="qr-count"></p>
+        <button type="button" class="rehearse-btn mono" data-act="rehearse">Rehearse with ${REHEARSAL_PEOPLE} pretend people</button>
       </div>
     </div>
     <div class="warm-panel" id="warm" hidden></div>
@@ -185,6 +188,8 @@ export async function startStage(o: StageOptions): Promise<void> {
   // Remember this room, so a stray click or reload brings the presenter back here.
   store.set('signalroom.stage', location.search);
   store.set('signalroom.key', key);
+  // Keep the presenter key off the big screen: take it out of the address bar.
+  history.replaceState(null, '', `/stage?room=${code}`);
 
   const config = await fetch('/config.json').then((r) => r.json() as Promise<Config>);
   const byId = new Map(o.signals.map((s) => [s.id, s]));
@@ -246,6 +251,7 @@ export async function startStage(o: StageOptions): Promise<void> {
       if (m.type === 'state') {
         state = m;
         syncStory();
+        botsAct();
       } else if (m.type === 'results') {
         results = m;
       } else if (m.type === 'error') {
@@ -307,10 +313,10 @@ export async function startStage(o: StageOptions): Promise<void> {
   const startFly = () => {
     stopFly();
     const step = () => {
-      const next = o.signals.find((s) => !state.covered.includes(s.id) && !flown.includes(s.id));
+      const next = flown.length >= FLY_MAX ? undefined : signalsOrdered().find((s) => !state.covered.includes(s.id) && !flown.includes(s.id));
       if (!next) {
         stopFly();
-        showFlash('All trends shown. Press Closing screen to finish.');
+        showFlash('Flyover done. Open Overview, then Closing screen to finish.');
         return;
       }
       flown.push(next.id);
@@ -352,6 +358,48 @@ export async function startStage(o: StageOptions): Promise<void> {
     input.click();
   };
 
+  // ---------- Rehearsal: pretend people who answer like a real audience ----------
+  const SAMPLE_TRENDS = ['AI tutors for every child', 'Robots in elderly care', 'AI-written laws', 'Personal AI that negotiates for you', 'AI in the boardroom'];
+  const botIds = Array.from({ length: REHEARSAL_PEOPLE }, (_, i) => `bot-${code.toLowerCase()}-${i + 1}`);
+  let rehearsing = store.get('signalroom.rehearse') === code;
+  let botDone = '';
+  const botSend = (m: ClientMessage, delay: number) =>
+    window.setTimeout(() => {
+      void fetch(`/api/room/${code}/message`, { method: 'POST', body: JSON.stringify(m) }).catch(() => undefined);
+    }, delay);
+  const rnd = (n: number) => Math.floor(Math.random() * n);
+  const botsAct = () => {
+    if (!rehearsing || state.revealed) return;
+    const stepKey = `${state.phase}|${state.activeSignalId}`;
+    if (stepKey === botDone) return;
+    botDone = stepKey;
+    const id = state.activeSignalId;
+    botIds.forEach((pid, i) => {
+      const wait = 400 + rnd(5000);
+      if (state.phase === 'warmup') botSend({ type: 'answer', participantId: pid, kind: 'warmup', value: rnd(3) }, wait);
+      if (state.phase === 'hearts') {
+        // Favour the first trends a little, so a clear top five appears.
+        const picks = new Set<string>();
+        const want = 3 + rnd(8);
+        while (picks.size < want) picks.add(o.signals[Math.random() < 0.4 ? rnd(8) : rnd(o.signals.length)].id);
+        [...picks].forEach((signalId, k) => botSend({ type: 'answer', participantId: pid, kind: 'heart', signalId }, wait + k * 300));
+      }
+      if (state.phase === 'guess' && id && state.activeRange) {
+        const { min, max } = state.activeRange;
+        botSend({ type: 'answer', participantId: pid, kind: 'game', signalId: id, value: min + rnd(max - min + 1) }, wait);
+      }
+      if (state.phase === 'hottake' && id) botSend({ type: 'answer', participantId: pid, kind: 'take', signalId: id, value: Math.random() < 0.6 ? 'agree' : 'disagree' }, wait);
+      if (state.phase === 'askTrends' && i < SAMPLE_TRENDS.length) botSend({ type: 'trend', participantId: pid, text: SAMPLE_TRENDS[i] }, 800 + i * 1500);
+    });
+  };
+  const startRehearsal = () => {
+    rehearsing = true;
+    store.set('signalroom.rehearse', code);
+    botIds.forEach((pid, i) => botSend({ type: 'join', participantId: pid, name: `Guest ${i + 1}` }, i * 60));
+    showFlash(`Rehearsal on: ${REHEARSAL_PEOPLE} pretend people joined. Press New room before the real session.`);
+    render();
+  };
+
   /** These screens live outside the overview, so close it (and any preview) before showing them. */
   const leaveOverview = (phase: Phase) => {
     ovOpen = false;
@@ -362,6 +410,7 @@ export async function startStage(o: StageOptions): Promise<void> {
   };
 
   const actions: Record<string, () => void> = {
+    rehearse: () => startRehearsal(),
     qr: () => {
       qrOpen = !qrOpen;
       render();
@@ -603,6 +652,8 @@ export async function startStage(o: StageOptions): Promise<void> {
     if (!ovOpen) return;
     const total = signalsOrdered().length;
     $('ov-title').textContent = `Trends by votes · ${total}`;
+    const flyBtn = document.querySelector<HTMLElement>('#ovstage [data-act="fly"]');
+    if (flyBtn) flyBtn.textContent = `Flyover · top ${FLY_MAX}`;
     const viewBtn = document.querySelector<HTMLElement>('#ovstage [data-act="view"]');
     if (viewBtn) viewBtn.textContent = results.trends.length ? `Show trends (${results.trends.length})` : 'Show trends';
     const grid = $('ov-grid');
@@ -611,10 +662,12 @@ export async function startStage(o: StageOptions): Promise<void> {
       const hearts = results.hearts[sg.id] ?? 0;
       const card = document.createElement('button');
       card.type = 'button';
-      card.className = `ov-tile${state.covered.includes(sg.id) ? ' done' : ''}${state.activeSignalId === sg.id ? ' now' : ''}`;
+      const rank = results.topN.indexOf(sg.id);
+      card.className = `ov-tile${rank >= 0 ? ' top' : ''}${state.covered.includes(sg.id) ? ' done' : ''}${state.activeSignalId === sg.id ? ' now' : ''}`;
       card.dataset.trend = sg.id;
       card.innerHTML = `
         <span class="ov-tile-pic"></span>
+        ${rank >= 0 ? `<span class="ov-rank mono">Top ${rank + 1}</span>` : ''}
         <span class="ov-tile-body">
           <span class="mono ov-tile-n">${String(sg.n).padStart(2, '0')}${hearts ? ` · ♥ ${hearts}` : ''}${state.covered.includes(sg.id) ? ' · played' : ''}</span>
           <span class="ov-tile-title">${esc(sg.title)}</span>
@@ -654,7 +707,7 @@ export async function startStage(o: StageOptions): Promise<void> {
   const render = () => {
     const status = linkStatus === 'live' ? 'live' : linkStatus === 'polling' ? 'slow' : 'reconnecting';
     badge.hidden = false;
-    badge.innerHTML = `<span class="live-dot ${status}"></span> Room ${esc(code)} · ${state.participantCount} joined${status === 'live' ? '' : ` · ${status}`}`;
+    badge.innerHTML = `<span class="live-dot ${status}"></span> Room ${esc(code)} · ${state.participantCount} joined${rehearsing ? ' · <span class="rehearsal-tag">rehearsal</span>' : ''}${status === 'live' ? '' : ` · ${status}`}`;
     phaseEl.hidden = false;
     phaseEl.textContent = PHASE_LABEL[state.phase];
     qr.hidden = !(state.phase === 'lobby' && qrOpen && !previewId && !ovOpen);

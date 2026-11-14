@@ -1087,3 +1087,11 @@ body[data-mode="stage"] .story-foot { bottom: 84px; right: 280px; }
 
 /* v19: audience trends list is live while phones add */
 .wall .wall-h { margin: 6px 0 18px; font-size: clamp(28px, 3vw, 52px); line-height: 1.05; }
+
+/* v20: top five, rehearsal */
+.ov-tile { position: relative; }
+.ov-tile.top { border-color: var(--orange); box-shadow: 0 0 0 2px var(--orange), 0 0 28px rgba(255, 122, 41, 0.35); }
+.ov-rank { position: absolute; top: 10px; left: 10px; padding: 5px 10px; border-radius: 999px; background: var(--orange); color: #0b1026; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.rehearse-btn { margin-top: 14px; padding: 8px 14px; border-radius: 999px; border: 1px dashed var(--line); background: transparent; color: var(--cream-faint); font-size: 12px; cursor: pointer; }
+.rehearse-btn:hover { color: var(--cream); border-color: var(--cream-faint); }
+.rehearsal-tag { color: var(--orange); }
