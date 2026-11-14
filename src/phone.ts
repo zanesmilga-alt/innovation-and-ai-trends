@@ -76,6 +76,9 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
   let toast = '';
   let toastTimer: number | undefined;
   let nameDraft = '';
+  let lastHtml = '';
+  let lastScreen = '';
+  const screenKey = () => `${joined}|${state.phase}|${state.activeSignalId}|${state.revealed}`;
   let trendOpen = false;
   let trendDraft = '';
   let guessDraft: number | null = null;
@@ -273,7 +276,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
     const addButton = joined && state.phase !== 'close' && state.phase !== 'askTrends' && !trendOpen
       ? `<button class="ghost-btn" id="trend-open" type="button">+ Suggest a trend</button>`
       : '';
-    root.innerHTML = `
+    const html = `
       <main class="phone">
         ${banner}
         ${toast ? `<p class="toast" role="status">${esc(toast)}</p>` : ''}
@@ -282,6 +285,15 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
         ${addButton}
         <button class="leave-btn mono" id="leave-phone" type="button">Leave room</button>
       </main>`;
+    // Other people's votes arrive all the time. Redraw only when this phone's screen changes,
+    // and keep the scroll position, so the list never jumps back to the top.
+    if (html === lastHtml) return;
+    const scrolled = root.querySelector('.phone')?.scrollTop ?? 0;
+    const sameScreen = screenKey() === lastScreen;
+    root.innerHTML = html;
+    lastHtml = html;
+    lastScreen = screenKey();
+    if (sameScreen) root.querySelector('.phone')!.scrollTop = scrolled;
     bind();
     tick();
   };

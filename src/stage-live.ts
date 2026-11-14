@@ -352,6 +352,15 @@ export async function startStage(o: StageOptions): Promise<void> {
     input.click();
   };
 
+  /** These screens live outside the overview, so close it (and any preview) before showing them. */
+  const leaveOverview = (phase: Phase) => {
+    ovOpen = false;
+    previewId = null;
+    syncStory();
+    setPhase(phase);
+    render();
+  };
+
   const actions: Record<string, () => void> = {
     qr: () => {
       qrOpen = !qrOpen;
@@ -380,9 +389,14 @@ export async function startStage(o: StageOptions): Promise<void> {
     },
     warm: () => setPhase('warmup'),
     hearts: () => setPhase('hearts'),
-    reveal: () => reveal(),
-    fly: () => setPhase('flyover'),
-    close: () => setPhase('close'),
+    reveal: () => {
+      // After the heart pick, Reveal goes straight to the results: the trends ordered by votes.
+      if (state.phase === 'hearts') ovOpen = true;
+      reveal();
+      render();
+    },
+    fly: () => leaveOverview('flyover'),
+    close: () => leaveOverview('close'),
     back: () => stepBy(-1),
     next: () => stepBy(1),
     game: () => setPhase('guess'),
@@ -394,8 +408,8 @@ export async function startStage(o: StageOptions): Promise<void> {
       o.openDetail(state.activeSignalId);
     },
     picture,
-    ask: () => setPhase('askTrends'),
-    view: () => setPhase('trendView'),
+    ask: () => leaveOverview('askTrends'),
+    view: () => leaveOverview('trendView'),
     reset: () => {
       if (!confirm('Clear all answers, hearts and trends in this room? This cannot be undone.')) return;
       stopFly();
@@ -527,23 +541,21 @@ export async function startStage(o: StageOptions): Promise<void> {
   };
 
   /** Trend phases: the waiting card while people add trends, and the trend view. */
+  let wallHtml = '';
   const renderWall = () => {
     const collecting = state.phase === 'askTrends';
     const viewing = state.phase === 'trendView';
     wall.hidden = !(collecting || viewing);
     if (wall.hidden) return;
-    if (collecting) {
-      wall.innerHTML = `
-        <div class="wall-card ask-card">
-          <p class="eyebrow mono">Add your trend</p>
-          <h2>Phones can add a trend now</h2>
-          <p class="lede">Up to 2 lines each. Trends so far: <strong>${results.trends.length}</strong></p>
-          <p class="mono small-note">Press “Show trends” when you're ready.</p>
-        </div>`;
-      return;
-    }
-    const items = results.trends.length ? results.trends.map((t) => `<li>${esc(t)}</li>`).join('') : '<li class="empty">No trends were added.</li>';
-    wall.innerHTML = `<div class="wall-card view-card"><p class="eyebrow mono">Your trends · ${results.trends.length}</p><ol>${items}</ol></div>`;
+    const items = results.trends.length
+      ? results.trends.map((t) => `<li>${esc(t)}</li>`).join('')
+      : `<li class="empty">${collecting ? 'Waiting for the first trend…' : 'No trends were added.'}</li>`;
+    const head = collecting
+      ? `<p class="eyebrow mono">Add your trend · on your phone now</p><h2 class="wall-h">Which trend did we miss?</h2>`
+      : '';
+    const html = `<div class="wall-card view-card">${head}<p class="eyebrow mono">Your trends · ${results.trends.length}</p><ol>${items}</ol></div>`;
+    // Redraw only when the list changes, so the cards do not flicker.
+    if (html !== wallHtml) { wall.innerHTML = html; wallHtml = html; }
   };
 
   /** Heart pick status: how many have voted. It stays open until Reveal. */
@@ -591,6 +603,8 @@ export async function startStage(o: StageOptions): Promise<void> {
     if (!ovOpen) return;
     const total = signalsOrdered().length;
     $('ov-title').textContent = `Trends by votes · ${total}`;
+    const viewBtn = document.querySelector<HTMLElement>('#ovstage [data-act="view"]');
+    if (viewBtn) viewBtn.textContent = results.trends.length ? `Show trends (${results.trends.length})` : 'Show trends';
     const grid = $('ov-grid');
     grid.innerHTML = '';
     for (const sg of signalsOrdered()) {

@@ -75,7 +75,7 @@ export type ClientMessage =
   | { type: 'hello'; role: 'stage'; key: string }
   | { type: 'hello'; role: 'phone' };
 
-export const MAX_HEARTS = 3;
+export const MAX_HEARTS = 10;
 export const TOP_N = 5; // how many most-hearted trends stand out on the map
 export const HEART_SECONDS = 60;
 export const WARMUP_OPTIONS = 3;
