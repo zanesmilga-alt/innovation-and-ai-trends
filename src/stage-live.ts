@@ -140,12 +140,10 @@ export async function startStage(o: StageOptions): Promise<void> {
     <p class="flash mono" id="flash" hidden></p>
     <div class="setup" id="setup" hidden>
       <div class="setup-card">
-        <p class="eyebrow mono">Presenter</p>
         <h2 id="setup-title">Start a room</h2>
-        <p class="lede">Type your presenter key. It's the password you set in Cloudflare (PRESENTER_KEY). The room link will contain it, so keep the link private.</p>
         <form id="setup-form" class="stack">
-          <input id="setup-key" class="field" type="password" autocomplete="off" placeholder="Presenter key" />
-          <button class="big-btn" type="submit">Create room</button>
+          <input id="setup-key" class="field" type="password" autocomplete="off" placeholder="Password" />
+          <button class="big-btn" type="submit">Let's go</button>
         </form>
       </div>
     </div>`;

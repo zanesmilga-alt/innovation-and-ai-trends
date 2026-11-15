@@ -82,6 +82,15 @@ export interface Signal {
   video?: string | null;
   /** Extra detail for each of the three figures, shown when a figure is clicked. */
   more?: string[];
+  /** The longer read behind "Go deeper": plain explanation, terms, what is going on, caveats, common questions. */
+  deep?: {
+    plain: string;
+    terms: { term: string; def: string }[];
+    going: { lead: string; text: string }[];
+    why: string;
+    know: string[];
+    qa: { q: string; a: string }[];
+  };
   choice?: Choice;
   hotTake: string;
   sources: Source[];

@@ -140,7 +140,58 @@
           "title": "MIT weight-editing study, via Let’s Data Science",
           "url": "https://letsdatascience.com/blog/gpt-6-astra-edited-0-016-percent-qwen-weights-math-sixfold"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Software used to be written line by line by programmers. Today you can describe what you want in normal language and an AI writes the code, tests it and fixes its own mistakes. The labs that build AI now use their own AI to write most of their code and to speed up their research. Think of a carpenter who builds a better saw, then uses that saw to build an even better one: each round goes faster.",
+        "terms": [
+          {
+            "term": "Coding agent",
+            "def": "An AI that writes, runs and fixes code on its own, over many steps, rather than suggesting one line at a time."
+          },
+          {
+            "term": "Vibe coding",
+            "def": "Building software by describing what you want and accepting what the AI produces, with little or no reading of the code."
+          },
+          {
+            "term": "Task horizon (METR)",
+            "def": "How long a task, measured in human working time, an AI agent can complete reliably on its own. METR tracks how fast this grows."
+          }
+        ],
+        "going": [
+          {
+            "lead": "The loop is closing",
+            "text": "AI writes code, the code trains better AI, better AI writes better code. This is why progress feels like it keeps speeding up rather than levelling off."
+          },
+          {
+            "lead": "Measured, not just claimed",
+            "text": "METR, an independent evaluator, estimates the length of tasks agents complete reliably now doubles every three to four months (it was about seven). In November 2026 it estimated Anthropic’s model progress has run 1.9x faster since October 2025, mostly because AI helps the researchers."
+          },
+          {
+            "lead": "Builders change",
+            "text": "Most new software builders are domain experts, not developers: a controller who builds a reconciliation tool, a planner who builds a scheduling app. The scarce skill moves from typing code to knowing what is worth building and checking that it works."
+          },
+          {
+            "lead": "A glimpse of AI editing AI",
+            "text": "MIT researchers had one model directly edit 0.016% of another model’s internal settings and lifted its maths score from 7.9% to 48.1% with no retraining. Critics say it fixed a specific flaw rather than adding new skill, so treat it as a sign of direction, not a breakthrough."
+          }
+        ],
+        "why": "Anyone with domain knowledge can now build working software. Customers will expect prototypes in days, not quarters.",
+        "know": [
+          "The 80% machine-written figure is Anthropic’s own internal number for its own code, not an industry average.",
+          "METR’s 1.9x covers one lab and has a wide range (1.5–2.8x). Disclosure: Anthropic makes Claude, which helped prepare this text.",
+          "Writing code faster is not the same as building the right thing. Review, testing and security still take human judgement."
+        ],
+        "qa": [
+          {
+            "q": "Does this mean we need fewer developers?",
+            "a": "It changes what developers do: more specifying, reviewing and integrating, less typing. Organisations are still working out the right team shape."
+          },
+          {
+            "q": "Is ‘AI improving AI’ dangerous?",
+            "a": "It is why labs and governments focus on testing and oversight. For business the point is speed: expect capability jumps more often."
+          }
+        ]
+      }
     },
     {
       "id": "ai-hires-ai",
@@ -243,7 +294,61 @@
           "title": "Camunda: 2026 State of Agentic Orchestration and Automation",
           "url": "https://camunda.com/blog/2026/01/closing-agentic-ai-vision-reality-gap-camunda-2026-state-of-agentic-orchestration-automation-report/"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "An AI agent is software that doesn’t just answer a question but carries out a task: it plans steps, uses tools, and checks the result. The new step is agents handing work to other agents, like a project manager who delegates to specialists. A travel agent AI might ask a booking agent AI to reserve a flight and a finance agent AI to approve the cost. The ambition is huge; most companies are still stuck at the pilot stage.",
+        "terms": [
+          {
+            "term": "AI agent",
+            "def": "Software that pursues a goal over several steps, using tools such as search, email or company systems."
+          },
+          {
+            "term": "MCP (Model Context Protocol)",
+            "def": "An open standard, introduced by Anthropic in 2024, that lets AI models connect to tools and data in a uniform way, like a universal plug."
+          },
+          {
+            "term": "A2A (Agent2Agent)",
+            "def": "An open protocol, introduced by Google in 2025, that lets agents from different vendors talk to and hand work to each other."
+          },
+          {
+            "term": "Orchestration",
+            "def": "Coordinating many agents and systems so a whole business process runs end to end."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Plumbing is being standardised",
+            "text": "Protocols like MCP and A2A do for agents what HTTP did for websites: they let pieces built by different companies work together. That is what makes agent-to-agent work possible."
+          },
+          {
+            "lead": "Adoption is broad but shallow",
+            "text": "Camunda found 71% of organisations use agents, but only 11% of agent use cases reached production in the past year. McKinsey sees large firms scaling agents rise from 27% to 40%."
+          },
+          {
+            "lead": "Gartner expects agents to be built into software",
+            "text": "40% of enterprise apps will embed task-specific agents by end of 2026, up from under 5% in 2025. Many people will use agents without choosing to."
+          },
+          {
+            "lead": "Why pilots stall",
+            "text": "unclear ownership, missing integration with real processes, security and trust concerns, and no agreed way to measure success. Model quality is rarely the main blocker."
+          }
+        ],
+        "why": "Customers’ processes will increasingly run agent to agent. Whatever we sell has to be reachable by their agents, and we can help close the gap from pilot to production.",
+        "know": [
+          "‘Agent’ is used loosely in marketing; many products called agents are chatbots with a few tool connections.",
+          "Agent-to-agent chains multiply errors: if each step is 95% reliable, ten steps in a row are far less reliable."
+        ],
+        "qa": [
+          {
+            "q": "What’s the difference between a chatbot and an agent?",
+            "a": "A chatbot answers; an agent acts. It takes steps in other systems on your behalf."
+          },
+          {
+            "q": "Why should a business care about agent protocols?",
+            "a": "If customers’ agents can’t read or call your services, you become invisible to automated buying and workflows."
+          }
+        ]
+      }
     },
     {
       "id": "robot-bmw",
@@ -368,7 +473,57 @@
           "title": "FutureSearch: Waymo forecast",
           "url": "https://futuresearch.ai/app/p/a/waymo-weekly-paid-rides-q4-2026"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "For decades robots were big arms bolted to the floor, doing one job behind a safety fence. Humanoid robots are built in human shape so they can work in spaces designed for people, and AI lets them learn tasks instead of being programmed step by step. At the same time, driverless taxis have become a normal paid service in several US cities. Robots are leaving the lab and doing real shifts.",
+        "terms": [
+          {
+            "term": "Humanoid robot",
+            "def": "A robot with a roughly human body plan (arms, legs or wheels, hands) so it can use human tools and spaces."
+          },
+          {
+            "term": "Robotaxi",
+            "def": "A taxi with no driver, operated by companies such as Waymo."
+          },
+          {
+            "term": "Embodied AI / physical AI",
+            "def": "AI that perceives and acts in the physical world through a body, rather than only producing text or images."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Proof in a real plant",
+            "text": "Figure’s F.02 humanoids helped build more than 30,000 BMW X3s during an 11-month pilot at Spartanburg; Figure 03 robots now work in logistics there."
+          },
+          {
+            "lead": "China dominates volume",
+            "text": "19,000–22,000 humanoids shipped worldwide in the first half of 2026, up roughly 270–300%, and over 97% came from Chinese vendors. Cheap hardware plus state support is scaling fast."
+          },
+          {
+            "lead": "Robotaxis are a business",
+            "text": "Waymo reports about 500,000 paid rides per week across 15 US cities and targets 1 million a week by year-end."
+          },
+          {
+            "lead": "Why now",
+            "text": "better AI for perception and planning, cheaper batteries and motors, and world models (see ‘AI Learns the Physical World’) that let robots practise in simulation."
+          }
+        ],
+        "why": "Physical work is now in scope for AI. Customers in manufacturing, logistics and mobility will ask what this means for them.",
+        "know": [
+          "Over 60% of humanoid shipments still go to entertainment, performances and research data collection, not factory work.",
+          "A pilot that contributes to production is not the same as a robot replacing a worker one-for-one. Productivity data is still limited."
+        ],
+        "qa": [
+          {
+            "q": "Will humanoids replace factory workers soon?",
+            "a": "Not at scale yet. Expect them first in repetitive, hard-to-staff tasks, alongside people."
+          },
+          {
+            "q": "Why human shape rather than specialised machines?",
+            "a": "Because factories, warehouses and homes are built for humans; a human-shaped robot can use them without redesign."
+          }
+        ]
+      }
     },
     {
       "id": "physical-world",
@@ -483,7 +638,57 @@
           "title": "NVIDIA: Cosmos 3",
           "url": "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Language models learned from text, so they’re good with words but have no feel for how the physical world works. A world model learns how things move, fall, collide and react, like a child who learns that a glass falls and breaks. Once an AI can simulate the world, a robot can practise a million times in a virtual space before touching anything real, and a factory can test a new line before building it.",
+        "terms": [
+          {
+            "term": "World model",
+            "def": "An AI that predicts how a physical scene will change over time: space, motion, cause and effect."
+          },
+          {
+            "term": "Digital twin",
+            "def": "A live virtual copy of a physical asset or process, used to test changes safely."
+          },
+          {
+            "term": "Simulation-first engineering",
+            "def": "Designing and testing in a virtual environment before spending money in the real world."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Gartner calls it a top trend",
+            "text": "World models are #3 on Gartner’s 2027 list, with a forecast that 40% of robotics applications will use them by 2030, up from under 1% in 2025."
+          },
+          {
+            "lead": "Real products are shipping",
+            "text": "Google released Genie 4 in October 2026 for real-time interactive world simulation. NVIDIA launched Cosmos 3 as an open world model in June 2026 and added open driving and robotics versions on 5 November."
+          },
+          {
+            "lead": "Why it matters for robots",
+            "text": "real-world motion data is scarce and expensive to collect. Simulation fills that gap, which is why world models and the humanoid boom go together."
+          },
+          {
+            "lead": "Industry is paying attention",
+            "text": "Germany signed a joint declaration with NVIDIA on industrial physical AI on 20 October 2026."
+          }
+        ],
+        "why": "Industrial customers get simulation-first engineering: test a line, a warehouse or a process virtually before spending on it.",
+        "know": [
+          "Simulations are only as good as their physics; what works in a virtual world can fail in a messy real one (the ‘sim-to-real gap’).",
+          "Most industrial use today is digital twins and planning, not fully autonomous robots."
+        ],
+        "qa": [
+          {
+            "q": "How is a world model different from ChatGPT?",
+            "a": "ChatGPT predicts the next word; a world model predicts what happens next in a physical scene."
+          },
+          {
+            "q": "Where would a non-robotics company see this?",
+            "a": "Planning factory layouts, warehouses, energy networks or traffic flows by testing them in simulation first."
+          }
+        ]
+      }
     },
     {
       "id": "lab-runs-itself",
@@ -586,7 +791,57 @@
           "title": "IntuitionLabs: AI drug discovery FDA approvals",
           "url": "https://intuitionlabs.ai/articles/ai-drug-discovery-fda-approvals"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Normally scientists design an experiment, run it by hand, wait for results and decide what to try next. In a self-driving lab, AI proposes the next experiment, robots carry it out, and the result goes straight back to the AI to plan the next round, around the clock. It turns discovery from a slow craft into a fast loop. The first drugs designed this way are in clinical trials, but none has been fully approved yet.",
+        "terms": [
+          {
+            "term": "Self-driving / autonomous lab",
+            "def": "A lab where AI plans experiments and robots run them in a continuous loop."
+          },
+          {
+            "term": "Clinical trial phases",
+            "def": "Phase I tests safety, Phase II tests whether it works, Phase III confirms in large groups before approval."
+          },
+          {
+            "term": "AI-designed drug",
+            "def": "A molecule whose structure was proposed or optimised mainly by AI models."
+          }
+        ],
+        "going": [
+          {
+            "lead": "The pipeline has grown fast",
+            "text": "More than 173 AI-designed drug programmes were in clinical development in early 2026, up from about two dozen in late 2023."
+          },
+          {
+            "lead": "Still no finish line",
+            "text": "As of mid-2026, no AI-discovered drug had full FDA approval; 15–20 programmes are due to report Phase III results in 2026–27. That is the real test."
+          },
+          {
+            "lead": "Early promise, mid-stage reality",
+            "text": "AI-designed molecules pass early safety trials more often, but in Phase II they fail at about the same rate as conventional ones."
+          },
+          {
+            "lead": "Industrial scale is coming",
+            "text": "Danaher expects its first AI-powered autonomous research lab to operate at scale in early 2027."
+          }
+        ],
+        "why": "R&D cycles that took years can compress into weeks. Customers in life sciences, materials and chemicals will reorganise R&D around it.",
+        "know": [
+          "Counts of AI drug programmes vary (117 to 200+) depending on what counts as ‘AI-designed’.",
+          "Faster discovery does not shorten the human trial stages, which still take years."
+        ],
+        "qa": [
+          {
+            "q": "So does AI make drugs faster or not?",
+            "a": "It speeds up finding and refining candidates. Proving they work in people still takes the usual trials."
+          },
+          {
+            "q": "Beyond pharma?",
+            "a": "The same loop applies to materials, batteries, chemicals and food science."
+          }
+        ]
+      }
     },
     {
       "id": "ai-learns-to-count",
@@ -689,7 +944,57 @@
           "title": "Gartner: Strategic Predictions for 2027",
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Chatbots are brilliant with words but shaky with numbers: they can produce a confident figure that is simply wrong. Large quantitative models are AI built to work with numbers first, combining neural networks with proven mathematical and statistical methods. Picture the difference between a gifted storyteller and an actuary. Gartner expects these models to take over part of forecasting and planning, where a wrong number costs real money.",
+        "terms": [
+          {
+            "term": "LLM (large language model)",
+            "def": "AI trained on huge amounts of text to predict and generate language."
+          },
+          {
+            "term": "LQM (large quantitative model)",
+            "def": "Gartner’s term for modular, hybrid AI built to process quantitative data and model complex systems."
+          },
+          {
+            "term": "Hybrid model",
+            "def": "A system that combines neural networks with explicit maths, rules or simulations."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Top of Gartner’s list",
+            "text": "LQMs are #1 on Gartner’s Top 10 Strategic Technology Trends for 2027 (20 October 2026)."
+          },
+          {
+            "lead": "The forecast",
+            "text": "By 2030, Gartner expects LQMs to replace LLMs in 25% of strategic forecasting and operational modelling tasks."
+          },
+          {
+            "lead": "The idea",
+            "text": "move decisions from reacting to problems to simulating them in advance: test a price change, a supply disruption or a staffing plan before it happens."
+          },
+          {
+            "lead": "Where first",
+            "text": "Gartner names finance and healthcare, regulated sectors where results must be auditable."
+          }
+        ],
+        "why": "Customers who plan, price, forecast or simulate will want AI that can be audited on the numbers, not just fluent in words.",
+        "know": [
+          "This is a forecast and a label, not yet a mature product category you can buy off the shelf.",
+          "Many existing forecasting tools already mix statistics and machine learning; LQMs are partly a rebranding of that direction at larger scale."
+        ],
+        "qa": [
+          {
+            "q": "Why can’t ChatGPT just do the maths?",
+            "a": "It can call a calculator or write code, but its core is language prediction. LQMs put numbers at the core."
+          },
+          {
+            "q": "What should a CFO take from this?",
+            "a": "Expect AI forecasting tools that explain their numbers and can be audited, not just fluent summaries."
+          }
+        ]
+      }
     },
     {
       "id": "your-voice-is-the-interface",
@@ -787,7 +1092,53 @@
           "title": "Gartner: Strategic Predictions for 2027",
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Most voice assistants work like a relay: first turn your speech into text, then think about the text, then turn the answer back into speech. A lot gets lost in that transcript: tone, hesitation, frustration. Speech reasoning models think directly on the sound, so they can hear that you’re upset or in a hurry and respond accordingly. Gartner expects them to take over most routine voice conversations in companies by 2030.",
+        "terms": [
+          {
+            "term": "Speech-to-text pipeline",
+            "def": "The traditional chain of transcription, text reasoning and speech synthesis."
+          },
+          {
+            "term": "Speech reasoning model",
+            "def": "An AI that reasons directly on audio, keeping tone, timing and emotion."
+          },
+          {
+            "term": "Voice agent",
+            "def": "An AI that holds a spoken conversation and takes actions, for example in a contact centre."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Gartner’s forecast",
+            "text": "Enterprise voice interactions handled autonomously by speech models rise from under 10% in 2026 to over 70% by 2030. Speech reasoning is #2 on Gartner’s 2027 list."
+          },
+          {
+            "lead": "Why it matters",
+            "text": "Gartner calls voice the enterprise’s highest-volume but least-automated channel. Contact centres, service desks and field teams run on it."
+          },
+          {
+            "lead": "Where to start",
+            "text": "Gartner advises lower-risk interactions first, such as routine customer service, before moving to complex or sensitive calls."
+          }
+        ],
+        "why": "Contact centres, service desks and field teams run on voice. Customers will ask what can be handed to a model that actually listens.",
+        "know": [
+          "Voice brings extra risks: voice cloning, consent to record, and accessibility for accents and speech differences.",
+          "Customers may accept a fast AI voice for simple tasks but still want a human for complaints and complex issues."
+        ],
+        "qa": [
+          {
+            "q": "Isn’t this just a better chatbot on the phone?",
+            "a": "No: by skipping transcription it keeps emotion and emphasis, which changes how well it understands people."
+          },
+          {
+            "q": "Which jobs change first?",
+            "a": "First-line contact-centre work and appointment or booking calls."
+          }
+        ]
+      }
     },
     {
       "id": "open-models-close-the-gap",
@@ -892,7 +1243,57 @@
           "url": "https://letsdatascience.com/news/thinking-machines-lab-releases-inkling-2-small-a-594b-moe-mo-2b2a96ce"
         }
       ],
-      "fit": "whole"
+      "fit": "whole",
+      "deep": {
+        "plain": "Some AI models are ‘closed’: you can only use them through the company’s website or service, like renting a car with a driver. ‘Open-weight’ models are published so anyone can download and run them on their own computers, like being handed the keys. Open models used to be clearly weaker. Now the best ones are only a few points behind the top closed models, which gives companies a real choice about control, cost and where their data goes.",
+        "terms": [
+          {
+            "term": "Weights / parameters",
+            "def": "The billions of numbers a model learns during training; they are the model. ‘Open weights’ means these are published."
+          },
+          {
+            "term": "Closed model",
+            "def": "A model only available through its maker’s service or API."
+          },
+          {
+            "term": "Open source vs open weights",
+            "def": "Open weights means you can download the model; full open source would also include training data and code, which is rarer."
+          }
+        ],
+        "going": [
+          {
+            "lead": "A frontier-scale open model",
+            "text": "Moonshot published the weights of Kimi K3.1 Pro on 4 November 2026: 2.8 trillion parameters and a 1-million-token context window."
+          },
+          {
+            "lead": "The gap is small",
+            "text": "On the Artificial Analysis index, the gap between the best open and closed models fell from about 12 to 3 points once K3.1 Pro’s weights were out. Epoch AI measured a lag of about four months earlier in 2026."
+          },
+          {
+            "lead": "More are coming",
+            "text": "Thinking Machines released Inkling 2 Small (594B parameters) on 5 November; its weights were closed at launch with an open release promised after safety testing."
+          },
+          {
+            "lead": "Why it matters",
+            "text": "companies can run strong AI inside their own walls, which helps with sovereignty, privacy and cost control."
+          }
+        ],
+        "why": "Customers get a credible option to run strong AI on their own infrastructure, under their own control, at their own cost.",
+        "know": [
+          "Open doesn’t mean easy: a 2.8T model needs very large hardware to run. Smaller open models are what most companies actually deploy.",
+          "Licences carry conditions, and many leading open models come from Chinese labs, which raises compliance questions for some customers."
+        ],
+        "qa": [
+          {
+            "q": "Should we switch to open models?",
+            "a": "It depends on the use case: open models give control and predictable cost; closed models are simpler to use and often still lead on the hardest tasks."
+          },
+          {
+            "q": "Are open models less safe?",
+            "a": "Once published, safeguards can be removed. That’s why some labs delay or restrict releases."
+          }
+        ]
+      }
     },
     {
       "id": "type-a-sentence-get-a-film",
@@ -980,7 +1381,53 @@
           "title": "Google: Gemini Omni 1.2 Flash",
           "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "A year or two ago, AI video was a novelty: short, glitchy clips. Now you can type a sentence and get a polished, consistent video clip, and big providers sell it as a normal business product priced per second. Making a product demo or training video starts to look more like writing an email than booking a film crew.",
+        "terms": [
+          {
+            "term": "Text-to-video",
+            "def": "Generating video from a written description."
+          },
+          {
+            "term": "GA (generally available)",
+            "def": "A product officially released for all customers, not a preview."
+          },
+          {
+            "term": "SynthID",
+            "def": "Google’s invisible watermark that marks content as AI-generated."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Enterprise-ready",
+            "text": "Google made Gemini Omni 1.2 Flash generally available on 5 November 2026: clips up to 15 seconds (up from 10), with editing in conversation and consistent characters and products across shots."
+          },
+          {
+            "lead": "Cheap enough to scale",
+            "text": "Output costs $0.07 per second at 720p, 30% less than the previous version."
+          },
+          {
+            "lead": "Labelled by default",
+            "text": "Every output carries a SynthID watermark, part of the wider push for provenance (see ‘AI-Free Is the New Organic’)."
+          }
+        ],
+        "why": "Product demos, training and marketing video stop being studio projects. Customers will expect visual content at text speed and cost.",
+        "know": [
+          "All capability claims are Google’s own; independent benchmarks were not available at launch.",
+          "Rights and likeness remain sensitive: using a real person’s face or voice needs consent."
+        ],
+        "qa": [
+          {
+            "q": "Will this replace video teams?",
+            "a": "It replaces much routine production; creative direction, brand judgement and editing still matter."
+          },
+          {
+            "q": "What’s the risk?",
+            "a": "Deepfakes and brand misuse. That’s why watermarking and provenance are rising in parallel."
+          }
+        ]
+      }
     },
     {
       "id": "the-computer-thats-alive",
@@ -1092,7 +1539,53 @@
           "title": "Gartner: Strategic Predictions for 2027",
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "All computers today run on silicon chips. ‘Wetware’ means using living biological material, such as lab-grown neurons, to do computing. The human brain runs on about 20 watts, the power of a dim light bulb, while AI data centres need power stations. Gartner lists renting access to such living systems over the cloud as a strategic trend. It is early and strange, but it shows how hard the energy problem has become.",
+        "terms": [
+          {
+            "term": "Wetware",
+            "def": "Biological material (cells, neurons) used for computing."
+          },
+          {
+            "term": "Biocomputing / organoid intelligence",
+            "def": "Research field using living cells or brain organoids to process information."
+          },
+          {
+            "term": "As a service",
+            "def": "Rented over the cloud rather than owned, like cloud servers today."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Gartner’s #10 trend for 2027",
+            "text": "cloud access to living or synthetic biological systems for computing."
+          },
+          {
+            "lead": "The energy argument",
+            "text": "Gartner’s Gene Alvarez makes the case with the brain’s roughly 20 watts: silicon can’t scale AI indefinitely given its energy demand."
+          },
+          {
+            "lead": "Reality check",
+            "text": "Gartner itself says this is at pilot stage, several years from maturity, with bioethics and ownership of results still open questions. Specialty labs already run small set-ups with living tissue."
+          }
+        ],
+        "why": "Not a buying decision for anyone yet. It is a signal that silicon’s energy limits are pushing the industry to look at radically different hardware.",
+        "know": [
+          "This is a glimpse of a possible future, not a business recommendation.",
+          "Ethical questions are real: what rights, if any, should lab-grown neural tissue have?"
+        ],
+        "qa": [
+          {
+            "q": "Is anyone using this for real work?",
+            "a": "Only in research and pilots. No mainstream business workloads run on it."
+          },
+          {
+            "q": "Why does it matter?",
+            "a": "It shows that energy, not ideas, is becoming AI’s hardest limit."
+          }
+        ]
+      }
     },
     {
       "id": "customer-agent",
@@ -1212,7 +1705,57 @@
           "title": "DHL: 2026 E-Commerce Trends Report",
           "url": "https://www.dhl.com/global-en/microsites/ec/ecommerce-insights/insights/reports/2026-ecommerce-trends-report.html"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Until now, a person visited a website, compared options and clicked ‘buy’. Increasingly, people ask an AI assistant to find, compare and even buy for them. The visitor to your shop may be a piece of software acting for a customer. That software doesn’t look at nice pictures; it reads data: prices, stock, delivery terms, reviews. If it can’t read your offer, it won’t recommend you.",
+        "terms": [
+          {
+            "term": "Agentic commerce",
+            "def": "Buying and selling where AI agents search, compare and transact on a person’s or company’s behalf."
+          },
+          {
+            "term": "Agent checkout protocols",
+            "def": "Open standards that let an AI agent pay securely, such as ACP (OpenAI and Stripe) and UCP (Google and Shopify)."
+          },
+          {
+            "term": "Stablecoin",
+            "def": "A digital token designed to hold a stable value, usually one dollar, used for fast payments."
+          }
+        ],
+        "going": [
+          {
+            "lead": "The traffic is real",
+            "text": "Adobe measured AI-referred traffic to US retail sites up 393% in Q1 2026; in March those visitors converted 42% better than other traffic."
+          },
+          {
+            "lead": "Habits are forming",
+            "text": "Bloomreach found 47.6% of consumers use AI to compare products or prices (35% in 2025). DHL’s 2026 survey across 29 countries: 38% of shoppers and 36% of businesses already use AI chat or assistants to buy and sell. Morgan Stanley found about 23% of Americans bought something with AI help in the past month."
+          },
+          {
+            "lead": "Forecasts are large",
+            "text": "Morgan Stanley expects AI shopping agents to handle $190B (base case) to $385B (bull case) of US e-commerce by 2030, 10–20% of the total. Gartner predicts 90% of B2B buying will be AI-agent intermediated by 2028, over $15 trillion."
+          },
+          {
+            "lead": "The rails are being built",
+            "text": "Open checkout standards are live, and 21 banks including Goldman Sachs, Bank of America and Citi plan a joint dollar stablecoin for H1 2027. Meanwhile some banks block AI agents: identity and permission are the new checkout."
+          }
+        ],
+        "why": "If an agent does the comparing, our offer has to be readable by machines: clean data, clear pricing, trusted identity.",
+        "know": [
+          "Adobe found many retail pages are only partly readable by AI: most companies aren’t ready.",
+          "Growth percentages start from a small base; AI-referred traffic is still a minority of total traffic."
+        ],
+        "qa": [
+          {
+            "q": "What should a company do first?",
+            "a": "Make product and service data clean, structured and current, and make sure policies (pricing, returns, delivery) are machine-readable."
+          },
+          {
+            "q": "Is this only retail?",
+            "a": "No. Gartner’s B2B forecast suggests procurement will change even faster."
+          }
+        ]
+      }
     },
     {
       "id": "google-zero",
@@ -1318,7 +1861,57 @@
           "url": "https://www.bain.com/insights/goodbye-clicks-hello-ai-zero-click-search-redefines-marketing/"
         }
       ],
-      "fit": "whole"
+      "fit": "whole",
+      "deep": {
+        "plain": "For 25 years the deal was simple: you searched on Google, clicked a link, and visited a website. Now Google and AI assistants answer the question directly, so many people never click. That’s ‘zero-click’. For anyone who relied on search traffic, from news sites to shops, the front door is moving. Being quoted in the AI’s answer starts to matter as much as ranking first in the list.",
+        "terms": [
+          {
+            "term": "Zero-click search",
+            "def": "A search that ends without the user clicking through to any website."
+          },
+          {
+            "term": "AI Overview",
+            "def": "Google’s AI-written summary shown above the search results."
+          },
+          {
+            "term": "AEO / GEO",
+            "def": "Answer-engine or generative-engine optimisation: making content easy for AI to find, trust and cite."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Clicks fall sharply when AI answers",
+            "text": "About 83% of searches end without a click when an AI Overview appears."
+          },
+          {
+            "lead": "Behaviour has shifted",
+            "text": "Bain found about 80% of consumers rely on zero-click answers for at least 40% of their searches, cutting organic web traffic by an estimated 15–25%."
+          },
+          {
+            "lead": "Publishers feel it first",
+            "text": "Ozone data via Digiday shows publisher ad supply down up to 40% in Q2 2026. Condé Nast told staff to plan for a world without Google traffic."
+          },
+          {
+            "lead": "The flip side",
+            "text": "retailers gain AI-referred visitors who buy more (see ‘Your Next Customer Is an Agent’)."
+          }
+        ],
+        "why": "How customers find us is changing. Being cited by AI answers matters as much as ranking on Google.",
+        "know": [
+          "Measures vary widely: SparkToro put the overall US zero-click rate at 22.4% in March 2026. The number depends on who measures it.",
+          "Search isn’t dead; it’s being reshaped. Branded and transactional searches still drive clicks."
+        ],
+        "qa": [
+          {
+            "q": "What is answer-engine optimisation in practice?",
+            "a": "Structured product data, accurate prices and stock, clear FAQs, reviews and third-party mentions so AI systems can cite you."
+          },
+          {
+            "q": "Will Google lose its dominance?",
+            "a": "Google is itself the main source of AI answers via AI Overviews; the change is in behaviour more than in who wins."
+          }
+        ]
+      }
     },
     {
       "id": "ai-glasses",
@@ -1417,7 +2010,53 @@
           "title": "9to5Mac: AI glasses shipments surged 263%",
           "url": "https://9to5mac.com/2026/09/21/report-ai-glasses-shipments-surged-263-in-h1-2026-as-apple-prepares-to-enter-the-market/"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Smart glasses failed for years because they looked odd and did little. The new ones look like normal sunglasses, with a small camera, microphones and speakers, and an AI assistant you can talk to. You can ask ‘what am I looking at?’ or get directions hands-free. They’re the first AI-native device people are actually buying in large numbers.",
+        "terms": [
+          {
+            "term": "Display-less AI glasses",
+            "def": "Glasses with camera, audio and AI but no screen in the lens, such as Ray-Ban Meta."
+          },
+          {
+            "term": "Multimodal AI",
+            "def": "AI that understands several inputs at once: voice, images, video."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Shipments are rising fast",
+            "text": "Counterpoint measured AI glasses shipments up 263% in H1 2026 versus H1 2025."
+          },
+          {
+            "lead": "One clear leader",
+            "text": "Meta had a 94% share of display-less AI glasses in H1 2026. EssilorLuxottica sold more than 7 million AI glasses in 2025."
+          },
+          {
+            "lead": "Big entrants expected",
+            "text": "Apple is reportedly preparing glasses for 2027."
+          },
+          {
+            "lead": "Work use cases",
+            "text": "hands-free instructions for field technicians, warehouse staff and maintenance crews; live translation."
+          }
+        ],
+        "why": "A camera and assistant always on means new hands-free use cases for field staff and frontline workers, and new privacy questions.",
+        "know": [
+          "Privacy is the big question: a camera on everyone’s face changes norms in offices, shops and public spaces.",
+          "Volumes are still small compared with smartphones."
+        ],
+        "qa": [
+          {
+            "q": "Will glasses replace phones?",
+            "a": "Not soon. More likely they become a companion: voice plus vision for quick tasks."
+          },
+          {
+            "q": "Business relevance?",
+            "a": "Frontline work and customer service, plus new rules on recording at work."
+          }
+        ]
+      }
     },
     {
       "id": "ai-companion",
@@ -1499,7 +2138,45 @@
         "700% companion app growth since 2022; Character.AI 20M monthly users, over half under 24; 57% worry about AI’s impact (Ipsos 2025). Rating: Unchecked."
       ],
       "gameStat": 1,
-      "links": []
+      "links": [],
+      "deep": {
+        "plain": "AI companions are chat apps designed to be a friend, partner or confidant: they remember you, ask about your day and are always available. Millions of people, many of them young, now talk to one regularly. That’s a new kind of relationship with technology, with real benefits for lonely people and real risks for vulnerable ones.",
+        "terms": [
+          {
+            "term": "AI companion",
+            "def": "A chatbot designed for ongoing personal or emotional conversation rather than tasks."
+          },
+          {
+            "term": "Engagement design",
+            "def": "Product choices that keep people coming back, which can tip into dependency."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Growth (figures from June 2026)",
+            "text": "companion apps grew about 700% since 2022 (TechCrunch); Character.AI had about 20 million monthly users, over half under 24."
+          },
+          {
+            "lead": "Public unease",
+            "text": "Ipsos (2025) found 57% of people worry AI will harm society."
+          },
+          {
+            "lead": "Why it matters for business",
+            "text": "the next generation of customers and employees will expect to talk to AI naturally, and will judge trust differently."
+          }
+        ],
+        "why": "The next generation of customers and employees expects to talk to AI as a matter of course, and trust will be earned differently.",
+        "know": [
+          "The figures here are from June 2026 and are the least well-evidenced in this collection.",
+          "This topic touches minors and mental health; regulators in several countries are looking at age checks and safeguards."
+        ],
+        "qa": [
+          {
+            "q": "Is this a business opportunity?",
+            "a": "The relationship layer moving into software is both a market and a responsibility. Tone and safeguards matter."
+          }
+        ]
+      }
     },
     {
       "id": "one-in-three-people-now-uses-ai",
@@ -1608,7 +2285,53 @@
           "url": "https://datareportal.com/reports/digital-2027-ai-use-around-the-world"
         }
       ],
-      "fit": "whole"
+      "fit": "whole",
+      "deep": {
+        "plain": "Generative AI went from a curiosity in late 2022 to something about one in three people on Earth uses every month. That’s faster than social media or smartphones spread. Most of the new growth comes from outside the US and Europe, often on mobile phones. Your customers’ customers already use AI daily, and that shapes what they expect from every company.",
+        "terms": [
+          {
+            "term": "Monthly active users (MAU)",
+            "def": "People who used a service at least once in a month."
+          },
+          {
+            "term": "Generative AI",
+            "def": "AI that creates text, images, audio or video."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Scale",
+            "text": "The Digital 2027 report (October 2026) counts 3.24 billion monthly users of generative AI tools, 38.9% of the world’s population."
+          },
+          {
+            "lead": "Speed",
+            "text": "Users grew by 1.2 billion (+57.2%) in 12 months."
+          },
+          {
+            "lead": "Broader definitions give bigger numbers",
+            "text": "DataReportal estimates 83.5% of internet users aged 16+ use some AI each month, over 4.1 billion people."
+          },
+          {
+            "lead": "Trust gap",
+            "text": "Fewer than one in four online adults in the EU and US believe AI benefits society, more negative than elsewhere."
+          }
+        ],
+        "why": "Our customers’ customers already use AI daily. Expectations for speed and self-service are being set outside our industry.",
+        "know": [
+          "Counts depend heavily on definitions; a number only means something next to its source.",
+          "A widely shared ‘4 billion by 2027’ figure comes from a single firm’s projection; treat it with caution."
+        ],
+        "qa": [
+          {
+            "q": "Is usage the same as value?",
+            "a": "No. Daily habits are widespread, but deep use in work processes is far less common (see ‘Show Me the Money’)."
+          },
+          {
+            "q": "Why is Europe more sceptical?",
+            "a": "Surveys show more concern about jobs, privacy and misinformation; regulation reflects that."
+          }
+        ]
+      }
     },
     {
       "id": "one-agent",
@@ -1707,7 +2430,49 @@
           "title": "Tech AI Magazine: October 2026 AI stories",
           "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Each big tech company wants to be the single AI assistant that does your work: reads your mail, writes documents, books meetings, uses your apps. The newest versions get their own account, permissions and even a spending limit, almost like a digital employee. The question is shifting from ‘which chatbot do you use?’ to ‘which agent runs your work, and who controls what it can do?’",
+        "terms": [
+          {
+            "term": "Work agent",
+            "def": "An AI with access to your work tools that can carry out tasks for you."
+          },
+          {
+            "term": "Permissions / spend cap",
+            "def": "Limits on what an agent may access and how much it may spend."
+          }
+        ],
+        "going": [
+          {
+            "lead": "October 2026 showed the race",
+            "text": "Google announced the Gemini agent with its own account, permissions and a spend cap (8 Oct); OpenAI began rolling out GPT-6 in ChatGPT (7 Oct)."
+          },
+          {
+            "lead": "Platforms are reorganising around agents",
+            "text": "In Google Workspace, Gems give way to reusable skills by March 2027."
+          },
+          {
+            "lead": "Why it matters",
+            "text": "whoever owns the main work agent controls which services get used. Other software has to plug into it rather than compete with it."
+          }
+        ],
+        "why": "Customers will pick a primary work agent. Our services need to plug into it, not compete with it.",
+        "know": [
+          "Most organisations will run several agents from different vendors; ‘one agent’ is the vendors’ ambition, not yet reality.",
+          "Giving an agent broad access raises the identity and security questions in ‘Every Agent Needs a Badge’."
+        ],
+        "qa": [
+          {
+            "q": "Which one will win?",
+            "a": "Too early to say; the choice often follows existing platforms (Microsoft 365, Google Workspace)."
+          },
+          {
+            "q": "What should we do?",
+            "a": "Make sure your services are reachable by the main agents through standard connectors."
+          }
+        ]
+      }
     },
     {
       "id": "ai-colleague",
@@ -1791,7 +2556,49 @@
         "$5.5T economic value at risk; 90%+ of enterprises face skills gaps. Rating: Unchecked."
       ],
       "gameStat": 0,
-      "links": []
+      "links": [],
+      "deep": {
+        "plain": "AI is moving from a tool you pick up to a colleague you work with: it drafts, analyses, reminds and acts. Working well with it is a skill, like managing a capable but unpredictable new team member. Most leaders say they’re not good at it yet. The technology is ahead of the people side.",
+        "terms": [
+          {
+            "term": "Human-AI collaboration",
+            "def": "Ways of splitting work between people and AI, including checking and correcting AI output."
+          },
+          {
+            "term": "AI literacy",
+            "def": "Understanding what AI can and can’t do well enough to use it responsibly."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Skills gap (figures from June 2026)",
+            "text": "14% of leaders say they are adept at shaping human-AI interaction (Deloitte 2026); IDC estimates $5.5T of economic value at risk from AI skills shortages and 90%+ of enterprises facing critical gaps."
+          },
+          {
+            "lead": "Teams vs individuals",
+            "text": "Teams using AI together can underperform individuals using it alone, because coordination and review habits haven’t caught up."
+          },
+          {
+            "lead": "Tasks, not jobs",
+            "text": "Gartner’s Futures Lab makes the point that AI changes tasks inside jobs first: writing a report matters less, judging one matters more."
+          }
+        ],
+        "why": "Customers need help with the people side, not only the technology: skills, roles and new ways of working.",
+        "know": [
+          "The figures here are from June 2026.",
+          "‘AI colleague’ is a useful metaphor but AI has no accountability; a person still owns the outcome."
+        ],
+        "qa": [
+          {
+            "q": "What skills matter most?",
+            "a": "Framing problems clearly, checking output critically, and knowing when not to use AI."
+          },
+          {
+            "q": "Does this mean less training of juniors?",
+            "a": "The opposite: see ‘Junior Jobs vs AI’."
+          }
+        ]
+      }
     },
     {
       "id": "bottom-rung",
@@ -1912,7 +2719,53 @@
           "title": "Strada: Entry-level hiring in the AI era",
           "url": "https://www.strada.org/news-insights/entry-level-hiring-in-the-ai-era-what-employers-are-thinking-and-doing"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Junior roles are how people learn a profession: doing the basic tasks, making mistakes, getting better. Those basic tasks are exactly what AI does well. Companies now name AI as a reason for cutting jobs, and young workers in AI-exposed jobs feel it first. If the bottom rung of the career ladder disappears, where will tomorrow’s experts come from?",
+        "terms": [
+          {
+            "term": "Entry-level / junior roles",
+            "def": "First jobs where people learn on the job."
+          },
+          {
+            "term": "AI-exposed occupation",
+            "def": "A job where many tasks can be done by current AI."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Cuts citing AI are up",
+            "text": "Challenger, Gray & Christmas counted 121,401 US job cuts where employers cited AI in January–October 2026, more than double all of 2025. They peaked at 38,579 in May and fell to 1,265 in October."
+          },
+          {
+            "lead": "Young workers in exposed jobs",
+            "text": "A Stanford study found relative employment for 22–25-year-olds in the most AI-exposed jobs fell 13% from 2022 to 2026."
+          },
+          {
+            "lead": "Not everyone agrees",
+            "text": "Strada found 2.7x more talent leaders expect AI to increase entry-level hiring than to decrease it."
+          },
+          {
+            "lead": "",
+            "text": "The clearest pattern is a tilt toward experience rather than mass displacement."
+          }
+        ],
+        "why": "If juniors don’t learn by doing, who becomes the senior expert in five years? Every organisation, ours included, needs an answer.",
+        "know": [
+          "Announced cuts are not the same as jobs lost; ‘AI’ can also be a convenient label for cost cutting.",
+          "The disagreement in the evidence is itself the signal: the effect is real but uneven."
+        ],
+        "qa": [
+          {
+            "q": "Is AI causing unemployment?",
+            "a": "Overall labour data doesn’t show mass displacement; the effect is concentrated in specific roles and age groups."
+          },
+          {
+            "q": "What should employers do?",
+            "a": "Redesign junior roles around judgement and supervision of AI, so people still learn the craft."
+          }
+        ]
+      }
     },
     {
       "id": "one-in-five-commits-is-an-agents",
@@ -2009,7 +2862,57 @@
           "title": "Gartner: Strategic Predictions for 2027",
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "AI coding agents now produce real code at scale. But code that nobody checks is a risk. The ‘harness’ is everything around the agent that keeps it safe: automatic tests, checks, rules about which model does what, and gates that stop bad code from going live. It’s like the safety systems around a powerful machine: the machine does the work, the harness makes it trustworthy.",
+        "terms": [
+          {
+            "term": "Commit",
+            "def": "A saved change to a codebase."
+          },
+          {
+            "term": "Agent coding harness",
+            "def": "Gartner’s term for the closed loop of context, model routing, verification gates and feedback around coding agents."
+          },
+          {
+            "term": "Verification gate",
+            "def": "An automatic check (tests, security scans) that code must pass before it is accepted."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Gartner’s forecast",
+            "text": "autonomous coding agents generate 20% of all public code commits by late 2026. The agent coding harness is #5 on its 2027 list."
+          },
+          {
+            "lead": "The new bottleneck is review",
+            "text": "Gartner says manual review is becoming the main constraint, because machines produce code faster than teams can audit it."
+          },
+          {
+            "lead": "",
+            "text": "The developer’s role shifts from writing code to specifying what’s needed and verifying the result."
+          },
+          {
+            "lead": "Connects to ‘AI Is Building the Next AI’",
+            "text": "the same shift happened inside AI labs first."
+          }
+        ],
+        "why": "The developer’s role shifts from writing code to specifying and verifying it. Customers will ask how we keep agent-written code safe.",
+        "know": [
+          "The 20% is a forecast; there is no reliable measured figure yet.",
+          "More code isn’t automatically better: maintenance, security and technical debt grow with volume."
+        ],
+        "qa": [
+          {
+            "q": "Is AI-written code safe?",
+            "a": "Only as safe as the checks around it. That’s the point of the harness."
+          },
+          {
+            "q": "What changes for IT teams?",
+            "a": "More investment in testing, security scanning and clear specifications."
+          }
+        ]
+      }
     },
     {
       "id": "an-agent-only-knows-what-you-feed-it",
@@ -2094,7 +2997,53 @@
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
       ],
-      "fit": "whole"
+      "fit": "whole",
+      "deep": {
+        "plain": "An AI agent is like a brilliant new hire on day one: smart, but knows nothing about your company. Without context it guesses, and guessing produces confident mistakes (‘hallucinations’). A context platform is the onboarding: it feeds the agent your data, rules, definitions and history at the moment it needs them. The better the context, the better and cheaper the agent.",
+        "terms": [
+          {
+            "term": "Hallucination",
+            "def": "When AI states something false with confidence."
+          },
+          {
+            "term": "Context platform",
+            "def": "A layer that supplies agents with relevant company data, rules and meaning."
+          },
+          {
+            "term": "Semantics / semantic layer",
+            "def": "Shared, precise definitions of business terms (what counts as a ‘customer’ or ‘revenue’) that both people and AI use."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Gartner’s forecast",
+            "text": "by 2027, organisations that prioritise semantics in AI-ready data raise agentic AI accuracy by up to 80% and cut costs by up to 60%. AI context platforms are #4 on its 2027 list."
+          },
+          {
+            "lead": "The diagnosis",
+            "text": "fragmented operational knowledge causes hallucinations and high compute costs."
+          },
+          {
+            "lead": "Why it matters",
+            "text": "as models become similar, a company’s own context is what makes its AI useful and different."
+          }
+        ],
+        "why": "The model is becoming a commodity. What makes an agent useful is the customer’s own context, and that is where we can help.",
+        "know": [
+          "‘Up to’ means best case, not a typical result.",
+          "Gartner warns of interoperability problems as vendors launch competing context platforms."
+        ],
+        "qa": [
+          {
+            "q": "Is this just data management with a new name?",
+            "a": "Partly. What’s new is that AI consumes it in real time, so gaps show immediately."
+          },
+          {
+            "q": "Where do companies start?",
+            "a": "Clean, well-defined core data and documented business rules."
+          }
+        ]
+      }
     },
     {
       "id": "software-you-throw-away",
@@ -2205,7 +3154,53 @@
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
       ],
-      "fit": "whole"
+      "fit": "whole",
+      "deep": {
+        "plain": "Software used to be expensive to build, so you kept it for years and kept patching it. When AI can build a working app in minutes, it can be cheaper to make a new one for a specific job and throw it away when the job is done, like a paper cup instead of a china mug. Gartner expects most new business apps to be short-lived.",
+        "terms": [
+          {
+            "term": "Disposable application",
+            "def": "An app built for a specific, temporary purpose and retired within a year."
+          },
+          {
+            "term": "Citizen developer",
+            "def": "A non-IT employee who builds tools, now often with AI."
+          },
+          {
+            "term": "App sprawl",
+            "def": "Uncontrolled growth in the number of apps, with risks for security and data."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Gartner’s forecasts",
+            "text": "by 2029, 80% of new applications will be intentionally disposable, used for less than a year (Strategic Predictions, September 2026). Disposable applications are #9 on its 2027 list."
+          },
+          {
+            "lead": "Governance shifts",
+            "text": "Gartner says locking down AI development to control sprawl is a losing battle; it recommends registries of business-built apps and updated records retention."
+          },
+          {
+            "lead": "Business model impact",
+            "text": "connects to ‘SaaS Is Having Its Kodak Moment’: if apps are cheap to build, long licences look different."
+          }
+        ],
+        "why": "How software is bought, built and budgeted changes. Customers will need governance for thousands of short-lived apps, not just a few big ones.",
+        "know": [
+          "Gartner gives two versions (80% by 2029 in its predictions; 80% by 2030 in its trends report). Both point the same way.",
+          "Core systems (finance, HR, ERP) won’t become disposable; it’s the long tail of small tools."
+        ],
+        "qa": [
+          {
+            "q": "Isn’t this a security nightmare?",
+            "a": "It can be. That’s why registries, data access rules and automated checks matter."
+          },
+          {
+            "q": "What does IT do then?",
+            "a": "Provide safe platforms and guardrails rather than building every tool itself."
+          }
+        ]
+      }
     },
     {
       "id": "one-trillion",
@@ -2335,7 +3330,57 @@
           "title": "Gartner: AI spending forecast",
           "url": "https://gartner.com/en/newsroom/press-releases/2026-09-16-gartner-forecasts-worldwide-ai-spending-to-grow-49-point-5-percent-in-2026"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Training and running AI needs enormous data centres full of specialised chips, plus the power to run them. The biggest tech companies are spending more on this every year than some countries’ entire budgets, and some now spend more than the cash their businesses generate. AI has become a story about capital, debt and energy, not just clever software.",
+        "terms": [
+          {
+            "term": "Capex (capital expenditure)",
+            "def": "Money spent on long-lived assets such as data centres and chips."
+          },
+          {
+            "term": "Operating cash flow",
+            "def": "Cash a company’s normal business generates in a period."
+          },
+          {
+            "term": "Compute commitments",
+            "def": "Long-term contracts to buy computing capacity, often from cloud providers."
+          }
+        ],
+        "going": [
+          {
+            "lead": "The scale",
+            "text": "Amazon, Alphabet, Microsoft and Meta guided about $730B of capex for 2026, about 78% above 2025. Q3 alone was about $202B, up 108% year on year."
+          },
+          {
+            "lead": "Spending outruns cash",
+            "text": "Amazon’s Q3 capex was 182% of its operating cash flow; Alphabet 121%, Meta 104% (Walnut, from company filings). Microsoft remains free-cash-flow positive."
+          },
+          {
+            "lead": "Across the market",
+            "text": "Global data centre capex passes $1 trillion in 2026 (Dell’Oro). Gartner puts total AI spending at $2.67 trillion in 2026 and $3.64 trillion in 2027."
+          },
+          {
+            "lead": "A lab’s books in public",
+            "text": "Anthropic’s IPO filing shows Q3 2026 revenue of $17.0B (up 1,127%), a Q3 operating loss of $567M and about $895B of compute commitments."
+          }
+        ],
+        "why": "This money becomes cheaper, better AI services that our customers can use. The risk now sits with lenders, utilities and suppliers if demand disappoints.",
+        "know": [
+          "Risk is shifting to lenders, utilities and suppliers if demand disappoints.",
+          "Disclosure: Anthropic makes Claude, which helped prepare this text."
+        ],
+        "qa": [
+          {
+            "q": "Is this a bubble?",
+            "a": "Nobody knows. Revenue is growing fast, but spending is growing faster. Watch whether usage turns into profits."
+          },
+          {
+            "q": "What does it mean for customers?",
+            "a": "More capacity usually means cheaper, better AI services over time."
+          }
+        ]
+      }
     },
     {
       "id": "cheaper-bigger",
@@ -2420,7 +3465,53 @@
           "title": "Tech AI Magazine: October 2026 AI stories",
           "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "The price of using AI for a given task keeps falling dramatically, yet companies’ AI bills keep rising. That’s not a contradiction: when something gets cheap, people use much more of it. Economists call this Jevons’ paradox, after coal-efficient steam engines that led to more coal use, not less. Meanwhile new models arrive so fast that you can’t finish testing one before the next lands.",
+        "terms": [
+          {
+            "term": "Token",
+            "def": "A chunk of text (roughly three-quarters of a word) that AI usage is priced by."
+          },
+          {
+            "term": "Inference",
+            "def": "Running a trained model to get answers; the ongoing cost of AI use."
+          },
+          {
+            "term": "Jevons’ paradox",
+            "def": "When efficiency makes something cheaper, total consumption often rises."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Cost per task collapsed (June 2026 figure)",
+            "text": "GPT-4-class inference fell about 98%, from $60 to about $0.60 per million tokens, 2024 to 2026."
+          },
+          {
+            "lead": "Spend rose anyway (June 2026)",
+            "text": "average enterprise AI budgets reached about $7M in 2026, up from $1.2M in 2024 (FinOps Foundation)."
+          },
+          {
+            "lead": "Release pace",
+            "text": "a notable new model roughly every 12 days in 2025; October 2026 alone brought GPT-6, Gemini 4 Argon and Claude Haiku 5.5."
+          }
+        ],
+        "why": "Model choice is no longer the differentiator. Value comes from what customers build with it and how they control the cost.",
+        "know": [
+          "Most figures here are from June 2026.",
+          "Agents use many more tokens per task than chat, which pushes bills up."
+        ],
+        "qa": [
+          {
+            "q": "How do companies control AI cost?",
+            "a": "Route simple tasks to small cheap models, cache results, measure cost per outcome."
+          },
+          {
+            "q": "Should we wait for the next model?",
+            "a": "No. Build so you can swap models easily."
+          }
+        ]
+      }
     },
     {
       "id": "free-era-ends",
@@ -2515,7 +3606,48 @@
           "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
         }
       ],
-      "fit": "whole"
+      "fit": "whole",
+      "deep": {
+        "plain": "For a few years the best AI was free or nearly free, because companies were racing for users. Running these models is expensive, so the best versions are moving behind paywalls, with tiers from a few euros to over a hundred a month. Prices are being worked out in public, and they keep changing.",
+        "terms": [
+          {
+            "term": "Freemium",
+            "def": "A free basic tier with paid premium tiers."
+          },
+          {
+            "term": "Usage limits",
+            "def": "Caps on how much you can use a model within a plan."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Free tiers shrink",
+            "text": "On 9 October 2026 Google limited free Gemini users to Flash Lite; Pro sits behind paid plans."
+          },
+          {
+            "lead": "Tiered pricing",
+            "text": "Google’s AI plans range from $4.99 (AI Plus) to $99.99 (AI Ultra) a month."
+          },
+          {
+            "lead": "Pushback works",
+            "text": "On 29 October OpenAI reversed a planned cut to ChatGPT Pro usage limits after user complaints."
+          }
+        ],
+        "why": "Customers need a clear view of what AI really costs per user and per task before scaling, not after.",
+        "know": [
+          "Consumer pricing and enterprise pricing differ; businesses usually pay per user or per usage under contracts."
+        ],
+        "qa": [
+          {
+            "q": "Will AI get more expensive?",
+            "a": "Per task it keeps getting cheaper; access to the very best models is what’s being priced up."
+          },
+          {
+            "q": "What should a company do?",
+            "a": "Know the real cost per user and per task before scaling."
+          }
+        ]
+      }
     },
     {
       "id": "saas-kodak",
@@ -2603,7 +3735,52 @@
           "title": "Pulse / CustomerThink: AI is killing seat-based pricing",
           "url": "https://www.pulse.bot/ai/news/ai-is-killing-seat-based-pricing-what-cx-software-buyers-should-do-next-34ed157f-dce9-4041-a698-1678c8abc295/"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Kodak invented the digital camera and still went bust, because digital destroyed the film business it lived on. Software companies built their business on charging per user, per seat. If an AI agent does the work of ten users, the customer needs fewer seats. So software vendors are shifting to charging per use or per result, and that challenges a 20-year business model.",
+        "terms": [
+          {
+            "term": "SaaS",
+            "def": "Software as a service: software rented over the internet, usually per user per month."
+          },
+          {
+            "term": "Per-seat pricing",
+            "def": "Paying for each named user."
+          },
+          {
+            "term": "Outcome-based pricing",
+            "def": "Paying per result, such as per resolved customer conversation."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Per-seat is shrinking",
+            "text": "Software companies using pure per-seat pricing fell from 21% to 15% in one year; hybrid pricing (seats plus usage) rose from 27% to 41% (Growth Unhinged survey of 240 companies, 2025)."
+          },
+          {
+            "lead": "Outcome pricing exists",
+            "text": "Intercom charges $0.99 per conversation its AI resolves."
+          },
+          {
+            "lead": "Still early",
+            "text": "Outcome-based pricing is used by about 5% of companies, but a quarter expect to move to it by 2028."
+          }
+        ],
+        "why": "How customers buy software is shifting from licences to outcomes. Our offers and pricing need to follow.",
+        "know": [
+          "The survey is from 2025; treat trends as direction, not precise current shares."
+        ],
+        "qa": [
+          {
+            "q": "Why should a buyer care?",
+            "a": "Contracts and budgets change: more variable costs, harder forecasting, but payment tied to value."
+          },
+          {
+            "q": "Will SaaS companies die?",
+            "a": "Some will adapt; the business model, not the software, is what’s under pressure."
+          }
+        ]
+      }
     },
     {
       "id": "show-money",
@@ -2698,7 +3875,49 @@
           "title": "Second Talent: McKinsey 2026 survey data",
           "url": "https://secondtalent.com/resources/ai-adoption-in-enterprise-statistics"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "After years of excitement, finance chiefs are asking a simple question: where is the return? Many companies rolled out AI tools widely but can’t show a financial result. The ones that do see results redesigned whole processes and own their data; the ones that don’t measured success by how many people opened a chatbot.",
+        "terms": [
+          {
+            "term": "EBIT",
+            "def": "Earnings before interest and taxes, a standard measure of operating profit."
+          },
+          {
+            "term": "ROI",
+            "def": "Return on investment."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Profit impact is flat",
+            "text": "McKinsey found the share of firms seeing any EBIT impact from AI moved from 39% to 37%, 2025 to 2026."
+          },
+          {
+            "lead": "June 2026 figures (not re-checked)",
+            "text": "MIT (2025) reported 95% of enterprises saw no measurable financial return from GenAI; Gartner expects over 40% of agentic AI projects to be cancelled by 2027 for poor ROI."
+          },
+          {
+            "lead": "Two strategies, same tech",
+            "text": "Klarna pulled back from replacing staff with AI; JPMorgan reports roughly paying back its AI investment each year."
+          }
+        ],
+        "why": "Customers will buy outcomes they can measure. Lead with the business case, not the technology.",
+        "know": [
+          "The MIT 95% figure has been widely debated for its method; treat it with care.",
+          "Productivity gains often show up as quality or speed before they show up in profit."
+        ],
+        "qa": [
+          {
+            "q": "Is AI failing then?",
+            "a": "Tools alone don’t pay off; process redesign does."
+          },
+          {
+            "q": "How should we talk about ROI?",
+            "a": "Lead with a measurable business outcome, not with the technology."
+          }
+        ]
+      }
     },
     {
       "id": "savings-real",
@@ -2801,7 +4020,45 @@
           "url": "https://www.artificialintelligence-news.com/"
         }
       ],
-      "fit": "whole"
+      "fit": "whole",
+      "deep": {
+        "plain": "This is the counterweight to the ROI doubts. Where AI is tied to a specific process, such as customer service, back-office work or software development, some large companies now publish hard savings targets. These give everyone else a benchmark.",
+        "terms": [
+          {
+            "term": "Resolution rate",
+            "def": "Share of customer requests solved without a human."
+          }
+        ],
+        "going": [
+          {
+            "lead": "",
+            "text": "Deutsche Telekom is targeting €2.5B of savings from AI (October 2026)."
+          },
+          {
+            "lead": "",
+            "text": "UnitedHealthcare expanded its AI assistant on the back of a reported 90% resolution rate."
+          },
+          {
+            "lead": "JPMorgan (June 2026)",
+            "text": "about $2B invested and about $2B in annual value."
+          }
+        ],
+        "why": "Customers now have reference points. We can benchmark their ambitions against real targets.",
+        "know": [
+          "Company-reported savings are targets or claims, not audited results.",
+          "The JPMorgan figure is from June 2026."
+        ],
+        "qa": [
+          {
+            "q": "Why do these succeed where others don’t?",
+            "a": "Clear process, clear metric, executive ownership."
+          },
+          {
+            "q": "Can smaller companies get similar results?",
+            "a": "Proportionally, yes, if they pick one process and measure it properly."
+          }
+        ]
+      }
     },
     {
       "id": "ai-stack",
@@ -2886,7 +4143,52 @@
           "title": "Tech AI Magazine: October 2026 AI stories",
           "url": "https://www.techaimag.com/ai-news/tracking-october-ai-in-2026-15-stories-you-actually-need-to-know"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "AI runs on a stack of layers: chips, cloud data centres, models, and the apps people use. A small number of companies control each layer, and some control several. Oddly, rivals now also sell each other’s products: one company’s model can be offered on a competitor’s cloud. Who controls which layer decides who makes the money and who can lock customers in.",
+        "terms": [
+          {
+            "term": "GPU",
+            "def": "Graphics processing unit, the chip type that dominates AI training and inference."
+          },
+          {
+            "term": "Hyperscaler",
+            "def": "A giant cloud provider such as AWS, Microsoft Azure or Google Cloud."
+          },
+          {
+            "term": "Lock-in",
+            "def": "When switching provider becomes too costly or hard."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Chip dominance (June 2026)",
+            "text": "Nvidia held about 92% of discrete GPU market share in H1 2025 and peaked above $5T in market value."
+          },
+          {
+            "lead": "Everyone builds their own chips",
+            "text": "Google, Amazon, Microsoft, Meta and Apple all design custom silicon to reduce dependence on Nvidia."
+          },
+          {
+            "lead": "Frenemies",
+            "text": "on 21 October 2026 OpenAI models entered private preview on Google Cloud for selected enterprises."
+          }
+        ],
+        "why": "Customers want choice and no lock-in. Being model-neutral is a selling point.",
+        "know": [
+          "Market share figures are from June 2026."
+        ],
+        "qa": [
+          {
+            "q": "Why does this matter to a customer?",
+            "a": "Concentration means pricing power and lock-in risk; model-neutral designs keep options open."
+          },
+          {
+            "q": "Will Nvidia keep its lead?",
+            "a": "It’s strong but custom chips and China’s domestic chips are eroding it in places."
+          }
+        ]
+      }
     },
     {
       "id": "power-wall",
@@ -3023,7 +4325,57 @@
           "title": "NewMarketPitch: SemiAnalysis count",
           "url": "https://newmarketpitch.com/blogs/news/data-center-states-blocking"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "You can order chips, but you can’t order a grid connection. AI data centres need as much electricity as small cities, and power grids can’t connect them fast enough. Local communities increasingly push back on noise, water use and land. So the limit on AI growth is shifting from chips to power and permission.",
+        "terms": [
+          {
+            "term": "Grid connection queue",
+            "def": "The waiting list to connect a new large user to the electricity network."
+          },
+          {
+            "term": "Moratorium",
+            "def": "A temporary ban, here on approving new data centres."
+          },
+          {
+            "term": "Behind-the-meter power",
+            "def": "Generating electricity on site rather than drawing from the grid."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Demand is surging",
+            "text": "Data centre electricity use grew 17% in 2025; AI-focused data centres grew 50% (IEA)."
+          },
+          {
+            "lead": "Local resistance is costly",
+            "text": "Data Center Watch counts $198B of US projects blocked or delayed by local opposition in H1 2026 ($130B in Q1, $68B in Q2) and 843 local opposition groups across 49 states."
+          },
+          {
+            "lead": "Moratoriums spread",
+            "text": "GatherGov counted 270 US jurisdictions adopting a data centre moratorium from January to early September 2026."
+          },
+          {
+            "lead": "Workarounds",
+            "text": "operators turn to on-site gas, fuel cells and nuclear deals; in the UK, grid queues hold back build-out."
+          }
+        ],
+        "why": "Energy and location now shape where and how fast AI scales. In Europe, grid access is a competitive factor.",
+        "know": [
+          "Moratorium counts vary widely between trackers (NLC counted 76) because they measure different things.",
+          "In Europe, grid access is now a competitive factor for where AI capacity lands."
+        ],
+        "qa": [
+          {
+            "q": "Is AI bad for the climate?",
+            "a": "It adds significant demand; the impact depends on the energy mix and efficiency gains."
+          },
+          {
+            "q": "What does it mean for our customers?",
+            "a": "Location, energy cost and sustainability reporting become part of AI decisions."
+          }
+        ]
+      }
     },
     {
       "id": "memory-supercycle",
@@ -3132,7 +4484,49 @@
           "title": "IDC: Memory crisis reshaping PC and smartphone outlook",
           "url": "https://www.idc.com/?p=109987"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "AI chips need huge amounts of very fast memory sitting right next to them. Memory factories can’t expand overnight, so AI data centres are buying up supply. The result: record profits for memory makers, mainly in South Korea, and shortages and higher prices for everything else that uses memory: phones, laptops, cars, connected devices.",
+        "terms": [
+          {
+            "term": "DRAM / HBM",
+            "def": "Main memory chips; HBM (high-bandwidth memory) is the stacked, very fast type used next to AI chips."
+          },
+          {
+            "term": "Supercycle",
+            "def": "A long period where demand outstrips supply and prices stay high."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Record margins",
+            "text": "SK hynix reported an 80% operating margin in Q3 2026 on record revenue of ₩104.6 trillion, and expects demand to exceed supply through 2030."
+          },
+          {
+            "lead": "Record profits",
+            "text": "Samsung’s Q3 2026 operating profit was ₩107.4 trillion, the first time a tech company passed ₩100 trillion in a quarter. Almost all came from chips; its mobile division slipped to a loss."
+          },
+          {
+            "lead": "Devices suffer",
+            "text": "IDC forecasts 2026 smartphone shipments −12.9% and PCs −11.3%, both blamed on the memory shortage, and average smartphone prices up 14% to a record $523."
+          }
+        ],
+        "why": "Laptops, phones and connected devices our customers buy will cost more or ship with less. Plan hardware budgets and refresh cycles accordingly.",
+        "know": [
+          "Memory is a cyclical industry; supercycles have ended abruptly before.",
+          "Effects differ by device segment; premium devices are less affected than budget ones."
+        ],
+        "qa": [
+          {
+            "q": "Why does AI affect my laptop price?",
+            "a": "The same factories make memory for both, and AI customers pay more."
+          },
+          {
+            "q": "What should companies plan for?",
+            "a": "Higher hardware costs and longer refresh cycles in 2026–27."
+          }
+        ]
+      }
     },
     {
       "id": "china-stack",
@@ -3257,7 +4651,53 @@
           "title": "Wing VC: China’s open-weight takeover",
           "url": "https://www.wing.vc/content/chinas-open-weight-takeover"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Because of US export controls, China can’t freely buy the best American AI chips. Instead it’s building its own full stack: its own chips, its own data centres and its own models. Chinese labs release powerful models openly and cheaply, so developers worldwide use them heavily. The world is moving toward two parallel AI ecosystems.",
+        "terms": [
+          {
+            "term": "Export controls",
+            "def": "Government rules restricting the sale of technology to certain countries."
+          },
+          {
+            "term": "OpenRouter",
+            "def": "A marketplace where developers route requests to many AI models, popular with cost-sensitive users."
+          },
+          {
+            "term": "Open-weight model",
+            "def": "See ‘Open Models Close the Gap’."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Chinese models dominate open traffic",
+            "text": "In one September 2026 week, 69% of tokens on OpenRouter came from Chinese labs."
+          },
+          {
+            "lead": "Close to the frontier",
+            "text": "Epoch AI estimated in May 2026 that the best open-weight models trail the closed frontier by about four months."
+          },
+          {
+            "lead": "Domestic chips rise",
+            "text": "TrendForce expects domestic suppliers’ share of China’s AI server chip market to reach 56% in 2026, up from 46%, with foreign share falling to 21%. Bernstein expects Nvidia’s China share to fall to about 8% from about 40%."
+          }
+        ],
+        "why": "Near-frontier AI is becoming cheap and open. Customers will face real choices on model origin, data sovereignty and compliance.",
+        "know": [
+          "Volume is not money: open models carry many tokens but a small share of spend, which still goes mostly to US closed labs.",
+          "OpenRouter is a developer marketplace, not the whole market."
+        ],
+        "qa": [
+          {
+            "q": "Can European companies use Chinese models?",
+            "a": "Technically yes; legally and reputationally it depends on sector, data and policy."
+          },
+          {
+            "q": "Is China ahead?",
+            "a": "Not at the very frontier, but close and much cheaper in open models."
+          }
+        ]
+      }
     },
     {
       "id": "dc-building",
@@ -3344,7 +4784,49 @@
           "title": "HelloGrowth: Google AI news October 2026",
           "url": "https://hellogrowth.ai/en/blog/google-ai-news-october-2026"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Not all AI has to run in a giant cloud data centre. Smaller, specialised models can run on a company’s own servers or even on laptops and phones. That keeps sensitive data in-house, cuts cost and works offline. For many everyday tasks, a small local model is good enough.",
+        "terms": [
+          {
+            "term": "Small language model (SLM)",
+            "def": "A compact model trained or tuned for specific tasks."
+          },
+          {
+            "term": "On-premise / edge AI",
+            "def": "AI running on your own hardware or devices rather than in the cloud."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Gartner (June 2026)",
+            "text": "organisations will use small task-specific models three times more than general LLMs by 2027."
+          },
+          {
+            "lead": "Cost (June 2026)",
+            "text": "moving inference from cloud to an on-premise small model can cut cost by about 90%."
+          },
+          {
+            "lead": "Real example",
+            "text": "in October 2026 Google shipped offline AI meeting notes on Mac, with no cloud involved."
+          }
+        ],
+        "why": "Customers with sensitive data can run AI locally. Privacy and sovereignty become arguments for adoption, not against it.",
+        "know": [
+          "Most figures here are from June 2026.",
+          "Running your own AI means owning updates, security and hardware; it’s not free."
+        ],
+        "qa": [
+          {
+            "q": "When is local AI the right choice?",
+            "a": "Sensitive data, predictable high volume, low-latency or offline needs."
+          },
+          {
+            "q": "Does it replace the cloud?",
+            "a": "No, it complements it. Hard tasks still go to big cloud models."
+          }
+        ]
+      }
     },
     {
       "id": "compute-geopolitics",
@@ -3441,7 +4923,49 @@
           "title": "Anthropic: Fable and Mythos access",
           "url": "https://www.anthropic.com/news/fable-mythos-access"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Access to the most powerful AI now depends on governments as well as on vendors. Countries control chip exports, data rules and which models may be used. In 2026 a US export rule briefly cut off access to two frontier models. Countries and companies are responding by seeking ‘sovereignty’: AI they control themselves.",
+        "terms": [
+          {
+            "term": "Sovereign AI",
+            "def": "AI capability owned or controlled by a country (or region)."
+          },
+          {
+            "term": "Digital sovereignty",
+            "def": "Reducing dependence on foreign technology providers for critical systems and data."
+          }
+        ],
+        "going": [
+          {
+            "lead": "A real cut-off",
+            "text": "US export controls suspended access to two frontier AI models for 19 days (12 June to 1 July 2026); Anthropic restored access after the controls were lifted."
+          },
+          {
+            "lead": "Gartner on sovereignty",
+            "text": "by 2030, more than 75% of organisations outside the US will adopt digital sovereignty strategies (sovereign tech is #8 on its 2027 list). By 2027, 35% of countries will be locked into region-specific AI platforms. Its Futures Lab lists AI sovereignty among seven disruptions for 2025–2030."
+          },
+          {
+            "lead": "Concentration (June 2026)",
+            "text": "the US holds about 55% of global hyperscale AI compute; Microsoft has committed $15.2B to the UAE through 2029."
+          }
+        ],
+        "why": "Customers need resilience: more than one model, more than one provider, and a plan for when access changes.",
+        "know": [
+          "Sovereignty is about the whole stack (chips, cloud, models, data), not just where data is stored.",
+          "Disclosure: Anthropic makes Claude, which helped prepare this text."
+        ],
+        "qa": [
+          {
+            "q": "What should companies do?",
+            "a": "Avoid single-provider dependence: more than one model, more than one cloud, and an exit plan."
+          },
+          {
+            "q": "Is Europe sovereign in AI?",
+            "a": "Not yet; it’s building options (see ‘Europe Has the Rules. Now It Wants the Models.’)."
+          }
+        ]
+      }
     },
     {
       "id": "europe-rules",
@@ -3542,7 +5066,57 @@
           "title": "Deutsche Telekom: Expands AI factory in Munich",
           "url": "https://www.telekom.com/en/newsroom/latest-updates/media-information/2026/11/ai-demand-rises-deutsche-telekom-expands-ai-factory-in-munich"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "The EU passed the world’s first broad AI law, the AI Act. In 2026 it gave companies more time for the strictest parts, but kept other rules on schedule. At the same time Europe is putting record money into its own AI models and computing, so European customers have local options.",
+        "terms": [
+          {
+            "term": "EU AI Act",
+            "def": "EU law regulating AI by risk level: banned, high-risk, limited-risk."
+          },
+          {
+            "term": "Digital Omnibus",
+            "def": "2026 EU package that simplified and delayed parts of digital rules, including AI Act deadlines."
+          },
+          {
+            "term": "AI factory",
+            "def": "EU-backed data centre offering AI computing to companies and researchers."
+          }
+        ],
+        "going": [
+          {
+            "lead": "New dates",
+            "text": "High-risk obligations for stand-alone AI systems now apply from 2 December 2027 (August 2028 for AI inside regulated products). The Omnibus entered into force on 27 July 2026."
+          },
+          {
+            "lead": "Delayed is not cancelled",
+            "text": "Transparency and general-purpose AI rules stayed on schedule."
+          },
+          {
+            "lead": "European champions",
+            "text": "Mistral raised €3B at a valuation above €21B in September 2026, the largest equity raise by a European tech company; it says it’s on track for $1B in annual recurring revenue."
+          },
+          {
+            "lead": "Compute demand",
+            "text": "Deutsche Telekom’s Munich AI factory sold out in seven months and is expanding to 20 MW; customers include Siemens and Daimler Trucks."
+          }
+        ],
+        "why": "Delayed is not cancelled: transparency and general-purpose AI rules stayed on schedule. And sovereign European options now exist for customers who need them.",
+        "know": [
+          "Mistral is still small next to US labs.",
+          "Regulation can be a selling point: compliant, auditable AI is what many European customers need."
+        ],
+        "qa": [
+          {
+            "q": "Does the delay mean we can relax?",
+            "a": "No; preparation takes time and some rules already apply."
+          },
+          {
+            "q": "Is European AI competitive?",
+            "a": "For many enterprise needs, yes; at the very frontier, US labs still lead."
+          }
+        ]
+      }
     },
     {
       "id": "ai-vs-ai",
@@ -3658,7 +5232,57 @@
           "title": "OpenAI: A thousand fewer paths to root",
           "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Finding security holes in software used to take skilled humans weeks. AI can now find and even exploit them on its own, at machine speed. The good news: defenders got these tools first. The bad news: attackers will get similar tools soon. Security is becoming a contest between AIs.",
+        "terms": [
+          {
+            "term": "Zero-day",
+            "def": "A software flaw unknown to the vendor, so no fix exists yet."
+          },
+          {
+            "term": "Exploit",
+            "def": "Code that takes advantage of a flaw to gain access or control."
+          },
+          {
+            "term": "Root / privilege escalation",
+            "def": "Gaining full control of a system."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Defensive programmes",
+            "text": "Anthropic’s Claude Mythos Preview found thousands of zero-day vulnerabilities across every major operating system and browser and was restricted to a defensive programme, Project Glasswing (April 2026), with partners such as AWS, Apple, Google, Microsoft and CrowdStrike."
+          },
+          {
+            "lead": "OpenAI followed",
+            "text": "GPT-6 Cyber, released to vetted defenders on 5 November 2026: 2,308 candidate Linux kernel findings, 1,724 reproduced, 948 working root exploits (588 for previously unknown flaws), plus 81 high-severity Firefox flaws."
+          },
+          {
+            "lead": "Attackers aren’t far behind",
+            "text": "Epoch AI estimates open-weight models trail closed ones by 6–7 months in cyber capabilities."
+          },
+          {
+            "lead": "Faster fixing is next",
+            "text": "Gartner’s 2027 list includes autonomous exposure remediation, forecasting containment within 48 hours rather than weeks by 2031."
+          }
+        ],
+        "why": "Patch cycles built for human-speed discovery no longer hold. Customers will ask how fast we find and fix flaws, and how we verify what is real.",
+        "know": [
+          "Finding flaws is faster than fixing them; patching is the bottleneck.",
+          "Disclosure: Anthropic makes Claude, which helped prepare this text. Deepfake fraud cost $1.65B in 2025 (Surfshark, June 2026)."
+        ],
+        "qa": [
+          {
+            "q": "Should we be worried?",
+            "a": "Yes, but the same tools help defenders. Speed of patching becomes critical."
+          },
+          {
+            "q": "What do customers ask?",
+            "a": "How fast do you find and fix flaws, and how do you verify what’s real?"
+          }
+        ]
+      }
     },
     {
       "id": "doctor-missed",
@@ -3753,7 +5377,46 @@
           "title": "AI News: Microsoft AI diagnostic tool",
           "url": "https://www.artificialintelligence-news.com/"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "AI can now read medical images and records and spot diseases, sometimes better than doctors in tests. The bigger story is reach: in places with few specialists, AI can screen thousands of patients that would otherwise never be seen. The same pattern applies to any field where experts are scarce.",
+        "terms": [
+          {
+            "term": "Diagnostic AI",
+            "def": "AI that detects disease from images, tests or records."
+          },
+          {
+            "term": "Screening",
+            "def": "Testing many people for a condition before symptoms appear."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Headline result",
+            "text": "in October 2026 a Microsoft AI diagnostic tool outperformed doctors in clinical tests (reported; headline-level evidence)."
+          },
+          {
+            "lead": "At scale (June 2026)",
+            "text": "NHS AI diabetic retinopathy detection at 94%; Wadhwani AI TB detection at 96% accuracy across 2,000+ clinics in India."
+          }
+        ],
+        "why": "Expertise can scale to places that never had it. The same pattern applies in every field where specialists are scarce.",
+        "know": [
+          "Systems trained on Western data underperform elsewhere: the data gap is an equity gap.",
+          "Beating doctors in a test is different from improving patient outcomes in practice.",
+          "The evidence here is mostly from June 2026."
+        ],
+        "qa": [
+          {
+            "q": "Will AI replace doctors?",
+            "a": "It supports them, especially in screening; diagnosis and treatment decisions stay with clinicians."
+          },
+          {
+            "q": "Why does this one matter?",
+            "a": "It’s the most human example of AI scaling scarce expertise."
+          }
+        ]
+      }
     },
     {
       "id": "every-agent-needs-a-badge",
@@ -3835,7 +5498,52 @@
           "title": "Gartner: Strategic Predictions for 2027",
           "url": "https://www.gartner.com/en/newsroom/press-releases/2026-09-15-gartner-unveils-top-strategic-predictions-for-2027-and-beyond"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "When an employee logs in, the company knows who they are and what they’re allowed to do. AI agents now send emails, move money and log into systems, but often using borrowed human passwords or broad technical accounts. That’s like giving a temp worker your own badge. Gartner says each agent needs its own identity, limits and audit trail, and a way to switch it off.",
+        "terms": [
+          {
+            "term": "Identity and access management (IAM)",
+            "def": "Systems that control who can access what."
+          },
+          {
+            "term": "Non-human / machine identity",
+            "def": "Credentials for software, bots and agents rather than people."
+          },
+          {
+            "term": "Least privilege",
+            "def": "Giving each identity only the access it needs."
+          }
+        ],
+        "going": [
+          {
+            "lead": "Gartner’s forecast",
+            "text": "by 2028, 25% of enterprise security breaches will trace back to AI agent abuse. AI agent identity is #6 on its 2027 list."
+          },
+          {
+            "lead": "The cause",
+            "text": "unmanaged machine privileges and legacy credential practices."
+          },
+          {
+            "lead": "The fix",
+            "text": "dynamic, policy-controlled access instead of static credentials; every agent gets its own identity, limits and audit trail, and can be revoked."
+          }
+        ],
+        "why": "Customers deploying agents will need answers on who an agent acts for, what it may touch, and how to switch it off.",
+        "know": [
+          "This is a forecast; today’s breach data doesn’t yet separate agent-caused incidents well."
+        ],
+        "qa": [
+          {
+            "q": "Who is responsible when an agent makes a mistake?",
+            "a": "The organisation and the person it acts for; that’s why traceable identities matter."
+          },
+          {
+            "q": "How does this link to other trends?",
+            "a": "‘AI vs AI’: the attack surface grows as fast as the agent fleet."
+          }
+        ]
+      }
     },
     {
       "id": "ai-takes-on-encryption",
@@ -3923,7 +5631,53 @@
           "title": "SecurityWeek: DeepMind and RSA-1024",
           "url": "https://securityweek.com/google-deepminds-ai-agents-make-1024-bit-rsa-keys-cheaper-to-attack"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "Encryption protects everything from bank transfers to emails. One widely used method, RSA, relies on the fact that splitting a very large number into its factors is extremely hard. Google DeepMind’s AI agents, working with human cryptographers, found new and faster ways to attack an old, shorter version of it within weeks. Today’s standard keys are still safe, but the way security research is done has changed.",
+        "terms": [
+          {
+            "term": "RSA",
+            "def": "A public-key encryption method based on the difficulty of factoring large numbers."
+          },
+          {
+            "term": "Key length (1024-bit, 2048-bit)",
+            "def": "Longer keys are much harder to break; 1024-bit is considered obsolete."
+          },
+          {
+            "term": "Post-quantum cryptography",
+            "def": "New encryption designed to resist future quantum computers."
+          }
+        ],
+        "going": [
+          {
+            "lead": "The result (6 November 2026)",
+            "text": "an AI-found signature-forgery method about 1,600x better in theory than the previous best for 1024-bit RSA, and a batch method making each additional 1024-bit key about 30x cheaper to factor."
+          },
+          {
+            "lead": "Efficiency gain",
+            "text": "when the agents re-ran a known attack, it used 3.5x less CPU time (391 vs 1,380 core-years)."
+          },
+          {
+            "lead": "How",
+            "text": "two cooperating AI agents designed, coded and ran the attack with light human supervision, working with cryptographers from UC San Diego and Inria."
+          }
+        ],
+        "why": "Security assumptions now need regular re-testing at machine speed. Customers still running legacy keys have a reason to retire them.",
+        "know": [
+          "Only obsolete 1024-bit RSA is affected. DeepMind says 2048-bit and larger keys remain secure.",
+          "The speed-ups are theoretical estimates."
+        ],
+        "qa": [
+          {
+            "q": "Is my bank account at risk?",
+            "a": "No; modern systems use stronger keys. Legacy systems with old keys should be retired."
+          },
+          {
+            "q": "What’s the lesson?",
+            "a": "Security assumptions need re-testing at machine speed, and migration plans (including post-quantum) matter."
+          }
+        ]
+      }
     },
     {
       "id": "ai-free-is-the-new-organic",
@@ -4233,7 +5987,57 @@
           "title": "Gartner: Strategic Predictions for 2026",
           "url": "https://www.gartner.com/en/articles/strategic-predictions-for-2026"
         }
-      ]
+      ],
+      "deep": {
+        "plain": "When anything can be generated by AI, proof that a human made something becomes valuable. Just as shoppers pay more for ‘organic’ or ‘gluten-free’, people may pay more for content certified as human-made. Companies also need to know which of their own data is real and which is AI-generated, or their future AI will learn from its own output.",
+        "terms": [
+          {
+            "term": "Provenance",
+            "def": "A record of where content came from and how it was made."
+          },
+          {
+            "term": "Watermark",
+            "def": "A hidden marker in content showing it was AI-generated; can be removed or broken."
+          },
+          {
+            "term": "Zero-trust data governance",
+            "def": "Treating no data as trustworthy by default; verifying origin before use."
+          }
+        ],
+        "going": [
+          {
+            "lead": "",
+            "text": "Gartner Futures Lab lists the ‘AI-free’ trust revolution among its 7 Disruptions You Might Not See Coming: 2025–2030 (Daryl Plummer)."
+          },
+          {
+            "lead": "Data governance forecast",
+            "text": "by 2028, 50% of organisations will adopt zero-trust data governance as unverified AI-generated data grows (Gartner, January 2026). Gartner also expects some regions to require verification of ‘AI-free’ data, with rules differing by jurisdiction."
+          },
+          {
+            "lead": "Skills forecast",
+            "text": "through 2026, 50% of global organisations will require ‘AI-free’ skills assessments as critical thinking atrophies (Gartner Strategic Predictions 2026)."
+          },
+          {
+            "lead": "Model collapse risk",
+            "text": "if future models train mostly on AI-generated content, quality and variety degrade; verified human data becomes an asset."
+          }
+        ],
+        "why": "Customers will want to know what was made by people, what by AI, and from which data. Provenance becomes part of the product.",
+        "know": [
+          "Watermarks are easy to break, so Gartner expects certification by trusted parties.",
+          "Flip side: once some content is certified AI-free, people may assume everything else is AI."
+        ],
+        "qa": [
+          {
+            "q": "Will people really pay more for AI-free?",
+            "a": "In some markets (creative work, education, news, luxury), likely; elsewhere convenience wins."
+          },
+          {
+            "q": "What should companies do now?",
+            "a": "Tag AI-generated content and data, and track provenance of what feeds their AI."
+          }
+        ]
+      }
     }
   ],
   "_note": "Content from the presenter briefing (39 trends). Figures as stated by the sources and rated in the briefing. Presenter notes (talking points, likely questions) are kept for the presenter only and are not shown on screen."

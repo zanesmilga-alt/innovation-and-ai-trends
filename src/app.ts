@@ -175,13 +175,13 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         </header>
         <h2 class="story-title">${esc(s.title)}</h2>
         <p class="story-tagline">${esc(s.hook)}</p>
-        ${onStage ? '' : `
         <div class="play-row">
+          ${onStage ? '' : `
           <button class="play-btn" type="button" id="play-btn">
             <span class="play-dot" aria-hidden="true"></span> ${played.has(s.id) ? 'Play again' : 'Play the game'}
-          </button>
+          </button>`}
+          ${s.deep ? '<button class="deeper-btn" type="button" id="deeper-btn">Go deeper <span aria-hidden="true">→</span></button>' : ''}
         </div>
-        `}
         ${s.why && !hideAll ? `
         <div class="why">
           <h3 class="mono">Why it matters for our customers</h3>
@@ -209,6 +209,8 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
         <p class="sources mono">${hideAll ? '' : sourcesHtml}</p>
         <p class="keys mono">← → next / previous · Esc map · ? keys</p>
       </footer>`;
+    closeDeep();
+    storyBody.querySelector('#deeper-btn')?.addEventListener('click', () => openDeep(s));
     storyBody.querySelector('#play-btn')?.addEventListener('click', () => openGame(s));
     storyBody.querySelectorAll<HTMLElement>('.st-stats .stat').forEach((el, i) =>
       el.addEventListener('click', () => (el.dataset.hidden ? openGame(s) : openDetail(s.id, i))),
@@ -257,6 +259,7 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
   }
 
   function closeStory() {
+    closeDeep();
     if (!current) return;
     closeGame();
     current = null;
@@ -302,6 +305,40 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     detail.hidden = false;
     detail.querySelector('#detail-x')!.addEventListener('click', closeDetail);
   }
+  // ---------- Go deeper: the longer read, in a panel that slides in from the right ----------
+  const deepSide = document.createElement('aside');
+  deepSide.className = 'deep-side';
+  deepSide.hidden = true;
+  deepSide.setAttribute('aria-label', 'Go deeper');
+  document.body.appendChild(deepSide);
+  function openDeep(s: Signal) {
+    const d = s.deep;
+    if (!d) return;
+    const sec = (title: string, body: string, open = false) =>
+      body ? `<details class="deep-sec"${open ? ' open' : ''}><summary>${title}</summary><div class="deep-body">${body}</div></details>` : '';
+    deepSide.innerHTML = `
+      <div class="deep-head">
+        <p class="eyebrow mono">Go deeper</p>
+        <button class="detail-close mono" type="button" id="deep-x">Close · Esc</button>
+        <h2>${esc(s.title)}</h2>
+      </div>
+      <div class="deep-scroll">
+        ${sec('In plain words', `<p>${esc(d.plain)}</p>`, true)}
+        ${sec('What is really going on', `<ul>${d.going.map((g) => `<li>${g.lead ? `<strong>${esc(g.lead)}.</strong> ` : ''}${esc(g.text)}</li>`).join('')}</ul>${d.why ? `<p class="deep-why"><strong>Why it matters for customers.</strong> ${esc(d.why)}</p>` : ''}`)}
+        ${sec('Key terms', `<dl>${d.terms.map((t) => `<dt>${esc(t.term)}</dt><dd>${esc(t.def)}</dd>`).join('')}</dl>`)}
+        ${sec('Worth knowing', `<ul>${d.know.map((k) => `<li>${esc(k)}</li>`).join('')}</ul>`)}
+        ${sec('Common questions', d.qa.map((x) => `<p class="deep-q">${esc(x.q)}</p><p>${esc(x.a)}</p>`).join(''))}
+      </div>`;
+    deepSide.hidden = false;
+    requestAnimationFrame(() => deepSide.classList.add('open'));
+    deepSide.querySelector('#deep-x')!.addEventListener('click', closeDeep);
+  }
+  function closeDeep() {
+    deepSide.classList.remove('open');
+    deepSide.hidden = true;
+    deepSide.innerHTML = '';
+  }
+
   function closeDetail() {
     detail.hidden = true;
     detail.innerHTML = '';
@@ -455,7 +492,8 @@ export async function mountApp(root: HTMLElement, mode: Mode): Promise<void> {
     if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA')) return;
     switch (e.key) {
       case 'Escape':
-        if (!detail.hidden) closeDetail();
+        if (!deepSide.hidden) closeDeep();
+        else if (!detail.hidden) closeDetail();
         else if (!help.hidden) toggleHelp(false);
         else if (gameOpen) closeGame();
         else closeStory();
