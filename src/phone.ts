@@ -12,6 +12,9 @@ import {
 } from './protocol';
 import type { Signal } from './types';
 
+/** Trends shown on the big screen but not offered in the heart pick. */
+const NOT_IN_HEART_LIST = new Set(['ai-takes-on-encryption', 'every-agent-needs-a-badge', 'europe-rules', 'compute-geopolitics']);
+
 interface Config {
   warmup: { question: string; options: string[] };
 }
@@ -165,7 +168,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
         ${acts.filter((a) => signals.some((x) => x.act === a.id)).map((a) => `
           <h2 class="heart-act mono">${esc(a.lens)}</h2>
           <ul class="hearts">
-            ${signals.filter((x) => x.act === a.id).map((s) => {
+            ${signals.filter((x) => x.act === a.id && !NOT_IN_HEART_LIST.has(x.id)).map((s) => {
               const on = you.hearts.includes(s.id);
               return `<li><button class="heart-row ${on ? 'on' : ''}" data-heart="${esc(s.id)}" type="button" aria-pressed="${on}">
                 <span class="heart" aria-hidden="true">${on ? '♥' : '♡'}</span><span class="ht"><span>${esc(s.title)}</span></span></button></li>`;
