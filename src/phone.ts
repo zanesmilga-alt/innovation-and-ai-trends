@@ -13,7 +13,7 @@ import {
 import type { Signal } from './types';
 
 /** Trends shown on the big screen but not offered in the heart pick. */
-const NOT_IN_HEART_LIST = new Set(['ai-takes-on-encryption', 'every-agent-needs-a-badge', 'europe-rules', 'compute-geopolitics']);
+const NOT_IN_HEART_LIST = new Set(['ai-takes-on-encryption', 'every-agent-needs-a-badge', 'europe-rules', 'compute-geopolitics', 'ai-vs-ai', 'china-stack']);
 
 interface Config {
   warmup: { question: string; options: string[] };
