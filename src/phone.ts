@@ -210,7 +210,7 @@ export async function mountPhone(root: HTMLElement, code: string | null): Promis
       return `
         <div class="centre">
           <h1 class="huge">Thanks</h1>
-          <p class="lede">Keep exploring the 25 signals in your own time.</p>
+          <p class="lede">Keep exploring the ${signals.length} trends in your own time.</p>
           <a class="big-btn link-btn" href="/overview">See all the trends</a>
           <a class="ghost-link" href="/explore">Explore the map</a>
         </div>`;

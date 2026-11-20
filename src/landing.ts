@@ -13,8 +13,8 @@ export function mountLanding(root: HTMLElement): void {
         <h1>Too Late To Ignore</h1>
         <p class="lede">AI is moving too fast to ignore, and too fast to catch up on later. Read the trends, play the numbers, then see what they mean for us.</p>
         <nav class="ctas" aria-label="Main">
-          <a class="btn primary" href="/explore">Explore the trends</a>
-          <a class="btn" href="/overview">Overview</a>
+          <a class="btn primary" href="/overview">Explore trends</a>
+          <a class="btn dark" href="/explore">Trend categories</a>
           <a class="btn" href="/stage">Presenter stage</a>
         </nav>
         <div class="strip" id="strip" aria-label="Trend pictures"></div>

@@ -1159,3 +1159,7 @@ body[data-mode="stage"] .story-foot { bottom: 84px; right: 280px; }
 .setup-card .field { width: 100%; box-sizing: border-box; min-height: 56px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); color: var(--cream); font: 500 20px var(--f-body); }
 .setup-card .field:focus { outline: 2px solid var(--orange); border-color: var(--orange); }
 .setup-card .stack { display: grid; gap: 14px; margin-top: 18px; }
+
+/* v27: landing buttons */
+.btn.dark { background: #03060f; border-color: #03060f; color: var(--cream); }
+.btn.dark:hover { background: #0b1226; border-color: var(--cream-faint); }

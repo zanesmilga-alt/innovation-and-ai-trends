@@ -224,7 +224,7 @@ export async function startStage(o: StageOptions): Promise<void> {
           <h2>Thank you</h2>
           <div class="qr-svg">${svg}</div>
           <p class="mono qr-url">${esc(location.host)}/explore</p>
-          <p class="lede">All 25 trends, at your own pace.</p>
+          <p class="lede">All ${o.signals.length} trends, at your own pace.</p>
         </div>`;
     })
     .catch(() => undefined);
@@ -502,10 +502,12 @@ export async function startStage(o: StageOptions): Promise<void> {
           <div class="warm-label">${esc(label)}</div>
         </div>`)
       .join('');
+    // The options always show, so the room can read them; the counts appear on Reveal.
     warm.innerHTML = `
       <p class="eyebrow mono">Warm-up</p>
       <h2>${esc(config.warmup.question)}</h2>
-      ${results.revealed ? `<div class="warm-cols">${cols}</div>` : `<p class="lede">Answer on your phone. Press Reveal.</p>`}`;
+      <div class="warm-cols">${cols}</div>
+      ${results.revealed ? '' : `<p class="lede">Answer on your phone. Press Reveal to show the split.</p>`}`;
   };
 
   const split = (a: number, d: number, la = 'Agree', ld = 'Disagree') => {
